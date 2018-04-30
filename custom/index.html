@@ -297,6 +297,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#dual-fish-still-image" title="Dual-Fish Still Image" class="md-nav__link">
+    Dual-Fish Still Image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#troubleshooting" title="Troubleshooting" class="md-nav__link">
     Troubleshooting
   </a>
@@ -319,13 +326,6 @@
           <li class="md-nav__item">
   <a href="#xmp-data" title="XMP Data" class="md-nav__link">
     XMP Data
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dual-fish-still-image" title="Dual-Fish Still Image" class="md-nav__link">
-    Dual-Fish Still Image
   </a>
   
 </li>
@@ -474,6 +474,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#dual-fish-still-image" title="Dual-Fish Still Image" class="md-nav__link">
+    Dual-Fish Still Image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#troubleshooting" title="Troubleshooting" class="md-nav__link">
     Troubleshooting
   </a>
@@ -496,13 +503,6 @@
           <li class="md-nav__item">
   <a href="#xmp-data" title="XMP Data" class="md-nav__link">
     XMP Data
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dual-fish-still-image" title="Dual-Fish Still Image" class="md-nav__link">
-    Dual-Fish Still Image
   </a>
   
 </li>
@@ -563,9 +563,17 @@ please send an email to jcasman@oppkey.com for
 to the camera's Web API at (http://localhost:8080/). When using the Web API from the plug-in, digest authentication is not required regardless of the wireless LAN mode. For detailed specifications of the Web API, please refer to <a href="https://developers.theta360.com/en/docs/v2.1/api_reference/">API Reference - v2.1 - API &amp; SDK | RICOH THETA Developers</a></p>
 <p>The Web API can not be used when the plug-in controls the camera device using the Camera API.</p>
 <h2 id="configuration-of-plug-in-with-web-server">Configuration of Plug-in With Web Server</h2>
-<p>The plug-in can launch a web server that provides a WebUI or its own API. By using port 8888 on the plug-in web server, it is possible to open a web page provided by the plug-in web server. You can then
+<p>If you want to configure your plug-in with an external mobile app, one strategy is to embed an HTTP server into
+your plug-in. A simple mobile app can then talk to the plug-in through the embedded HTTP server.
+With this configuration strategy, the plug-in can launch a web server on port 8888 that provides a WebUI or its own API. </p>
+<p>You must use port 8888 on the plug-in web server, as the other ports are blocked. You can then
 build a basic app on a smartphone to access the 
 plug-in web server on the THETA V.</p>
+<p>Developers have reported success using NanoHttpd, which is available from GitHub at 
+<a href="https://github.com/NanoHttpd/nanohttpd">https://github.com/NanoHttpd/nanohttpd</a>.</p>
+<p>Another way to access the plug-in configuration page you create is to use the OpenPluginPage API from the Ricoh v2.1 WiFi API on port 80. It will redirect to port 8888.</p>
+<p>Information on the OpenPluginPage API is available here:</p>
+<p><a href="https://developers.theta360.com/en/docs/v2.1/api_reference/protocols/open_plugin_page.html">https://developers.theta360.com/en/docs/v2.1/api_reference/protocols/open_plugin_page.html</a></p>
 <p>Your app can look for the presence or absence of the web server by using the Web API's <a href="https://developers.theta360.com/en/docs/v2.1/api_reference/commands/camera._list_plugins.html">camera._listPlugins</a>. The information from camera._listPlugins consists of information described in the configuration file (\assets\settings.json) of each plug-in. If the setting file does not exist or the setting value is incorrect, the default value is written in the camera._listPlugins information. </p>
 <p>Sample configuration file:</p>
 <pre><code>{
@@ -573,6 +581,8 @@ plug-in web server on the THETA V.</p>
 }
 </code></pre>
 
+<p>From talking with the community, we think the process is shown below.</p>
+<p><img alt="" src="../img/custom/theta-v-plugin-configuration.png" /></p>
 <h2 id="camera-hardware">Camera Hardware</h2>
 <ul>
 <li>APQ8053 (<a href="https://www.qualcomm.com/products/snapdragon/processors/625">Snapdragon 625</a>)<ul>
@@ -697,6 +707,16 @@ public static final int KEYCODE_MEDIA_RECORD = 130;
 </code></pre>
 <h3 id="storage-in-emmc">Storage in eMMC</h3>
 <p><code>/sdcard/DCIM/</code> can be used.</p>
+<h3 id="dual-fish-still-image">Dual-Fish Still Image</h3>
+<p>If you want to save still images as dual-fisheye, use this parameter.</p>
+<pre><code>mParameters.set("RIC_PROC_STITCHING_TYPE", "RicNonStitching");
+</code></pre>
+<p>The actual size of the dual-fish image is 5792x2896. Use the command below:</p>
+<pre><code>mParameters.setPictureSize(5792, 2896);
+</code></pre>
+<p><a href="https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/8?u=codetricity">This article</a> 
+provides more information on a plug-in built by community
+developer Ichi Hirota.</p>
 <h3 id="troubleshooting">Troubleshooting</h3>
 <ul>
 <li>Force power down<ul>
@@ -719,18 +739,6 @@ in the future. There's also an uncomfirmed rumor that Ricoh is working
 on a library to help with this.</p>
 <p><img alt="" src="../img/custom/xmp-data.png" /></p>
 <p><img alt="" src="../img/custom/xmp-missing.png" /></p>
-<h3 id="dual-fish-still-image">Dual-Fish Still Image</h3>
-<p>I attempted to save still images as dual-fisheye using this parameter.</p>
-<pre><code>mParameters.set("RIC_PROC_STITCHING_TYPE", "RicNonStitching");
-</code></pre>
-<p>In my tests, the image was squished.</p>
-<p><img alt="" src="../img/custom/dual-fish-problem.png" /></p>
-<p>The actual size of the dual-fish image is 5792x2896. However, I 
-could not get the command below to work.</p>
-<pre><code>mParameters.setPictureSize(5792, 2896);
-</code></pre>
-<p>The image above is sized at 5376x2688. I suspect the smaller size is the 
-reason for the distortion.</p>
                 
                   
                 
