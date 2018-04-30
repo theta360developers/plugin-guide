@@ -1,8 +1,12 @@
 # THETA Plug-in Community Guide
 
-## Fast Viewing Docs for Review
+This document is viewable here:
 
-You can view the MarkDown docs directly on GitHub in a web browser. The images and formatting will be automatically displayed by GitHub.
+ [http://theta360.guide/plugin-guide/](http://theta360.guide/plugin-guide/)
+
+## Fast Viewing Docs for Review by Contributors
+
+You can also view the MarkDown docs directly on GitHub in a web browser. The images and formatting will be automatically displayed by GitHub.
 
 - [SDK Setup](docs/index.md)
 - [Using the Plug-in](docs/use.md)
@@ -12,7 +16,7 @@ You can view the MarkDown docs directly on GitHub in a web browser. The images a
 
 ## Status
 
-As of April 5, 2018, this guide needs to be updated for the new API and SDK
+As of April 30, 2018, this guide is partially updated for the new API and SDK
 
 ## Building the HTML from MarkDown
 
