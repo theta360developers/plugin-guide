@@ -38,9 +38,20 @@ you have any problems finding the download location,
 please send an email to jcasman@oppkey.com for
  friendly (I hope) help.  :-)
 
+## Camera Hardware
+
+- APQ8053 ([Snapdragon 625](https://www.qualcomm.com/products/snapdragon/processors/625))
+    - CPU: Cortex A-53 x8
+    - GPU: Qualcomm AdrenoTM 506
+- 3GB LPDDR3 SDRAM, 32GB eMMC
+- WLAN/BT (2 models)
+    - 2.4GHz (1-11ch) only
+    - 2.4GHz(1-11ch) + 5GHz(W52)
+- 12MP CMOS x2, 4ch MEMS microphones, 1ch speaker
+
 ## Using the WiFi Web API 
 
-Your plug-in can also use the 
+In addition to the Android Camera class, your plug-in can also use the 
 [RICOH THETA API v2.1](https://developers.theta360.com/en/docs/v2.1/api_reference/) web API. Send POST commands 
 to the camera's Web API at (http://localhost:8080/). When using the Web API from the plug-in, digest authentication is not required regardless of the wireless LAN mode. For detailed specifications of the Web API, please refer to [API Reference - v2.1 - API & SDK \| RICOH THETA Developers](https://developers.theta360.com/en/docs/v2.1/api_reference/)
 
@@ -84,16 +95,7 @@ From talking with the community, we think the process is shown below.
 
 
 
-## Camera Hardware
 
-- APQ8053 ([Snapdragon 625](https://www.qualcomm.com/products/snapdragon/processors/625))
-    - CPU: Cortex A-53 x8
-    - GPU: Qualcomm AdrenoTM 506
-- 3GB LPDDR3 SDRAM, 32GB eMMC
-- WLAN/BT (2 models)
-    - 2.4GHz (1-11ch) only
-    - 2.4GHz(1-11ch) + 5GHz(W52)
-- 12MP CMOS x2, 4ch MEMS microphones, 1ch speaker
 
 ## Internal Storage 
 The THETA V has a maximum storage size of 32GB. Developers can use 19GB  for storage of their plug-in applications and approximately 1.5GB for the plug-in itself. The partition for data is `/data`.
@@ -132,7 +134,7 @@ Although you can use a curl script to switch plugins with the WiFi API,
 I find it easier to use a tool like 
 Restlet Client to save my HTTP test scripts into a group. I can select an
 individual test and run it with a push of a button. To switch plugins, I 
-saved a script for  `camera._setPlugin`. You can geta list of plugins with 
+saved a script for  `camera._setPlugin`. You can get a list of plugins with 
 `camera._listPlugins`.
 
 ![](img/custom/restlet-client.png)
@@ -147,6 +149,32 @@ pipe the output to another tool to get *pretty print*.
 ## Finishing a Plug-in
 
 Push and hold the Mode Button for 2 seconds to finish. When the plug-in detects that the Mode Button has been pressed for 2 seconds, it must quit. When the plug-in finishes, a [notification of termination for the plug-in](/docs/theta-plugin-ref/broadcast-intent/#notifying-completion-of-plug-in) must be made.
+
+
+
+## Dual-Fish Still Image
+
+If you want to save still images as dual-fisheye, use this parameter:
+
+    mParameters.set("RIC_PROC_STITCHING_TYPE", "RicNonStitching");
+
+The size of the dual-fish image is 5792x2896. Use the command below:
+
+    mParameters.setPictureSize(5792, 2896);
+
+[This article](https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/8?u=codetricity) 
+provides more information on a plug-in built by community
+developer Ichi Hirota.
+
+The picture below is from Ichi Hirota.
+
+![](img/custom/dual-fish-sample.jpg)
+
+![](img/custom/dual-fish-meta-data.png)
+
+Here's example code from Ichi Hirota for bracketing.
+
+![](img/custom/dualfish-bracketing.png)
 
 
 ## Camera LEDs
@@ -182,6 +210,8 @@ Snippet below will turn all LEDs off.
 
 ## Camera Buttons
 
+** 4/30 NEED TO UPDATE FOR BROADCAST INTENT **
+
 There are three buttons you can map:
 
 | Button | Code | Location |
@@ -216,36 +246,12 @@ __Broadcast to launch shooting application after plugin finish__
 
     com.theta360.devicelibrary.receiver.ACTION_BOOT_BASIC
 
-### Storage in eMMC
+## Storage in eMMC
 
 `/sdcard/DCIM/` can be used.
 
-### Dual-Fish Still Image
 
-If you want to save still images as dual-fisheye, use this parameter:
-
-    mParameters.set("RIC_PROC_STITCHING_TYPE", "RicNonStitching");
-
-The size of the dual-fish image is 5792x2896. Use the command below:
-
-    mParameters.setPictureSize(5792, 2896);
-
-[This article](https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/8?u=codetricity) 
-provides more information on a plug-in built by community
-developer Ichi Hirota.
-
-The picture below is from Ichi Hirota.
-
-![](img/custom/dual-fish-sample.jpg)
-
-![](img/custom/dual-fish-meta-data.png)
-
-Here's example code from Ichi Hirota for bracketing.
-
-![](img/custom/dualfish-bracketing.png)
-
-
-### Troubleshooting
+## Troubleshooting
 
 - Force power down
     - Press WLAN + POWER buttons for 10 seconds
