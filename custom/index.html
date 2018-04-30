@@ -1,0 +1,826 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.2.1">
+    
+    
+      
+        <title>Custom Development - THETA V Plugin Community Test Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.ac64251e.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.792431c1.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    
+    
+    
+      <body data-md-color-primary="light-green" data-md-color-accent="lime">
+    
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="THETA V Plugin Community Test Guide" class="md-header-nav__button md-logo">
+          
+            <img src="../assets/images/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                THETA V Plugin Community Test Guide
+              </span>
+              <span class="md-header-nav__topic">
+                Custom Development
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <img src="../assets/images/logo.png" width="24" height="24">
+      
+    </span>
+    THETA V Plugin Community Test Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Setup" class="md-nav__link">
+      Setup
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../use/" title="Plugin Use" class="md-nav__link">
+      Plugin Use
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Custom Development
+      </label>
+    
+    <a href="./" title="Custom Development" class="md-nav__link md-nav__link--active">
+      Custom Development
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-wifi-web-api" title="Using the WiFi Web API" class="md-nav__link">
+    Using the WiFi Web API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-of-plug-in-with-web-server" title="Configuration of Plug-in With Web Server" class="md-nav__link">
+    Configuration of Plug-in With Web Server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camera-hardware" title="Camera Hardware" class="md-nav__link">
+    Camera Hardware
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#internal-storage" title="Internal Storage" class="md-nav__link">
+    Internal Storage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging" title="Debugging" class="md-nav__link">
+    Debugging
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-active-plugin" title="Set Active Plugin" class="md-nav__link">
+    Set Active Plugin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finishing-a-plug-in" title="Finishing a Plug-in" class="md-nav__link">
+    Finishing a Plug-in
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camera-leds" title="Camera LEDs" class="md-nav__link">
+    Camera LEDs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camera-buttons" title="Camera Buttons" class="md-nav__link">
+    Camera Buttons
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#broadcast-examples" title="Broadcast Examples" class="md-nav__link">
+    Broadcast Examples
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storage-in-emmc" title="Storage in eMMC" class="md-nav__link">
+    Storage in eMMC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" title="Troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problems" title="Problems" class="md-nav__link">
+    Problems
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xmp-data" title="XMP Data" class="md-nav__link">
+    XMP Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dual-fish-still-image" title="Dual-Fish Still Image" class="md-nav__link">
+    Dual-Fish Still Image
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../concept/" title="Concept Ideas" class="md-nav__link">
+      Concept Ideas
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../community/" title="Community" class="md-nav__link">
+      Community
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-wifi-web-api" title="Using the WiFi Web API" class="md-nav__link">
+    Using the WiFi Web API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-of-plug-in-with-web-server" title="Configuration of Plug-in With Web Server" class="md-nav__link">
+    Configuration of Plug-in With Web Server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camera-hardware" title="Camera Hardware" class="md-nav__link">
+    Camera Hardware
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#internal-storage" title="Internal Storage" class="md-nav__link">
+    Internal Storage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging" title="Debugging" class="md-nav__link">
+    Debugging
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-active-plugin" title="Set Active Plugin" class="md-nav__link">
+    Set Active Plugin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finishing-a-plug-in" title="Finishing a Plug-in" class="md-nav__link">
+    Finishing a Plug-in
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camera-leds" title="Camera LEDs" class="md-nav__link">
+    Camera LEDs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camera-buttons" title="Camera Buttons" class="md-nav__link">
+    Camera Buttons
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#broadcast-examples" title="Broadcast Examples" class="md-nav__link">
+    Broadcast Examples
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storage-in-emmc" title="Storage in eMMC" class="md-nav__link">
+    Storage in eMMC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" title="Troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problems" title="Problems" class="md-nav__link">
+    Problems
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xmp-data" title="XMP Data" class="md-nav__link">
+    XMP Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dual-fish-still-image" title="Dual-Fish Still Image" class="md-nav__link">
+    Dual-Fish Still Image
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="custom-development">Custom Development</h1>
+<h2 id="overview">Overview</h2>
+<p>Your primary way to control the camera is with the Android Camera class. Although this API was
+deprecated in level 21, it still works. Make sure you use the older Camera class and not
+the newer camera2 API.</p>
+<p>Use the offiical Android API documentation as your main reference.</p>
+<p><a href="https://developer.android.com/reference/android/hardware/Camera.html">https://developer.android.com/reference/android/hardware/Camera.html</a></p>
+<p>There are a set of THETA features that are not covered by the Android 
+<a href="https://developer.android.com/reference/android/hardware/Camera.html">Camera</a>
+API. These are covered by using 
+<a href="https://developer.android.com/reference/android/hardware/Camera.Parameters.html">Camera.Parameters</a></p>
+<p>Example:</p>
+<pre><code>mParameters.set("RIC_PROC_STITCHING", "RicStaticStitching");
+mCamera.setParameters(mParameters);
+</code></pre>
+<p>Here's example of setting multiple parameters and then taking a picture.</p>
+<pre><code>    public void takePicture() {
+        mParameters.setPictureSize(5376, 2688);
+        mParameters.set("RIC_SHOOTING_MODE", "RicStillCaptureStd");
+        mParameters.set("RIC_EXPOSURE_MODE", "RicAutoExposureP");
+        mParameters.set("recording-hint", "false");
+        mParameters.setJpegThumbnailSize(320, 160);
+        mCamera.setParameters(mParameters);
+        mCamera.takePicture(null, null, mJpegPictureCallback);
+    }
+</code></pre>
+<p>The plug-in SDK is a great place to get started. The SDK can be downloaded from the theta360.com site. If
+you have any problems finding the download location,
+please send an email to jcasman@oppkey.com for
+ friendly (I hope) help.  :-)</p>
+<h2 id="using-the-wifi-web-api">Using the WiFi Web API</h2>
+<p>Your plug-in can also use the 
+<a href="https://developers.theta360.com/en/docs/v2.1/api_reference/">RICOH THETA API v2.1</a> web API. Send POST commands 
+to the camera's Web API at (http://localhost:8080/). When using the Web API from the plug-in, digest authentication is not required regardless of the wireless LAN mode. For detailed specifications of the Web API, please refer to <a href="https://developers.theta360.com/en/docs/v2.1/api_reference/">API Reference - v2.1 - API &amp; SDK | RICOH THETA Developers</a></p>
+<p>The Web API can not be used when the plug-in controls the camera device using the Camera API.</p>
+<h2 id="configuration-of-plug-in-with-web-server">Configuration of Plug-in With Web Server</h2>
+<p>The plug-in can launch a web server that provides a WebUI or its own API. By using port 8888 on the plug-in web server, it is possible to open a web page provided by the plug-in web server. You can then
+build a basic app on a smartphone to access the 
+plug-in web server on the THETA V.</p>
+<p>Your app can look for the presence or absence of the web server by using the Web API's <a href="https://developers.theta360.com/en/docs/v2.1/api_reference/commands/camera._list_plugins.html">camera._listPlugins</a>. The information from camera._listPlugins consists of information described in the configuration file (\assets\settings.json) of each plug-in. If the setting file does not exist or the setting value is incorrect, the default value is written in the camera._listPlugins information. </p>
+<p>Sample configuration file:</p>
+<pre><code>{
+ &quot;webServer&quot;: true
+}
+</code></pre>
+
+<h2 id="camera-hardware">Camera Hardware</h2>
+<ul>
+<li>APQ8053 (<a href="https://www.qualcomm.com/products/snapdragon/processors/625">Snapdragon 625</a>)<ul>
+<li>CPU: Cortex A-53 x8</li>
+<li>GPU: Qualcomm AdrenoTM 506</li>
+</ul>
+</li>
+<li>3GB LPDDR3 SDRAM, 32GB eMMC</li>
+<li>WLAN/BT (2 models)<ul>
+<li>2.4GHz (1-11ch) only</li>
+<li>2.4GHz(1-11ch) + 5GHz(W52)</li>
+</ul>
+</li>
+<li>12MP CMOS x2, 4ch MEMS microphones, 1ch speaker</li>
+</ul>
+<h2 id="internal-storage">Internal Storage</h2>
+<p>The THETA V has a maximum storage size of 32GB. Developers can use 19GB  for storage of their plug-in applications and approximately 1.5GB for the plug-in itself. The partition for data is <code>/data</code>.</p>
+<p>The sample code stores data to <code>DCIM</code>.</p>
+<p>This is an example of saving all your images to a sub-directory <code>Construction</code> and then
+adding a number to the file name. There's a separate bit of code to iterate the roomNumber.</p>
+<pre><code>String fileUrl = "/storage/emulated/0/DCIM/Construction/room" + roomNumberStr + "sect01.jpg";
+</code></pre>
+<h2 id="debugging">Debugging</h2>
+<p>You can debug the THETA V with a USB cable and adb.
+The camera will operate in Plugin Mode while connected to adb.</p>
+<p><img alt="" src="../img/debug/debug-connection.png" /></p>
+<p>You will be able to get debug messages similar to the example below:</p>
+<pre><code>   12-14 07:53:24.105  1171  1373 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+</code></pre>
+<p>Example debug output with the camera connected to my Linux computer with a USB cable 
+and in plug-in mode.</p>
+<p><img alt="" src="../img/debug/debug-screen.png" /></p>
+<h2 id="set-active-plugin">Set Active Plugin</h2>
+<p>To set the active plugin, you can also use the WiFi API. To use 
+the WiFi API, you must connect your 
+computer to the THETA with WiFi. 
+Although you can use a curl script to switch plugins with the WiFi API,
+I find it easier to use a tool like 
+Restlet Client to save my HTTP test scripts into a group. I can select an
+individual test and run it with a push of a button. To switch plugins, I 
+saved a script for  <code>camera._setPlugin</code>. You can geta list of plugins with 
+<code>camera._listPlugins</code>.</p>
+<p><img alt="" src="../img/custom/restlet-client.png" /></p>
+<p>In addition to saving the HTTP test scripts, Restlet Client or Postman will show the
+JSON response in <em>pretty</em> format automatically. With curl, you will need to
+pipe the output to another tool to get <em>pretty print</em>.</p>
+<p><img alt="" src="../img/custom/restlet-client-response.png" /></p>
+<h2 id="finishing-a-plug-in">Finishing a Plug-in</h2>
+<p>Push and hold the Mode Button for 2 seconds to finish. When the plug-in detects that the Mode Button has been pressed for 2 seconds, it must quit. When the plug-in finishes, a <a href="../docs/theta-plugin-ref/broadcast-intent/#notifying-completion-of-plug-in">notification of termination for the plug-in</a> must be made.</p>
+<h2 id="camera-leds">Camera LEDs</h2>
+<p>Example below shows camera turning on all LEDs.</p>
+<pre><code>Intent ledon = new Intent("com.theta360.devicelibrary.receiver.ACTION_ADJ_LED");
+ledon.putExtra("ledNo", 0);
+ledon.putExtra("color", "on");
+sendBroadcast(ledon);
+</code></pre>
+<p>In the example below, I tested turning on all the LEDs when a picture is 
+taken by pressing the shutter button.</p>
+<pre><code>public boolean onKeyDown(int keyCode, KeyEvent event) {
+    if (keyCode == KEYCODE_CAMERA) {
+        takePicture();
+        // “ledNo” can be set LED number (0-8). 0 means all LEDs.
+        ledon.putExtra("ledNo", 0);
+        // color can be "on", "red", "green", "blue"
+        ledon.putExtra("color", "on");
+        sendBroadcast(ledon);
+    }
+</code></pre>
+<p><img alt="" src="../img/custom/led-all.png" /></p>
+<p>Snippet below will turn all LEDs off.</p>
+<pre><code>Intent ledoff = new Intent("com.theta360.devicelibrary.receiver.ACTION_ADJ_LED_OFF");
+ledoff.putExtra("ledNo", 0);
+sendBroadcast(ledoff);
+</code></pre>
+<h2 id="camera-buttons">Camera Buttons</h2>
+<p>There are three buttons you can map:</p>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th align="center">Code</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WiFi</td>
+<td align="center">284</td>
+<td>side middle</td>
+</tr>
+<tr>
+<td>Mode</td>
+<td align="center">130</td>
+<td>side bottom</td>
+</tr>
+<tr>
+<td>Shutter</td>
+<td align="center">27</td>
+<td>front</td>
+</tr>
+</tbody>
+</table>
+<p>In the sample code, <code>MainActivity.java</code> has this at the top </p>
+<pre><code>public static final int KEYCODE_CAMERA = 27;
+public static final int KEYCODE_MEDIA_RECORD = 130;
+</code></pre>
+<p>Further down in that same file, you'll see the trigger.</p>
+<pre><code>public boolean onKeyDown(int keyCode, KeyEvent event) {
+    if (keyCode == KEYCODE_CAMERA) {
+        takePicture();
+    }
+
+    return super.onKeyDown(keyCode, event);
+}
+</code></pre>
+<h2 id="broadcast-examples">Broadcast Examples</h2>
+<p><strong>Broadcast to sound error tone</strong></p>
+<pre><code>com.theta360.devicelibrary.receiver.ACTION_AUDIO_WARNING
+</code></pre>
+<p><strong>Broadcast to launch shooting application after plugin finish</strong></p>
+<pre><code>com.theta360.devicelibrary.receiver.ACTION_BOOT_BASIC
+</code></pre>
+<h3 id="storage-in-emmc">Storage in eMMC</h3>
+<p><code>/sdcard/DCIM/</code> can be used.</p>
+<h3 id="troubleshooting">Troubleshooting</h3>
+<ul>
+<li>Force power down<ul>
+<li>Press WLAN + POWER buttons for 10 seconds</li>
+</ul>
+</li>
+<li>WLAN reset<ul>
+<li>Press WLAN button for 10 seconds</li>
+</ul>
+</li>
+</ul>
+<h2 id="problems">Problems</h2>
+<p>At the time of writing this unofficial guide, the plug-in development 
+environment is in closed beta. Problems listed here may be fixed by the 
+time you read this.</p>
+<h3 id="xmp-data">XMP Data</h3>
+<p>1/26/2018:
+In my tests, the image did not have XMP data in it, so I'll need to add it 
+in the future. There's also an uncomfirmed rumor that Ricoh is working
+on a library to help with this.</p>
+<p><img alt="" src="../img/custom/xmp-data.png" /></p>
+<p><img alt="" src="../img/custom/xmp-missing.png" /></p>
+<h3 id="dual-fish-still-image">Dual-Fish Still Image</h3>
+<p>I attempted to save still images as dual-fisheye using this parameter.</p>
+<pre><code>mParameters.set("RIC_PROC_STITCHING_TYPE", "RicNonStitching");
+</code></pre>
+<p>In my tests, the image was squished.</p>
+<p><img alt="" src="../img/custom/dual-fish-problem.png" /></p>
+<p>The actual size of the dual-fish image is 5792x2896. However, I 
+could not get the command below to work.</p>
+<pre><code>mParameters.setPictureSize(5792, 2896);
+</code></pre>
+<p>The image above is sized at 5376x2688. I suspect the smaller size is the 
+reason for the distortion.</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../use/" title="Plugin Use" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Plugin Use
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../concept/" title="Concept Ideas" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Concept Ideas
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.oppkey.com">Oppkey</a>
+        and
+        <a href="http://theta360.guide">
+          the awesome community of developers at theta360.guide</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/theta360developers" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/theta360dev" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.facebook.com/theta360guide/" class="md-footer-social__link fa fa-facebook"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.5165553b.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:".."}})</script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-73311422-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
+    
+  </body>
+</html>

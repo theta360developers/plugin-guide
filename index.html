@@ -1,0 +1,711 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="./assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.2.1">
+    
+    
+      
+        <title>THETA V Plugin Community Test Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="./assets/stylesheets/application.ac64251e.css">
+      
+        <link rel="stylesheet" href="./assets/stylesheets/application-palette.792431c1.css">
+      
+    
+    
+      <script src="./assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    
+    
+    
+      <body data-md-color-primary="light-green" data-md-color-accent="lime">
+    
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="." title="THETA V Plugin Community Test Guide" class="md-header-nav__button md-logo">
+          
+            <img src="./assets/images/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                THETA V Plugin Community Test Guide
+              </span>
+              <span class="md-header-nav__topic">
+                Setup
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <img src="./assets/images/logo.png" width="24" height="24">
+      
+    </span>
+    THETA V Plugin Community Test Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Setup
+      </label>
+    
+    <a href="." title="Setup" class="md-nav__link md-nav__link--active">
+      Setup
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#theta-v-plugin-application-development-overview" title="THETA V Plugin Application Development Overview" class="md-nav__link">
+    THETA V Plugin Application Development Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-hardware-and-software-for-development" title="Required Hardware and Software for Development" class="md-nav__link">
+    Required Hardware and Software for Development
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#android-sdk-installation" title="Android SDK Installation" class="md-nav__link">
+    Android SDK Installation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download-android-studio" title="Download Android Studio" class="md-nav__link">
+    Download Android Studio
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-ricoh-plugin-sdk-and-update-android-build-system" title="Import Ricoh Plugin SDK and Update Android Build System" class="md-nav__link">
+    Import Ricoh Plugin SDK and Update Android Build System
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-a-theta-v-plugin-development-camera" title="Getting a THETA V Plugin “Development Camera”" class="md-nav__link">
+    Getting a THETA V Plugin “Development Camera”
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb-cable-connection-between-theta-v-and-development-workstation" title="USB cable connection between THETA V and development workstation" class="md-nav__link">
+    USB cable connection between THETA V and development workstation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-your-plugin-into-camera" title="Install Your Plugin into Camera" class="md-nav__link">
+    Install Your Plugin into Camera
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-vysor-to-help-with-testing" title="Use Vysor to help with testing" class="md-nav__link">
+    Use Vysor to help with testing
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="use/" title="Plugin Use" class="md-nav__link">
+      Plugin Use
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="custom/" title="Custom Development" class="md-nav__link">
+      Custom Development
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="concept/" title="Concept Ideas" class="md-nav__link">
+      Concept Ideas
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="community/" title="Community" class="md-nav__link">
+      Community
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#theta-v-plugin-application-development-overview" title="THETA V Plugin Application Development Overview" class="md-nav__link">
+    THETA V Plugin Application Development Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-hardware-and-software-for-development" title="Required Hardware and Software for Development" class="md-nav__link">
+    Required Hardware and Software for Development
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#android-sdk-installation" title="Android SDK Installation" class="md-nav__link">
+    Android SDK Installation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download-android-studio" title="Download Android Studio" class="md-nav__link">
+    Download Android Studio
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-ricoh-plugin-sdk-and-update-android-build-system" title="Import Ricoh Plugin SDK and Update Android Build System" class="md-nav__link">
+    Import Ricoh Plugin SDK and Update Android Build System
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-a-theta-v-plugin-development-camera" title="Getting a THETA V Plugin “Development Camera”" class="md-nav__link">
+    Getting a THETA V Plugin “Development Camera”
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb-cable-connection-between-theta-v-and-development-workstation" title="USB cable connection between THETA V and development workstation" class="md-nav__link">
+    USB cable connection between THETA V and development workstation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-your-plugin-into-camera" title="Install Your Plugin into Camera" class="md-nav__link">
+    Install Your Plugin into Camera
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-vysor-to-help-with-testing" title="Use Vysor to help with testing" class="md-nav__link">
+    Use Vysor to help with testing
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="ricoh-theta-v-plugin-application-development-community-guide">Ricoh THETA V Plugin Application Development - Community Guide</h1>
+<p><img alt="" src="./img/product/front-image.png" /></p>
+<p>This is a compilation of community experiences and tests from members of <a href="http://theta360.guide">theta360.guide</a>, an
+independent developer community for RICOH THETA cameras. This is not an
+official Ricoh group. The <em>community-created</em> document you are reading may contain factual errors. For official information from Ricoh, please go to
+<a href="http://theta360.com">theta360.com</a>.</p>
+<h2 id="theta-v-plugin-application-development-overview">THETA V Plugin Application Development Overview</h2>
+<p>The THETA V uses Android as the operating system. Because of this, the THETA V application development process is the same as the development process for an Android phone. You connect the THETA V to a development workstation, either Mac, Windows, or Linux with a micro USB cable. To establish a development connection, you need a THETA V 
+Plugin Development camera. More
+information on the THETA V Plugin Development cameras should be available when the 
+THETA V partner program is launched in 2018 (specific date of launch has not been announced). </p>
+<p>This document describes the following development process:</p>
+<ul>
+<li>Android SDK Installation</li>
+<li>Import Ricoh sample Plugin and Update Android Build System</li>
+<li>Getting a THETA V Plugin Development Camera</li>
+<li>USB cable connection between THETA V and development workstation</li>
+<li>Using adb to connect to the camera</li>
+<li>Use adb to install plugin into camera</li>
+<li>Use Vysor to help with testing</li>
+</ul>
+<h2 id="required-hardware-and-software-for-development">Required Hardware and Software for Development</h2>
+<ul>
+<li>The SDK was tested with a RICOH THETA V under the following conditions.</li>
+<li>Camera<ul>
+<li>Hardware</li>
+<li>RICOH THETA V</li>
+<li>Firmware</li>
+<li>ver.2.20.1 and above<ul>
+<li>Information on checking and updating the firmware is <a href="https://theta360.com/en/support/manual/s/content/pc/pc_09.html">here</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Development Environment<ul>
+<li>Windows 10 Version 1709<ul>
+<li>In Windows 7, adb connection does not work with USB</li>
+</ul>
+</li>
+<li>macOS High Sierra ver.10.13</li>
+<li>Development ・ Build environment</li>
+<li>Android Studio 3.0+</li>
+<li>gradle 3.0.1</li>
+<li>Android SDK (API Level 25)</li>
+<li>compileSdkVersion 26</li>
+<li>buildToolsVersion "26.0.3"</li>
+<li>minSdkVersion 25</li>
+<li>targetSdkVersion 25</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="android-sdk-installation">Android SDK Installation</h2>
+<p>This community guide has been tested with the Android SDK 3.0.1 and 3.1.1 on Windows 10 (1709) 64bit and Ubuntu 17.10. The process should be similar on Mac OS X.</p>
+<h3 id="download-android-studio">Download Android Studio</h3>
+<p>Download Android Studio from the site below.</p>
+<p>https://developer.android.com/studio/index.html</p>
+<p><img alt="" src="./img/setup/android-studio-download.png" />
+<img alt="" src="./img/setup/android-studio-version.png" /></p>
+<h2 id="import-ricoh-plugin-sdk-and-update-android-build-system">Import Ricoh Plugin SDK and Update Android Build System</h2>
+<p>Install Ricoh Plugin SDK and Update Android Build System.</p>
+<pre><code>$ l
+app/          gradle/            gradlew      LICENSE.txt     README.md
+build.gradle  gradle.properties  gradlew.bat  pluginlibrary/  settings.gradle
+</code></pre>
+<p>Import Project from File -&gt; New -&gt; Import Project.</p>
+<p><img alt="" src="./img/setup/import-project.png" /></p>
+<p><img alt="" src="./img/setup/select-plugin.png" /></p>
+<p>You will see the following status bar for a few minutes.</p>
+<p><img alt="" src="./img/setup/build-plugin-status.png" /></p>
+<p>After the process completes, you will see a Windows Security Alert.</p>
+<p><img alt="" src="./img/setup/firewall-allow.png" /></p>
+<p>Allow access to the OpenJDK Platform.</p>
+<p>You may need to update your Build Tools. Install 26.0.3 or higher.</p>
+<p><img alt="" src="./img/setup/build-tools-upgrade.png" /></p>
+<p>Accept the license terms for 26.0.3 and press Next.</p>
+<p><img alt="" src="./img/setup/license-agreement.png" /></p>
+<p>The components will be installed for you.</p>
+<p><img alt="" src="./img/setup/component-installer.png" /></p>
+<p>Allow Gradle enough time to resync your project.</p>
+<p><img alt="" src="./img/setup/gradle-sync.png" /></p>
+<p>Although not necessary, I decided to update Gradle.</p>
+<p><img alt="" src="./img/setup/gradle-update.png" /></p>
+<p>You can now inspect your Project in the navigation area.</p>
+<p><img alt="" src="./img/setup/plugin-code-structure.png" /></p>
+<p>Build the APK</p>
+<p><img alt="" src="./img/setup/build-apk.png" /></p>
+<p>At the bottom of the Android Studio window, you will see the status of the build.</p>
+<p><img alt="" src="./img/setup/build-status.png" /></p>
+<p>Click on the status bar to show your Event Log and locate the APK.</p>
+<p><img alt="" src="./img/setup/build-locate.png" /></p>
+<p>Locate the file <code>plugin-debug.apk</code> and install it onto the THETA V</p>
+<p><img alt="" src="./img/setup/plugin-find-apk.png" /></p>
+<h2 id="getting-a-theta-v-plugin-development-camera">Getting a THETA V Plugin “Development Camera”</h2>
+<p>Normal THETA V cameras are not enabled for the development of plugins.
+As of April 13, 2018, the THETA V plugin development cameras are in closed beta. 
+To discuss your plugin project, you can contact Ricoh directly
+or you can also contact the independent developer community at <a href="http://theta360.guide">http://theta360.guide</a> and they can forward your request to the appropriate people at Ricoh. 
+Alternately, you can send an email to Jesse Casman at jcasman@oppkey.com for more information.
+The number of development cameras are very limited. Please understand that only a
+small number of requests can be fulfilled.</p>
+<h2 id="usb-cable-connection-between-theta-v-and-development-workstation">USB cable connection between THETA V and development workstation</h2>
+<p>With the THETA off, connect it to your developer workstation with a USB cable.</p>
+<p><img alt="" src="./img/adb/usb-cable.png" /></p>
+<p>Using adb to connect to the camera</p>
+<p>On Windows, adb is installed into </p>
+<pre><code>C:\Users\[user]\AppData\Local\Android\sdk\platform-tools
+</code></pre>
+<p><img alt="" src="./img/adb/adb-location.png" /></p>
+<p>You should add this into your PATH.  On Windows, you can edit the PATH with <em>Control Panel -&gt; System and Security -&gt; System -&gt; Advanced system settings -&gt; Environment Variables -&gt; Path</em></p>
+<p><img alt="" src="./img/adb/path.png" /></p>
+<p>After putting adb into your <code>PATH</code>, start a new cmd shell and run </p>
+<pre><code>adb devices -l
+</code></pre>
+<p><img alt="" src="./img/adb/adb-list-devices.png" /></p>
+<p>If you don't use <code>-l</code>, you can still identify the device by the serial number
+of your THETA V. In the example below, my THETA V has a serial number of 00101082.</p>
+<pre><code>$ adb devices
+List of devices attached
+* daemon not running. starting it now at tcp:5037 *
+* daemon started successfully *
+00101082    device
+</code></pre>
+<p>You can log into the camera, and do an <code>ls</code> to list all files, just like in any Android system</p>
+<pre><code>$ adb shell
+msm8953_64:/ $ ls -l                                                                                                                                                 
+total 4240
+drwxrwxr-x   5 media_rw media_rw    4096 2017-01-01 00:00 DCIM
+dr-xr-xr-x  17 root     root           0 1970-04-02 10:08 acct
+drwxr-xr-x   2 root     root          40 1970-01-01 00:00 bt_firmware                             
+lrwxrwxrwx   1 root     root          50 1970-01-01 00:00 bugreports -&gt; /data/user_de/0/com.android.shell/files/bugreports
+drwxrwx---   6 system   cache       4096 2017-11-14 15:55 cache
+lrwxrwxrwx   1 root     root          13 1970-01-01 00:00 charger -&gt; /sbin/healthd
+drwxr-xr-x   2 root     root           0 1970-04-02 10:08 config
+lrwxrwxrwx   1 root     root          17 1970-01-01 00:00 d -&gt; /sys/kernel/debug
+drwxrwx--x  43 system   system      4096 2017-09-21 14:00 data
+-rw-r--r--   1 root     root         966 1970-01-01 00:00 default.prop
+drwxr-xr-x  15 root     root        3180 2017-11-27 12:50 dev
+drwxr-xr-x   3 root     root        4096 1970-01-01 00:00 dsp
+</code></pre>
+<p>Change directory into DCIM. The RICOH THETA Plug-in SDK uses the
+<a href="https://developer.android.com/reference/android/hardware/Camera.html">android.hardware.Camera</a> class. It saves images into the normal location you would expect from an Android device. You can also use the <a href="https://developers.theta360.com/en/docs/v2.1/api_reference/">RICOH THETA API v2.1</a>, which is is a WebAPI based on OSC to take pictures from your plug-in by sending a POST command to the internal camera web server.</p>
+<pre><code>127|msm8953_64:/DCIM/0 $ ls -l
+total 128
+drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Alarms
+drwxrwxr-x 2 media_rw media_rw  4096 2017-09-22 22:31 Converted
+drwxrwxr-x 3 media_rw media_rw  4096 2017-09-19 18:15 DCIM
+drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Download
+drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Movies
+drwxrwxr-x 2 media_rw media_rw  4096 2017-10-02 15:31 MtpOperation
+drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Music
+drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Notifications
+drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Pictures
+drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Podcasts
+drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Ringtones
+-rw-rw-r-- 1 media_rw media_rw 15972 2017-09-25 23:35 btsnoop_hci.log
+drwxrwxr-x 2 media_rw media_rw  4096 2017-09-21 14:26 ptp
+</code></pre>
+<p>Locate pictures and movies.</p>
+<pre><code>msm8953_64:/DCIM/0/DCIM/100RICOH $
+
+msm8953_64:/DCIM/0/DCIM/100RICOH $ ls -l                                                                                                             
+total 554752
+-rw-rw-r-- 1 media_rw media_rw   1970120 2017-09-28 12:58 R0010025.JPG
+-rw-rw-r-- 1 media_rw media_rw   2402374 2017-09-28 12:58 R0010026.JPG
+-rw-rw-r-- 1 media_rw media_rw   2136165 2017-09-28 12:58 R0010027.JPG
+-rw-rw-r-- 1 media_rw media_rw   2810985 2017-09-28 12:59 R0010028.JPG
+-rw-rw-r-- 1 media_rw media_rw   1834346 2017-10-18 18:34 R0010035.JPG
+-rw-rw-r-- 1 media_rw media_rw    679681 2017-10-21 12:13 R0010036.JPG
+-rw-rw-r-- 1 media_rw media_rw   2103925 2017-10-21 14:16 R0010037.JPG
+-rw-rw-r-- 1 media_rw media_rw  52108839 2017-10-21 14:19 R0010038.MP4
+-rw-rw-r-- 1 media_rw media_rw 108450224 2017-10-21 14:20 R0010039.MP4
+</code></pre>
+<h2 id="install-your-plugin-into-camera">Install Your Plugin into Camera</h2>
+<p>Use Android Studio
+or</p>
+<p>call <code>adb install -r ./plugin/build/outputs/apk/debug/plugin-debug.apk</code></p>
+<pre><code>$ adb install -r ./plugin/build/outputs/apk/debug/plugin-debug.apk 
+* daemon not running. starting it now at tcp:5037 *
+* daemon started successfully *
+Success
+</code></pre>
+<h2 id="use-vysor-to-help-with-testing">Use Vysor to help with testing</h2>
+<p>Go to  <a href="https://www.vysor.io/">https://www.vysor.io/</a> 
+and install Vysor.</p>
+<p><img alt="" src="./img/vysor/visor-home.png" /></p>
+<p>On Linux, you can Vysor with the information <a href="https://github.com/koush/electron-chrome">here</a>.</p>
+<p>The basic process is shown below.</p>
+<pre><code>git clone https://github.com/koush/electron-chrome.git
+cd electron-chrome
+npm install
+</code></pre>
+<p>Using the Chrome Store app id for Vysor:</p>
+<pre><code>electron --enable-logging . --app-id=gidgenkbbabolejbgbpnhbimgjbffefm
+</code></pre>
+<p><img alt="" src="./img/vysor/vysor-linux.png" /></p>
+<p>After starting Vysor, you will be able to choose your device, <em>RICOH THETA_V</em>.  Press <em>View</em>.</p>
+<p><img alt="" src="./img/vysor/vysor-device.png" /></p>
+<p>Vysor will start up.</p>
+<p><img alt="" src="./img/vysor/vysor-start.png" /></p>
+<p>Click on the home button.</p>
+<p><img alt="" src="./img/vysor/home-button.png" /></p>
+<p>Any launcher will work. I'm using the Snapdragon Launcher.</p>
+<p><img alt="" src="./img/vysor/snapdragon.png" /></p>
+<p>You will see all the apps.</p>
+<p><img alt="" src="./img/vysor/plugin-sample.png" /></p>
+<p>Go to App Settings</p>
+<p><img alt="" src="./img/vysor/plugin-settings.png" /></p>
+<p>Set Permissions for <em>Storage</em> and <em>Camera</em>.</p>
+<p><img alt="" src="./img/vysor/storage-camera.png" /></p>
+<p>Launch App</p>
+<p><img alt="" src="./img/vysor/launch-app.png" /></p>
+<p>The Vysor screen will be black.</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+        
+          <a href="use/" title="Plugin Use" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Plugin Use
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.oppkey.com">Oppkey</a>
+        and
+        <a href="http://theta360.guide">
+          the awesome community of developers at theta360.guide</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/theta360developers" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/theta360dev" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.facebook.com/theta360guide/" class="md-footer-social__link fa fa-facebook"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="./assets/javascripts/application.5165553b.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:"."}})</script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-73311422-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
+    
+  </body>
+</html>
