@@ -1,0 +1,26 @@
+site_name: THETA V Plugin Community Test Guide
+google_analytics: ['UA-73311422-1', 'auto']
+theme_dir: theme/material
+theme: 
+  name: material
+  palette:
+    primary: 'light green'
+    accent: 'lime'
+  favicon: assets/images/favicon.ico
+  logo: assets/images/logo.png
+
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/theta360developers'
+    - type: 'twitter'
+      link: 'https://twitter.com/theta360dev'
+    - type: 'facebook'
+      link: 'https://www.facebook.com/theta360guide/'
+  
+pages: 
+  - Setup: index.md
+  - Plugin Use: use.md
+  - Custom Development: custom.md
+  - Concept Ideas: concept.md
+  - Community: community.md
