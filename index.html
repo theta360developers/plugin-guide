@@ -229,8 +229,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#getting-a-theta-v-plugin-development-camera" title="Getting a THETA V Plugin “Development Camera”" class="md-nav__link">
-    Getting a THETA V Plugin “Development Camera”
+  <a href="#putting-your-theta-v-into-developer-mode" title="Putting Your THETA V into “Developer Mode”" class="md-nav__link">
+    Putting Your THETA V into “Developer Mode”
   </a>
   
 </li>
@@ -375,8 +375,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#getting-a-theta-v-plugin-development-camera" title="Getting a THETA V Plugin “Development Camera”" class="md-nav__link">
-    Getting a THETA V Plugin “Development Camera”
+  <a href="#putting-your-theta-v-into-developer-mode" title="Putting Your THETA V into “Developer Mode”" class="md-nav__link">
+    Putting Your THETA V into “Developer Mode”
   </a>
   
 </li>
@@ -422,11 +422,13 @@
 <p>This is a compilation of community experiences and tests from members of <a href="http://theta360.guide">theta360.guide</a>, an
 independent developer community for RICOH THETA cameras. This is not an
 official Ricoh group. The <em>community-created</em> document you are reading may contain factual errors. For official information from Ricoh, please go to
-<a href="http://theta360.com">theta360.com</a>.</p>
+<a href="https://api.ricoh/docs/theta-plugin?utm_source=theta360guide">https://api.ricoh/docs/theta-plugin/</a>.</p>
 <h2 id="theta-v-plugin-application-development-overview">THETA V Plugin Application Development Overview</h2>
-<p>The THETA V uses Android as the operating system. Because of this, the THETA V application development process is the same as the development process for an Android phone. You connect the THETA V to a development workstation, either Mac, Windows, or Linux with a micro USB cable. To establish a development connection, you need a THETA V 
-Plugin Development camera. More
-information on the THETA V Plugin Development cameras should be available when the 
+<p>The THETA V uses Android as the operating system. Because of this, the THETA V application development process is the same as the development process for an Android phone. Connect the THETA V to a development workstation, either Mac, Windows, or Linux with a micro USB cable and connect to the camera with adb. You will need a THETA V 
+that is in developer mode. To put your THETA V into developer mode during the closed-beta period, 
+please contact jcasman@oppkey.com. He will need
+to get physical access to your camera. More
+information on a process to put the THETA V into developer mode remotely should be available when the 
 THETA V partner program is launched in 2018 (specific date of launch has not been announced). </p>
 <p>This document describes the following development process:</p>
 <ul>
@@ -510,14 +512,13 @@ build.gradle  gradle.properties  gradlew.bat  pluginlibrary/  settings.gradle
 <p><img alt="" src="./img/setup/build-locate.png" /></p>
 <p>Locate the file <code>plugin-debug.apk</code> and install it onto the THETA V</p>
 <p><img alt="" src="./img/setup/plugin-find-apk.png" /></p>
-<h2 id="getting-a-theta-v-plugin-development-camera">Getting a THETA V Plugin “Development Camera”</h2>
+<h2 id="putting-your-theta-v-into-developer-mode">Putting Your THETA V into “Developer Mode”</h2>
 <p>Normal THETA V cameras are not enabled for the development of plugins.
-As of April 13, 2018, the THETA V plugin development cameras are in closed beta. 
+As of April 30, 2018, the THETA V plugin development process is in closed beta. 
 To discuss your plugin project, you can contact Ricoh directly
 or you can also contact the independent developer community at <a href="http://theta360.guide">http://theta360.guide</a> and they can forward your request to the appropriate people at Ricoh. 
 Alternately, you can send an email to Jesse Casman at jcasman@oppkey.com for more information.
-The number of development cameras are very limited. Please understand that only a
-small number of requests can be fulfilled.</p>
+Please understand that only a small number of requests can be fulfilled.</p>
 <h2 id="usb-cable-connection-between-theta-v-and-development-workstation">USB cable connection between THETA V and development workstation</h2>
 <p>With the THETA off, connect it to your developer workstation with a USB cable.</p>
 <p><img alt="" src="./img/adb/usb-cable.png" /></p>
