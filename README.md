@@ -27,7 +27,7 @@ Create HTML from MarkDown
 
     $ mkdocs build
 
-## Ediing Documents
+## Editing Documents
 Edit the `*.md` files in `./docs/` only.  Do not edit the HTML files in `./site`. The HTML files will be
 overwritten by `mkdocs build`.
 
