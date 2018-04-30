@@ -5,13 +5,15 @@
 This is a compilation of community experiences and tests from members of [theta360.guide](http://theta360.guide), an
 independent developer community for RICOH THETA cameras. This is not an
 official Ricoh group. The *community-created* document you are reading may contain factual errors. For official information from Ricoh, please go to
-[theta360.com](http://theta360.com).
+[https://api.ricoh/docs/theta-plugin/](https://api.ricoh/docs/theta-plugin?utm_source=theta360guide).
 
 ## THETA V Plugin Application Development Overview
 
-The THETA V uses Android as the operating system. Because of this, the THETA V application development process is the same as the development process for an Android phone. You connect the THETA V to a development workstation, either Mac, Windows, or Linux with a micro USB cable. To establish a development connection, you need a THETA V 
-Plugin Development camera. More
-information on the THETA V Plugin Development cameras should be available when the 
+The THETA V uses Android as the operating system. Because of this, the THETA V application development process is the same as the development process for an Android phone. Connect the THETA V to a development workstation, either Mac, Windows, or Linux with a micro USB cable and connect to the camera with adb. You will need a THETA V 
+that is in developer mode. To put your THETA V into developer mode during the closed-beta period, 
+please contact jcasman@oppkey.com. He will need
+to get physical access to your camera. More
+information on a process to put the THETA V into developer mode remotely should be available when the 
 THETA V partner program is launched in 2018 (specific date of launch has not been announced). 
 
 This document describes the following development process:
@@ -126,15 +128,14 @@ Locate the file `plugin-debug.apk` and install it onto the THETA V
 
 ![](img/setup/plugin-find-apk.png)
 
-## Getting a THETA V Plugin “Development Camera”
+## Putting Your THETA V into “Developer Mode”
 
 Normal THETA V cameras are not enabled for the development of plugins.
-As of April 13, 2018, the THETA V plugin development cameras are in closed beta. 
+As of April 30, 2018, the THETA V plugin development process is in closed beta. 
 To discuss your plugin project, you can contact Ricoh directly
 or you can also contact the independent developer community at [http://theta360.guide](http://theta360.guide) and they can forward your request to the appropriate people at Ricoh. 
 Alternately, you can send an email to Jesse Casman at jcasman@oppkey.com for more information.
-The number of development cameras are very limited. Please understand that only a
-small number of requests can be fulfilled.
+Please understand that only a small number of requests can be fulfilled.
 
 ## USB cable connection between THETA V and development workstation
 
