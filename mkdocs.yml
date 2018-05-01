@@ -1,4 +1,4 @@
-site_name: THETA V Plugin Community Test Guide
+site_name: THETA V Plugin Development Community Guide
 google_analytics: ['UA-73311422-1', 'auto']
 theme_dir: theme/material
 theme: 
@@ -22,5 +22,6 @@ pages:
   - Setup: index.md
   - Plugin Use: use.md
   - Custom Development: custom.md
+  - Workflow Tips: workflow.md
   - Concept Ideas: concept.md
   - Community: community.md
