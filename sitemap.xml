@@ -3,7 +3,7 @@
 
     
     <url>
-     <loc>/</loc>
+     <loc>http://theta360.guide/plugin-guide//</loc>
      <lastmod>2018-05-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -11,7 +11,7 @@
 
     
     <url>
-     <loc>/use/</loc>
+     <loc>http://theta360.guide/plugin-guide//use/</loc>
      <lastmod>2018-05-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -19,7 +19,7 @@
 
     
     <url>
-     <loc>/custom/</loc>
+     <loc>http://theta360.guide/plugin-guide//custom/</loc>
      <lastmod>2018-05-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -27,7 +27,7 @@
 
     
     <url>
-     <loc>/workflow/</loc>
+     <loc>http://theta360.guide/plugin-guide//workflow/</loc>
      <lastmod>2018-05-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -35,7 +35,7 @@
 
     
     <url>
-     <loc>/concept/</loc>
+     <loc>http://theta360.guide/plugin-guide//fun/</loc>
      <lastmod>2018-05-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -43,7 +43,23 @@
 
     
     <url>
-     <loc>/community/</loc>
+     <loc>http://theta360.guide/plugin-guide//concept/</loc>
+     <lastmod>2018-05-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>http://theta360.guide/plugin-guide//community/</loc>
+     <lastmod>2018-05-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>http://theta360.guide/plugin-guide//about/</loc>
      <lastmod>2018-05-01</lastmod>
      <changefreq>daily</changefreq>
     </url>

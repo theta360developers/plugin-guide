@@ -13,7 +13,7 @@
         <meta name="description" content="RICOH THETA development for plug-ins and 360 applications include AR and VR applications">
       
       
-        <link rel="canonical" href="http://theta360.guide/plugin-guide/workflow/">
+        <link rel="canonical" href="http://theta360.guide/plugin-guide/about/">
       
       
         <meta name="author" content="Craig Oda and Jesse Casman">
@@ -38,7 +38,7 @@
     
     
       
-        <title>Workflow Tips - THETA V Plugin Development Community Guide</title>
+        <title>About - THETA V Plugin Development Community Guide</title>
       
     
     
@@ -98,7 +98,7 @@
                 THETA V Plugin Development Community Guide
               </span>
               <span class="md-header-nav__topic">
-                Workflow Tips
+                About
               </span>
             
           
@@ -201,68 +201,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Workflow Tips
-      </label>
-    
-    <a href="./" title="Workflow Tips" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../workflow/" title="Workflow Tips" class="md-nav__link">
       Workflow Tips
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#debugging" title="Debugging" class="md-nav__link">
-    Debugging
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#save-http-test-scripts-in-separate-tool" title="Save HTTP Test Scripts in Separate Tool" class="md-nav__link">
-    Save HTTP Test Scripts in Separate Tool
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing-functionality-with-standard-android-packages" title="Testing Functionality with Standard Android Packages" class="md-nav__link">
-    Testing Functionality with Standard Android Packages
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-the-keyboard-on-vysor" title="Using the Keyboard on Vysor" class="md-nav__link">
-    Using the Keyboard on Vysor
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -306,11 +249,20 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../about/" title="About" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="About" class="md-nav__link md-nav__link--active">
       About
     </a>
+    
   </li>
 
     
@@ -331,41 +283,6 @@
     
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#debugging" title="Debugging" class="md-nav__link">
-    Debugging
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#save-http-test-scripts-in-separate-tool" title="Save HTTP Test Scripts in Separate Tool" class="md-nav__link">
-    Save HTTP Test Scripts in Separate Tool
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing-functionality-with-standard-android-packages" title="Testing Functionality with Standard Android Packages" class="md-nav__link">
-    Testing Functionality with Standard Android Packages
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-the-keyboard-on-vysor" title="Using the Keyboard on Vysor" class="md-nav__link">
-    Using the Keyboard on Vysor
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -377,42 +294,20 @@
               
                 
                 
-                <h1 id="development-workflow-tips">Development Workflow Tips</h1>
-<h2 id="debugging">Debugging</h2>
-<p>You can debug the THETA V with a USB cable and adb.
-The camera will operate in Plugin Mode while connected to adb.</p>
-<p><img alt="" src="../img/debug/debug-connection.png" /></p>
-<p>You will be able to get debug messages similar to the example below:</p>
-<pre><code>   12-14 07:53:24.105  1171  1373 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
-</code></pre>
-<p>Example debug output with the camera connected to my Linux computer with a USB cable 
-and in plug-in mode.</p>
-<p><img alt="" src="../img/debug/debug-screen.png" /></p>
-<h2 id="save-http-test-scripts-in-separate-tool">Save HTTP Test Scripts in Separate Tool</h2>
-<p>To set the active plugin, you can also use the WiFi API. To use 
-the WiFi API, you must connect your 
-computer to the THETA with WiFi. 
-Although you can use a curl script to switch plugins with the WiFi API,
-I find it easier to use a tool like 
-Restlet Client to save my HTTP test scripts into a group. I can select an
-individual test and run it with a push of a button. To switch plugins, I 
-saved a script for  <code>camera._setPlugin</code>. You can get a list of plugins with 
-<code>camera._listPlugins</code>.</p>
-<p><img alt="" src="../img/custom/restlet-client.png" /></p>
-<p>In addition to saving the HTTP test scripts, Restlet Client or Postman will show the
-JSON response in <em>pretty</em> format automatically. With curl, you will need to
-pipe the output to another tool to get <em>pretty print</em>.</p>
-<p><img alt="" src="../img/custom/restlet-client-response.png" /></p>
-<h2 id="testing-functionality-with-standard-android-packages">Testing Functionality with Standard Android Packages</h2>
-<p>You can download apks from many sites for testing things like 
-communication protocol with Facebook Messenger or video transmission.</p>
-<p>I've been using this site with good results.</p>
-<p><a href="https://apkpure.com/app">https://apkpure.com/app</a></p>
-<p>For example, I can send 360 images directly from the THETA V storage to Facebook Messenger.
-The images are viewable in 360 by the recipient.</p>
-<p><img alt="" src="../img/workflow/facebook-messenger.png" /></p>
-<h2 id="using-the-keyboard-on-vysor">Using the Keyboard on Vysor</h2>
-<p>You can test the functionality of standard applications.</p>
+                <h1 id="about-the-plug-in-community-guide">About The Plug-in Community Guide</h1>
+<p>This document started as an internal document that Craig Oda wrote 
+to help Jesse Casman with meetings at CES 2018 in Las Vegas.  Craig
+and Jesse found 
+out that Ricoh was planning to announce a radical, new strategy for 
+360 cameras. In January of 2018, Ricoh announced plans to open 
+up the internal Android operating system
+to external developers.</p>
+<p>We immediately saw the potential to change how people approached VR 
+and AR.  </p>
+<p>At CES, we gained access to unlocked THETA V cameras under the
+closed beta program that Ricoh offered developers. As we worked
+with the community on building applications, this document grew.</p>
+<p><img alt="" src="../img/about/about-picture.png" /></p>
                 
                   
                 
@@ -431,7 +326,7 @@ The images are viewable in 360 by the recipient.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../custom/" title="Custom Development" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../community/" title="Community" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -440,25 +335,11 @@ The images are viewable in 360 by the recipient.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Custom Development
+                Community
               </span>
             </div>
           </a>
         
-        
-          <a href="../fun/" title="Fun Tests" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Fun Tests
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>
