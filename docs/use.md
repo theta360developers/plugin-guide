@@ -19,15 +19,19 @@ The plug-in will save the image to a file called `/sdcard/DCIM/100RICOH/R0010047
 In order to download the picture, you first need to find out the exact filename. You can use Vysor to find the filename.
 
 Go into File Manager
+
 ![](img/vysor/filemanager.png)
 
 Down into DCIM
+
 ![](img/vysor/DCIM.png)
 
 Down into 100RICOH
+
 ![](img/vysor/100RICOH.png)
 
 If you have a lot of images on the camera, you may need to scroll down to the bottom of the list.
+
 ![](img/vysor/filename.png)
 
 There's your filename, the newest image. In this case, it's R0010047.JPG
