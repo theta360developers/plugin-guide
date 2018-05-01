@@ -12,11 +12,18 @@ but the image will be captured.
 
 The picture will be given a filename that is in numerical sequential order incrementing up from the previous picture. The format will be similar to this example filename: R0010047.JPG. 
 
-The plug-in will save the image to a file called `/sdcard/DCIM/100RICOH/R0010047.JPG`.
+The plug-in will save the image to a file with the location
+and format similar to the example below.
+
+ `/sdcard/DCIM/100RICOH/R0010047.JPG`.
+
+To get the file to your local computer, you can either 
+use normal MTP as you would with a normal Android 
+phone or you can just download the one file with adb.
 
 ### Download the Picture
 
-In order to download the picture, you first need to find out the exact filename. You can use Vysor to find the filename.
+In order to download the picture with adb, you first need to find out the exact filename. You can use Vysor to find the filename.
 
 Go into File Manager
 
@@ -35,10 +42,6 @@ If you have a lot of images on the camera, you may need to scroll down to the bo
 ![](img/vysor/filename.png)
 
 There's your filename, the newest image. In this case, it's R0010047.JPG
-
-Next, make sure you are in adb
-
-    $ adb shell
    
 Then use adb pull to download the picture to your local machine   
    
