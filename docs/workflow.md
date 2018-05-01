@@ -36,7 +36,7 @@ pipe the output to another tool to get *pretty print*.
 
 ![](img/custom/restlet-client-response.png)
 
-## Testing Functionality with Standard Android Packages
+## Using Standard Android Packages
 You can download apks from many sites for testing things like 
 communication protocol with Facebook Messenger or video transmission.
 
@@ -91,7 +91,7 @@ Test the keyboard.
 
 ![](img/workflow/keyboard/notepad.png)
 
-## WiFi
+## Enabling WiFi for All Apps
 
 With the keyboard enabled, you can now type in your password for your WiFi hotspot to connect to the Internet.
 
