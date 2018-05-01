@@ -51,4 +51,26 @@ The images are viewable in 360 by the recipient.
 
 
 ## Using the Keyboard on Vysor
-You can test the functionality of standard applications.
+
+You need to disable the THETA V camera process to use the keyboard.
+
+Connect your THETA V to Vysor.
+
+![](img/workflow/keyboard/vysor-view.png)
+
+Expand the apps to find your settings.
+
+![](img/workflow/keyboard/apps.png)
+
+Go into settings.
+
+![](img/workflow/keyboard/settings.png)
+
+Go to *Developer options*. You may need to [enable developer options](https://developer.android.com/studio/debug/dev-options) by going to *About phone* and 
+tapping Build number 7 times.
+
+![](img/workflow/keyboard/developer-options.png)
+
+Access *Running services*.
+
+![](img/workflow/keyboard/developer-options.png)
