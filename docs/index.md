@@ -2,6 +2,8 @@
 
 ![](img/product/front-image.png)
 
+*By [Craig Oda and Jesse Casman](/about/) of [Oppkey](http://oppkey.com/)*
+
 This is a compilation of community experiences and tests from members of [theta360.guide](http://theta360.guide), an
 independent developer community for RICOH THETA cameras. This is not an
 official Ricoh group. The *community-created* document you are reading may contain factual errors. For official information from Ricoh, please go to
