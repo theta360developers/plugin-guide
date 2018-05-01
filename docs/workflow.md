@@ -93,6 +93,11 @@ Test the keyboard.
 
 ## WiFi
 
-With the keyboard enabled, you can now type in your password.
+With the keyboard enabled, you can now type in your password for your WiFi hotspot to connect to the Internet.
 
+![](img/workflow/wifi/wlan-switch.png)
+
+Connect to WiFi and all your apps and plug-ins will be able to connect to the Internet.
+
+![](img/workflow/wifi/wifi-connected.png)
 
