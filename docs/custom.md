@@ -222,19 +222,24 @@ __Broadcast to launch shooting application after plugin finish__
 - WLAN reset
      - Press WLAN button for 10 seconds
 
+## XMP Data
+[UPDATED May 1, 2018] Images produced by the Plugin Application have XMP data in them. These screenshots are just looking at image properties using the GNOME Image Viewer app on an Ubuntu laptop. 
 
-## Problems
-At the time of writing this unofficial guide, the plug-in development 
-environment is in closed beta. Problems listed here may be fixed by the 
-time you read this.
+Here is an image taken with the Plugin Application, showing ProjectionType and more:
 
-### XMP Data
-1/26/2018:
-In my tests, the image did not have XMP data in it, so I'll need to add it 
-in the future. There's also an uncomfirmed rumor that Ricoh is working
+![](img/custom/takenWITHplugin.png)
+
+In comparison, here is an normal image taken at my desk, using the RICOH THETA V as a camera, not in Plug-in Mode. 
+
+![](img/custom/takenWITHOUTplugin.png)
+
+However, I have access to an example of a dual fish-eye image taken with a plug-in built by a developer that does not include XMP data. This may indicate that as you develop your plug-in, you may need to inject XMP data. There's an uncomfirmed rumor that Ricoh is working
 on a library to help with this.
 
-![](img/custom/xmp-data.png)
+Here's the example:
 
-![](img/custom/xmp-missing.png)
+![](img/custom/ichidualfisheyeplugin.png)
+
+
+
 
