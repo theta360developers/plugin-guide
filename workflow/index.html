@@ -27,22 +27,22 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="/assets/images/favicon.ico">
+      <link rel="shortcut icon" href="../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.2.1">
     
     
       
-        <title>THETA V Plugin Development Community Guide</title>
+        <title>Workflow Tips - THETA V Plugin Development Community Guide</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/application.ac64251e.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.ac64251e.css">
       
-        <link rel="stylesheet" href="/assets/stylesheets/application-palette.792431c1.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.792431c1.css">
       
     
     
-      <script src="/assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
       
@@ -75,9 +75,9 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="/" title="THETA V Plugin Development Community Guide" class="md-header-nav__button md-logo">
+        <a href=".." title="THETA V Plugin Development Community Guide" class="md-header-nav__button md-logo">
           
-            <img src="/assets/images/logo.png" width="24" height="24">
+            <img src="../assets/images/logo.png" width="24" height="24">
           
         </a>
       </div>
@@ -92,7 +92,7 @@
                 THETA V Plugin Development Community Guide
               </span>
               <span class="md-header-nav__topic">
-                
+                Workflow Tips
               </span>
             
           
@@ -147,7 +147,7 @@
   <label class="md-nav__title md-nav__title--site" for="drawer">
     <span class="md-nav__button md-logo">
       
-        <img src="/assets/images/logo.png" width="24" height="24">
+        <img src="../assets/images/logo.png" width="24" height="24">
       
     </span>
     THETA V Plugin Development Community Guide
@@ -161,7 +161,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/" title="Setup" class="md-nav__link">
+    <a href=".." title="Setup" class="md-nav__link">
       Setup
     </a>
   </li>
@@ -173,7 +173,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/use/" title="Plugin Use" class="md-nav__link">
+    <a href="../use/" title="Plugin Use" class="md-nav__link">
       Plugin Use
     </a>
   </li>
@@ -185,7 +185,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/custom/" title="Custom Development" class="md-nav__link">
+    <a href="../custom/" title="Custom Development" class="md-nav__link">
       Custom Development
     </a>
   </li>
@@ -195,11 +195,54 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="/workflow/" title="Workflow Tips" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Workflow Tips
+      </label>
+    
+    <a href="./" title="Workflow Tips" class="md-nav__link md-nav__link--active">
       Workflow Tips
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#debugging" title="Debugging" class="md-nav__link">
+    Debugging
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-http-test-scripts-in-separate-tool" title="Save HTTP Test Scripts in Separate Tool" class="md-nav__link">
+    Save HTTP Test Scripts in Separate Tool
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -209,7 +252,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/concept/" title="Concept Ideas" class="md-nav__link">
+    <a href="../concept/" title="Concept Ideas" class="md-nav__link">
       Concept Ideas
     </a>
   </li>
@@ -221,7 +264,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/community/" title="Community" class="md-nav__link">
+    <a href="../community/" title="Community" class="md-nav__link">
       Community
     </a>
   </li>
@@ -234,12 +277,78 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#debugging" title="Debugging" class="md-nav__link">
+    Debugging
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-http-test-scripts-in-separate-tool" title="Save HTTP Test Scripts in Separate Tool" class="md-nav__link">
+    Save HTTP Test Scripts in Separate Tool
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
-
+                
+                
+                <h1 id="development-workflow-tips">Development Workflow Tips</h1>
+<h2 id="debugging">Debugging</h2>
+<p>You can debug the THETA V with a USB cable and adb.
+The camera will operate in Plugin Mode while connected to adb.</p>
+<p><img alt="" src="../img/debug/debug-connection.png" /></p>
+<p>You will be able to get debug messages similar to the example below:</p>
+<pre><code>   12-14 07:53:24.105  1171  1373 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+</code></pre>
+<p>Example debug output with the camera connected to my Linux computer with a USB cable 
+and in plug-in mode.</p>
+<p><img alt="" src="../img/debug/debug-screen.png" /></p>
+<h2 id="save-http-test-scripts-in-separate-tool">Save HTTP Test Scripts in Separate Tool</h2>
+<p>To set the active plugin, you can also use the WiFi API. To use 
+the WiFi API, you must connect your 
+computer to the THETA with WiFi. 
+Although you can use a curl script to switch plugins with the WiFi API,
+I find it easier to use a tool like 
+Restlet Client to save my HTTP test scripts into a group. I can select an
+individual test and run it with a push of a button. To switch plugins, I 
+saved a script for  <code>camera._setPlugin</code>. You can get a list of plugins with 
+<code>camera._listPlugins</code>.</p>
+<p><img alt="" src="../img/custom/restlet-client.png" /></p>
+<p>In addition to saving the HTTP test scripts, Restlet Client or Postman will show the
+JSON response in <em>pretty</em> format automatically. With curl, you will need to
+pipe the output to another tool to get <em>pretty print</em>.</p>
+<p><img alt="" src="../img/custom/restlet-client-response.png" /></p>
+                
+                  
+                
+              
               
                 
               
@@ -250,6 +359,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../custom/" title="Custom Development" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Custom Development
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../concept/" title="Concept Ideas" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Concept Ideas
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -282,9 +426,9 @@
       
     </div>
     
-      <script src="/assets/javascripts/application.5165553b.js"></script>
+      <script src="../assets/javascripts/application.5165553b.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:""}})</script>
+      <script>app.initialize({version:"0.17.3",url:{base:".."}})</script>
       
     
     

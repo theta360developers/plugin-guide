@@ -27,6 +27,14 @@
 
     
     <url>
+     <loc>/workflow/</loc>
+     <lastmod>2018-05-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
      <loc>/concept/</loc>
      <lastmod>2018-05-01</lastmod>
      <changefreq>daily</changefreq>

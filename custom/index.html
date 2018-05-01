@@ -32,7 +32,7 @@
     
     
       
-        <title>Custom Development - THETA V Plugin Community Test Guide</title>
+        <title>Custom Development - THETA V Plugin Development Community Guide</title>
       
     
     
@@ -75,7 +75,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href=".." title="THETA V Plugin Community Test Guide" class="md-header-nav__button md-logo">
+        <a href=".." title="THETA V Plugin Development Community Guide" class="md-header-nav__button md-logo">
           
             <img src="../assets/images/logo.png" width="24" height="24">
           
@@ -89,7 +89,7 @@
           
             
               <span class="md-header-nav__topic">
-                THETA V Plugin Community Test Guide
+                THETA V Plugin Development Community Guide
               </span>
               <span class="md-header-nav__topic">
                 Custom Development
@@ -150,7 +150,7 @@
         <img src="../assets/images/logo.png" width="24" height="24">
       
     </span>
-    THETA V Plugin Community Test Guide
+    THETA V Plugin Development Community Guide
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -247,20 +247,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#debugging" title="Debugging" class="md-nav__link">
-    Debugging
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#set-active-plugin" title="Set Active Plugin" class="md-nav__link">
-    Set Active Plugin
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#finishing-a-plug-in" title="Finishing a Plug-in" class="md-nav__link">
     Finishing a Plug-in
   </a>
@@ -344,6 +330,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../workflow/" title="Workflow Tips" class="md-nav__link">
+      Workflow Tips
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../concept/" title="Concept Ideas" class="md-nav__link">
       Concept Ideas
     </a>
@@ -413,20 +411,6 @@
         <li class="md-nav__item">
   <a href="#internal-storage" title="Internal Storage" class="md-nav__link">
     Internal Storage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#debugging" title="Debugging" class="md-nav__link">
-    Debugging
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#set-active-plugin" title="Set Active Plugin" class="md-nav__link">
-    Set Active Plugin
   </a>
   
 </li>
@@ -593,31 +577,6 @@ plug-in web server on the THETA V.</p>
 adding a number to the file name. There's a separate bit of code to iterate the roomNumber.</p>
 <pre><code>String fileUrl = "/storage/emulated/0/DCIM/Construction/room" + roomNumberStr + "sect01.jpg";
 </code></pre>
-<h2 id="debugging">Debugging</h2>
-<p>You can debug the THETA V with a USB cable and adb.
-The camera will operate in Plugin Mode while connected to adb.</p>
-<p><img alt="" src="../img/debug/debug-connection.png" /></p>
-<p>You will be able to get debug messages similar to the example below:</p>
-<pre><code>   12-14 07:53:24.105  1171  1373 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
-</code></pre>
-<p>Example debug output with the camera connected to my Linux computer with a USB cable 
-and in plug-in mode.</p>
-<p><img alt="" src="../img/debug/debug-screen.png" /></p>
-<h2 id="set-active-plugin">Set Active Plugin</h2>
-<p>To set the active plugin, you can also use the WiFi API. To use 
-the WiFi API, you must connect your 
-computer to the THETA with WiFi. 
-Although you can use a curl script to switch plugins with the WiFi API,
-I find it easier to use a tool like 
-Restlet Client to save my HTTP test scripts into a group. I can select an
-individual test and run it with a push of a button. To switch plugins, I 
-saved a script for  <code>camera._setPlugin</code>. You can get a list of plugins with 
-<code>camera._listPlugins</code>.</p>
-<p><img alt="" src="../img/custom/restlet-client.png" /></p>
-<p>In addition to saving the HTTP test scripts, Restlet Client or Postman will show the
-JSON response in <em>pretty</em> format automatically. With curl, you will need to
-pipe the output to another tool to get <em>pretty print</em>.</p>
-<p><img alt="" src="../img/custom/restlet-client-response.png" /></p>
 <h2 id="finishing-a-plug-in">Finishing a Plug-in</h2>
 <p>Push and hold the Mode Button for 2 seconds to finish. When the plug-in detects that the Mode Button has been pressed for 2 seconds, it must quit. When the plug-in finishes, a <a href="../docs/theta-plugin-ref/broadcast-intent/#notifying-completion-of-plug-in">notification of termination for the plug-in</a> must be made.</p>
 <h2 id="dual-fish-still-image">Dual-Fish Still Image</h2>
@@ -766,13 +725,13 @@ on a library to help with this.</p>
           </a>
         
         
-          <a href="../concept/" title="Concept Ideas" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../workflow/" title="Workflow Tips" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Concept Ideas
+                Workflow Tips
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
