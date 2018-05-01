@@ -182,7 +182,7 @@
         }, 
         {
             "location": "/workflow/", 
-            "text": "Development Workflow Tips\n\n\nDebugging\n\n\nYou can debug the THETA V with a USB cable and adb.\nThe camera will operate in Plugin Mode while connected to adb.\n\n\n\n\nYou will be able to get debug messages similar to the example below:\n\n\n   12-14 07:53:24.105  1171  1373 E TaskPersister: File error accessing recents directory (directory doesn't exist?).\n\n\n\nExample debug output with the camera connected to my Linux computer with a USB cable \nand in plug-in mode.\n\n\n\n\nSave HTTP Test Scripts in Separate Tool\n\n\nTo set the active plugin, you can also use the WiFi API. To use \nthe WiFi API, you must connect your \ncomputer to the THETA with WiFi. \nAlthough you can use a curl script to switch plugins with the WiFi API,\nI find it easier to use a tool like \nRestlet Client to save my HTTP test scripts into a group. I can select an\nindividual test and run it with a push of a button. To switch plugins, I \nsaved a script for  \ncamera._setPlugin\n. You can get a list of plugins with \n\ncamera._listPlugins\n.\n\n\n\n\nIn addition to saving the HTTP test scripts, Restlet Client or Postman will show the\nJSON response in \npretty\n format automatically. With curl, you will need to\npipe the output to another tool to get \npretty print\n.", 
+            "text": "Development Workflow Tips\n\n\nDebugging\n\n\nYou can debug the THETA V with a USB cable and adb.\nThe camera will operate in Plugin Mode while connected to adb.\n\n\n\n\nYou will be able to get debug messages similar to the example below:\n\n\n   12-14 07:53:24.105  1171  1373 E TaskPersister: File error accessing recents directory (directory doesn't exist?).\n\n\n\nExample debug output with the camera connected to my Linux computer with a USB cable \nand in plug-in mode.\n\n\n\n\nSave HTTP Test Scripts in Separate Tool\n\n\nTo set the active plugin, you can also use the WiFi API. To use \nthe WiFi API, you must connect your \ncomputer to the THETA with WiFi. \nAlthough you can use a curl script to switch plugins with the WiFi API,\nI find it easier to use a tool like \nRestlet Client to save my HTTP test scripts into a group. I can select an\nindividual test and run it with a push of a button. To switch plugins, I \nsaved a script for  \ncamera._setPlugin\n. You can get a list of plugins with \n\ncamera._listPlugins\n.\n\n\n\n\nIn addition to saving the HTTP test scripts, Restlet Client or Postman will show the\nJSON response in \npretty\n format automatically. With curl, you will need to\npipe the output to another tool to get \npretty print\n.\n\n\n\n\nTesting Functionality with Standard Android Packages\n\n\nYou can download apks from many sites for testing things like \ncommunication protocol with Facebook Messenger or video transmission.\n\n\nI've been using this site with good results.\n\n\nhttps://apkpure.com/app\n\n\nFor example, I can send 360 images directly from the THETA V storage to Facebook Messenger.\nThe images are viewable in 360 by the recipient.\n\n\n\n\nUsing the Keyboard on Vysor\n\n\nYou can test the functionality of standard applications.", 
             "title": "Workflow Tips"
         }, 
         {
@@ -199,6 +199,16 @@
             "location": "/workflow/#save-http-test-scripts-in-separate-tool", 
             "text": "To set the active plugin, you can also use the WiFi API. To use \nthe WiFi API, you must connect your \ncomputer to the THETA with WiFi. \nAlthough you can use a curl script to switch plugins with the WiFi API,\nI find it easier to use a tool like \nRestlet Client to save my HTTP test scripts into a group. I can select an\nindividual test and run it with a push of a button. To switch plugins, I \nsaved a script for   camera._setPlugin . You can get a list of plugins with  camera._listPlugins .   In addition to saving the HTTP test scripts, Restlet Client or Postman will show the\nJSON response in  pretty  format automatically. With curl, you will need to\npipe the output to another tool to get  pretty print .", 
             "title": "Save HTTP Test Scripts in Separate Tool"
+        }, 
+        {
+            "location": "/workflow/#testing-functionality-with-standard-android-packages", 
+            "text": "You can download apks from many sites for testing things like \ncommunication protocol with Facebook Messenger or video transmission.  I've been using this site with good results.  https://apkpure.com/app  For example, I can send 360 images directly from the THETA V storage to Facebook Messenger.\nThe images are viewable in 360 by the recipient.", 
+            "title": "Testing Functionality with Standard Android Packages"
+        }, 
+        {
+            "location": "/workflow/#using-the-keyboard-on-vysor", 
+            "text": "You can test the functionality of standard applications.", 
+            "title": "Using the Keyboard on Vysor"
         }, 
         {
             "location": "/concept/", 
