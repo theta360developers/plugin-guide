@@ -74,3 +74,25 @@ tapping Build number 7 times.
 Access *Running services*.
 
 ![](img/workflow/keyboard/developer-options.png)
+
+Select the *RICOH THETA V* process.
+
+![](img/workflow/keyboard/ricoh-theta-process.png)
+
+Stop the *CameraService*.
+
+![](img/workflow/keyboard/camera-service.png)
+
+Be bold and stop the service.
+
+![](img/workflow/keyboard/camera-stop.png)
+
+Test the keyboard.
+
+![](img/workflow/keyboard/notepad.png)
+
+## WiFi
+
+With the keyboard enabled, you can now type in your password.
+
+
