@@ -402,20 +402,34 @@
                 
                 
                 <h1 id="plugin-use">Plugin Use</h1>
-<p>In the future, your plugin can be used by all THETA camera owners. They will
-be able to install the plugin with a computer application that Ricoh
-will provide.</p>
-<p>End-users can choose your plugin with the official RICOH THETA mobile app or a custom application that you provide.  For development, you can also select the
-active plug-in with the WiFi API. </p>
+<p>In the future, your plugin can be distributed through the THETA Store, downloaded, and used by all THETA V camera end-users. They will
+be able to install the plugin with a computer application that Ricoh will provide.</p>
+<p>End-users can choose your plugin with the official RICOH THETA mobile app or a custom application that you provide. For development, you can also select the active plug-in with the WiFi API. </p>
 <h2 id="testing-the-sample-plugin">Testing the Sample Plugin</h2>
 <p>Disconnect the camera from the USB cable. Press the physical button on the camera. There will be no sound,
-but the image will be captured. The plug-in will save the image to a file called <code>/sdcard/DCIM/plugin.jpg</code>.</p>
+but the image will be captured. </p>
+<p>The picture will be given a filename that is in numerical sequential order incrementing up from the previous picture. The format will be similar to this example filename: R0010047.JPG. </p>
+<p>The plug-in will save the image to a file with the location
+and format similar to the example below.</p>
+<p><code>/sdcard/DCIM/100RICOH/R0010047.JPG</code>.</p>
+<p>To get the file to your local computer, you can either 
+use normal MTP as you would with a normal Android 
+phone or you can just download the one file with adb.</p>
 <h3 id="download-the-picture">Download the Picture</h3>
-<pre><code>$ adb pull /sdcard/DCIM/plugin.jpg
-/sdcard/DCIM/plugin.jpg: 1 file pulled. 21.2 MB/s (2790527 bytes in 0.126s)
+<p>In order to download the picture with adb, you first need to find out the exact filename. You can use Vysor to find the filename.</p>
+<p>Go into File Manager</p>
+<p><img alt="" src="../img/vysor/filemanager.png" /></p>
+<p>Down into DCIM</p>
+<p><img alt="" src="../img/vysor/DCIM.png" /></p>
+<p>Down into 100RICOH</p>
+<p><img alt="" src="../img/vysor/100RICOH.png" /></p>
+<p>If you have a lot of images on the camera, you may need to scroll down to the bottom of the list.</p>
+<p><img alt="" src="../img/vysor/filename.png" /></p>
+<p>There's your filename, the newest image. In this case, it's R0010047.JPG</p>
+<p>Then use adb pull to download the picture to your local machine   </p>
+<pre><code>$ adb pull /sdcard/DCIM/100RICOH/R0010047.JPG
+/sdcard/DCIM/100RICOH/R0010047.JPG: 1 file pulled. 21.2 MB/s (2790527 bytes in 0.126s)
 </code></pre>
-<p>You can also check the file in Vysor.</p>
-<p><img alt="" src="../img/vysor/vysor-image.png" /></p>
 <h2 id="put-camera-into-plugin-mode">Put Camera into Plugin Mode</h2>
 <p>Plugin mode can only be enabled on
 the RICOH THETA V.</p>
