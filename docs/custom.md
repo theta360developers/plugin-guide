@@ -143,7 +143,41 @@ Here's example code from Ichi Hirota for bracketing.
 
 ## Camera LEDs
 
-Example below shows camera turning on all LEDs.
+### LED Colors
+
+In `pluginlibrary`, the LED colors are defined in `LedColor`.
+
+    RED("red", 0b001),
+    GREEN("green", 0b010),
+    BLUE("blue", 0b100),
+    CYAN("cyan", 0b110),
+    MAGENTA("magenta", 0b101),
+    YELLOW("yellow", 0b011),
+    WHITE("white", 0b111),;
+
+### LED Numbers
+
+![](img/custom/led-all.png)
+
+### LED Usage Example
+
+In `MainActivity`, there is an example for the LED.
+
+    public void onKeyUp(int keyCode, KeyEvent event) {
+        /**
+            * You can control the LED of the camera.
+            * It is possible to change the way of lighting, the cycle of blinking, the color of light emission.
+            * Light emitting color can be changed only LED3.
+            */
+        notificationLedBlink(LedTarget.LED3, LedColor.BLUE, 1000);
+
+
+
+** 5/1 EXAMPLES BELOW NEED TO UPDATED FOR NEW LIBRARY **
+
+
+Example below is outdated as of 5/1/2018. I am leaving it in until I can fix it
+with the new library.
 
     Intent ledon = new Intent("com.theta360.devicelibrary.receiver.ACTION_ADJ_LED");
     ledon.putExtra("ledNo", 0);
@@ -151,8 +185,7 @@ Example below shows camera turning on all LEDs.
     sendBroadcast(ledon);
 
 
-In the example below, I tested turning on all the LEDs when a picture is 
-taken by pressing the shutter button.
+** This example also needs to be fixed. **
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KEYCODE_CAMERA) {
@@ -164,7 +197,8 @@ taken by pressing the shutter button.
             sendBroadcast(ledon);
         }
 
-![](img/custom/led-all.png)
+
+** Fix example **
 
 Snippet below will turn all LEDs off.
 
@@ -174,33 +208,49 @@ Snippet below will turn all LEDs off.
 
 ## Camera Buttons
 
-** 4/30 NEED TO UPDATE FOR BROADCAST INTENT **
 
 There are three buttons you can map:
 
-| Button | Code | Location |
-| ------ |:----:| -------- |
-| WiFi   | 284  | side middle |
-| Mode   | 130  | side bottom |
-| Shutter| 27   | front       |
+| Button Common Name | Name in Library | Code | Location |
+| ------------------ | ------------------- |:----:| -------- |
+| WiFi               | KEYCODE_WLAN_ON_OFF | 284  | side middle |
+| Mode               | KEYCODE_MEDIA_RECORD | 130  | side bottom |
+| Shutter            | KEYCODE_CAMERA | 27   | front       |
 
+In the pluginlibrary for the SDK, the `KeyReceiver` file has these values:
 
-In the sample code, `MainActivity.java` has this at the top 
+    public class KeyReceiver extends BroadcastReceiver {
+        public static final int KEYCODE_CAMERA = 27;
+        public static final int KEYCODE_MEDIA_RECORD = 130;
+        public static final int KEYCODE_WLAN_ON_OFF = 284;
 
-    public static final int KEYCODE_CAMERA = 27;
-    public static final int KEYCODE_MEDIA_RECORD = 130;
+        public static final String ACTION_KEY_DOWN = "com.theta360.plugin.ACTION_KEY_DOWN";
+        public static final String ACTION_KEY_UP = "com.theta360.plugin.ACTION_KEY_UP";
+        private static final String KEY_CODE = "keyCode";
+        private static final String KEY_EVENT = "KeyEvent";
 
-Further down in that same file, you'll see the trigger.
+In `MainActivity.java`, there is an example of using the `keyCode`.
 
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KEYCODE_CAMERA) {
-            takePicture();
-        }
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        return super.onKeyDown(keyCode, event);
-    }
+        // Set a callback when a button operation event is acquired.
+        setKeyCallback(new KeyCallback() {
+            @Override
+            public void onKeyDown(int keyCode, KeyEvent event) {
+                if (keyCode == KeyReceiver.KEYCODE_CAMERA) {
+                    /*
+                     * To take a static picture, use the takePicture method.
+                     * You can receive a fileUrl of the static picture in the callback.
+                     */
+                    new TakePictureTask(mTakePictureTaskCallback).execute();
+                }
+            }
 
 ## Broadcast Examples
+
+__ 5/1: Need to update for new library __
 
 __Broadcast to sound error tone__
    
