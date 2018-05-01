@@ -302,22 +302,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problems" title="Problems" class="md-nav__link">
-    Problems
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#xmp-data" title="XMP Data" class="md-nav__link">
     XMP Data
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -495,22 +482,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problems" title="Problems" class="md-nav__link">
-    Problems
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#xmp-data" title="XMP Data" class="md-nav__link">
     XMP Data
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -711,17 +685,16 @@ public static final int KEYCODE_MEDIA_RECORD = 130;
 </ul>
 </li>
 </ul>
-<h2 id="problems">Problems</h2>
-<p>At the time of writing this unofficial guide, the plug-in development 
-environment is in closed beta. Problems listed here may be fixed by the 
-time you read this.</p>
-<h3 id="xmp-data">XMP Data</h3>
-<p>1/26/2018:
-In my tests, the image did not have XMP data in it, so I'll need to add it 
-in the future. There's also an uncomfirmed rumor that Ricoh is working
+<h2 id="xmp-data">XMP Data</h2>
+<p>[UPDATED May 1, 2018] Images produced by the Plugin Application have XMP data in them. These screenshots are just looking at image properties using the GNOME Image Viewer app on an Ubuntu laptop. </p>
+<p>Here is an image taken with the Plugin Application, showing ProjectionType and more:</p>
+<p><img alt="" src="../img/custom/takenWITHplugin.png" /></p>
+<p>In comparison, here is an normal image taken at my desk, using the RICOH THETA V as a camera, not in Plug-in Mode. </p>
+<p><img alt="" src="../img/custom/takenWITHOUTplugin.png" /></p>
+<p>However, I have access to an example of a dual fish-eye image taken with a plug-in built by a developer that does not include XMP data. This may indicate that as you develop your plug-in, you may need to inject XMP data. There's an uncomfirmed rumor that Ricoh is working
 on a library to help with this.</p>
-<p><img alt="" src="../img/custom/xmp-data.png" /></p>
-<p><img alt="" src="../img/custom/xmp-missing.png" /></p>
+<p>Here's the example:</p>
+<p><img alt="" src="../img/custom/ichidualfisheyeplugin.png" /></p>
                 
                   
                 
