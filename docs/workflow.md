@@ -35,3 +35,20 @@ JSON response in *pretty* format automatically. With curl, you will need to
 pipe the output to another tool to get *pretty print*.
 
 ![](img/custom/restlet-client-response.png)
+
+## Testing Functionality with Standard Android Packages
+You can download apks from many sites for testing things like 
+communication protocol with Facebook Messenger or video transmission.
+
+I've been using this site with good results.
+
+[https://apkpure.com/app](https://apkpure.com/app)
+
+For example, I can send 360 images directly from the THETA V storage to Facebook Messenger.
+The images are viewable in 360 by the recipient.
+
+![](img/workflow/facebook-messenger.png)
+
+
+## Using the Keyboard on Vysor
+You can test the functionality of standard applications.
