@@ -271,6 +271,33 @@
     Camera LEDs
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#led-colors" title="LED Colors" class="md-nav__link">
+    LED Colors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#led-numbers" title="LED Numbers" class="md-nav__link">
+    LED Numbers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#led-usage-example" title="LED Usage Example" class="md-nav__link">
+    LED Usage Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -451,6 +478,33 @@
     Camera LEDs
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#led-colors" title="LED Colors" class="md-nav__link">
+    LED Colors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#led-numbers" title="LED Numbers" class="md-nav__link">
+    LED Numbers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#led-usage-example" title="LED Usage Example" class="md-nav__link">
+    LED Usage Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -599,14 +653,37 @@ developer Ichi Hirota.</p>
 <p>Here's example code from Ichi Hirota for bracketing.</p>
 <p><img alt="" src="../img/custom/dualfish-bracketing.png" /></p>
 <h2 id="camera-leds">Camera LEDs</h2>
-<p>Example below shows camera turning on all LEDs.</p>
+<h3 id="led-colors">LED Colors</h3>
+<p>In <code>pluginlibrary</code>, the LED colors are defined in <code>LedColor</code>.</p>
+<pre><code>RED("red", 0b001),
+GREEN("green", 0b010),
+BLUE("blue", 0b100),
+CYAN("cyan", 0b110),
+MAGENTA("magenta", 0b101),
+YELLOW("yellow", 0b011),
+WHITE("white", 0b111),;
+</code></pre>
+<h3 id="led-numbers">LED Numbers</h3>
+<p><img alt="" src="../img/custom/led-all.png" /></p>
+<h3 id="led-usage-example">LED Usage Example</h3>
+<p>In <code>MainActivity</code>, there is an example for the LED.</p>
+<pre><code>public void onKeyUp(int keyCode, KeyEvent event) {
+    /**
+        * You can control the LED of the camera.
+        * It is possible to change the way of lighting, the cycle of blinking, the color of light emission.
+        * Light emitting color can be changed only LED3.
+        */
+    notificationLedBlink(LedTarget.LED3, LedColor.BLUE, 1000);
+</code></pre>
+<p><strong> 5/1 EXAMPLES BELOW NEED TO UPDATED FOR NEW LIBRARY </strong></p>
+<p>Example below is outdated as of 5/1/2018. I am leaving it in until I can fix it
+with the new library.</p>
 <pre><code>Intent ledon = new Intent("com.theta360.devicelibrary.receiver.ACTION_ADJ_LED");
 ledon.putExtra("ledNo", 0);
 ledon.putExtra("color", "on");
 sendBroadcast(ledon);
 </code></pre>
-<p>In the example below, I tested turning on all the LEDs when a picture is 
-taken by pressing the shutter button.</p>
+<p><strong> This example also needs to be fixed. </strong></p>
 <pre><code>public boolean onKeyDown(int keyCode, KeyEvent event) {
     if (keyCode == KEYCODE_CAMERA) {
         takePicture();
@@ -617,19 +694,19 @@ taken by pressing the shutter button.</p>
         sendBroadcast(ledon);
     }
 </code></pre>
-<p><img alt="" src="../img/custom/led-all.png" /></p>
+<p><strong> Fix example </strong></p>
 <p>Snippet below will turn all LEDs off.</p>
 <pre><code>Intent ledoff = new Intent("com.theta360.devicelibrary.receiver.ACTION_ADJ_LED_OFF");
 ledoff.putExtra("ledNo", 0);
 sendBroadcast(ledoff);
 </code></pre>
 <h2 id="camera-buttons">Camera Buttons</h2>
-<p><strong> 4/30 NEED TO UPDATE FOR BROADCAST INTENT </strong></p>
 <p>There are three buttons you can map:</p>
 <table>
 <thead>
 <tr>
-<th>Button</th>
+<th>Button Common Name</th>
+<th>Name in Library</th>
 <th align="center">Code</th>
 <th>Location</th>
 </tr>
@@ -637,35 +714,55 @@ sendBroadcast(ledoff);
 <tbody>
 <tr>
 <td>WiFi</td>
+<td>KEYCODE_WLAN_ON_OFF</td>
 <td align="center">284</td>
 <td>side middle</td>
 </tr>
 <tr>
 <td>Mode</td>
+<td>KEYCODE_MEDIA_RECORD</td>
 <td align="center">130</td>
 <td>side bottom</td>
 </tr>
 <tr>
 <td>Shutter</td>
+<td>KEYCODE_CAMERA</td>
 <td align="center">27</td>
 <td>front</td>
 </tr>
 </tbody>
 </table>
-<p>In the sample code, <code>MainActivity.java</code> has this at the top </p>
-<pre><code>public static final int KEYCODE_CAMERA = 27;
-public static final int KEYCODE_MEDIA_RECORD = 130;
-</code></pre>
-<p>Further down in that same file, you'll see the trigger.</p>
-<pre><code>public boolean onKeyDown(int keyCode, KeyEvent event) {
-    if (keyCode == KEYCODE_CAMERA) {
-        takePicture();
-    }
+<p>In the pluginlibrary for the SDK, the <code>KeyReceiver</code> file has these values:</p>
+<pre><code>public class KeyReceiver extends BroadcastReceiver {
+    public static final int KEYCODE_CAMERA = 27;
+    public static final int KEYCODE_MEDIA_RECORD = 130;
+    public static final int KEYCODE_WLAN_ON_OFF = 284;
 
-    return super.onKeyDown(keyCode, event);
-}
+    public static final String ACTION_KEY_DOWN = "com.theta360.plugin.ACTION_KEY_DOWN";
+    public static final String ACTION_KEY_UP = "com.theta360.plugin.ACTION_KEY_UP";
+    private static final String KEY_CODE = "keyCode";
+    private static final String KEY_EVENT = "KeyEvent";
+</code></pre>
+<p>In <code>MainActivity.java</code>, there is an example of using the <code>keyCode</code>.</p>
+<pre><code>protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+
+    // Set a callback when a button operation event is acquired.
+    setKeyCallback(new KeyCallback() {
+        @Override
+        public void onKeyDown(int keyCode, KeyEvent event) {
+            if (keyCode == KeyReceiver.KEYCODE_CAMERA) {
+                /*
+                 * To take a static picture, use the takePicture method.
+                 * You can receive a fileUrl of the static picture in the callback.
+                 */
+                new TakePictureTask(mTakePictureTaskCallback).execute();
+            }
+        }
 </code></pre>
 <h2 id="broadcast-examples">Broadcast Examples</h2>
+<p><strong> 5/1: Need to update for new library </strong></p>
 <p><strong>Broadcast to sound error tone</strong></p>
 <pre><code>com.theta360.devicelibrary.receiver.ACTION_AUDIO_WARNING
 </code></pre>
