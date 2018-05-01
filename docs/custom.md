@@ -214,14 +214,6 @@ __Broadcast to launch shooting application after plugin finish__
 
 `/sdcard/DCIM/` can be used.
 
-
-## Troubleshooting
-
-- Force power down
-    - Press WLAN + POWER buttons for 10 seconds
-- WLAN reset
-     - Press WLAN button for 10 seconds
-
 ## XMP Data
 [UPDATED May 1, 2018] Images produced by the Plugin Application have XMP data in them. These screenshots are just looking at image properties using the GNOME Image Viewer app on an Ubuntu laptop. 
 
@@ -240,6 +232,13 @@ Here's the example:
 
 ![](img/custom/ichidualfisheyeplugin.png)
 
+## Troubleshooting
 
+- Force power down
+    - Press WLAN + POWER buttons for 10 seconds
+- WLAN reset
+     - Press WLAN button for 10 seconds
+- Shutdown versus Sleep mode
+     - Press and hold power button 3-4 seconds to shutdown, red LEDs will flash - Pressing power button quickly will start Sleep Mode, no LEDs
 
 
