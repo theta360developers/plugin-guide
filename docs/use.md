@@ -1,29 +1,45 @@
 # Plugin Use
 
-In the future, your plugin can be used by all THETA camera owners. They will
-be able to install the plugin with a computer application that Ricoh
-will provide.
+In the future, your plugin can be distributed through the THETA Store, downloaded, and used by all THETA V camera end-users. They will
+be able to install the plugin with a computer application that Ricoh will provide.
 
-End-users can choose your plugin with the official RICOH THETA mobile app or a custom application that you provide.  For development, you can also select the
-active plug-in with the WiFi API. 
-
-
+End-users can choose your plugin with the official RICOH THETA mobile app or a custom application that you provide. For development, you can also select the active plug-in with the WiFi API. 
 
 ## Testing the Sample Plugin
 
 Disconnect the camera from the USB cable. Press the physical button on the camera. There will be no sound,
-but the image will be captured. The plug-in will save the image to a file called `/sdcard/DCIM/plugin.jpg`.
+but the image will be captured. 
 
+The picture will be given a filename that is in numerical sequential order incrementing up from the previous picture. The format will be similar to this example filename: R0010047.JPG. 
 
+The plug-in will save the image to a file called `/sdcard/DCIM/100RICOH/R0010047.JPG`.
 
 ### Download the Picture
 
-    $ adb pull /sdcard/DCIM/plugin.jpg
-    /sdcard/DCIM/plugin.jpg: 1 file pulled. 21.2 MB/s (2790527 bytes in 0.126s)
+In order to download the picture, you first need to find out the exact filename. You can use Vysor to find the filename.
 
-You can also check the file in Vysor.
+Go into File Manager
+![](img/vysor/filemanager.png)
 
-![](img/vysor/vysor-image.png)
+Down into DCIM
+![](img/vysor/DCIM.png)
+
+Down into 100RICOH
+![](img/vysor/100RICOH.png)
+
+If you have a lot of images on the camera, you may need to scroll down to the bottom of the list.
+![](img/vysor/filename.png)
+
+There's your filename, the newest image. In this case, it's R0010047.JPG
+
+Next, make sure you are in adb
+
+    $ adb shell
+   
+Then use adb pull to download the picture to your local machine   
+   
+    $ adb pull /sdcard/DCIM/100RICOH/R0010047.JPG
+    /sdcard/DCIM/100RICOH/R0010047.JPG: 1 file pulled. 21.2 MB/s (2790527 bytes in 0.126s)
 
 ## Put Camera into Plugin Mode
 Plugin mode can only be enabled on
