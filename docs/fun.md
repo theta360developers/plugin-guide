@@ -8,4 +8,4 @@ The THETA has all the functionality of a normal Android system. This includes us
 
 Here's a short, cool test using the internal speaker to play human speech. The audio file is single channel, 22050Hz 32-bit.  
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/AeebH7ONTkg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+[![](img/fun/youtubeicon-speech.png)](https://www.youtube.com/watch?v=AeebH7ONTkg)
