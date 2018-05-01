@@ -73,7 +73,7 @@ tapping Build number 7 times.
 
 Access *Running services*.
 
-![](img/workflow/keyboard/developer-options.png)
+![](img/workflow/keyboard/running-services.png)
 
 Select the *RICOH THETA V* process.
 
