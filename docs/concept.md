@@ -31,7 +31,10 @@ And there are users waiting to get their hands on an app like this:
 * Button side button (mode) cycles through pre-set settings
 * Companion mobile app is used to configure timelapse settings and store them into camera
 
-Some more thoughts from Craig ([@codetricity](https://community.theta360.guide/u/codetricity/summary)) about hardware needed for this project [here](https://community.theta360.guide/t/using-mesh-iot-button-with-ricoh-theta-to-create-remote-wireless-shutter/1641/15). Scroll up to get the full original discussion.
+Some more thoughts from Craig ([@codetricity](https://community.theta360.guide/u/codetricity/summary)) about 
+possible alternatives to this project using hardware to trigger the timelapse with WiFi or Bluetooth are [here](https://community.theta360.guide/t/using-mesh-iot-button-with-ricoh-theta-to-create-remote-wireless-shutter/1641/15). 
+Right now, it looks like the best way to approach the project with with software only and avoid the need to
+manufacture or buy a wireless remote. Scroll up to get the full original discussion.
 
 Think you could build this? :-)
 
