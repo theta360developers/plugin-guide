@@ -1,6 +1,6 @@
 # Plugin Ideas
 
-We are constantly working with community members to support "ideation," scoping out possible plug-ins and helping define concepts. Dealing with feature requests and turning those into workable code is a process. Brainstorming, coming up with concepts, sharing them, stress-testing them, doing this within in the community often moves a concept to code more quickly.
+We are constantly working with community members to support "ideation," scoping out possible plug-ins and helping define concepts. Dealing with feature requests and turning those into workable code is a process. Brainstorming, coming up with concepts, sharing them, stress-testing them, and doing this within in the community can move a concept to code more quickly.
 
 ## Hands-Off Action Time-Lapse Concept
 
