@@ -21,7 +21,7 @@ I used an LG 360 cam with I st with the app for interval shooting with the app b
 I changed my LG for the Theta V due to 4k video and much superior seaming of the images, but unfortunately found out that for interval shooting I need to press the button on the app, not the camera, with is a pain… other pilots use the wired ca-3 remote shutter with is also clumsy…
 Can’t get my head around the fact that the Theta doesn’t have a wireless remote shutter, and the camera button will only take still images even though it is set for interval shooting through the control app…
 
-### To build this plug-in, here's a possible Spec Sheet
+### To build this plug-in, here's a possible Project Requirements
 
 * Plug-in inside of camera handles timelapse
 * Shutter button starts/stops timelapse
@@ -31,7 +31,10 @@ Can’t get my head around the fact that the Theta doesn’t have a wireless rem
 * Button side button (mode) cycles through pre-set settings
 * Companion mobile app is used to configure timelapse settings and store them into camera
 
-Some more thoughts about buying hardware [here. from Craig](https://community.theta360.guide/t/using-mesh-iot-button-with-ricoh-theta-to-create-remote-wireless-shutter/1641/15).
+Some more thoughts from Craig ([@codetricity](https://community.theta360.guide/u/codetricity/summary)) about hardware needed for this project [here](https://community.theta360.guide/t/using-mesh-iot-button-with-ricoh-theta-to-create-remote-wireless-shutter/1641/15).
+
+Think you could build this? :-)
+
 
 # More Concept Ideas from RICOH 
 
