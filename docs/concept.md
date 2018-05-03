@@ -38,17 +38,6 @@ manufacture or buy a wireless remote. Scroll up to get the full original discuss
 
 Think you could build this? :-)
 
-
-# Plug-in Concepts from RICOH 
-
-![](img/concept/change-party.png)
-
-![](img/concept/change-viewing.png)
-
-![](img/concept/child-growth.png)
-
-![](img/concept/cooking.png)
-
 ## Example Construction Concept
 
 I created a new plugin called *ConstructionPlugin* to
@@ -125,3 +114,15 @@ My code snippet now looks like this:
     try (FileOutputStream fileOutputStream = new FileOutputStream(fileUrl)) {
         fileOutputStream.write(data);
         roomNumber = roomNumber + 1;
+
+
+# Plug-in Concepts from RICOH 
+
+![](img/concept/change-party.png)
+
+![](img/concept/change-viewing.png)
+
+![](img/concept/child-growth.png)
+
+![](img/concept/cooking.png)
+
