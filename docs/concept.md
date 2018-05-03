@@ -1,4 +1,4 @@
-# Plugin Ideas
+# Plugin Concepts from the Community
 
 We are constantly working with community members to support "ideation," scoping out possible plug-ins and helping define concepts. Dealing with feature requests and turning those into workable code is a process. Brainstorming, coming up with concepts, sharing them, stress-testing them, and doing this within in the community can move a concept to real code and a finish, sellable product more quickly.
 
@@ -8,18 +8,18 @@ Thanks to [Daniel Towersey](https://community.theta360.guide/u/danieltowersey/su
 
 ![](img/concept/DanielTowersey.jpg)
 
-> > Here at our paragliding site alone there must be about 30 to 50 Theta users awaiting such an update, or even better, a wireless remote shutter to substitute the ca-3 cable remote…
-
-Full original discussion [here](https://community.theta360.guide/t/using-mesh-iot-button-with-ricoh-theta-to-create-remote-wireless-shutter/1641/20) covers lots of details.
-
-![](img/concept/paragliding1.jpg)![](img/concept/paragliding2.jpg)![](img/concept/paragliding3.jpg)
-
 ### Description of Requirements from Daniel:
 
 > > We use GoPro for standard photo and video included in our package, and sell 360º photos as an optional photo package.
 I used an LG 360 cam with I st with the app for interval shooting with the app before take off, and then just needed to press the camera button in flight (on a monopod).
 I changed my LG for the Theta V due to 4k video and much superior seaming of the images, but unfortunately found out that for interval shooting I need to press the button on the app, not the camera, with is a pain… other pilots use the wired ca-3 remote shutter with is also clumsy…
 Can’t get my head around the fact that the Theta doesn’t have a wireless remote shutter, and the camera button will only take still images even though it is set for interval shooting through the control app…
+
+And there are users waiting to get their hands on an app like this:
+
+> > Here at our paragliding site alone there must be about 30 to 50 Theta users awaiting such an update, or even better, a wireless remote shutter to substitute the ca-3 cable remote…
+
+![](img/concept/paragliding1.jpg)![](img/concept/paragliding2.jpg)![](img/concept/paragliding3.jpg)
 
 ### To build this plug-in, here's a possible Project Requirements
 
@@ -31,12 +31,12 @@ Can’t get my head around the fact that the Theta doesn’t have a wireless rem
 * Button side button (mode) cycles through pre-set settings
 * Companion mobile app is used to configure timelapse settings and store them into camera
 
-Some more thoughts from Craig ([@codetricity](https://community.theta360.guide/u/codetricity/summary)) about hardware needed for this project [here](https://community.theta360.guide/t/using-mesh-iot-button-with-ricoh-theta-to-create-remote-wireless-shutter/1641/15).
+Some more thoughts from Craig ([@codetricity](https://community.theta360.guide/u/codetricity/summary)) about hardware needed for this project [here](https://community.theta360.guide/t/using-mesh-iot-button-with-ricoh-theta-to-create-remote-wireless-shutter/1641/15). Scroll up to get the full original discussion.
 
 Think you could build this? :-)
 
 
-# More Concept Ideas from RICOH 
+# Plug-in Concepts from RICOH 
 
 ![](img/concept/change-party.png)
 
