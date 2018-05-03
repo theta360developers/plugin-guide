@@ -1,7 +1,39 @@
 # Plugin Ideas
 
-These are ideas for plugins to help with brainstorm discussions. 
-They have not been implemented.
+We are constantly working with community members to support "ideation," scoping out possible plug-ins and helping define concepts. Dealing with feature requests and turning those into workable code is a process. Brainstorming, coming up with concepts, sharing them, stress-testing them, doing this within in the community often moves a concept to code more quickly.
+
+## Hands-Off Action Time-Lapse Concept
+
+Thanks to [Daniel Towersey](https://community.theta360.guide/u/danieltowersey/summary) from the theta360.guide community for this concept for a "Hands-Off Action Time-Lapse" plug-in for the THETA V to be using in paragliding. 
+
+![](img/concept/DanielTowersey.jpg)
+
+> > Here at our paragliding site alone there must be about 30 to 50 Theta users awaiting such an update, or even better, a wireless remote shutter to substitute the ca-3 cable remote…
+
+Full original discussion [here](https://community.theta360.guide/t/using-mesh-iot-button-with-ricoh-theta-to-create-remote-wireless-shutter/1641/20) covers lots of details.
+
+![](img/concept/paragliding1.jpg)![](img/concept/paragliding2.jpg)![](img/concept/paragliding3.jpg)
+
+### Description of Requirements from Daniel:
+
+> > We use GoPro for standard photo and video included in our package, and sell 360º photos as an optional photo package.
+I used an LG 360 cam with I st with the app for interval shooting with the app before take off, and then just needed to press the camera button in flight (on a monopod).
+I changed my LG for the Theta V due to 4k video and much superior seaming of the images, but unfortunately found out that for interval shooting I need to press the button on the app, not the camera, with is a pain… other pilots use the wired ca-3 remote shutter with is also clumsy…
+Can’t get my head around the fact that the Theta doesn’t have a wireless remote shutter, and the camera button will only take still images even though it is set for interval shooting through the control app…
+
+### To build this plug-in, here's a possible Spec Sheet
+
+* Plug-in inside of camera handles timelapse
+* Shutter button starts/stops timelapse
+* White LED above shutter button indicates that it is in plug-in mode
+* Magenta WiFi LED below shutter button flashing indicates that timelapse is activated
+* Rate of flashing provides a clue as to current setting
+* Button side button (mode) cycles through pre-set settings
+* Companion mobile app is used to configure timelapse settings and store them into camera
+
+Some more thoughts about buying hardware [here. from Craig](https://community.theta360.guide/t/using-mesh-iot-button-with-ricoh-theta-to-create-remote-wireless-shutter/1641/15).
+
+# More Concept Ideas from RICOH 
 
 ![](img/concept/change-party.png)
 
