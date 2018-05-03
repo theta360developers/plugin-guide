@@ -33,8 +33,11 @@ Here's example of setting multiple parameters and then taking a picture.
             mCamera.takePicture(null, null, mJpegPictureCallback);
         }
 
-The plug-in SDK is a great place to get started. The SDK can be downloaded from the theta360.com site. If
-you have any problems finding the download location,
+There is extensive documentation on the 
+[RICOH Developer Connection THETA Plug-in portal](https://api.ricoh/docs/theta-plugin/sdk/)
+
+The plug-in SDK is a great place to get started. The SDK can be downloaded from [GitHub](https://github.com/ricohapi/theta-plugin-sdk). If
+you have any problems 
 please send an email to jcasman@oppkey.com for
  friendly (I hope) help.  :-)
 
