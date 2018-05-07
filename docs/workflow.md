@@ -101,3 +101,9 @@ Connect to WiFi and all your apps and plug-ins will be able to connect to the In
 
 ![](img/workflow/wifi/wifi-connected.png)
 
+## Using Vysor From Linux or Other OS
+
+I've found the easiest way to Vysor on Linux is to use the Chrome Extension in 
+Chrome on Linux.
+
+![Vysor Extension](img/workflow/vysor/vysor-in-chrome.png)
