@@ -107,3 +107,12 @@ I've found the easiest way to Vysor on Linux is to use the
 [Vysor Chrome Extension](https://chrome.google.com/webstore/detail/vysor/gidgenkbbabolejbgbpnhbimgjbffefm?authuser=1) in the Chrome web browser on Linux.
 
 ![Vysor Extension](img/workflow/vysor/vysor-in-chrome.png)
+
+### Fixing Flickering Problem on Certain NVIDIA Cards
+
+On an old NVIDIA graphics card, I needed to disable flipping using the NVIDIA X Server Settings. I am using X11, not Wayland on Ubuntu 18.04.  You can check to see if you're running Wayland or X11 with this:
+
+    $ echo $XDG_SESSION_TYPE
+    x11
+
+![OpenGL Settings](img/workflow/vysor/opengl-settings.png)
