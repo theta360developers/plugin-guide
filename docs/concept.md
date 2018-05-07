@@ -127,11 +127,11 @@ This is a concept to control timelapse from a paraglider or other 360 action sit
 * Existing IR remote you have around the house
 * 1/4" by 20 tpi stud and nut to attach to bracket on paraglider
 
-![](img/custom/components.jpg)
+![](img/concept/components.jpg)
 
 ### Assembly
 
-![](img/custom/assembly.jpg)
+![](img/concept/assembly.jpg)
 
 ### Prototype Case
 This is a prototype neoprene case that holds the components against the stud. Case objectives:
@@ -140,21 +140,21 @@ This is a prototype neoprene case that holds the components against the stud. Ca
 * secure components to solid base to prevent accidental detachment and loss while in-flight
 * easy removal from camera with velcro tabs
 
-![](img/custom/prototypecase.jpg)
+![](img/concept/prototypecase.jpg)
 
 ### Mounting
 The accessory can be mounted on any standard 1/4" tripod mount or bracket.
 
-![](img/custom/mounting.jpg)
+![](img/concept/mounting.jpg)
 
 Mounting the base of the accessory to the bracket will attach both the camera and IR receiver with a solid metal bolt.
 
 ### Configuring IR Controller
 The FLIRC desktop software is used one-time to map the buttons on the IR controller to Android keycodes. The mapping is saved to FLIRC and is retained when power is off.
 
-![](img/custom/configuring1.jpg)
+![](img/concept/configuring1.jpg)
 
-![](img/custom/configuring2.jpg)
+![](img/concept/configuring2.jpg)
 
 
 ### Configuring Camera
