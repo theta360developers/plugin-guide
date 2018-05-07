@@ -269,6 +269,19 @@
     Using Vysor From Linux or Other OS
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixing-flickering-problem-on-certain-nvidia-cards" title="Fixing Flickering Problem on Certain NVIDIA Cards" class="md-nav__link">
+    Fixing Flickering Problem on Certain NVIDIA Cards
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -388,6 +401,19 @@
     Using Vysor From Linux or Other OS
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixing-flickering-problem-on-certain-nvidia-cards" title="Fixing Flickering Problem on Certain NVIDIA Cards" class="md-nav__link">
+    Fixing Flickering Problem on Certain NVIDIA Cards
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -469,6 +495,12 @@ tapping Build number 7 times.</p>
 <p>I've found the easiest way to Vysor on Linux is to use the 
 <a href="https://chrome.google.com/webstore/detail/vysor/gidgenkbbabolejbgbpnhbimgjbffefm?authuser=1">Vysor Chrome Extension</a> in the Chrome web browser on Linux.</p>
 <p><img alt="Vysor Extension" src="../img/workflow/vysor/vysor-in-chrome.png" /></p>
+<h3 id="fixing-flickering-problem-on-certain-nvidia-cards">Fixing Flickering Problem on Certain NVIDIA Cards</h3>
+<p>On an old NVIDIA graphics card, I needed to disable flipping using the NVIDIA X Server Settings. I am using X11, not Wayland on Ubuntu 18.04.  You can check to see if you're running Wayland or X11 with this:</p>
+<pre><code>$ echo $XDG_SESSION_TYPE
+x11
+</code></pre>
+<p><img alt="OpenGL Settings" src="../img/workflow/vysor/opengl-settings.png" /></p>
                 
                   
                 
