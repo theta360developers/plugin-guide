@@ -103,7 +103,7 @@ Connect to WiFi and all your apps and plug-ins will be able to connect to the In
 
 ## Using Vysor From Linux or Other OS
 
-I've found the easiest way to Vysor on Linux is to use the Chrome Extension in 
-Chrome on Linux.
+I've found the easiest way to Vysor on Linux is to use the 
+[Vysor Chrome Extension](https://chrome.google.com/webstore/detail/vysor/gidgenkbbabolejbgbpnhbimgjbffefm?authuser=1) in the Chrome web browser on Linux.
 
 ![Vysor Extension](img/workflow/vysor/vysor-in-chrome.png)
