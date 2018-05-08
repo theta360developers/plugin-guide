@@ -158,7 +158,7 @@ In `pluginlibrary`, the LED colors are defined in `LedColor`.
     YELLOW("yellow", 0b011),
     WHITE("white", 0b111),;
 
-### LED Numbers
+### Camera LED Identification 
 
 ![](img/custom/led-all.png)
 
@@ -262,6 +262,20 @@ New library has these values in `PluginActivity`. As of 5/1, still need to test.
     private static final String ACTION_AUDIO_MOVSTOP = "com.theta360.plugin.ACTION_AUDIO_MOVSTOP";
     private static final String ACTION_AUDIO_SELF = "com.theta360.plugin.ACTION_AUDIO_SELF";
     private static final String ACTION_AUDIO_WARNING = "com.theta360.plugin.ACTION_AUDIO_WARNING";
+
+
+## Text to Speech
+As of May 8, 2018, `android.speech.tts` does not work. This may
+start working in a future update. For now, you can try other Text-Speech engines
+for Android. A list of untested engines is [here](http://hyperionics.com/TtsSetup/eng/TtsInfo.html). Another untested possibility
+could be the [Flite TTS Engine for Android](https://github.com/happyalu/Flite-TTS-Engine-for-Android).
+
+Currently, human speech can be played directly from the internal speaker of 
+the THETA V. However, the volume is low. We are trying to figure out how
+to increase the volume.
+
+Here's a [test of the THETA V playing "I Have a Dream"](https://youtu.be/AeebH7ONTkg) by Dr. Martin Luther King Jr.
+
 
 ## Broadcast Examples
 
