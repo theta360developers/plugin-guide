@@ -282,8 +282,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#led-numbers" title="LED Numbers" class="md-nav__link">
-    LED Numbers
+  <a href="#camera-led-identification" title="Camera LED Identification" class="md-nav__link">
+    Camera LED Identification
   </a>
   
 </li>
@@ -310,6 +310,13 @@
         <li class="md-nav__item">
   <a href="#audio" title="Audio" class="md-nav__link">
     Audio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-to-speech" title="Text to Speech" class="md-nav__link">
+    Text to Speech
   </a>
   
 </li>
@@ -496,8 +503,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#led-numbers" title="LED Numbers" class="md-nav__link">
-    LED Numbers
+  <a href="#camera-led-identification" title="Camera LED Identification" class="md-nav__link">
+    Camera LED Identification
   </a>
   
 </li>
@@ -524,6 +531,13 @@
         <li class="md-nav__item">
   <a href="#audio" title="Audio" class="md-nav__link">
     Audio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-to-speech" title="Text to Speech" class="md-nav__link">
+    Text to Speech
   </a>
   
 </li>
@@ -679,7 +693,7 @@ MAGENTA("magenta", 0b101),
 YELLOW("yellow", 0b011),
 WHITE("white", 0b111),;
 </code></pre>
-<h3 id="led-numbers">LED Numbers</h3>
+<h3 id="camera-led-identification">Camera LED Identification</h3>
 <p><img alt="" src="../img/custom/led-all.png" /></p>
 <h3 id="led-usage-example">LED Usage Example</h3>
 <p>In <code>MainActivity</code>, there is an example for the LED.</p>
@@ -787,6 +801,15 @@ private static final String ACTION_AUDIO_MOVSTOP = "com.theta360.plugin.ACTION_A
 private static final String ACTION_AUDIO_SELF = "com.theta360.plugin.ACTION_AUDIO_SELF";
 private static final String ACTION_AUDIO_WARNING = "com.theta360.plugin.ACTION_AUDIO_WARNING";
 </code></pre>
+<h2 id="text-to-speech">Text to Speech</h2>
+<p>As of May 8, 2018, <code>android.speech.tts</code> does not work. This may
+start working in a future update. For now, you can try other Text-Speech engines
+for Android. A list of untested engines is <a href="http://hyperionics.com/TtsSetup/eng/TtsInfo.html">here</a>. Another untested possibility
+could be the <a href="https://github.com/happyalu/Flite-TTS-Engine-for-Android">Flite TTS Engine for Android</a>.</p>
+<p>Currently, human speech can be played directly from the internal speaker of 
+the THETA V. However, the volume is low. We are trying to figure out how
+to increase the volume.</p>
+<p>Here's a <a href="https://youtu.be/AeebH7ONTkg">test of the THETA V playing "I Have a Dream"</a> by Dr. Martin Luther King Jr.</p>
 <h2 id="broadcast-examples">Broadcast Examples</h2>
 <p><strong> 5/1: Need to update for new library </strong></p>
 <p><strong>Broadcast to sound error tone</strong></p>
