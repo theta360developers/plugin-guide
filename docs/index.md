@@ -73,8 +73,12 @@ Install Ricoh Plugin SDK and Update Android Build System.
     $ l
     app/          gradle/            gradlew      LICENSE.txt     README.md
     build.gradle  gradle.properties  gradlew.bat  pluginlibrary/  settings.gradle
+    
+If you've just installed Android Studio, you may choose Import project from the Welcome to Android Studio start up screen:
 
-Import Project from File -> New -> Import Project.
+![](img/setup/androidstudio-startup-selection.png)
+
+Otherwise, use the menus. Import Project from File -> New -> Import Project.
 
 ![](img/setup/import-project.png)
 
