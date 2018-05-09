@@ -24,13 +24,16 @@ to get physical access to your camera. More
 information on a process to put the THETA V into developer mode remotely should be available when the 
 THETA V partner program is launched in 2018 (specific date of launch has not been announced). 
 
-This document describes the following development process:
+This document covers the following development process and tips:
 
-- Android SDK Installation
-- Import Ricoh sample Plugin and Update Android Build System
-- Getting a THETA V Plugin Development Camera
-- USB cable connection between THETA V and development workstation
-- Using adb to connect to the camera
-- Use adb to install plugin into camera
+- [Requirements](/requirements/)
+- [Android SDK Installation and Setup](/setup/) 
+- RICOH THETA Plugin SDK Import (in setup)
+- Use adb to connect to the THETA V and install plug-in 
+- Test the plug-in
 - Use Vysor to help with testing
+- Custom Development
+- Development Workflow Tips
+- Concept Ideas
+- Community and Getting Help
 

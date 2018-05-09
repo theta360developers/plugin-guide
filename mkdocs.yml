@@ -26,6 +26,7 @@ pages:
   - Requirements: requirements.md
   - Setup: setup.md
   - Plugin Use: use.md
+  - Using Vysor: vysor.md
   - Custom Development: custom.md
   - Workflow Tips: workflow.md
   - Fun Tests: fun.md

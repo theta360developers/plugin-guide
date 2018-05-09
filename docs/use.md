@@ -1,9 +1,103 @@
 # Plugin Use
 
-In the future, your plugin can be distributed through the THETA Store, downloaded, and used by all THETA V camera end-users. They will
-be able to install the plugin with a computer application that Ricoh will provide.
+## adb
 
-End-users can choose your plugin with the official RICOH THETA mobile app or a custom application that you provide. For development, you can also select the active plug-in with the WiFi API. 
+Connect the THETA V to your developer workstation with a USB cable.
+
+![](img/adb/usb-cable.png)
+
+Use adb to connect to the camera
+
+On Windows, adb is installed into 
+
+    C:\Users\[user]\AppData\Local\Android\sdk\platform-tools
+
+![](img/adb/adb-location.png)
+
+You should add this into your PATH.  On Windows, you can edit the PATH with *Control Panel -> System and Security -> System -> Advanced system settings -> Environment Variables -> Path*
+
+![](img/adb/path.png)
+
+After putting adb into your `PATH`, start a new cmd shell and run 
+
+    adb devices -l
+
+![](img/adb/adb-list-devices.png)
+
+If you don't use `-l`, you can still identify the device by the serial number
+of your THETA V. In the example below, my THETA V has a serial number of 00101082.
+
+    $ adb devices
+    List of devices attached
+    * daemon not running. starting it now at tcp:5037 *
+    * daemon started successfully *
+    00101082	device
+
+You can log into the camera, and do an `ls` to list all files, just like in any Android system
+
+    $ adb shell
+    msm8953_64:/ $ ls -l                                                                                                                                                 
+    total 4240
+    drwxrwxr-x   5 media_rw media_rw    4096 2017-01-01 00:00 DCIM
+    dr-xr-xr-x  17 root     root           0 1970-04-02 10:08 acct
+    drwxr-xr-x   2 root     root          40 1970-01-01 00:00 bt_firmware                             
+    lrwxrwxrwx   1 root     root          50 1970-01-01 00:00 bugreports -> /data/user_de/0/com.android.shell/files/bugreports
+    drwxrwx---   6 system   cache       4096 2017-11-14 15:55 cache
+    lrwxrwxrwx   1 root     root          13 1970-01-01 00:00 charger -> /sbin/healthd
+    drwxr-xr-x   2 root     root           0 1970-04-02 10:08 config
+    lrwxrwxrwx   1 root     root          17 1970-01-01 00:00 d -> /sys/kernel/debug
+    drwxrwx--x  43 system   system      4096 2017-09-21 14:00 data
+    -rw-r--r--   1 root     root         966 1970-01-01 00:00 default.prop
+    drwxr-xr-x  15 root     root        3180 2017-11-27 12:50 dev
+    drwxr-xr-x   3 root     root        4096 1970-01-01 00:00 dsp
+
+Change directory into DCIM. The RICOH THETA Plug-in SDK uses the
+[android.hardware.Camera](https://developer.android.com/reference/android/hardware/Camera.html) class. It saves images into the normal location you would expect from an Android device. You can also use the [RICOH THETA API v2.1](https://developers.theta360.com/en/docs/v2.1/api_reference/), which is is a WebAPI based on OSC to take pictures from your plug-in by sending a POST command to the internal camera web server.
+
+    127|msm8953_64:/DCIM/0 $ ls -l
+    total 128
+    drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Alarms
+    drwxrwxr-x 2 media_rw media_rw  4096 2017-09-22 22:31 Converted
+    drwxrwxr-x 3 media_rw media_rw  4096 2017-09-19 18:15 DCIM
+    drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Download
+    drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Movies
+    drwxrwxr-x 2 media_rw media_rw  4096 2017-10-02 15:31 MtpOperation
+    drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Music
+    drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Notifications
+    drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Pictures
+    drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Podcasts
+    drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Ringtones
+    -rw-rw-r-- 1 media_rw media_rw 15972 2017-09-25 23:35 btsnoop_hci.log
+    drwxrwxr-x 2 media_rw media_rw  4096 2017-09-21 14:26 ptp
+
+Locate pictures and movies.
+
+    msm8953_64:/DCIM/0/DCIM/100RICOH $
+
+    msm8953_64:/DCIM/0/DCIM/100RICOH $ ls -l                                                                                                             
+    total 554752
+    -rw-rw-r-- 1 media_rw media_rw   1970120 2017-09-28 12:58 R0010025.JPG
+    -rw-rw-r-- 1 media_rw media_rw   2402374 2017-09-28 12:58 R0010026.JPG
+    -rw-rw-r-- 1 media_rw media_rw   2136165 2017-09-28 12:58 R0010027.JPG
+    -rw-rw-r-- 1 media_rw media_rw   2810985 2017-09-28 12:59 R0010028.JPG
+    -rw-rw-r-- 1 media_rw media_rw   1834346 2017-10-18 18:34 R0010035.JPG
+    -rw-rw-r-- 1 media_rw media_rw    679681 2017-10-21 12:13 R0010036.JPG
+    -rw-rw-r-- 1 media_rw media_rw   2103925 2017-10-21 14:16 R0010037.JPG
+    -rw-rw-r-- 1 media_rw media_rw  52108839 2017-10-21 14:19 R0010038.MP4
+    -rw-rw-r-- 1 media_rw media_rw 108450224 2017-10-21 14:20 R0010039.MP4
+
+
+## Install Your Plugin into Camera
+
+Use Android Studio
+or
+
+call `adb install -r ./plugin/build/outputs/apk/debug/plugin-debug.apk`
+
+    $ adb install -r ./plugin/build/outputs/apk/debug/plugin-debug.apk 
+    * daemon not running. starting it now at tcp:5037 *
+    * daemon started successfully *
+    Success
 
 ## Testing the Sample Plugin
 
@@ -19,34 +113,12 @@ and format similar to the example below.
 
 To get the file to your local computer, you can either 
 use normal MTP as you would with a normal Android 
-phone or you can just download the one file with adb.
+phone or you can just download the one file with adb. If you
+use adb pull, you can get the filename by logging into the
+shell with `adb shell` or you can use a tool like Vysor
+to display a virtual graphic THETA V screen to your workstation.
+Refer to the next section on Vysor.
 
-### Download the Picture
-
-In order to download the picture with adb, you first need to find out the exact filename. You can use Vysor to find the filename.
-
-Go into File Manager
-
-![](img/vysor/filemanager.png)
-
-Down into DCIM
-
-![](img/vysor/DCIM.png)
-
-Down into 100RICOH
-
-![](img/vysor/100RICOH.png)
-
-If you have a lot of images on the camera, you may need to scroll down to the bottom of the list.
-
-![](img/vysor/filename.png)
-
-There's your filename, the newest image. In this case, it's R0010047.JPG
-   
-Then use adb pull to download the picture to your local machine   
-   
-    $ adb pull /sdcard/DCIM/100RICOH/R0010047.JPG
-    /sdcard/DCIM/100RICOH/R0010047.JPG: 1 file pulled. 21.2 MB/s (2790527 bytes in 0.126s)
 
 ## Put Camera into Plugin Mode
 Plugin mode can only be enabled on
@@ -74,21 +146,6 @@ Additional information on the side buttons is shown below.
 Information on the front of the camera is shown below.
 
 ![](img/use/front-buttons.png)
-
-## Use Vysor to Verify Plugin Installation
-
-You can install multiple plugins into the THETA V. In the example below,
-I'm using Vysor to verify that I installed my new plugin 
-*ConstructionPlugin* in addition to the *PluginSample* I installed
-earlier.
-
-![](img/use/vysor-selection.png)
-
-Prior to selecting with my new *ConstructionPlugin* with the API, I set
-the permissions with Vysor. Settings -> Apps -> YourAppName
-
-![](img/use/vysor-settings.png)
-
 
 
 
