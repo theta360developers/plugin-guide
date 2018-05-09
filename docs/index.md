@@ -86,7 +86,7 @@ Otherwise, use the menus. Import Project from File -> New -> Import Project.
 
 You will see the following status bar for a few minutes.
 
-![](img/setup/build-plugin-status.png)
+![](img/setup/building.jpg)
 
 After the process completes, you will see a Windows Security Alert.
 
