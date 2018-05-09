@@ -1,6 +1,8 @@
 # Ricoh THETA V Plugin Application Development - Community Guide
 
-![](img/product/front-image.png)
+<!-- ![](img/product/front-image.png) -->
+[![](img/promotion/plug-in-webinar.png)](https://register.gotowebinar.com/register/2633164712729319681)
+# [Register Now!](https://register.gotowebinar.com/register/2633164712729319681)
 
 *By [Craig Oda and Jesse Casman](/about/) of [Oppkey](http://oppkey.com/)*
 
