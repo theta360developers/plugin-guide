@@ -22,7 +22,8 @@ extra:
       link: 'https://www.facebook.com/theta360guide/'
   
 pages: 
-  - Setup: index.md
+  - Overview and Requirements: index.md
+  - Setup: setup.md
   - Plugin Use: use.md
   - Custom Development: custom.md
   - Workflow Tips: workflow.md
