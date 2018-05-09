@@ -2,8 +2,8 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Ricoh THETA V Plugin Application Development - Community Guide\n\n\n\n\n\n\n\nRegister Now!\n\n\nBy \nCraig Oda and Jesse Casman\n of \nOppkey\n\n\nThis is a compilation of community experiences and tests from members of \ntheta360.guide\n, an\nindependent developer community for RICOH THETA cameras. This is not an\nofficial Ricoh group. The \ncommunity-created\n document you are reading may contain factual errors. \n\n\nOfficial Ricoh Documentation\n\n\n\n\nPlug-in SDK\n\n\nPlug-in API\n\n\n\n\nTHETA V Plugin Application Development Overview\n\n\nThe THETA V uses Android as the operating system. Because of this, the THETA V application development process is the same as the development process for an Android phone. Connect the THETA V to a development workstation, either Mac, Windows, or Linux with a micro USB cable and connect to the camera with adb. You will need a THETA V \nthat is in developer mode. To put your THETA V into developer mode during the closed-beta period, \nplease contact jcasman@oppkey.com. He will need\nto get physical access to your camera. More\ninformation on a process to put the THETA V into developer mode remotely should be available when the \nTHETA V partner program is launched in 2018 (specific date of launch has not been announced). \n\n\nThis document describes the following development process:\n\n\n\n\nAndroid SDK Installation\n\n\nImport Ricoh sample Plugin and Update Android Build System\n\n\nGetting a THETA V Plugin Development Camera\n\n\nUSB cable connection between THETA V and development workstation\n\n\nUsing adb to connect to the camera\n\n\nUse adb to install plugin into camera\n\n\nUse Vysor to help with testing\n\n\n\n\nRequired Hardware and Software for Development\n\n\n\n\nThe SDK was tested with a RICOH THETA V under the following conditions.\n\n\nCamera\n\n\nHardware\n\n\nRICOH THETA V\n\n\nFirmware\n\n\nver.2.20.1 and above\n\n\nInformation on checking and updating the firmware is \nhere\n.\n\n\n\n\n\n\n\n\n\n\nDevelopment Environment\n\n\nWindows 10 Version 1709\n\n\nIn Windows 7, adb connection does not work with USB\n\n\n\n\n\n\nmacOS High Sierra ver.10.13\n\n\nDevelopment \u30fb Build environment\n\n\nAndroid Studio 3.0+\n\n\ngradle 3.0.1\n\n\nAndroid SDK (API Level 25)\n\n\ncompileSdkVersion 26\n\n\nbuildToolsVersion \"26.0.3\"\n\n\nminSdkVersion 25\n\n\ntargetSdkVersion 25", 
-            "title": "Overview and Requirements"
+            "text": "Ricoh THETA V Plugin Application Development - Community Guide\n\n\n\n\n\n\n\nRegister Now!\n\n\nBy \nCraig Oda and Jesse Casman\n of \nOppkey\n\n\nThis is a compilation of community experiences and tests from members of \ntheta360.guide\n, an\nindependent developer community for RICOH THETA cameras. This is not an\nofficial Ricoh group. The \ncommunity-created\n document you are reading may contain factual errors. \n\n\nOfficial Ricoh Documentation\n\n\n\n\nPlug-in SDK\n\n\nPlug-in API\n\n\n\n\nTHETA V Plugin Application Development Overview\n\n\nThe THETA V uses Android as the operating system. Because of this, the THETA V application development process is the same as the development process for an Android phone. Connect the THETA V to a development workstation, either Mac, Windows, or Linux with a micro USB cable and connect to the camera with adb. You will need a THETA V \nthat is in developer mode. To put your THETA V into developer mode during the closed-beta period, \nplease contact jcasman@oppkey.com. He will need\nto get physical access to your camera. More\ninformation on a process to put the THETA V into developer mode remotely should be available when the \nTHETA V partner program is launched in 2018 (specific date of launch has not been announced). \n\n\nThis document describes the following development process:\n\n\n\n\nAndroid SDK Installation\n\n\nImport Ricoh sample Plugin and Update Android Build System\n\n\nGetting a THETA V Plugin Development Camera\n\n\nUSB cable connection between THETA V and development workstation\n\n\nUsing adb to connect to the camera\n\n\nUse adb to install plugin into camera\n\n\nUse Vysor to help with testing", 
+            "title": "Overview"
         }, 
         {
             "location": "/#ricoh-theta-v-plugin-application-development-community-guide", 
@@ -26,9 +26,24 @@
             "title": "THETA V Plugin Application Development Overview"
         }, 
         {
-            "location": "/#required-hardware-and-software-for-development", 
-            "text": "The SDK was tested with a RICOH THETA V under the following conditions.  Camera  Hardware  RICOH THETA V  Firmware  ver.2.20.1 and above  Information on checking and updating the firmware is  here .      Development Environment  Windows 10 Version 1709  In Windows 7, adb connection does not work with USB    macOS High Sierra ver.10.13  Development \u30fb Build environment  Android Studio 3.0+  gradle 3.0.1  Android SDK (API Level 25)  compileSdkVersion 26  buildToolsVersion \"26.0.3\"  minSdkVersion 25  targetSdkVersion 25", 
-            "title": "Required Hardware and Software for Development"
+            "location": "/requirements/", 
+            "text": "Requirements for Development\n\n\nRequired Hardware\n\n\n\n\nThe SDK was tested with a RICOH THETA V under the following conditions.\n\n\nCamera\n\n\nHardware\n\n\nRICOH THETA V\n\n\nFirmware\n\n\nver.2.20.1 and above\n\n\nInformation on checking and updating the firmware is \nhere\n\n\n\n\n\n\nThe camera must be unlocked and in developer mode. Contact jcasman@oppkey.com for information\non unlocking your camera.\n\n\n\n\n\n\n\n\nSoftware for Development\n\n\n\n\nDevelopment Environment\n\n\nWindows 10 Version 1709\n\n\nIn Windows 7, adb connection does not work with USB\n\n\n\n\n\n\nmacOS High Sierra ver.10.13\n\n\nDevelopment \u30fb Build environment\n\n\nAndroid Studio 3.0+\n\n\ngradle 3.0.1\n\n\nAndroid SDK (API Level 25)\n\n\ncompileSdkVersion 26\n\n\nbuildToolsVersion \"26.0.3\"\n\n\nminSdkVersion 25\n\n\ntargetSdkVersion 25", 
+            "title": "Requirements"
+        }, 
+        {
+            "location": "/requirements/#requirements-for-development", 
+            "text": "", 
+            "title": "Requirements for Development"
+        }, 
+        {
+            "location": "/requirements/#required-hardware", 
+            "text": "The SDK was tested with a RICOH THETA V under the following conditions.  Camera  Hardware  RICOH THETA V  Firmware  ver.2.20.1 and above  Information on checking and updating the firmware is  here    The camera must be unlocked and in developer mode. Contact jcasman@oppkey.com for information\non unlocking your camera.", 
+            "title": "Required Hardware"
+        }, 
+        {
+            "location": "/requirements/#software-for-development", 
+            "text": "Development Environment  Windows 10 Version 1709  In Windows 7, adb connection does not work with USB    macOS High Sierra ver.10.13  Development \u30fb Build environment  Android Studio 3.0+  gradle 3.0.1  Android SDK (API Level 25)  compileSdkVersion 26  buildToolsVersion \"26.0.3\"  minSdkVersion 25  targetSdkVersion 25", 
+            "title": "Software for Development"
         }, 
         {
             "location": "/setup/", 
