@@ -116,7 +116,7 @@ Although not necessary, I decided to update Gradle.
 
 You can now inspect your Project in the navigation area.
 
-![](img/setup/plugin-code-structure.png)
+![](img/setup/inspect.jpg)
 
 Build the APK
 
