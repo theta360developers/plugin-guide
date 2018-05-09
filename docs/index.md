@@ -76,7 +76,7 @@ Install Ricoh Plugin SDK and Update Android Build System.
     
 If you've just installed Android Studio, you may choose Import project from the Welcome to Android Studio start up screen:
 
-![](img/setup/androidstudio-startup-selection.png)
+![](img/setup/androidstudio-startup-selection.jpg)
 
 Otherwise, use the menus. Import Project from File -> New -> Import Project.
 
