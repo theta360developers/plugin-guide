@@ -1,6 +1,8 @@
 site_name: THETA V Plugin Development Community Guide
 site_url: http://theta360.guide/plugin-guide/
 site_description: RICOH THETA development for plug-ins and 360 applications include AR and VR applications
+repo_url: https://github.com/theta360developers/plugin-guide
+repo_name: GitHub
 site_author: Craig Oda and Jesse Casman
 google_analytics: ['UA-73311422-1', 'auto']
 theme_dir: theme/material

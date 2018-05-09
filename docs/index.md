@@ -7,10 +7,10 @@
 *By [Craig Oda and Jesse Casman](/about/) of [Oppkey](http://oppkey.com/)*
 
 This is a compilation of community experiences and tests from members of [theta360.guide](http://theta360.guide), an
-independent developer community for RICOH THETA cameras. This is not an
-official Ricoh group. The *community-created* document you are reading may contain factual errors. 
+independent developer community for RICOH THETA cameras.  The *community-created* document you are reading may contain factual errors. Please help the community to 
+update this document using pull requests on [GitHub](https://github.com/theta360developers/plugin-guide).
 
-## Official Ricoh Documentation
+## Official Ricoh Information
 
 - [Plug-in SDK](https://github.com/ricohapi/theta-plugin-sdk)
 - [Plug-in API](https://api.ricoh/docs/theta-plugin/api/?utm_source=theta360guide)
