@@ -50,9 +50,14 @@ The images are viewable in 360 by the recipient.
 ![](img/workflow/facebook-messenger.png)
 
 
-## Using the Keyboard on Vysor
+## Using the Keyboard and Back Button on Vysor
 
-You need to disable the THETA V camera process to use the keyboard.
+You need to disable the THETA V camera process to use the keyboard and back button.
+
+The video [Getting Vysor Back Button to Work - RICOH THETA Development](https://youtu.be/dMBLHgyGZe4) 
+shows the setup process.
+
+The steps are also explained below.
 
 Connect your THETA V to Vysor.
 
@@ -90,6 +95,13 @@ Be bold and stop the service.
 Test the keyboard.
 
 ![](img/workflow/keyboard/notepad.png)
+
+Test the back button.
+
+![](img/workflow/keyboard/back-button.png)
+
+![](img/workflow/keyboard/image-directory.png)
+
 
 ## Enabling WiFi for All Apps
 
