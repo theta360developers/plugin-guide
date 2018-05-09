@@ -230,35 +230,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#testing-the-sample-plugin" title="Testing the Sample Plugin" class="md-nav__link">
-    Testing the Sample Plugin
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#download-the-picture" title="Download the Picture" class="md-nav__link">
-    Download the Picture
+  <a href="#adb" title="adb" class="md-nav__link">
+    adb
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#install-your-plugin-into-camera" title="Install Your Plugin into Camera" class="md-nav__link">
+    Install Your Plugin into Camera
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-the-sample-plugin" title="Testing the Sample Plugin" class="md-nav__link">
+    Testing the Sample Plugin
+  </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#put-camera-into-plugin-mode" title="Put Camera into Plugin Mode" class="md-nav__link">
     Put Camera into Plugin Mode
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-vysor-to-verify-plugin-installation" title="Use Vysor to Verify Plugin Installation" class="md-nav__link">
-    Use Vysor to Verify Plugin Installation
   </a>
   
 </li>
@@ -296,6 +290,18 @@
   
 </nav>
     
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../vysor/" title="Using Vysor" class="md-nav__link">
+      Using Vysor
+    </a>
   </li>
 
     
@@ -392,35 +398,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#testing-the-sample-plugin" title="Testing the Sample Plugin" class="md-nav__link">
-    Testing the Sample Plugin
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#download-the-picture" title="Download the Picture" class="md-nav__link">
-    Download the Picture
+  <a href="#adb" title="adb" class="md-nav__link">
+    adb
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#install-your-plugin-into-camera" title="Install Your Plugin into Camera" class="md-nav__link">
+    Install Your Plugin into Camera
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-the-sample-plugin" title="Testing the Sample Plugin" class="md-nav__link">
+    Testing the Sample Plugin
+  </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#put-camera-into-plugin-mode" title="Put Camera into Plugin Mode" class="md-nav__link">
     Put Camera into Plugin Mode
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-vysor-to-verify-plugin-installation" title="Use Vysor to Verify Plugin Installation" class="md-nav__link">
-    Use Vysor to Verify Plugin Installation
   </a>
   
 </li>
@@ -468,9 +468,87 @@
                 
                 
                 <h1 id="plugin-use">Plugin Use</h1>
-<p>In the future, your plugin can be distributed through the THETA Store, downloaded, and used by all THETA V camera end-users. They will
-be able to install the plugin with a computer application that Ricoh will provide.</p>
-<p>End-users can choose your plugin with the official RICOH THETA mobile app or a custom application that you provide. For development, you can also select the active plug-in with the WiFi API. </p>
+<h2 id="adb">adb</h2>
+<p>Connect the THETA V to your developer workstation with a USB cable.</p>
+<p><img alt="" src="../img/adb/usb-cable.png" /></p>
+<p>Use adb to connect to the camera</p>
+<p>On Windows, adb is installed into </p>
+<pre><code>C:\Users\[user]\AppData\Local\Android\sdk\platform-tools
+</code></pre>
+<p><img alt="" src="../img/adb/adb-location.png" /></p>
+<p>You should add this into your PATH.  On Windows, you can edit the PATH with <em>Control Panel -&gt; System and Security -&gt; System -&gt; Advanced system settings -&gt; Environment Variables -&gt; Path</em></p>
+<p><img alt="" src="../img/adb/path.png" /></p>
+<p>After putting adb into your <code>PATH</code>, start a new cmd shell and run </p>
+<pre><code>adb devices -l
+</code></pre>
+<p><img alt="" src="../img/adb/adb-list-devices.png" /></p>
+<p>If you don't use <code>-l</code>, you can still identify the device by the serial number
+of your THETA V. In the example below, my THETA V has a serial number of 00101082.</p>
+<pre><code>$ adb devices
+List of devices attached
+* daemon not running. starting it now at tcp:5037 *
+* daemon started successfully *
+00101082    device
+</code></pre>
+<p>You can log into the camera, and do an <code>ls</code> to list all files, just like in any Android system</p>
+<pre><code>$ adb shell
+msm8953_64:/ $ ls -l                                                                                                                                                 
+total 4240
+drwxrwxr-x   5 media_rw media_rw    4096 2017-01-01 00:00 DCIM
+dr-xr-xr-x  17 root     root           0 1970-04-02 10:08 acct
+drwxr-xr-x   2 root     root          40 1970-01-01 00:00 bt_firmware                             
+lrwxrwxrwx   1 root     root          50 1970-01-01 00:00 bugreports -&gt; /data/user_de/0/com.android.shell/files/bugreports
+drwxrwx---   6 system   cache       4096 2017-11-14 15:55 cache
+lrwxrwxrwx   1 root     root          13 1970-01-01 00:00 charger -&gt; /sbin/healthd
+drwxr-xr-x   2 root     root           0 1970-04-02 10:08 config
+lrwxrwxrwx   1 root     root          17 1970-01-01 00:00 d -&gt; /sys/kernel/debug
+drwxrwx--x  43 system   system      4096 2017-09-21 14:00 data
+-rw-r--r--   1 root     root         966 1970-01-01 00:00 default.prop
+drwxr-xr-x  15 root     root        3180 2017-11-27 12:50 dev
+drwxr-xr-x   3 root     root        4096 1970-01-01 00:00 dsp
+</code></pre>
+<p>Change directory into DCIM. The RICOH THETA Plug-in SDK uses the
+<a href="https://developer.android.com/reference/android/hardware/Camera.html">android.hardware.Camera</a> class. It saves images into the normal location you would expect from an Android device. You can also use the <a href="https://developers.theta360.com/en/docs/v2.1/api_reference/">RICOH THETA API v2.1</a>, which is is a WebAPI based on OSC to take pictures from your plug-in by sending a POST command to the internal camera web server.</p>
+<pre><code>127|msm8953_64:/DCIM/0 $ ls -l
+total 128
+drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Alarms
+drwxrwxr-x 2 media_rw media_rw  4096 2017-09-22 22:31 Converted
+drwxrwxr-x 3 media_rw media_rw  4096 2017-09-19 18:15 DCIM
+drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Download
+drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Movies
+drwxrwxr-x 2 media_rw media_rw  4096 2017-10-02 15:31 MtpOperation
+drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Music
+drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Notifications
+drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Pictures
+drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Podcasts
+drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Ringtones
+-rw-rw-r-- 1 media_rw media_rw 15972 2017-09-25 23:35 btsnoop_hci.log
+drwxrwxr-x 2 media_rw media_rw  4096 2017-09-21 14:26 ptp
+</code></pre>
+<p>Locate pictures and movies.</p>
+<pre><code>msm8953_64:/DCIM/0/DCIM/100RICOH $
+
+msm8953_64:/DCIM/0/DCIM/100RICOH $ ls -l                                                                                                             
+total 554752
+-rw-rw-r-- 1 media_rw media_rw   1970120 2017-09-28 12:58 R0010025.JPG
+-rw-rw-r-- 1 media_rw media_rw   2402374 2017-09-28 12:58 R0010026.JPG
+-rw-rw-r-- 1 media_rw media_rw   2136165 2017-09-28 12:58 R0010027.JPG
+-rw-rw-r-- 1 media_rw media_rw   2810985 2017-09-28 12:59 R0010028.JPG
+-rw-rw-r-- 1 media_rw media_rw   1834346 2017-10-18 18:34 R0010035.JPG
+-rw-rw-r-- 1 media_rw media_rw    679681 2017-10-21 12:13 R0010036.JPG
+-rw-rw-r-- 1 media_rw media_rw   2103925 2017-10-21 14:16 R0010037.JPG
+-rw-rw-r-- 1 media_rw media_rw  52108839 2017-10-21 14:19 R0010038.MP4
+-rw-rw-r-- 1 media_rw media_rw 108450224 2017-10-21 14:20 R0010039.MP4
+</code></pre>
+<h2 id="install-your-plugin-into-camera">Install Your Plugin into Camera</h2>
+<p>Use Android Studio
+or</p>
+<p>call <code>adb install -r ./plugin/build/outputs/apk/debug/plugin-debug.apk</code></p>
+<pre><code>$ adb install -r ./plugin/build/outputs/apk/debug/plugin-debug.apk 
+* daemon not running. starting it now at tcp:5037 *
+* daemon started successfully *
+Success
+</code></pre>
 <h2 id="testing-the-sample-plugin">Testing the Sample Plugin</h2>
 <p>Disconnect the camera from the USB cable. Press the physical button on the camera. There will be no sound,
 but the image will be captured. </p>
@@ -480,22 +558,11 @@ and format similar to the example below.</p>
 <p><code>/sdcard/DCIM/100RICOH/R0010047.JPG</code>.</p>
 <p>To get the file to your local computer, you can either 
 use normal MTP as you would with a normal Android 
-phone or you can just download the one file with adb.</p>
-<h3 id="download-the-picture">Download the Picture</h3>
-<p>In order to download the picture with adb, you first need to find out the exact filename. You can use Vysor to find the filename.</p>
-<p>Go into File Manager</p>
-<p><img alt="" src="../img/vysor/filemanager.png" /></p>
-<p>Down into DCIM</p>
-<p><img alt="" src="../img/vysor/DCIM.png" /></p>
-<p>Down into 100RICOH</p>
-<p><img alt="" src="../img/vysor/100RICOH.png" /></p>
-<p>If you have a lot of images on the camera, you may need to scroll down to the bottom of the list.</p>
-<p><img alt="" src="../img/vysor/filename.png" /></p>
-<p>There's your filename, the newest image. In this case, it's R0010047.JPG</p>
-<p>Then use adb pull to download the picture to your local machine   </p>
-<pre><code>$ adb pull /sdcard/DCIM/100RICOH/R0010047.JPG
-/sdcard/DCIM/100RICOH/R0010047.JPG: 1 file pulled. 21.2 MB/s (2790527 bytes in 0.126s)
-</code></pre>
+phone or you can just download the one file with adb. If you
+use adb pull, you can get the filename by logging into the
+shell with <code>adb shell</code> or you can use a tool like Vysor
+to display a virtual graphic THETA V screen to your workstation.
+Refer to the next section on Vysor.</p>
 <h2 id="put-camera-into-plugin-mode">Put Camera into Plugin Mode</h2>
 <p>Plugin mode can only be enabled on
 the RICOH THETA V.</p>
@@ -511,15 +578,6 @@ on and then pressing the mode button. </p>
 <p><img alt="" src="../img/use/side-buttons.png" /></p>
 <p>Information on the front of the camera is shown below.</p>
 <p><img alt="" src="../img/use/front-buttons.png" /></p>
-<h2 id="use-vysor-to-verify-plugin-installation">Use Vysor to Verify Plugin Installation</h2>
-<p>You can install multiple plugins into the THETA V. In the example below,
-I'm using Vysor to verify that I installed my new plugin 
-<em>ConstructionPlugin</em> in addition to the <em>PluginSample</em> I installed
-earlier.</p>
-<p><img alt="" src="../img/use/vysor-selection.png" /></p>
-<p>Prior to selecting with my new <em>ConstructionPlugin</em> with the API, I set
-the permissions with Vysor. Settings -&gt; Apps -&gt; YourAppName</p>
-<p><img alt="" src="../img/use/vysor-settings.png" /></p>
 <h2 id="set-active-plugin">Set Active Plugin</h2>
 <p>When you develop the plugin application, a companion mobile application can set the active plugin using the
 WiFi API of the camera. The Ricoh mobile application that
@@ -634,13 +692,13 @@ of available plug-ins.</p>
           </a>
         
         
-          <a href="../custom/" title="Custom Development" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../vysor/" title="Using Vysor" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Custom Development
+                Using Vysor
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

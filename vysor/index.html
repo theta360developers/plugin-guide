@@ -13,7 +13,7 @@
         <meta name="description" content="RICOH THETA development for plug-ins and 360 applications include AR and VR applications">
       
       
-        <link rel="canonical" href="http://theta360.guide/plugin-guide/community/">
+        <link rel="canonical" href="http://theta360.guide/plugin-guide/vysor/">
       
       
         <meta name="author" content="Craig Oda and Jesse Casman">
@@ -38,7 +38,7 @@
     
     
       
-        <title>Community - THETA V Plugin Development Community Guide</title>
+        <title>Using Vysor - THETA V Plugin Development Community Guide</title>
       
     
     
@@ -98,7 +98,7 @@
                 THETA V Plugin Development Community Guide
               </span>
               <span class="md-header-nav__topic">
-                Community
+                Using Vysor
               </span>
             
           
@@ -213,11 +213,81 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../vysor/" title="Using Vysor" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Using Vysor
+      </label>
+    
+    <a href="./" title="Using Vysor" class="md-nav__link md-nav__link--active">
       Using Vysor
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#use-vysor-to-verify-plugin-installation" title="Use Vysor to Verify Plugin Installation" class="md-nav__link">
+    Use Vysor to Verify Plugin Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-image-file-names-with-vysor" title="Verify Image File Names with Vysor" class="md-nav__link">
+    Verify Image File Names with Vysor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-keyboard-and-back-button-on-vysor" title="Using the Keyboard and Back Button on Vysor" class="md-nav__link">
+    Using the Keyboard and Back Button on Vysor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-vysor-from-linux-or-other-os" title="Using Vysor From Linux or Other OS" class="md-nav__link">
+    Using Vysor From Linux or Other OS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixing-flickering-problem-on-certain-nvidia-cards" title="Fixing Flickering Problem on Certain NVIDIA Cards" class="md-nav__link">
+    Fixing Flickering Problem on Certain NVIDIA Cards
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -273,88 +343,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Community
-      </label>
-    
-    <a href="./" title="Community" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../community/" title="Community" class="md-nav__link">
       Community
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#communitytheta360guide" title="community.theta360.guide" class="md-nav__link">
-    community.theta360.guide
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-ask-a-question" title="How to Ask a Question" class="md-nav__link">
-    How to Ask a Question
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#public-question" title="Public Question" class="md-nav__link">
-    Public Question
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#private-question" title="Private Question" class="md-nav__link">
-    Private Question
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#events-meetups-and-workshops" title="Events, Meetups and Workshops" class="md-nav__link">
-    Events, Meetups and Workshops
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#marketing-and-sales-questions" title="Marketing and Sales Questions" class="md-nav__link">
-    Marketing and Sales Questions
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -391,50 +384,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#communitytheta360guide" title="community.theta360.guide" class="md-nav__link">
-    community.theta360.guide
+  <a href="#use-vysor-to-verify-plugin-installation" title="Use Vysor to Verify Plugin Installation" class="md-nav__link">
+    Use Vysor to Verify Plugin Installation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-ask-a-question" title="How to Ask a Question" class="md-nav__link">
-    How to Ask a Question
+  <a href="#verify-image-file-names-with-vysor" title="Verify Image File Names with Vysor" class="md-nav__link">
+    Verify Image File Names with Vysor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-keyboard-and-back-button-on-vysor" title="Using the Keyboard and Back Button on Vysor" class="md-nav__link">
+    Using the Keyboard and Back Button on Vysor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-vysor-from-linux-or-other-os" title="Using Vysor From Linux or Other OS" class="md-nav__link">
+    Using Vysor From Linux or Other OS
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#public-question" title="Public Question" class="md-nav__link">
-    Public Question
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#private-question" title="Private Question" class="md-nav__link">
-    Private Question
+  <a href="#fixing-flickering-problem-on-certain-nvidia-cards" title="Fixing Flickering Problem on Certain NVIDIA Cards" class="md-nav__link">
+    Fixing Flickering Problem on Certain NVIDIA Cards
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#events-meetups-and-workshops" title="Events, Meetups and Workshops" class="md-nav__link">
-    Events, Meetups and Workshops
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#marketing-and-sales-questions" title="Marketing and Sales Questions" class="md-nav__link">
-    Marketing and Sales Questions
-  </a>
   
 </li>
       
@@ -453,40 +439,100 @@
               
                 
                 
-                <h1 id="community">Community</h1>
-<p>There is a very active and fun community around the RICOH THETA V development. Check out 
-<a href="https://theta360.guide">theta360.guide</a> now.</p>
-<h2 id="communitytheta360guide">community.theta360.guide</h2>
-<p>The main hub THETA developer discussion is the independent developer community at <a href="https://community.theta360.guide">community.theta360.guide</a>. There are more than
-a 1,000 registered THETA developers on the community
-site viewing 70,000 pages a month. You do not need to register to read the content, but it would be great if
-you signed for free and asked a question or shared some information.</p>
-<p>We want to hear from you!</p>
-<p><a href="https://community.theta360.guide/u/jcasman27/summary"><img alt="" src="../img/community/jcasman.png" /></a></p>
-<p><a href="https://community.theta360.guide/u/codetricity/summary"><img alt="" src="../img/community/craigoda.png" /></a></p>
-<h2 id="how-to-ask-a-question">How to Ask a Question</h2>
-<h3 id="public-question">Public Question</h3>
-<p>Go to the <a href="https://community.theta360.guide/c/theta-api-usage">THETA API Usage conference</a>.</p>
-<p>Click on New Topic.</p>
-<p><img alt="" src="../img/community/new-topic.png" /></p>
-<p>Write the title of your question and the details in the body.</p>
-<p><img alt="" src="../img/community/questions.png" /></p>
-<p>If you are new to the community, your question will need to get approved for the first post only.</p>
-<h3 id="private-question">Private Question</h3>
-<p>You can message us directly on https://community.theta360.guide. Or you can send email to jcasman@oppkey.com.</p>
-<h2 id="events-meetups-and-workshops">Events, Meetups and Workshops</h2>
-<p>A number of workshops are planned to cover different aspects of plug-in development. We also hold physical and online meetings to explore the booming business around applications for 360 cameras. Here are some of the upcoming events for developers:</p>
-<ul>
-<li>VRLA (May 4-5, Los Angeles, CA)</li>
-<li>DeveloperWeek (June 18-20, New York City, NY)</li>
-<li>TechCrunch DISRUPT (Sept 5-7, San Francisco, CA)</li>
-</ul>
-<p><img alt="" src="../img/community/meetup.png" /></p>
-<p>The <a href="https://www.meetup.com/RICOH-THETA-Developers-SF-Bay-Area/">RICOH THETA Developers SF Bay Area Meetup Group</a> is the 
-most active.</p>
-<h2 id="marketing-and-sales-questions">Marketing and Sales Questions</h2>
-<p>If you have questions about marketing and selling your application, Jesse Casman can relay your question to the appropriate people at Ricoh.  He can also help you get your app onto the THETA Plug-in store and provide 
-information on the process to get your plug-in showcased as a featured app.</p>
+                <h1 id="using-vysor-to-help-with-testing">Using Vysor to Help With Testing</h1>
+<p>Go to  <a href="https://www.vysor.io/">https://www.vysor.io/</a> 
+and install Vysor.</p>
+<p><img alt="" src="../img/vysor/visor-home.png" /></p>
+<p>After starting Vysor, you will be able to choose your device, <em>RICOH THETA_V</em>.  Press <em>View</em>.</p>
+<p><img alt="" src="../img/vysor/vysor-device.png" /></p>
+<p>Vysor will start up.</p>
+<p><img alt="" src="../img/vysor/vysor-start.png" /></p>
+<p>Click on the home button.</p>
+<p><img alt="" src="../img/vysor/home-button.png" /></p>
+<p>Any launcher will work. I'm using the Snapdragon Launcher.</p>
+<p><img alt="" src="../img/vysor/snapdragon.png" /></p>
+<p>You will see all the apps.</p>
+<p><img alt="" src="../img/vysor/plugin-sample.png" /></p>
+<p>Go to App Settings</p>
+<p><img alt="" src="../img/vysor/plugin-settings.png" /></p>
+<p>Set Permissions for <em>Storage</em> and <em>Camera</em>.</p>
+<p><img alt="" src="../img/vysor/storage-camera.png" /></p>
+<p>Launch App</p>
+<p><img alt="" src="../img/vysor/launch-app.png" /></p>
+<p>In the future, your plugin can be distributed through the THETA Store, downloaded, and used by all THETA V camera end-users. They will
+be able to install the plugin with a computer application that Ricoh will provide.</p>
+<p>End-users can choose your plugin with the official RICOH THETA mobile app or a custom application that you provide. For development, you can also select the active plug-in with the WiFi API. </p>
+<h2 id="use-vysor-to-verify-plugin-installation">Use Vysor to Verify Plugin Installation</h2>
+<p>You can install multiple plugins into the THETA V. In the example below,
+I'm using Vysor to verify that I installed my new plugin 
+<em>ConstructionPlugin</em> in addition to the <em>PluginSample</em> I installed
+earlier.</p>
+<p><img alt="" src="../img/use/vysor-selection.png" /></p>
+<p>Prior to selecting with my new <em>ConstructionPlugin</em> with the API, I set
+the permissions with Vysor. Settings -&gt; Apps -&gt; YourAppName</p>
+<p><img alt="" src="../img/use/vysor-settings.png" /></p>
+<h2 id="verify-image-file-names-with-vysor">Verify Image File Names with Vysor</h2>
+<p>In order to download the picture with adb, you first need to find out the exact filename. You can use Vysor to find the filename.</p>
+<p>Go into File Manager</p>
+<p><img alt="" src="../img/vysor/filemanager.png" /></p>
+<p>Down into DCIM</p>
+<p><img alt="" src="../img/vysor/DCIM.png" /></p>
+<p>Down into 100RICOH</p>
+<p><img alt="" src="../img/vysor/100RICOH.png" /></p>
+<p>If you have a lot of images on the camera, you may need to scroll down to the bottom of the list.</p>
+<p><img alt="" src="../img/vysor/filename.png" /></p>
+<p>There's your filename, the newest image. In this case, it's R0010047.JPG</p>
+<p>Then use adb pull to download the picture to your local machine   </p>
+<pre><code>$ adb pull /sdcard/DCIM/100RICOH/R0010047.JPG
+/sdcard/DCIM/100RICOH/R0010047.JPG: 1 file pulled. 21.2 MB/s (2790527 bytes in 0.126s)
+</code></pre>
+<h2 id="using-the-keyboard-and-back-button-on-vysor">Using the Keyboard and Back Button on Vysor</h2>
+<p>You need to disable the THETA V camera process to use the keyboard and back button.</p>
+<p>The video <a href="https://youtu.be/dMBLHgyGZe4">Getting Vysor Back Button to Work - RICOH THETA Development</a> 
+shows the setup process.</p>
+<p>The steps are also explained below.</p>
+<p>Connect your THETA V to Vysor.</p>
+<p><img alt="" src="../img/workflow/keyboard/vysor-view.png" /></p>
+<p>Expand the apps to find your settings.</p>
+<p><img alt="" src="../img/workflow/keyboard/apps.png" /></p>
+<p>Go into settings.</p>
+<p><img alt="" src="../img/workflow/keyboard/settings.png" /></p>
+<p>Go to <em>Developer options</em>. You may need to <a href="https://developer.android.com/studio/debug/dev-options">enable developer options</a> by going to <em>About phone</em> and 
+tapping Build number 7 times.</p>
+<p><img alt="" src="../img/workflow/keyboard/developer-options.png" /></p>
+<p>Access <em>Running services</em>.</p>
+<p><img alt="" src="../img/workflow/keyboard/running-services.png" /></p>
+<p>Select the <em>RICOH THETA V</em> process.</p>
+<p><img alt="" src="../img/workflow/keyboard/ricoh-theta-process.png" /></p>
+<p>Stop the <em>CameraService</em>.</p>
+<p><img alt="" src="../img/workflow/keyboard/camera-service.png" /></p>
+<p>Be bold and stop the service.</p>
+<p><img alt="" src="../img/workflow/keyboard/camera-stop.png" /></p>
+<p>Test the keyboard.</p>
+<p><img alt="" src="../img/workflow/keyboard/notepad.png" /></p>
+<p>Test the back button.</p>
+<p><img alt="" src="../img/workflow/keyboard/back-button.png" /></p>
+<p><img alt="" src="../img/workflow/keyboard/image-directory.png" /></p>
+<h2 id="using-vysor-from-linux-or-other-os">Using Vysor From Linux or Other OS</h2>
+<p>I've found the easiest way to Vysor on Linux is to use the 
+<a href="https://chrome.google.com/webstore/detail/vysor/gidgenkbbabolejbgbpnhbimgjbffefm?authuser=1">Vysor Chrome Extension</a> in the Chrome web browser on Linux.</p>
+<p><img alt="Vysor Extension" src="../img/workflow/vysor/vysor-in-chrome.png" /></p>
+<p>On Linux, you can also install Vysor as a desktop application with the information <a href="https://github.com/koush/electron-chrome">here</a>.</p>
+<p>The basic process is shown below.</p>
+<pre><code>git clone https://github.com/koush/electron-chrome.git
+cd electron-chrome
+npm install
+</code></pre>
+<p>Using the Chrome Store app id for Vysor:</p>
+<pre><code>electron --enable-logging . --app-id=gidgenkbbabolejbgbpnhbimgjbffefm
+</code></pre>
+<p><img alt="" src="../img/vysor/vysor-linux.png" /></p>
+<h3 id="fixing-flickering-problem-on-certain-nvidia-cards">Fixing Flickering Problem on Certain NVIDIA Cards</h3>
+<p>On an old NVIDIA graphics card, I needed to disable flipping using the NVIDIA X Server Settings. I am using X11, not Wayland on Ubuntu 18.04.  You can check to see if you're running Wayland or X11 with this:</p>
+<pre><code>$ echo $XDG_SESSION_TYPE
+x11
+</code></pre>
+<p><img alt="OpenGL Settings" src="../img/workflow/vysor/opengl-settings.png" /></p>
                 
                   
                 
@@ -505,7 +551,7 @@ information on the process to get your plug-in showcased as a featured app.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../concept/" title="Concept Ideas" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../use/" title="Plugin Use" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -514,19 +560,19 @@ information on the process to get your plug-in showcased as a featured app.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Concept Ideas
+                Plugin Use
               </span>
             </div>
           </a>
         
         
-          <a href="../about/" title="About" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../custom/" title="Custom Development" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                About
+                Custom Development
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

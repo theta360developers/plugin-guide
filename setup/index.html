@@ -244,34 +244,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#putting-your-theta-v-into-developer-mode" title="Putting Your THETA V into “Developer Mode”" class="md-nav__link">
-    Putting Your THETA V into “Developer Mode”
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usb-cable-connection-between-theta-v-and-development-workstation" title="USB cable connection between THETA V and development workstation" class="md-nav__link">
-    USB cable connection between THETA V and development workstation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-your-plugin-into-camera" title="Install Your Plugin into Camera" class="md-nav__link">
-    Install Your Plugin into Camera
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-vysor-to-help-with-testing" title="Use Vysor to help with testing" class="md-nav__link">
-    Use Vysor to help with testing
-  </a>
-  
-</li>
-      
       
       
     </ul>
@@ -289,6 +261,18 @@
   <li class="md-nav__item">
     <a href="../use/" title="Plugin Use" class="md-nav__link">
       Plugin Use
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../vysor/" title="Using Vysor" class="md-nav__link">
+      Using Vysor
     </a>
   </li>
 
@@ -412,34 +396,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#putting-your-theta-v-into-developer-mode" title="Putting Your THETA V into “Developer Mode”" class="md-nav__link">
-    Putting Your THETA V into “Developer Mode”
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usb-cable-connection-between-theta-v-and-development-workstation" title="USB cable connection between THETA V and development workstation" class="md-nav__link">
-    USB cable connection between THETA V and development workstation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-your-plugin-into-camera" title="Install Your Plugin into Camera" class="md-nav__link">
-    Install Your Plugin into Camera
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-vysor-to-help-with-testing" title="Use Vysor to help with testing" class="md-nav__link">
-    Use Vysor to help with testing
-  </a>
-  
-</li>
-      
       
       
     </ul>
@@ -499,125 +455,6 @@ build.gradle  gradle.properties  gradlew.bat  pluginlibrary/  settings.gradle
 <p><img alt="" src="../img/setup/build-locate.png" /></p>
 <p>Locate the file <code>plugin-debug.apk</code> and install it onto the THETA V</p>
 <p><img alt="" src="../img/setup/plugin-find-apk.png" /></p>
-<h2 id="putting-your-theta-v-into-developer-mode">Putting Your THETA V into “Developer Mode”</h2>
-<p>Normal THETA V cameras are not enabled for the development of plugins.
-As of April 30, 2018, the THETA V plugin development process is in closed beta. 
-To discuss your plugin project, you can contact Ricoh directly
-or you can also contact the independent developer community at <a href="http://theta360.guide">http://theta360.guide</a> and they can forward your request to the appropriate people at Ricoh. 
-Alternately, you can send an email to Jesse Casman at jcasman@oppkey.com for more information.
-Please understand that only a small number of requests can be fulfilled.</p>
-<h2 id="usb-cable-connection-between-theta-v-and-development-workstation">USB cable connection between THETA V and development workstation</h2>
-<p>With the THETA off, connect it to your developer workstation with a USB cable.</p>
-<p><img alt="" src="../img/adb/usb-cable.png" /></p>
-<p>Using adb to connect to the camera</p>
-<p>On Windows, adb is installed into </p>
-<pre><code>C:\Users\[user]\AppData\Local\Android\sdk\platform-tools
-</code></pre>
-<p><img alt="" src="../img/adb/adb-location.png" /></p>
-<p>You should add this into your PATH.  On Windows, you can edit the PATH with <em>Control Panel -&gt; System and Security -&gt; System -&gt; Advanced system settings -&gt; Environment Variables -&gt; Path</em></p>
-<p><img alt="" src="../img/adb/path.png" /></p>
-<p>After putting adb into your <code>PATH</code>, start a new cmd shell and run </p>
-<pre><code>adb devices -l
-</code></pre>
-<p><img alt="" src="../img/adb/adb-list-devices.png" /></p>
-<p>If you don't use <code>-l</code>, you can still identify the device by the serial number
-of your THETA V. In the example below, my THETA V has a serial number of 00101082.</p>
-<pre><code>$ adb devices
-List of devices attached
-* daemon not running. starting it now at tcp:5037 *
-* daemon started successfully *
-00101082    device
-</code></pre>
-<p>You can log into the camera, and do an <code>ls</code> to list all files, just like in any Android system</p>
-<pre><code>$ adb shell
-msm8953_64:/ $ ls -l                                                                                                                                                 
-total 4240
-drwxrwxr-x   5 media_rw media_rw    4096 2017-01-01 00:00 DCIM
-dr-xr-xr-x  17 root     root           0 1970-04-02 10:08 acct
-drwxr-xr-x   2 root     root          40 1970-01-01 00:00 bt_firmware                             
-lrwxrwxrwx   1 root     root          50 1970-01-01 00:00 bugreports -&gt; /data/user_de/0/com.android.shell/files/bugreports
-drwxrwx---   6 system   cache       4096 2017-11-14 15:55 cache
-lrwxrwxrwx   1 root     root          13 1970-01-01 00:00 charger -&gt; /sbin/healthd
-drwxr-xr-x   2 root     root           0 1970-04-02 10:08 config
-lrwxrwxrwx   1 root     root          17 1970-01-01 00:00 d -&gt; /sys/kernel/debug
-drwxrwx--x  43 system   system      4096 2017-09-21 14:00 data
--rw-r--r--   1 root     root         966 1970-01-01 00:00 default.prop
-drwxr-xr-x  15 root     root        3180 2017-11-27 12:50 dev
-drwxr-xr-x   3 root     root        4096 1970-01-01 00:00 dsp
-</code></pre>
-<p>Change directory into DCIM. The RICOH THETA Plug-in SDK uses the
-<a href="https://developer.android.com/reference/android/hardware/Camera.html">android.hardware.Camera</a> class. It saves images into the normal location you would expect from an Android device. You can also use the <a href="https://developers.theta360.com/en/docs/v2.1/api_reference/">RICOH THETA API v2.1</a>, which is is a WebAPI based on OSC to take pictures from your plug-in by sending a POST command to the internal camera web server.</p>
-<pre><code>127|msm8953_64:/DCIM/0 $ ls -l
-total 128
-drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Alarms
-drwxrwxr-x 2 media_rw media_rw  4096 2017-09-22 22:31 Converted
-drwxrwxr-x 3 media_rw media_rw  4096 2017-09-19 18:15 DCIM
-drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Download
-drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Movies
-drwxrwxr-x 2 media_rw media_rw  4096 2017-10-02 15:31 MtpOperation
-drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Music
-drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Notifications
-drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Pictures
-drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Podcasts
-drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Ringtones
--rw-rw-r-- 1 media_rw media_rw 15972 2017-09-25 23:35 btsnoop_hci.log
-drwxrwxr-x 2 media_rw media_rw  4096 2017-09-21 14:26 ptp
-</code></pre>
-<p>Locate pictures and movies.</p>
-<pre><code>msm8953_64:/DCIM/0/DCIM/100RICOH $
-
-msm8953_64:/DCIM/0/DCIM/100RICOH $ ls -l                                                                                                             
-total 554752
--rw-rw-r-- 1 media_rw media_rw   1970120 2017-09-28 12:58 R0010025.JPG
--rw-rw-r-- 1 media_rw media_rw   2402374 2017-09-28 12:58 R0010026.JPG
--rw-rw-r-- 1 media_rw media_rw   2136165 2017-09-28 12:58 R0010027.JPG
--rw-rw-r-- 1 media_rw media_rw   2810985 2017-09-28 12:59 R0010028.JPG
--rw-rw-r-- 1 media_rw media_rw   1834346 2017-10-18 18:34 R0010035.JPG
--rw-rw-r-- 1 media_rw media_rw    679681 2017-10-21 12:13 R0010036.JPG
--rw-rw-r-- 1 media_rw media_rw   2103925 2017-10-21 14:16 R0010037.JPG
--rw-rw-r-- 1 media_rw media_rw  52108839 2017-10-21 14:19 R0010038.MP4
--rw-rw-r-- 1 media_rw media_rw 108450224 2017-10-21 14:20 R0010039.MP4
-</code></pre>
-<h2 id="install-your-plugin-into-camera">Install Your Plugin into Camera</h2>
-<p>Use Android Studio
-or</p>
-<p>call <code>adb install -r ./plugin/build/outputs/apk/debug/plugin-debug.apk</code></p>
-<pre><code>$ adb install -r ./plugin/build/outputs/apk/debug/plugin-debug.apk 
-* daemon not running. starting it now at tcp:5037 *
-* daemon started successfully *
-Success
-</code></pre>
-<h2 id="use-vysor-to-help-with-testing">Use Vysor to help with testing</h2>
-<p>Go to  <a href="https://www.vysor.io/">https://www.vysor.io/</a> 
-and install Vysor.</p>
-<p><img alt="" src="../img/vysor/visor-home.png" /></p>
-<p>On Linux, you can Vysor with the information <a href="https://github.com/koush/electron-chrome">here</a>.</p>
-<p>The basic process is shown below.</p>
-<pre><code>git clone https://github.com/koush/electron-chrome.git
-cd electron-chrome
-npm install
-</code></pre>
-<p>Using the Chrome Store app id for Vysor:</p>
-<pre><code>electron --enable-logging . --app-id=gidgenkbbabolejbgbpnhbimgjbffefm
-</code></pre>
-<p><img alt="" src="../img/vysor/vysor-linux.png" /></p>
-<p>After starting Vysor, you will be able to choose your device, <em>RICOH THETA_V</em>.  Press <em>View</em>.</p>
-<p><img alt="" src="../img/vysor/vysor-device.png" /></p>
-<p>Vysor will start up.</p>
-<p><img alt="" src="../img/vysor/vysor-start.png" /></p>
-<p>Click on the home button.</p>
-<p><img alt="" src="../img/vysor/home-button.png" /></p>
-<p>Any launcher will work. I'm using the Snapdragon Launcher.</p>
-<p><img alt="" src="../img/vysor/snapdragon.png" /></p>
-<p>You will see all the apps.</p>
-<p><img alt="" src="../img/vysor/plugin-sample.png" /></p>
-<p>Go to App Settings</p>
-<p><img alt="" src="../img/vysor/plugin-settings.png" /></p>
-<p>Set Permissions for <em>Storage</em> and <em>Camera</em>.</p>
-<p><img alt="" src="../img/vysor/storage-camera.png" /></p>
-<p>Launch App</p>
-<p><img alt="" src="../img/vysor/launch-app.png" /></p>
-<p>The Vysor screen will be black.</p>
                 
                   
                 
