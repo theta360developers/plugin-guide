@@ -94,9 +94,9 @@ After the process completes, you will see a Windows Security Alert.
 
 Allow access to the OpenJDK Platform.
 
-You may need to update your Build Tools. Install 26.0.3 or higher.
+You may need to update your Build Tools or Install missing platforms and sync project. 
 
-![](img/setup/build-tools-upgrade.png)
+![](img/setup/missing-platform.jpg)
 
 Accept the license terms for 26.0.3 and press Next.
 
