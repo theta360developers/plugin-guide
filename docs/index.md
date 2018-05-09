@@ -11,6 +11,11 @@ independent developer community for RICOH THETA cameras. This is not an
 official Ricoh group. The *community-created* document you are reading may contain factual errors. For official information from Ricoh, please go to
 [https://api.ricoh/docs/theta-plugin/](https://api.ricoh/docs/theta-plugin?utm_source=theta360guide).
 
+## Official Ricoh Documentation
+
+- [Plug-in SDK](https://github.com/ricohapi/theta-plugin-sdk)
+- [Plug-in API](https://api.ricoh/docs/theta-plugin/api/?utm_source=theta360guide)
+
 ## THETA V Plugin Application Development Overview
 
 The THETA V uses Android as the operating system. Because of this, the THETA V application development process is the same as the development process for an Android phone. Connect the THETA V to a development workstation, either Mac, Windows, or Linux with a micro USB cable and connect to the camera with adb. You will need a THETA V 
