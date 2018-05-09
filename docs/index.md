@@ -120,7 +120,7 @@ You can now inspect your Project in the navigation area.
 
 Build the APK
 
-![](img/setup/build.png)
+![](img/setup/build.jpg)
 
 At the bottom of the Android Studio window, you will see the status of the build.
 
