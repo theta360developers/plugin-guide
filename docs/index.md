@@ -28,9 +28,9 @@ This document covers the following development process and tips:
 
 - [Requirements](/requirements/)
 - [Android SDK Installation and Setup](/setup/) 
-- RICOH THETA Plugin SDK Import (in setup)
+- [RICOH THETA Plugin SDK Import](/setup/#import-ricoh-plugin-sdk-and-update-android-build-system)
 - [Use adb to connect to the THETA V and install plug-in](/use/) 
-- Test the plug-in (in Plugin Use)
+- [Test the plug-in](/setup/#import-ricoh-plugin-sdk-and-update-android-build-system)
 - [Use Vysor to help with testing ](/vysor/)
 - [Custom Development](/custom/)
 - [Development Workflow Tips](/workflow/)
