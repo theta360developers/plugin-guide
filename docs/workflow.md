@@ -2,8 +2,23 @@
 
 ## Debugging
 
-You can debug the THETA V with a USB cable and adb.
-The camera will operate in Plugin Mode while connected to adb.
+### Save logcat to file on camera
+
+This is a typical debugging workflow:
+
+1. Enter `adb shell` in terminal to enter the shell in the camera.
+2. `logcat > /sdcard/DCIM/log.txt&`
+3. Reproduce issue, camera may reboot.
+4. `adb pull /sdcard/DCIM/log.txt` in terminal 
+
+
+### View logcat on workstation
+
+For some messages, you can also debug the THETA V with a USB 
+cable and adb in real-time. The camera will 
+operate in Plugin Mode while connected to adb. It's better to
+save to save as explained above because the camera may lock or 
+reboot when it encounters the bug and you'll lose the connection.
 
 ![](img/debug/debug-connection.png)
 
