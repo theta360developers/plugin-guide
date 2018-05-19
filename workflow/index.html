@@ -318,6 +318,26 @@
     Debugging
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#save-logcat-to-file-on-camera" title="Save logcat to file on camera" class="md-nav__link">
+    Save logcat to file on camera
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-logcat-on-workstation" title="View logcat on workstation" class="md-nav__link">
+    View logcat on workstation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -423,6 +443,26 @@
     Debugging
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#save-logcat-to-file-on-camera" title="Save logcat to file on camera" class="md-nav__link">
+    Save logcat to file on camera
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-logcat-on-workstation" title="View logcat on workstation" class="md-nav__link">
+    View logcat on workstation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -465,8 +505,20 @@
                 
                 <h1 id="development-workflow-tips">Development Workflow Tips</h1>
 <h2 id="debugging">Debugging</h2>
-<p>You can debug the THETA V with a USB cable and adb.
-The camera will operate in Plugin Mode while connected to adb.</p>
+<h3 id="save-logcat-to-file-on-camera">Save logcat to file on camera</h3>
+<p>This is a typical debugging workflow:</p>
+<ol>
+<li>Enter <code>adb shell</code> in terminal to enter the shell in the camera.</li>
+<li><code>logcat &gt; /sdcard/DCIM/log.txt&amp;</code></li>
+<li>Reproduce issue, camera may reboot.</li>
+<li><code>adb pull /sdcard/DCIM/log.txt</code> in terminal </li>
+</ol>
+<h3 id="view-logcat-on-workstation">View logcat on workstation</h3>
+<p>For some messages, you can also debug the THETA V with a USB 
+cable and adb in real-time. The camera will 
+operate in Plugin Mode while connected to adb. It's better to
+save to save as explained above because the camera may lock or 
+reboot when it encounters the bug and you'll lose the connection.</p>
 <p><img alt="" src="../img/debug/debug-connection.png" /></p>
 <p>You will be able to get debug messages similar to the example below:</p>
 <pre><code>   12-14 07:53:24.105  1171  1373 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
