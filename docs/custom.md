@@ -174,6 +174,8 @@ In `MainActivity`, there is an example for the LED.
             */
         notificationLedBlink(LedTarget.LED3, LedColor.BLUE, 1000);
 
+#### Changing LED Color and Blink Rate
+
 The example below will use flash LED3, the WiFi LED, faster and display
 a magenta color.
 
@@ -181,29 +183,19 @@ a magenta color.
 
 ![](img/custom/led/magenta-led.png)
 
+#### Changing LED Target
 
+The example below shows how to blink LEDs 4, 5, 6, 7, and 8. Note that the
+color is ignored.
 
-** 5/1 EXAMPLES BELOW NEED TO UPDATED FOR NEW LIBRARY **
+    notificationLedBlink(LedTarget.LED4, LedColor.BLUE, 300);
+    notificationLedBlink(LedTarget.LED5, LedColor.BLUE, 300);
 
+    notificationLedBlink(LedTarget.LED6, LedColor.BLUE, 300);
+    notificationLedBlink(LedTarget.LED7, LedColor.RED, 300);
+    notificationLedBlink(LedTarget.LED8, LedColor.RED, 300);
 
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KEYCODE_CAMERA) {
-            takePicture();
-            // “ledNo” can be set LED number (0-8). 0 means all LEDs.
-            ledon.putExtra("ledNo", 0);
-            // color can be "on", "red", "green", "blue"
-            ledon.putExtra("color", "on");
-            sendBroadcast(ledon);
-        }
-
-
-** Fix example **
-
-Snippet below will turn all LEDs off.
-
-    Intent ledoff = new Intent("com.theta360.devicelibrary.receiver.ACTION_ADJ_LED_OFF");
-    ledoff.putExtra("ledNo", 0);
-    sendBroadcast(ledoff);
+![](img/custom/led/led-4-8.png)
 
 ## Camera Buttons
 
