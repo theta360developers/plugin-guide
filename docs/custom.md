@@ -174,21 +174,17 @@ In `MainActivity`, there is an example for the LED.
             */
         notificationLedBlink(LedTarget.LED3, LedColor.BLUE, 1000);
 
+The example below will use flash LED3, the WiFi LED, faster and display
+a magenta color.
+
+        notificationLedBlink(LedTarget.LED3, LedColor.MAGENTA, 300);
+
+![](img/custom/led/magenta-led.png)
+
 
 
 ** 5/1 EXAMPLES BELOW NEED TO UPDATED FOR NEW LIBRARY **
 
-
-Example below is outdated as of 5/1/2018. I am leaving it in until I can fix it
-with the new library.
-
-    Intent ledon = new Intent("com.theta360.devicelibrary.receiver.ACTION_ADJ_LED");
-    ledon.putExtra("ledNo", 0);
-    ledon.putExtra("color", "on");
-    sendBroadcast(ledon);
-
-
-** This example also needs to be fixed. **
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KEYCODE_CAMERA) {
