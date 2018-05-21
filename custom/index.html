@@ -377,6 +377,26 @@
     LED Usage Example
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-led-color-and-blink-rate" title="Changing LED Color and Blink Rate" class="md-nav__link">
+    Changing LED Color and Blink Rate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-led-target" title="Changing LED Target" class="md-nav__link">
+    Changing LED Target
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -603,6 +623,26 @@
     LED Usage Example
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-led-color-and-blink-rate" title="Changing LED Color and Blink Rate" class="md-nav__link">
+    Changing LED Color and Blink Rate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-led-target" title="Changing LED Target" class="md-nav__link">
+    Changing LED Target
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -789,28 +829,23 @@ WHITE("white", 0b111),;
         */
     notificationLedBlink(LedTarget.LED3, LedColor.BLUE, 1000);
 </code></pre>
+<h4 id="changing-led-color-and-blink-rate">Changing LED Color and Blink Rate</h4>
 <p>The example below will use flash LED3, the WiFi LED, faster and display
 a magenta color.</p>
 <pre><code>    notificationLedBlink(LedTarget.LED3, LedColor.MAGENTA, 300);
 </code></pre>
 <p><img alt="" src="../img/custom/led/magenta-led.png" /></p>
-<p><strong> 5/1 EXAMPLES BELOW NEED TO UPDATED FOR NEW LIBRARY </strong></p>
-<pre><code>public boolean onKeyDown(int keyCode, KeyEvent event) {
-    if (keyCode == KEYCODE_CAMERA) {
-        takePicture();
-        // “ledNo” can be set LED number (0-8). 0 means all LEDs.
-        ledon.putExtra("ledNo", 0);
-        // color can be "on", "red", "green", "blue"
-        ledon.putExtra("color", "on");
-        sendBroadcast(ledon);
-    }
+<h4 id="changing-led-target">Changing LED Target</h4>
+<p>The example below shows how to blink LEDs 4, 5, 6, 7, and 8. Note that the
+color is ignored.</p>
+<pre><code>notificationLedBlink(LedTarget.LED4, LedColor.BLUE, 300);
+notificationLedBlink(LedTarget.LED5, LedColor.BLUE, 300);
+
+notificationLedBlink(LedTarget.LED6, LedColor.BLUE, 300);
+notificationLedBlink(LedTarget.LED7, LedColor.RED, 300);
+notificationLedBlink(LedTarget.LED8, LedColor.RED, 300);
 </code></pre>
-<p><strong> Fix example </strong></p>
-<p>Snippet below will turn all LEDs off.</p>
-<pre><code>Intent ledoff = new Intent("com.theta360.devicelibrary.receiver.ACTION_ADJ_LED_OFF");
-ledoff.putExtra("ledNo", 0);
-sendBroadcast(ledoff);
-</code></pre>
+<p><img alt="" src="../img/custom/led/led-4-8.png" /></p>
 <h2 id="camera-buttons">Camera Buttons</h2>
 <p>There are three buttons you can map:</p>
 <table>
