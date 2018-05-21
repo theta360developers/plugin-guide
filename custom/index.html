@@ -789,15 +789,12 @@ WHITE("white", 0b111),;
         */
     notificationLedBlink(LedTarget.LED3, LedColor.BLUE, 1000);
 </code></pre>
-<p><strong> 5/1 EXAMPLES BELOW NEED TO UPDATED FOR NEW LIBRARY </strong></p>
-<p>Example below is outdated as of 5/1/2018. I am leaving it in until I can fix it
-with the new library.</p>
-<pre><code>Intent ledon = new Intent("com.theta360.devicelibrary.receiver.ACTION_ADJ_LED");
-ledon.putExtra("ledNo", 0);
-ledon.putExtra("color", "on");
-sendBroadcast(ledon);
+<p>The example below will use flash LED3, the WiFi LED, faster and display
+a magenta color.</p>
+<pre><code>    notificationLedBlink(LedTarget.LED3, LedColor.MAGENTA, 300);
 </code></pre>
-<p><strong> This example also needs to be fixed. </strong></p>
+<p><img alt="" src="../img/custom/led/magenta-led.png" /></p>
+<p><strong> 5/1 EXAMPLES BELOW NEED TO UPDATED FOR NEW LIBRARY </strong></p>
 <pre><code>public boolean onKeyDown(int keyCode, KeyEvent event) {
     if (keyCode == KEYCODE_CAMERA) {
         takePicture();
