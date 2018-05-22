@@ -363,6 +363,34 @@
     1.7 Build apk
   </a>
   
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-identify-location-of-apk" title="1.8 Identify location of apk" class="md-nav__link">
+    1.8 Identify location of apk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19-check-installation-setup" title="1.9 Check installation setup" class="md-nav__link">
+    1.9 Check installation setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#110-cd-into-apk-directory" title="1.10 cd into apk directory" class="md-nav__link">
+    1.10 cd into apk directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#111-use-adb-to-install-the-apk-into-your-camera" title="1.11 Use adb to install the apk into your camera" class="md-nav__link">
+    1.11 Use adb to install the apk into your camera
+  </a>
+  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
@@ -589,6 +617,34 @@
     1.7 Build apk
   </a>
   
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-identify-location-of-apk" title="1.8 Identify location of apk" class="md-nav__link">
+    1.8 Identify location of apk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19-check-installation-setup" title="1.9 Check installation setup" class="md-nav__link">
+    1.9 Check installation setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#110-cd-into-apk-directory" title="1.10 cd into apk directory" class="md-nav__link">
+    1.10 cd into apk directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#111-use-adb-to-install-the-apk-into-your-camera" title="1.11 Use adb to install the apk into your camera" class="md-nav__link">
+    1.11 Use adb to install the apk into your camera
+  </a>
+  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
@@ -692,6 +748,25 @@ a magenta color.  Edit <code>MainActivity</code> as follows.</p>
 <p>Select <em>Save all</em> from the <em>File</em> menu. </p>
 <p><img alt="" src="../img/custom/led/saveAll.png" /></p>
 <h3 id="17-build-apk">1.7 Build apk</h3>
+<p><img alt="" src="../img/custom/led/buildApk.png" /></p>
+<h3 id="18-identify-location-of-apk">1.8 Identify location of apk</h3>
+<p><img alt="" src="../img/custom/led/findApk.png" /></p>
+<pre><code>theta-plugin-sdk &gt; app &gt; build &gt; outputs &gt; apk &gt; debug &gt; app-debug.apk
+</code></pre>
+<h3 id="19-check-installation-setup">1.9 Check installation setup</h3>
+<p>You will use adb to install the apk into your THETA V. Confirm that you have the following set up:</p>
+<ul>
+<li>Your THETA V should be connected to your computer with a USB cable.</li>
+<li>You must be using an unlocked THETA V that is in <em>Developer Mode</em></li>
+<li>adb needs to be in your PATH</li>
+</ul>
+<p>If you are unsure about any of the steps above, refer to the previous sections. You can
+also ask questions in the community at <a href="http://plugin.community.theta360.guide">http://plugin.community.theta360.guide</a>.
+If you are at a workshop, please raise your hand and someone will assist you.</p>
+<h3 id="110-cd-into-apk-directory">1.10 cd into apk directory</h3>
+<p>Change directory into the same directory that your apk is in.</p>
+<p><img alt="" src="../img/custom/led/change-directory.png" /></p>
+<h3 id="111-use-adb-to-install-the-apk-into-your-camera">1.11 Use adb to install the apk into your camera</h3>
 <p><img alt="" src="../img/custom/led/magenta-led.png" /></p>
 <h4 id="changing-led-target">Changing LED Target</h4>
 <p>The example below shows how to blink LEDs 4, 5, 6, 7, and 8. Note that the
