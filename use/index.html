@@ -319,15 +319,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-active-plugin" title="Set Active Plugin" class="md-nav__link">
-    Set Active Plugin
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-active-plugin-with-mobile-app" title="Verify Active Plugin with Mobile App" class="md-nav__link">
-    Verify Active Plugin with Mobile App
+  <a href="#set-active-plugin-with-mobile-app" title="Set Active Plugin with Mobile App" class="md-nav__link">
+    Set Active Plugin with Mobile App
   </a>
   
     <nav class="md-nav">
@@ -536,15 +529,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-active-plugin" title="Set Active Plugin" class="md-nav__link">
-    Set Active Plugin
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-active-plugin-with-mobile-app" title="Verify Active Plugin with Mobile App" class="md-nav__link">
-    Verify Active Plugin with Mobile App
+  <a href="#set-active-plugin-with-mobile-app" title="Set Active Plugin with Mobile App" class="md-nav__link">
+    Set Active Plugin with Mobile App
   </a>
   
     <nav class="md-nav">
@@ -695,32 +681,7 @@ and format similar to the example below.</p>
 phone </li>
 <li>use a tool like Vysor to display a virtual THETA V screen to your workstation. To set up and use Vysor, refer to the next section on Vysor.</li>
 </ul>
-<h2 id="set-active-plugin">Set Active Plugin</h2>
-<p>When you develop the plugin application, a companion mobile application can set the active plugin using the
-WiFi API of the camera. The Ricoh mobile application that
-most of your users will also have can set the active plugin. For
-testing, you can either use the Ricoh mobile app, build your own mobile app, or send a REST command
-using an HTTP testing tool such as 
-<a href="https://curl.haxx.se/">curl</a>  or <a href="https://www.getpostman.com/">Postman</a>. In the example below, I am using 
-Restlet Client, which is a browser-based Chrome tool similar to Postman.</p>
-<p>I am using THETA V firmware 1.20.1. This command may change in the future.  Use com.theta360.yourappname for the packageName. Note that in the example below, my package is called pluginsample.</p>
-<p><img alt="" src="../img/use/setPlugin.png" /></p>
-<p>This is the POST command:</p>
-<pre><code>http://192.168.1.1/osc/commands/execute
-
-{
-    "name": "camera._setPlugin",
-    "parameters": {
-        "packageName": "com.theta360.pluginsample",
-        "boot": "true",
-        "force": "false"
-    }
-}
-</code></pre>
-<p>Note that the command changed in firmware 1.20.1. The command 
-was previously <code>camera._setApplication</code> and is deprecated, though it 
-still works in firmware 1.20.1.</p>
-<h2 id="verify-active-plugin-with-mobile-app">Verify Active Plugin with Mobile App</h2>
+<h2 id="set-active-plugin-with-mobile-app">Set Active Plugin with Mobile App</h2>
 <p>Using the Ricoh mobile app, you can see and select the
 active plugin. </p>
 <p>Connect your RICOH THETA mobile app to your THETA V.</p>
