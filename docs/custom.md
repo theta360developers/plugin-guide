@@ -30,8 +30,8 @@ the file to inspect the available colors.
 
 ### 1.2 Identify LED Colors
 
-You'll only be able to change the color for the WiFi LED on the front of the camera.  Take a note of the color
-you want to use. The next steps in this tutorial will use MAGENTA.
+You'll only be able to change the color for the WiFi LED on the front of the camera.  Take note of the color
+you want to use. This tutorial will use MAGENTA.
 
     RED("red", 0b001),
     GREEN("green", 0b010),
@@ -95,7 +95,7 @@ Select *Save all* from the *File* menu.
 
 ### 1.9 Check installation setup
 
-You will use adb to install the apk into your THETA V. Confirm that you have the following set up:
+We will use adb to install the apk into your THETA V. Confirm that you have the following set up:
 
 * Your THETA V should be connected to your computer with a USB cable.
 * You must be using an unlocked THETA V that is in *Developer Mode*
@@ -113,9 +113,48 @@ Change directory into the same directory that your apk is in.
 
 ### 1.11 Use adb to install the apk into your camera
 
+In the directory that your apk is in, run the following command:
+
+    adb install -r app-debug.apk
+
+You should see  *Success*. If your daemon is not running, you will see message that it is starting.
+
+![](img/custom/led/adb-install.png)
+
+### 1.12 Reboot camera
+
+Hold the camera power button down for 4 seconds to shutdown the camera. You will see red LEDs flash.
+If you do not hold the power button down for 4 seconds, the camera will go into sleep mode. Once the 
+camera is shutdown, turn on the camera again by pressing the power button.
+
+### 1.13 Put camera into plug-in mode
+
+Press the mode button for longer than 2 seconds. LED2 will turn white.
+
+### 1.14 Verify LED is blinking
+
+After placing the camera into plug-in mode, you should see LED3 blinking with a magenta color.
+
 ![](img/custom/led/magenta-led.png)
 
-#### Changing LED Target
+Congratulations!  You've just successfully built and installed your first custom plug-in. You are now
+a plug-in developer!
+
+### 1.15 Troubleshooting
+
+#### Problem: `adb install -r app-debug.apk` hangs
+
+Unplug the USB cable from your computer and try again.
+
+#### Problem: Install succeeds, but nothing happens
+
+* Use the RICOH mobile app or the API to verify that plugin application is selected as the active plugin
+* Use Vysor to uninstall old plug-in
+* Use Vysor to start the plug-in. Click on the plug-in icon in Vysor with the same process you would use to launch
+a mobile phone app
+
+
+## 2 Control LED Target
 
 The example below shows how to blink LEDs 4, 5, 6, 7, and 8. Note that the
 color is ignored.
@@ -129,7 +168,7 @@ color is ignored.
 
 ![](img/custom/led/led-4-8.png)
 
-## Camera Buttons
+## 3 Control Camera Buttons
 
 
 There are three buttons you can map:
