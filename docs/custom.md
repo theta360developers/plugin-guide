@@ -85,6 +85,30 @@ Select *Save all* from the *File* menu.
 
 ### 1.7 Build apk 
 
+![](img/custom/led/buildApk.png)
+
+### 1.8 Identify location of apk
+
+![](img/custom/led/findApk.png)
+
+    theta-plugin-sdk > app > build > outputs > apk > debug > app-debug.apk
+
+### 1.9 Check installation setup
+
+You will use adb to install the apk into your THETA V. Confirm that you have the following set up:
+
+* Your THETA V should be connected to your computer with a USB cable.
+* You must be using an unlocked THETA V that is in *Developer Mode*
+* adb needs to be in your PATH
+
+If you are unsure about any of the steps above, refer to the previous sections. You can
+also ask questions in the community at [http://plugin.community.theta360.guide](http://plugin.community.theta360.guide).
+If you are at a workshop, please raise your hand and someone will assist you.
+
+### 1.10 Use adb to install the apk into your camera
+
+
+
 
 ![](img/custom/led/magenta-led.png)
 
