@@ -38,7 +38,7 @@
     
     
       
-        <title>Custom Development - THETA V Plugin Development Community Guide</title>
+        <title>Custom Development Tutorial - THETA V Plugin Development Community Guide</title>
       
     
     
@@ -100,7 +100,7 @@
                 THETA V Plugin Development Community Guide
               </span>
               <span class="md-header-nav__topic">
-                Custom Development
+                Custom Development Tutorial
               </span>
             
           
@@ -284,11 +284,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Custom Development
+        Custom Development Tutorial
       </label>
     
-    <a href="./" title="Custom Development" class="md-nav__link md-nav__link--active">
-      Custom Development
+    <a href="./" title="Custom Development Tutorial" class="md-nav__link md-nav__link--active">
+      Custom Development Tutorial
     </a>
     
       
@@ -309,41 +309,62 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#camera-leds" title="Camera LEDs" class="md-nav__link">
-    Camera LEDs
+  <a href="#1-control-camera-leds" title="1 Control Camera LEDs" class="md-nav__link">
+    1 Control Camera LEDs
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#led-colors" title="LED Colors" class="md-nav__link">
-    LED Colors
+  <a href="#11-first-steps-with-pluginlibrary" title="1.1 First steps with pluginlibrary" class="md-nav__link">
+    1.1 First steps with pluginlibrary
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#camera-led-identification" title="Camera LED Identification" class="md-nav__link">
-    Camera LED Identification
+  <a href="#12-identify-led-colors" title="1.2 Identify LED Colors" class="md-nav__link">
+    1.2 Identify LED Colors
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#led-usage-example" title="LED Usage Example" class="md-nav__link">
-    LED Usage Example
+  <a href="#13-identify-camera-led-targets" title="1.3 Identify Camera LED Targets" class="md-nav__link">
+    1.3 Identify Camera LED Targets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-review-led-example-in-sdk" title="1.4 Review LED Example in SDK." class="md-nav__link">
+    1.4 Review LED Example in SDK.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-change-led-color-and-blink-rate" title="1.5 Change LED color and blink rate" class="md-nav__link">
+    1.5 Change LED color and blink rate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-save-changes" title="1.6 Save changes" class="md-nav__link">
+    1.6 Save changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-build-apk" title="1.7 Build apk" class="md-nav__link">
+    1.7 Build apk
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#changing-led-color-and-blink-rate" title="Changing LED Color and Blink Rate" class="md-nav__link">
-    Changing LED Color and Blink Rate
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#changing-led-target" title="Changing LED Target" class="md-nav__link">
@@ -369,47 +390,24 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#internal-storage" title="Internal Storage" class="md-nav__link">
-    Internal Storage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-the-wifi-web-api" title="Using the WiFi Web API" class="md-nav__link">
-    Using the WiFi Web API
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dual-fish-still-image-example" title="Dual-Fish Still Image Example" class="md-nav__link">
-    Dual-Fish Still Image Example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#text-to-speech-status" title="Text to Speech Status" class="md-nav__link">
-    Text to Speech Status
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#xmp-data" title="XMP Data" class="md-nav__link">
-    XMP Data
-  </a>
-  
-</li>
-      
       
       
     </ul>
   
 </nav>
     
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../customtips/" title="Custom Development Tips" class="md-nav__link">
+      Custom Development Tips
+    </a>
   </li>
 
     
@@ -537,41 +535,62 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#camera-leds" title="Camera LEDs" class="md-nav__link">
-    Camera LEDs
+  <a href="#1-control-camera-leds" title="1 Control Camera LEDs" class="md-nav__link">
+    1 Control Camera LEDs
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#led-colors" title="LED Colors" class="md-nav__link">
-    LED Colors
+  <a href="#11-first-steps-with-pluginlibrary" title="1.1 First steps with pluginlibrary" class="md-nav__link">
+    1.1 First steps with pluginlibrary
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#camera-led-identification" title="Camera LED Identification" class="md-nav__link">
-    Camera LED Identification
+  <a href="#12-identify-led-colors" title="1.2 Identify LED Colors" class="md-nav__link">
+    1.2 Identify LED Colors
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#led-usage-example" title="LED Usage Example" class="md-nav__link">
-    LED Usage Example
+  <a href="#13-identify-camera-led-targets" title="1.3 Identify Camera LED Targets" class="md-nav__link">
+    1.3 Identify Camera LED Targets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-review-led-example-in-sdk" title="1.4 Review LED Example in SDK." class="md-nav__link">
+    1.4 Review LED Example in SDK.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-change-led-color-and-blink-rate" title="1.5 Change LED color and blink rate" class="md-nav__link">
+    1.5 Change LED color and blink rate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-save-changes" title="1.6 Save changes" class="md-nav__link">
+    1.6 Save changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-build-apk" title="1.7 Build apk" class="md-nav__link">
+    1.7 Build apk
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#changing-led-color-and-blink-rate" title="Changing LED Color and Blink Rate" class="md-nav__link">
-    Changing LED Color and Blink Rate
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#changing-led-target" title="Changing LED Target" class="md-nav__link">
@@ -597,41 +616,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#internal-storage" title="Internal Storage" class="md-nav__link">
-    Internal Storage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-the-wifi-web-api" title="Using the WiFi Web API" class="md-nav__link">
-    Using the WiFi Web API
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dual-fish-still-image-example" title="Dual-Fish Still Image Example" class="md-nav__link">
-    Dual-Fish Still Image Example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#text-to-speech-status" title="Text to Speech Status" class="md-nav__link">
-    Text to Speech Status
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#xmp-data" title="XMP Data" class="md-nav__link">
-    XMP Data
-  </a>
-  
-</li>
-      
       
       
     </ul>
@@ -649,7 +633,7 @@
                   <a href="https://github.com/theta360developers/plugin-guide/edit/master/docs/custom.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="custom-development">Custom Development</h1>
+                <h1 id="custom-development-tutorial">Custom Development Tutorial</h1>
 <h2 id="overview">Overview</h2>
 <p>Your primary way to control the camera is with the Android Camera class. Although this API was
 deprecated in level 21, it still works. Make sure you use the older Camera class and not
@@ -660,30 +644,16 @@ the newer camera2 API.</p>
 <a href="https://developer.android.com/reference/android/hardware/Camera.html">Camera</a>
 API. These are covered by using 
 <a href="https://developer.android.com/reference/android/hardware/Camera.Parameters.html">Camera.Parameters</a></p>
-<p>Example:</p>
-<pre><code>mParameters.set("RIC_PROC_STITCHING", "RicStaticStitching");
-mCamera.setParameters(mParameters);
+<h2 id="1-control-camera-leds">1 Control Camera LEDs</h2>
+<h3 id="11-first-steps-with-pluginlibrary">1.1 First steps with pluginlibrary</h3>
+<p>Open Android Studio. Identify the available colors. In <code>pluginlibrary</code>, the LED colors are defined in <code>LedColor</code>. Open
+the file to inspect the available colors.</p>
+<pre><code>pluginlibrary -&gt; java -&gt; com.theta360pluginlibrary -&gt; values -&gt; LedColor
 </code></pre>
-<p>Here's example of setting multiple parameters and then taking a picture.</p>
-<pre><code>    public void takePicture() {
-        mParameters.setPictureSize(5376, 2688);
-        mParameters.set("RIC_SHOOTING_MODE", "RicStillCaptureStd");
-        mParameters.set("RIC_EXPOSURE_MODE", "RicAutoExposureP");
-        mParameters.set("recording-hint", "false");
-        mParameters.setJpegThumbnailSize(320, 160);
-        mCamera.setParameters(mParameters);
-        mCamera.takePicture(null, null, mJpegPictureCallback);
-    }
-</code></pre>
-<p>There is extensive documentation on the 
-<a href="https://api.ricoh/docs/theta-plugin/sdk/">RICOH Developer Connection THETA Plug-in portal</a></p>
-<p>The plug-in SDK is a great place to get started. The SDK can be downloaded from <a href="https://github.com/ricohapi/theta-plugin-sdk">GitHub</a>. If
-you have any problems 
-please send an email to jcasman@oppkey.com for
- friendly (I hope) help.  :-)</p>
-<h2 id="camera-leds">Camera LEDs</h2>
-<h3 id="led-colors">LED Colors</h3>
-<p>In <code>pluginlibrary</code>, the LED colors are defined in <code>LedColor</code>.</p>
+<p><img alt="" src="../img/custom/led/led-colors.png" /></p>
+<h3 id="12-identify-led-colors">1.2 Identify LED Colors</h3>
+<p>You'll only be able to change the color for the WiFi LED on the front of the camera.  Take a note of the color
+you want to use. The next steps in this tutorial will use MAGENTA.</p>
 <pre><code>RED("red", 0b001),
 GREEN("green", 0b010),
 BLUE("blue", 0b100),
@@ -692,10 +662,17 @@ MAGENTA("magenta", 0b101),
 YELLOW("yellow", 0b011),
 WHITE("white", 0b111),;
 </code></pre>
-<h3 id="camera-led-identification">Camera LED Identification</h3>
+<h3 id="13-identify-camera-led-targets">1.3 Identify Camera LED Targets</h3>
+<p>The camera has 8 LEDs. You can control LEDs 3 through 8.
+This tutorial will focus on LED3, the WiFi LED. You can try different LEDs
+on your own. </p>
 <p><img alt="" src="../img/custom/led-all.png" /></p>
-<h3 id="led-usage-example">LED Usage Example</h3>
-<p>In <code>MainActivity</code>, there is an example for the LED.</p>
+<h3 id="14-review-led-example-in-sdk">1.4 Review LED Example in SDK.</h3>
+<p>In <code>MainActivity</code>, there is an example that blinks the WiFi LED.</p>
+<pre><code>app -&gt; java -&gt; com.theta360.pluginapplication -&gt; MainActivity
+</code></pre>
+<p><img alt="" src="../img/custom/led/mainActivity.png" /></p>
+<p>Look for this code section.</p>
 <pre><code>public void onKeyUp(int keyCode, KeyEvent event) {
     /**
         * You can control the LED of the camera.
@@ -704,11 +681,17 @@ WHITE("white", 0b111),;
         */
     notificationLedBlink(LedTarget.LED3, LedColor.BLUE, 1000);
 </code></pre>
-<h4 id="changing-led-color-and-blink-rate">Changing LED Color and Blink Rate</h4>
-<p>The example below will use flash LED3, the WiFi LED, faster and display
-a magenta color.</p>
+<p>You can change the target, color, and blink rate. The higher the number, the slower the rate.
+The example below will use a delay of 300 between blinks to cause the LED to blink faster.</p>
+<h3 id="15-change-led-color-and-blink-rate">1.5 Change LED color and blink rate</h3>
+<p>The example below will flash LED3, the WiFi LED, faster and display
+a magenta color.  Edit <code>MainActivity</code> as follows.</p>
 <pre><code>    notificationLedBlink(LedTarget.LED3, LedColor.MAGENTA, 300);
 </code></pre>
+<h3 id="16-save-changes">1.6 Save changes</h3>
+<p>Select <em>Save all</em> from the <em>File</em> menu. </p>
+<p><img alt="" src="../img/custom/led/saveAll.png" /></p>
+<h3 id="17-build-apk">1.7 Build apk</h3>
 <p><img alt="" src="../img/custom/led/magenta-led.png" /></p>
 <h4 id="changing-led-target">Changing LED Target</h4>
 <p>The example below shows how to blink LEDs 4, 5, 6, 7, and 8. Note that the
@@ -782,52 +765,6 @@ notificationLedBlink(LedTarget.LED8, LedColor.RED, 300);
             }
         }
 </code></pre>
-<h2 id="internal-storage">Internal Storage</h2>
-<p>The THETA V has a maximum storage size of 32GB. Developers can use 19GB  for storage of their plug-in applications and approximately 1.5GB for the plug-in itself. The partition for data is <code>/data</code>.</p>
-<p><code>/sdcard/DCIM/</code> can be used.</p>
-<p>This is an example of saving all your images to a sub-directory <code>Construction</code> and then
-adding a number to the file name. There's a separate bit of code to iterate the roomNumber.</p>
-<pre><code>String fileUrl = "/storage/emulated/0/DCIM/Construction/room" + roomNumberStr + "sect01.jpg";
-</code></pre>
-<h2 id="using-the-wifi-web-api">Using the WiFi Web API</h2>
-<p>In addition to the Android Camera class, your plug-in can also use the 
-<a href="https://developers.theta360.com/en/docs/v2.1/api_reference/">RICOH THETA API v2.1</a> web API. Send POST commands 
-to the camera's Web API at (http://localhost:8080/). When using the Web API from the plug-in, digest authentication is not required regardless of the wireless LAN mode. For detailed specifications of the Web API, please refer to <a href="https://developers.theta360.com/en/docs/v2.1/api_reference/">API Reference - v2.1 - API &amp; SDK | RICOH THETA Developers</a></p>
-<p>The Web API can not be used when the plug-in controls the camera device using the Camera API.</p>
-<h2 id="dual-fish-still-image-example">Dual-Fish Still Image Example</h2>
-<p>If you want to save still images as dual-fisheye, use this parameter:</p>
-<pre><code>mParameters.set("RIC_PROC_STITCHING_TYPE", "RicNonStitching");
-</code></pre>
-<p>The size of the dual-fish image is 5792x2896. Use the command below:</p>
-<pre><code>mParameters.setPictureSize(5792, 2896);
-</code></pre>
-<p><a href="https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/8?u=codetricity">This article</a> 
-provides more information on a plug-in built by community
-developer Ichi Hirota.</p>
-<p>The picture below is from Ichi Hirota.</p>
-<p><img alt="" src="../img/custom/dual-fish-sample.jpg" /></p>
-<p><img alt="" src="../img/custom/dual-fish-meta-data.png" /></p>
-<p>Here's example code from Ichi Hirota for bracketing.</p>
-<p><img alt="" src="../img/custom/dualfish-bracketing.png" /></p>
-<h2 id="text-to-speech-status">Text to Speech Status</h2>
-<p>As of May 21, 2018, <code>android.speech.tts</code> does not work. This may
-start working in a future update. For now, you can try other Text-Speech engines
-for Android. A list of untested engines is <a href="http://hyperionics.com/TtsSetup/eng/TtsInfo.html">here</a>. Another untested possibility
-could be the <a href="https://github.com/happyalu/Flite-TTS-Engine-for-Android">Flite TTS Engine for Android</a>.</p>
-<p>Currently, human speech can be played directly from the internal speaker of 
-the THETA V. However, the volume is low. We are trying to figure out how
-to increase the volume.</p>
-<p>Here's a <a href="https://youtu.be/AeebH7ONTkg">test of the THETA V playing "I Have a Dream"</a> by Dr. Martin Luther King Jr.</p>
-<h2 id="xmp-data">XMP Data</h2>
-<p>[UPDATED May 1, 2018] Images produced by the Plugin Application have XMP data in them. These screenshots are just looking at image properties using the GNOME Image Viewer app on an Ubuntu laptop. </p>
-<p>Here is an image taken with the Plugin Application, showing ProjectionType and more:</p>
-<p><img alt="" src="../img/custom/takenWITHplugin.png" /></p>
-<p>In comparison, here is an normal image taken at my desk, using the RICOH THETA V as a camera, not in Plug-in Mode. </p>
-<p><img alt="" src="../img/custom/takenWITHOUTplugin.png" /></p>
-<p>However, I have access to an example of a dual fish-eye image taken with a plug-in built by a developer that does not include XMP data. This may indicate that as you develop your plug-in, you may need to inject XMP data. There's an uncomfirmed rumor that Ricoh is working
-on a library to help with this.</p>
-<p>Here's the example:</p>
-<p><img alt="" src="../img/custom/ichidualfisheyeplugin.png" /></p>
                 
                   
                 
@@ -861,13 +798,13 @@ on a library to help with this.</p>
           </a>
         
         
-          <a href="../configuration/" title="Plugin Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../customtips/" title="Custom Development Tips" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Plugin Configuration
+                Custom Development Tips
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

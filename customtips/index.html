@@ -13,7 +13,7 @@
         <meta name="description" content="RICOH THETA development for plug-ins and 360 applications include AR and VR applications">
       
       
-        <link rel="canonical" href="http://theta360.guide/plugin-guide/workflow/">
+        <link rel="canonical" href="http://theta360.guide/plugin-guide/customtips/">
       
       
         <meta name="author" content="Craig Oda and Jesse Casman">
@@ -38,7 +38,7 @@
     
     
       
-        <title>Workflow Tips - THETA V Plugin Development Community Guide</title>
+        <title>Custom Development Tips - THETA V Plugin Development Community Guide</title>
       
     
     
@@ -100,7 +100,7 @@
                 THETA V Plugin Development Community Guide
               </span>
               <span class="md-header-nav__topic">
-                Workflow Tips
+                Custom Development Tips
               </span>
             
           
@@ -285,11 +285,75 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../customtips/" title="Custom Development Tips" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Custom Development Tips
+      </label>
+    
+    <a href="./" title="Custom Development Tips" class="md-nav__link md-nav__link--active">
       Custom Development Tips
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#internal-storage" title="Internal Storage" class="md-nav__link">
+    Internal Storage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-wifi-web-api" title="Using the WiFi Web API" class="md-nav__link">
+    Using the WiFi Web API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dual-fish-still-image-example" title="Dual-Fish Still Image Example" class="md-nav__link">
+    Dual-Fish Still Image Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-to-speech-status" title="Text to Speech Status" class="md-nav__link">
+    Text to Speech Status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xmp-data" title="XMP Data" class="md-nav__link">
+    XMP Data
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -309,101 +373,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Workflow Tips
-      </label>
-    
-    <a href="./" title="Workflow Tips" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../workflow/" title="Workflow Tips" class="md-nav__link">
       Workflow Tips
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#debugging" title="Debugging" class="md-nav__link">
-    Debugging
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#save-logcat-to-file-on-camera" title="Save logcat to file on camera" class="md-nav__link">
-    Save logcat to file on camera
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#view-logcat-on-workstation" title="View logcat on workstation" class="md-nav__link">
-    View logcat on workstation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#set-active-plugin" title="Set Active Plugin" class="md-nav__link">
-    Set Active Plugin
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#save-http-test-scripts-in-separate-tool" title="Save HTTP Test Scripts in Separate Tool" class="md-nav__link">
-    Save HTTP Test Scripts in Separate Tool
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-standard-android-packages" title="Using Standard Android Packages" class="md-nav__link">
-    Using Standard Android Packages
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enabling-wifi-for-all-apps" title="Enabling WiFi for All Apps" class="md-nav__link">
-    Enabling WiFi for All Apps
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -500,62 +474,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#debugging" title="Debugging" class="md-nav__link">
-    Debugging
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#save-logcat-to-file-on-camera" title="Save logcat to file on camera" class="md-nav__link">
-    Save logcat to file on camera
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#view-logcat-on-workstation" title="View logcat on workstation" class="md-nav__link">
-    View logcat on workstation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#set-active-plugin" title="Set Active Plugin" class="md-nav__link">
-    Set Active Plugin
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#save-http-test-scripts-in-separate-tool" title="Save HTTP Test Scripts in Separate Tool" class="md-nav__link">
-    Save HTTP Test Scripts in Separate Tool
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-standard-android-packages" title="Using Standard Android Packages" class="md-nav__link">
-    Using Standard Android Packages
+  <a href="#internal-storage" title="Internal Storage" class="md-nav__link">
+    Internal Storage
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#enabling-wifi-for-all-apps" title="Enabling WiFi for All Apps" class="md-nav__link">
-    Enabling WiFi for All Apps
+  <a href="#using-the-wifi-web-api" title="Using the WiFi Web API" class="md-nav__link">
+    Using the WiFi Web API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dual-fish-still-image-example" title="Dual-Fish Still Image Example" class="md-nav__link">
+    Dual-Fish Still Image Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-to-speech-status" title="Text to Speech Status" class="md-nav__link">
+    Text to Speech Status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xmp-data" title="XMP Data" class="md-nav__link">
+    XMP Data
   </a>
   
 </li>
@@ -574,82 +522,62 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/theta360developers/plugin-guide/edit/master/docs/workflow.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/theta360developers/plugin-guide/edit/master/docs/customtips.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="development-workflow-tips">Development Workflow Tips</h1>
-<h2 id="debugging">Debugging</h2>
-<h3 id="save-logcat-to-file-on-camera">Save logcat to file on camera</h3>
-<p>This is a typical debugging workflow:</p>
-<ol>
-<li>Enter <code>adb shell</code> in terminal to enter the shell in the camera.</li>
-<li><code>logcat &gt; /sdcard/DCIM/log.txt&amp;</code></li>
-<li>Reproduce issue, camera may reboot.</li>
-<li><code>adb pull /sdcard/DCIM/log.txt</code> in terminal </li>
-</ol>
-<h3 id="view-logcat-on-workstation">View logcat on workstation</h3>
-<p>For some messages, you can also debug the THETA V with a USB 
-cable and adb in real-time. The camera will 
-operate in Plugin Mode while connected to adb. It's better to
-save to save as explained above because the camera may lock or 
-reboot when it encounters the bug and you'll lose the connection.</p>
-<p><img alt="" src="../img/debug/debug-connection.png" /></p>
-<p>You will be able to get debug messages similar to the example below:</p>
-<pre><code>   12-14 07:53:24.105  1171  1373 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+                <h1 id="custom-development-tips">Custom Development Tips</h1>
+<p>There is extensive documentation on the 
+<a href="https://api.ricoh/docs/theta-plugin/sdk/">RICOH Developer Connection THETA Plug-in portal</a></p>
+<p>The plug-in SDK is a great place to get started. The SDK can be downloaded from <a href="https://github.com/ricohapi/theta-plugin-sdk">GitHub</a>. If
+you have any problems 
+please send an email to jcasman@oppkey.com for
+ friendly (I hope) help.  :-)</p>
+<h2 id="internal-storage">Internal Storage</h2>
+<p>The THETA V has a maximum storage size of 32GB. Developers can use 19GB  for storage of their plug-in applications and approximately 1.5GB for the plug-in itself. The partition for data is <code>/data</code>.</p>
+<p><code>/sdcard/DCIM/</code> can be used.</p>
+<p>This is an example of saving all your images to a sub-directory <code>Construction</code> and then
+adding a number to the file name. There's a separate bit of code to iterate the roomNumber.</p>
+<pre><code>String fileUrl = "/storage/emulated/0/DCIM/Construction/room" + roomNumberStr + "sect01.jpg";
 </code></pre>
-<p>Example debug output with the camera connected to my Linux computer with a USB cable 
-and in plug-in mode.</p>
-<p><img alt="" src="../img/debug/debug-screen.png" /></p>
-<h2 id="set-active-plugin">Set Active Plugin</h2>
-<p>When you develop the plugin application, a companion mobile application can set the active plugin using the
-WiFi API of the camera. The Ricoh mobile application that
-most of your users will also have can set the active plugin. For
-testing, you can either use the Ricoh mobile app, build your own mobile app, or send a REST command
-using an HTTP testing tool such as 
-<a href="https://curl.haxx.se/">curl</a>  or <a href="https://www.getpostman.com/">Postman</a>. In the example below, I am using 
-Restlet Client, which is a browser-based Chrome tool similar to Postman.</p>
-<p>I am using THETA V firmware 1.20.1. This command may change in the future.  Use com.theta360.yourappname for the packageName. Note that in the example below, my package is called pluginsample.</p>
-<p><img alt="" src="../img/use/setPlugin.png" /></p>
-<p>This is the POST command:</p>
-<pre><code>http://192.168.1.1/osc/commands/execute
-
-{
-    "name": "camera._setPlugin",
-    "parameters": {
-        "packageName": "com.theta360.pluginsample",
-        "boot": "true",
-        "force": "false"
-    }
-}
+<h2 id="using-the-wifi-web-api">Using the WiFi Web API</h2>
+<p>In addition to the Android Camera class, your plug-in can also use the 
+<a href="https://developers.theta360.com/en/docs/v2.1/api_reference/">RICOH THETA API v2.1</a> web API. Send POST commands 
+to the camera's Web API at (http://localhost:8080/). When using the Web API from the plug-in, digest authentication is not required regardless of the wireless LAN mode. For detailed specifications of the Web API, please refer to <a href="https://developers.theta360.com/en/docs/v2.1/api_reference/">API Reference - v2.1 - API &amp; SDK | RICOH THETA Developers</a></p>
+<p>The Web API can not be used when the plug-in controls the camera device using the Camera API.</p>
+<h2 id="dual-fish-still-image-example">Dual-Fish Still Image Example</h2>
+<p>If you want to save still images as dual-fisheye, use this parameter:</p>
+<pre><code>mParameters.set("RIC_PROC_STITCHING_TYPE", "RicNonStitching");
 </code></pre>
-<p>Note that the command changed in firmware 1.20.1. The command 
-was previously <code>camera._setApplication</code> and is deprecated, though it 
-still works in firmware 1.20.1.</p>
-<h3 id="save-http-test-scripts-in-separate-tool">Save HTTP Test Scripts in Separate Tool</h3>
-<p>Although you can use a curl script to switch plugins with the WiFi API,
-I find it easier to use a tool like 
-Restlet Client to save my HTTP test scripts into a group. I can select an
-individual test and run it with a push of a button. To switch plugins, I 
-saved a script for  <code>camera._setPlugin</code>. You can get a list of plugins with 
-<code>camera._listPlugins</code>.</p>
-<p><img alt="" src="../img/custom/restlet-client.png" /></p>
-<p>In addition to saving the HTTP test scripts, Restlet Client or Postman will show the
-JSON response in <em>pretty</em> format automatically. With curl, you will need to
-pipe the output to another tool to get <em>pretty print</em>.</p>
-<p><img alt="" src="../img/custom/restlet-client-response.png" /></p>
-<h2 id="using-standard-android-packages">Using Standard Android Packages</h2>
-<p>You can download apks from many sites for testing things like 
-communication protocol with Facebook Messenger or video transmission.</p>
-<p>I've been using this site with good results.</p>
-<p><a href="https://apkpure.com/app">https://apkpure.com/app</a></p>
-<p>For example, I can send 360 images directly from the THETA V storage to Facebook Messenger.
-The images are viewable in 360 by the recipient.</p>
-<p><img alt="" src="../img/workflow/facebook-messenger.png" /></p>
-<h2 id="enabling-wifi-for-all-apps">Enabling WiFi for All Apps</h2>
-<p>With the keyboard enabled, you can now type in your password for your WiFi hotspot to connect to the Internet.</p>
-<p><img alt="" src="../img/workflow/wifi/wlan-switch.png" /></p>
-<p>Connect to WiFi and all your apps and plug-ins will be able to connect to the Internet.</p>
-<p><img alt="" src="../img/workflow/wifi/wifi-connected.png" /></p>
+<p>The size of the dual-fish image is 5792x2896. Use the command below:</p>
+<pre><code>mParameters.setPictureSize(5792, 2896);
+</code></pre>
+<p><a href="https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/8?u=codetricity">This article</a> 
+provides more information on a plug-in built by community
+developer Ichi Hirota.</p>
+<p>The picture below is from Ichi Hirota.</p>
+<p><img alt="" src="../img/custom/dual-fish-sample.jpg" /></p>
+<p><img alt="" src="../img/custom/dual-fish-meta-data.png" /></p>
+<p>Here's example code from Ichi Hirota for bracketing.</p>
+<p><img alt="" src="../img/custom/dualfish-bracketing.png" /></p>
+<h2 id="text-to-speech-status">Text to Speech Status</h2>
+<p>As of May 21, 2018, <code>android.speech.tts</code> does not work. This may
+start working in a future update. For now, you can try other Text-Speech engines
+for Android. A list of untested engines is <a href="http://hyperionics.com/TtsSetup/eng/TtsInfo.html">here</a>. Another untested possibility
+could be the <a href="https://github.com/happyalu/Flite-TTS-Engine-for-Android">Flite TTS Engine for Android</a>.</p>
+<p>Currently, human speech can be played directly from the internal speaker of 
+the THETA V. However, the volume is low. We are trying to figure out how
+to increase the volume.</p>
+<p>Here's a <a href="https://youtu.be/AeebH7ONTkg">test of the THETA V playing "I Have a Dream"</a> by Dr. Martin Luther King Jr.</p>
+<h2 id="xmp-data">XMP Data</h2>
+<p>[UPDATED May 1, 2018] Images produced by the Plugin Application have XMP data in them. These screenshots are just looking at image properties using the GNOME Image Viewer app on an Ubuntu laptop. </p>
+<p>Here is an image taken with the Plugin Application, showing ProjectionType and more:</p>
+<p><img alt="" src="../img/custom/takenWITHplugin.png" /></p>
+<p>In comparison, here is an normal image taken at my desk, using the RICOH THETA V as a camera, not in Plug-in Mode. </p>
+<p><img alt="" src="../img/custom/takenWITHOUTplugin.png" /></p>
+<p>However, I have access to an example of a dual fish-eye image taken with a plug-in built by a developer that does not include XMP data. This may indicate that as you develop your plug-in, you may need to inject XMP data. There's an uncomfirmed rumor that Ricoh is working
+on a library to help with this.</p>
+<p>Here's the example:</p>
+<p><img alt="" src="../img/custom/ichidualfisheyeplugin.png" /></p>
                 
                   
                 
@@ -668,7 +596,7 @@ The images are viewable in 360 by the recipient.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../configuration/" title="Plugin Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../custom/" title="Custom Development Tutorial" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -677,19 +605,19 @@ The images are viewable in 360 by the recipient.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Plugin Configuration
+                Custom Development Tutorial
               </span>
             </div>
           </a>
         
         
-          <a href="../troubleshoot/" title="Troubleshooting" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../configuration/" title="Plugin Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Troubleshooting
+                Plugin Configuration
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
