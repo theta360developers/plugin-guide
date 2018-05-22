@@ -286,6 +286,16 @@
             "title": "Troubleshooting"
         }, 
         {
+            "location": "/hardware/", 
+            "text": "Camera Hardware\n\n\n\n\nAPQ8053 (\nSnapdragon 625\n)\n\n\nCPU: Cortex A-53 x8\n\n\nGPU: Qualcomm AdrenoTM 506\n\n\n\n\n\n\n3GB LPDDR3 SDRAM, 32GB eMMC\n\n\nWLAN/BT (2 models)\n\n\n2.4GHz (1-11ch) only\n\n\n2.4GHz(1-11ch) + 5GHz(W52)\n\n\n\n\n\n\n12MP CMOS x2, 4ch MEMS microphones, 1ch speaker", 
+            "title": "Camera Hardware"
+        }, 
+        {
+            "location": "/hardware/#camera-hardware", 
+            "text": "APQ8053 ( Snapdragon 625 )  CPU: Cortex A-53 x8  GPU: Qualcomm AdrenoTM 506    3GB LPDDR3 SDRAM, 32GB eMMC  WLAN/BT (2 models)  2.4GHz (1-11ch) only  2.4GHz(1-11ch) + 5GHz(W52)    12MP CMOS x2, 4ch MEMS microphones, 1ch speaker", 
+            "title": "Camera Hardware"
+        }, 
+        {
             "location": "/fun/", 
             "text": "Fun Tests To Explore THETA V Capability\n\n\nThis section is intended to show off some functionality and tests that are a \"good start\" but maybe need more effort. It's constantly a work in progress. But hopefully it helps point you in the right direction or give you some interesting starting points to do more. \n\n\nApps\n\n\nSince you've got a full Android OS funning inside the camera, there are quite a bit of apps and utilities that are already available. This is a real strength of the camera. This video shows some GREAT tips and tricks for setting up different Android apps running inside of the THETA V in plug-in mode. In includes details on setting up Developer Mode, turning off the camera services, using Vysor and using a virtual keyboard to connect to wifi, and tons more. \n\n\n\n\nHere's a simple test after installed Facebook Messenger in a THETA V. We used Facebook Messenger to receive video and audio streams from the Internet. The video also shows the  THETA V playing music and audio from internal plug-ins.\n\n\n\n\nSound\n\n\nThe THETA has all the functionality of a normal Android system. This includes using its speakers and mics (4 total) to interact with users. It's clear that the THETA V plug-in technology can be used to provide audio prompts to users, including human voice feedback. \"Hey, THETA, take a picture now,\" for example.\n\n\nHere's a short, cool test using the internal speaker to play human speech. The audio file is single channel, 22050Hz 32-bit.", 
             "title": "Fun Tests"
