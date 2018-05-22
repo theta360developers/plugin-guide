@@ -31,7 +31,10 @@ This document covers the following development process and tips:
 - [Test the plug-in](/setup/#import-ricoh-plugin-sdk-and-update-android-build-system)
 - [Use Vysor to help with testing ](/vysor/)
 - [Custom Development](/custom/)
+- [Configuring your plug-in](/configuration/)
 - [Development Workflow Tips](/workflow/)
+- [Troubleshooting](/troubleshoot/)
+- [Fun tests](/fun/)
 - [Concept Ideas](/concept/)
 - [Community and Getting Help](/community/)
 
