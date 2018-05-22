@@ -156,38 +156,7 @@ phone
 * use a tool like Vysor to display a virtual THETA V screen to your workstation. To set up and use Vysor, refer to the next section on Vysor.
 
 
-## Set Active Plugin
-
-When you develop the plugin application, a companion mobile application can set the active plugin using the
-WiFi API of the camera. The Ricoh mobile application that
-most of your users will also have can set the active plugin. For
-testing, you can either use the Ricoh mobile app, build your own mobile app, or send a REST command
-using an HTTP testing tool such as 
-[curl](https://curl.haxx.se/)  or [Postman](https://www.getpostman.com/). In the example below, I am using 
-Restlet Client, which is a browser-based Chrome tool similar to Postman.
-
-I am using THETA V firmware 1.20.1. This command may change in the future.  Use com.theta360.yourappname for the packageName. Note that in the example below, my package is called pluginsample.
-
-![](img/use/setPlugin.png)
-
-This is the POST command:
-
-    http://192.168.1.1/osc/commands/execute
-
-    {
-        "name": "camera._setPlugin",
-        "parameters": {
-            "packageName": "com.theta360.pluginsample",
-            "boot": "true",
-            "force": "false"
-        }
-    }
-
-Note that the command changed in firmware 1.20.1. The command 
-was previously `camera._setApplication` and is deprecated, though it 
-still works in firmware 1.20.1.
-
-## Verify Active Plugin with Mobile App
+## Set Active Plugin with Mobile App
 
 Using the Ricoh mobile app, you can see and select the
 active plugin. 

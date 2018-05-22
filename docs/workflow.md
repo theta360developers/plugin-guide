@@ -31,11 +31,41 @@ and in plug-in mode.
 
 ![](img/debug/debug-screen.png)
 
-## Save HTTP Test Scripts in Separate Tool 
 
-To set the active plugin, you can also use the WiFi API. To use 
-the WiFi API, you must connect your 
-computer to the THETA with WiFi. 
+## Set Active Plugin
+
+When you develop the plugin application, a companion mobile application can set the active plugin using the
+WiFi API of the camera. The Ricoh mobile application that
+most of your users will also have can set the active plugin. For
+testing, you can either use the Ricoh mobile app, build your own mobile app, or send a REST command
+using an HTTP testing tool such as 
+[curl](https://curl.haxx.se/)  or [Postman](https://www.getpostman.com/). In the example below, I am using 
+Restlet Client, which is a browser-based Chrome tool similar to Postman.
+
+I am using THETA V firmware 1.20.1. This command may change in the future.  Use com.theta360.yourappname for the packageName. Note that in the example below, my package is called pluginsample.
+
+![](img/use/setPlugin.png)
+
+This is the POST command:
+
+    http://192.168.1.1/osc/commands/execute
+
+    {
+        "name": "camera._setPlugin",
+        "parameters": {
+            "packageName": "com.theta360.pluginsample",
+            "boot": "true",
+            "force": "false"
+        }
+    }
+
+Note that the command changed in firmware 1.20.1. The command 
+was previously `camera._setApplication` and is deprecated, though it 
+still works in firmware 1.20.1.
+
+
+### Save HTTP Test Scripts in Separate Tool 
+
 Although you can use a curl script to switch plugins with the WiFi API,
 I find it easier to use a tool like 
 Restlet Client to save my HTTP test scripts into a group. I can select an
