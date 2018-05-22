@@ -239,18 +239,6 @@ In `MainActivity.java`, there is an example of using the `keyCode`.
                 }
             }
 
-## Audio
-
-New library has these values in `PluginActivity`. As of 5/1, still need to test.
-
-    private static final String ACTION_AUDIO_SHUTTER = "com.theta360.plugin.ACTION_AUDIO_SHUTTER";
-    private static final String ACTION_AUDIO_SH_OPEN = "com.theta360.plugin.ACTION_AUDIO_SH_OPEN";
-    private static final String ACTION_AUDIO_SH_CLOSE = "com.theta360.plugin.ACTION_AUDIO_SH_CLOSE";
-    private static final String ACTION_AUDIO_MOVSTART = "com.theta360.plugin.ACTION_AUDIO_MOVSTART";
-    private static final String ACTION_AUDIO_MOVSTOP = "com.theta360.plugin.ACTION_AUDIO_MOVSTOP";
-    private static final String ACTION_AUDIO_SELF = "com.theta360.plugin.ACTION_AUDIO_SELF";
-    private static final String ACTION_AUDIO_WARNING = "com.theta360.plugin.ACTION_AUDIO_WARNING";
-
 
 ## Text to Speech
 As of May 8, 2018, `android.speech.tts` does not work. This may
@@ -264,18 +252,6 @@ to increase the volume.
 
 Here's a [test of the THETA V playing "I Have a Dream"](https://youtu.be/AeebH7ONTkg) by Dr. Martin Luther King Jr.
 
-
-## Broadcast Examples
-
-__ 5/1: Need to update for new library __
-
-__Broadcast to sound error tone__
-   
-    com.theta360.devicelibrary.receiver.ACTION_AUDIO_WARNING
-
-__Broadcast to launch shooting application after plugin finish__
-
-    com.theta360.devicelibrary.receiver.ACTION_BOOT_BASIC
 
 ## Storage in eMMC
 
