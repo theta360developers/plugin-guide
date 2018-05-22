@@ -41,108 +41,6 @@ you have any problems
 please send an email to jcasman@oppkey.com for
  friendly (I hope) help.  :-)
 
-## Camera Hardware
-
-- APQ8053 ([Snapdragon 625](https://www.qualcomm.com/products/snapdragon/processors/625))
-    - CPU: Cortex A-53 x8
-    - GPU: Qualcomm AdrenoTM 506
-- 3GB LPDDR3 SDRAM, 32GB eMMC
-- WLAN/BT (2 models)
-    - 2.4GHz (1-11ch) only
-    - 2.4GHz(1-11ch) + 5GHz(W52)
-- 12MP CMOS x2, 4ch MEMS microphones, 1ch speaker
-
-## Using the WiFi Web API 
-
-In addition to the Android Camera class, your plug-in can also use the 
-[RICOH THETA API v2.1](https://developers.theta360.com/en/docs/v2.1/api_reference/) web API. Send POST commands 
-to the camera's Web API at (http://localhost:8080/). When using the Web API from the plug-in, digest authentication is not required regardless of the wireless LAN mode. For detailed specifications of the Web API, please refer to [API Reference - v2.1 - API & SDK \| RICOH THETA Developers](https://developers.theta360.com/en/docs/v2.1/api_reference/)
-
-The Web API can not be used when the plug-in controls the camera device using the Camera API.
-
-
-## Configuration of Plug-in With Web Server
-
-If you want to configure your plug-in with an external mobile app, one strategy is to embed an HTTP server into
-your plug-in. A simple mobile app can then talk to the plug-in through the embedded HTTP server.
-With this configuration strategy, the plug-in can launch a web server on port 8888 that provides a WebUI or its own API. 
-
-You must use port 8888 on the plug-in web server, as the other ports are blocked. You can then
-build a basic app on a smartphone to access the 
-plug-in web server on the THETA V.
-
-Developers have reported success using NanoHttpd, which is available from GitHub at 
-[https://github.com/NanoHttpd/nanohttpd](https://github.com/NanoHttpd/nanohttpd).
-
-Another way to access the plug-in configuration page you create is to use the OpenPluginPage API from the Ricoh v2.1 WiFi API on port 80. It will redirect to port 8888.
-
-Information on the OpenPluginPage API is available here:
-
-[https://developers.theta360.com/en/docs/v2.1/api_reference/protocols/open_plugin_page.html](https://developers.theta360.com/en/docs/v2.1/api_reference/protocols/open_plugin_page.html)
-
-
-Your app can look for the presence or absence of the web server by using the Web API's [camera._listPlugins](https://developers.theta360.com/en/docs/v2.1/api_reference/commands/camera._list_plugins.html). The information from camera._listPlugins consists of information described in the configuration file (\assets\settings.json) of each plug-in. If the setting file does not exist or the setting value is incorrect, the default value is written in the camera._listPlugins information. 
-
-
-Sample configuration file:
-
-~~~
-{
- "webServer": true
-}
-~~~
-
-From talking with the community, we think the process is shown below.
-
-![](img/custom/theta-v-plugin-configuration.png)
-
-
-
-
-
-## Internal Storage 
-The THETA V has a maximum storage size of 32GB. Developers can use 19GB  for storage of their plug-in applications and approximately 1.5GB for the plug-in itself. The partition for data is `/data`.
-
-The sample code stores data to `DCIM`.
-
-This is an example of saving all your images to a sub-directory `Construction` and then
-adding a number to the file name. There's a separate bit of code to iterate the roomNumber.
-
-    String fileUrl = "/storage/emulated/0/DCIM/Construction/room" + roomNumberStr + "sect01.jpg";
-
-
-
-
-## Finishing a Plug-in
-
-Push and hold the Mode Button for 2 seconds to finish. When the plug-in detects that the Mode Button has been pressed for 2 seconds, it must quit. When the plug-in finishes, a [notification of termination for the plug-in](/docs/theta-plugin-ref/broadcast-intent/#notifying-completion-of-plug-in) must be made.
-
-
-
-## Dual-Fish Still Image
-
-If you want to save still images as dual-fisheye, use this parameter:
-
-    mParameters.set("RIC_PROC_STITCHING_TYPE", "RicNonStitching");
-
-The size of the dual-fish image is 5792x2896. Use the command below:
-
-    mParameters.setPictureSize(5792, 2896);
-
-[This article](https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/8?u=codetricity) 
-provides more information on a plug-in built by community
-developer Ichi Hirota.
-
-The picture below is from Ichi Hirota.
-
-![](img/custom/dual-fish-sample.jpg)
-
-![](img/custom/dual-fish-meta-data.png)
-
-Here's example code from Ichi Hirota for bracketing.
-
-![](img/custom/dualfish-bracketing.png)
-
 
 ## Camera LEDs
 
@@ -240,8 +138,53 @@ In `MainActivity.java`, there is an example of using the `keyCode`.
             }
 
 
-## Text to Speech
-As of May 8, 2018, `android.speech.tts` does not work. This may
+
+## Internal Storage 
+The THETA V has a maximum storage size of 32GB. Developers can use 19GB  for storage of their plug-in applications and approximately 1.5GB for the plug-in itself. The partition for data is `/data`.
+
+`/sdcard/DCIM/` can be used.
+
+This is an example of saving all your images to a sub-directory `Construction` and then
+adding a number to the file name. There's a separate bit of code to iterate the roomNumber.
+
+    String fileUrl = "/storage/emulated/0/DCIM/Construction/room" + roomNumberStr + "sect01.jpg";
+
+
+## Using the WiFi Web API 
+
+In addition to the Android Camera class, your plug-in can also use the 
+[RICOH THETA API v2.1](https://developers.theta360.com/en/docs/v2.1/api_reference/) web API. Send POST commands 
+to the camera's Web API at (http://localhost:8080/). When using the Web API from the plug-in, digest authentication is not required regardless of the wireless LAN mode. For detailed specifications of the Web API, please refer to [API Reference - v2.1 - API & SDK \| RICOH THETA Developers](https://developers.theta360.com/en/docs/v2.1/api_reference/)
+
+The Web API can not be used when the plug-in controls the camera device using the Camera API.
+
+## Dual-Fish Still Image Example
+
+If you want to save still images as dual-fisheye, use this parameter:
+
+    mParameters.set("RIC_PROC_STITCHING_TYPE", "RicNonStitching");
+
+The size of the dual-fish image is 5792x2896. Use the command below:
+
+    mParameters.setPictureSize(5792, 2896);
+
+[This article](https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/8?u=codetricity) 
+provides more information on a plug-in built by community
+developer Ichi Hirota.
+
+The picture below is from Ichi Hirota.
+
+![](img/custom/dual-fish-sample.jpg)
+
+![](img/custom/dual-fish-meta-data.png)
+
+Here's example code from Ichi Hirota for bracketing.
+
+![](img/custom/dualfish-bracketing.png)
+
+
+## Text to Speech Status
+As of May 21, 2018, `android.speech.tts` does not work. This may
 start working in a future update. For now, you can try other Text-Speech engines
 for Android. A list of untested engines is [here](http://hyperionics.com/TtsSetup/eng/TtsInfo.html). Another untested possibility
 could be the [Flite TTS Engine for Android](https://github.com/happyalu/Flite-TTS-Engine-for-Android).
@@ -252,10 +195,6 @@ to increase the volume.
 
 Here's a [test of the THETA V playing "I Have a Dream"](https://youtu.be/AeebH7ONTkg) by Dr. Martin Luther King Jr.
 
-
-## Storage in eMMC
-
-`/sdcard/DCIM/` can be used.
 
 ## XMP Data
 [UPDATED May 1, 2018] Images produced by the Plugin Application have XMP data in them. These screenshots are just looking at image properties using the GNOME Image Viewer app on an Ubuntu laptop. 
