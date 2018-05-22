@@ -391,12 +391,47 @@
     1.11 Use adb to install the apk into your camera
   </a>
   
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-reboot-camera" title="1.12 Reboot camera" class="md-nav__link">
+    1.12 Reboot camera
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-put-camera-into-plug-in-mode" title="1.13 Put camera into plug-in mode" class="md-nav__link">
+    1.13 Put camera into plug-in mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-verify-led-is-blinking" title="1.14 Verify LED is blinking" class="md-nav__link">
+    1.14 Verify LED is blinking
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115-troubleshooting" title="1.15 Troubleshooting" class="md-nav__link">
+    1.15 Troubleshooting
+  </a>
+  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#changing-led-target" title="Changing LED Target" class="md-nav__link">
-    Changing LED Target
+  <a href="#problem-adb-install-r-app-debugapk-hangs" title="Problem: adb install -r app-debug.apk hangs" class="md-nav__link">
+    Problem: adb install -r app-debug.apk hangs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-install-succeeds-but-nothing-happens" title="Problem: Install succeeds, but nothing happens" class="md-nav__link">
+    Problem: Install succeeds, but nothing happens
   </a>
   
 </li>
@@ -412,8 +447,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#camera-buttons" title="Camera Buttons" class="md-nav__link">
-    Camera Buttons
+  <a href="#2-control-led-target" title="2 Control LED Target" class="md-nav__link">
+    2 Control LED Target
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-control-camera-buttons" title="3 Control Camera Buttons" class="md-nav__link">
+    3 Control Camera Buttons
   </a>
   
 </li>
@@ -645,12 +687,47 @@
     1.11 Use adb to install the apk into your camera
   </a>
   
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-reboot-camera" title="1.12 Reboot camera" class="md-nav__link">
+    1.12 Reboot camera
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-put-camera-into-plug-in-mode" title="1.13 Put camera into plug-in mode" class="md-nav__link">
+    1.13 Put camera into plug-in mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-verify-led-is-blinking" title="1.14 Verify LED is blinking" class="md-nav__link">
+    1.14 Verify LED is blinking
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115-troubleshooting" title="1.15 Troubleshooting" class="md-nav__link">
+    1.15 Troubleshooting
+  </a>
+  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#changing-led-target" title="Changing LED Target" class="md-nav__link">
-    Changing LED Target
+  <a href="#problem-adb-install-r-app-debugapk-hangs" title="Problem: adb install -r app-debug.apk hangs" class="md-nav__link">
+    Problem: adb install -r app-debug.apk hangs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-install-succeeds-but-nothing-happens" title="Problem: Install succeeds, but nothing happens" class="md-nav__link">
+    Problem: Install succeeds, but nothing happens
   </a>
   
 </li>
@@ -666,8 +743,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#camera-buttons" title="Camera Buttons" class="md-nav__link">
-    Camera Buttons
+  <a href="#2-control-led-target" title="2 Control LED Target" class="md-nav__link">
+    2 Control LED Target
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-control-camera-buttons" title="3 Control Camera Buttons" class="md-nav__link">
+    3 Control Camera Buttons
   </a>
   
 </li>
@@ -708,8 +792,8 @@ the file to inspect the available colors.</p>
 </code></pre>
 <p><img alt="" src="../img/custom/led/led-colors.png" /></p>
 <h3 id="12-identify-led-colors">1.2 Identify LED Colors</h3>
-<p>You'll only be able to change the color for the WiFi LED on the front of the camera.  Take a note of the color
-you want to use. The next steps in this tutorial will use MAGENTA.</p>
+<p>You'll only be able to change the color for the WiFi LED on the front of the camera.  Take note of the color
+you want to use. This tutorial will use MAGENTA.</p>
 <pre><code>RED("red", 0b001),
 GREEN("green", 0b010),
 BLUE("blue", 0b100),
@@ -754,7 +838,7 @@ a magenta color.  Edit <code>MainActivity</code> as follows.</p>
 <pre><code>theta-plugin-sdk &gt; app &gt; build &gt; outputs &gt; apk &gt; debug &gt; app-debug.apk
 </code></pre>
 <h3 id="19-check-installation-setup">1.9 Check installation setup</h3>
-<p>You will use adb to install the apk into your THETA V. Confirm that you have the following set up:</p>
+<p>We will use adb to install the apk into your THETA V. Confirm that you have the following set up:</p>
 <ul>
 <li>Your THETA V should be connected to your computer with a USB cable.</li>
 <li>You must be using an unlocked THETA V that is in <em>Developer Mode</em></li>
@@ -767,8 +851,33 @@ If you are at a workshop, please raise your hand and someone will assist you.</p
 <p>Change directory into the same directory that your apk is in.</p>
 <p><img alt="" src="../img/custom/led/change-directory.png" /></p>
 <h3 id="111-use-adb-to-install-the-apk-into-your-camera">1.11 Use adb to install the apk into your camera</h3>
+<p>In the directory that your apk is in, run the following command:</p>
+<pre><code>adb install -r app-debug.apk
+</code></pre>
+<p>You should see  <em>Success</em>. If your daemon is not running, you will see message that it is starting.</p>
+<p><img alt="" src="../img/custom/led/adb-install.png" /></p>
+<h3 id="112-reboot-camera">1.12 Reboot camera</h3>
+<p>Hold the camera power button down for 4 seconds to shutdown the camera. You will see red LEDs flash.
+If you do not hold the power button down for 4 seconds, the camera will go into sleep mode. Once the 
+camera is shutdown, turn on the camera again by pressing the power button.</p>
+<h3 id="113-put-camera-into-plug-in-mode">1.13 Put camera into plug-in mode</h3>
+<p>Press the mode button for longer than 2 seconds. LED2 will turn white.</p>
+<h3 id="114-verify-led-is-blinking">1.14 Verify LED is blinking</h3>
+<p>After placing the camera into plug-in mode, you should see LED3 blinking with a magenta color.</p>
 <p><img alt="" src="../img/custom/led/magenta-led.png" /></p>
-<h4 id="changing-led-target">Changing LED Target</h4>
+<p>Congratulations!  You've just successfully built and installed your first custom plug-in. You are now
+a plug-in developer!</p>
+<h3 id="115-troubleshooting">1.15 Troubleshooting</h3>
+<h4 id="problem-adb-install-r-app-debugapk-hangs">Problem: <code>adb install -r app-debug.apk</code> hangs</h4>
+<p>Unplug the USB cable from your computer and try again.</p>
+<h4 id="problem-install-succeeds-but-nothing-happens">Problem: Install succeeds, but nothing happens</h4>
+<ul>
+<li>Use the RICOH mobile app or the API to verify that plugin application is selected as the active plugin</li>
+<li>Use Vysor to uninstall old plug-in</li>
+<li>Use Vysor to start the plug-in. Click on the plug-in icon in Vysor with the same process you would use to launch
+a mobile phone app</li>
+</ul>
+<h2 id="2-control-led-target">2 Control LED Target</h2>
 <p>The example below shows how to blink LEDs 4, 5, 6, 7, and 8. Note that the
 color is ignored.</p>
 <pre><code>notificationLedBlink(LedTarget.LED4, LedColor.BLUE, 300);
@@ -779,7 +888,7 @@ notificationLedBlink(LedTarget.LED7, LedColor.RED, 300);
 notificationLedBlink(LedTarget.LED8, LedColor.RED, 300);
 </code></pre>
 <p><img alt="" src="../img/custom/led/led-4-8.png" /></p>
-<h2 id="camera-buttons">Camera Buttons</h2>
+<h2 id="3-control-camera-buttons">3 Control Camera Buttons</h2>
 <p>There are three buttons you can map:</p>
 <table>
 <thead>
