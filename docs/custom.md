@@ -1,4 +1,4 @@
-# Custom Development
+# Custom Development Tutorial
 
 ## Overview
 
@@ -16,37 +16,22 @@ There are a set of THETA features that are not covered by the Android
 API. These are covered by using 
 [Camera.Parameters](https://developer.android.com/reference/android/hardware/Camera.Parameters.html)
 
-Example:
 
-    mParameters.set("RIC_PROC_STITCHING", "RicStaticStitching");
-    mCamera.setParameters(mParameters);
+## 1 Control Camera LEDs
 
-Here's example of setting multiple parameters and then taking a picture.
+### 1.1 First steps with pluginlibrary
 
-        public void takePicture() {
-            mParameters.setPictureSize(5376, 2688);
-            mParameters.set("RIC_SHOOTING_MODE", "RicStillCaptureStd");
-            mParameters.set("RIC_EXPOSURE_MODE", "RicAutoExposureP");
-            mParameters.set("recording-hint", "false");
-            mParameters.setJpegThumbnailSize(320, 160);
-            mCamera.setParameters(mParameters);
-            mCamera.takePicture(null, null, mJpegPictureCallback);
-        }
+Open Android Studio. Identify the available colors. In `pluginlibrary`, the LED colors are defined in `LedColor`. Open
+the file to inspect the available colors.
 
-There is extensive documentation on the 
-[RICOH Developer Connection THETA Plug-in portal](https://api.ricoh/docs/theta-plugin/sdk/)
+    pluginlibrary -> java -> com.theta360pluginlibrary -> values -> LedColor
 
-The plug-in SDK is a great place to get started. The SDK can be downloaded from [GitHub](https://github.com/ricohapi/theta-plugin-sdk). If
-you have any problems 
-please send an email to jcasman@oppkey.com for
- friendly (I hope) help.  :-)
+![](img/custom/led/led-colors.png)
 
+### 1.2 Identify LED Colors
 
-## Camera LEDs
-
-### LED Colors
-
-In `pluginlibrary`, the LED colors are defined in `LedColor`.
+You'll only be able to change the color for the WiFi LED on the front of the camera.  Take a note of the color
+you want to use. The next steps in this tutorial will use MAGENTA.
 
     RED("red", 0b001),
     GREEN("green", 0b010),
@@ -56,13 +41,23 @@ In `pluginlibrary`, the LED colors are defined in `LedColor`.
     YELLOW("yellow", 0b011),
     WHITE("white", 0b111),;
 
-### Camera LED Identification 
+### 1.3 Identify Camera LED Targets
+
+The camera has 8 LEDs. You can control LEDs 3 through 8.
+This tutorial will focus on LED3, the WiFi LED. You can try different LEDs
+on your own. 
 
 ![](img/custom/led-all.png)
 
-### LED Usage Example
+### 1.4 Review LED Example in SDK.
 
-In `MainActivity`, there is an example for the LED.
+In `MainActivity`, there is an example that blinks the WiFi LED.
+
+    app -> java -> com.theta360.pluginapplication -> MainActivity
+
+![](img/custom/led/mainActivity.png)
+
+Look for this code section.
 
     public void onKeyUp(int keyCode, KeyEvent event) {
         /**
@@ -72,12 +67,24 @@ In `MainActivity`, there is an example for the LED.
             */
         notificationLedBlink(LedTarget.LED3, LedColor.BLUE, 1000);
 
-#### Changing LED Color and Blink Rate
+You can change the target, color, and blink rate. The higher the number, the slower the rate.
+The example below will use a delay of 300 between blinks to cause the LED to blink faster.
 
-The example below will use flash LED3, the WiFi LED, faster and display
-a magenta color.
+### 1.5 Change LED color and blink rate
+
+The example below will flash LED3, the WiFi LED, faster and display
+a magenta color.  Edit `MainActivity` as follows.
 
         notificationLedBlink(LedTarget.LED3, LedColor.MAGENTA, 300);
+
+### 1.6 Save changes
+
+Select *Save all* from the *File* menu. 
+
+![](img/custom/led/saveAll.png)
+
+### 1.7 Build apk 
+
 
 ![](img/custom/led/magenta-led.png)
 
@@ -136,84 +143,5 @@ In `MainActivity.java`, there is an example of using the `keyCode`.
                     new TakePictureTask(mTakePictureTaskCallback).execute();
                 }
             }
-
-
-
-## Internal Storage 
-The THETA V has a maximum storage size of 32GB. Developers can use 19GB  for storage of their plug-in applications and approximately 1.5GB for the plug-in itself. The partition for data is `/data`.
-
-`/sdcard/DCIM/` can be used.
-
-This is an example of saving all your images to a sub-directory `Construction` and then
-adding a number to the file name. There's a separate bit of code to iterate the roomNumber.
-
-    String fileUrl = "/storage/emulated/0/DCIM/Construction/room" + roomNumberStr + "sect01.jpg";
-
-
-## Using the WiFi Web API 
-
-In addition to the Android Camera class, your plug-in can also use the 
-[RICOH THETA API v2.1](https://developers.theta360.com/en/docs/v2.1/api_reference/) web API. Send POST commands 
-to the camera's Web API at (http://localhost:8080/). When using the Web API from the plug-in, digest authentication is not required regardless of the wireless LAN mode. For detailed specifications of the Web API, please refer to [API Reference - v2.1 - API & SDK \| RICOH THETA Developers](https://developers.theta360.com/en/docs/v2.1/api_reference/)
-
-The Web API can not be used when the plug-in controls the camera device using the Camera API.
-
-## Dual-Fish Still Image Example
-
-If you want to save still images as dual-fisheye, use this parameter:
-
-    mParameters.set("RIC_PROC_STITCHING_TYPE", "RicNonStitching");
-
-The size of the dual-fish image is 5792x2896. Use the command below:
-
-    mParameters.setPictureSize(5792, 2896);
-
-[This article](https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/8?u=codetricity) 
-provides more information on a plug-in built by community
-developer Ichi Hirota.
-
-The picture below is from Ichi Hirota.
-
-![](img/custom/dual-fish-sample.jpg)
-
-![](img/custom/dual-fish-meta-data.png)
-
-Here's example code from Ichi Hirota for bracketing.
-
-![](img/custom/dualfish-bracketing.png)
-
-
-## Text to Speech Status
-As of May 21, 2018, `android.speech.tts` does not work. This may
-start working in a future update. For now, you can try other Text-Speech engines
-for Android. A list of untested engines is [here](http://hyperionics.com/TtsSetup/eng/TtsInfo.html). Another untested possibility
-could be the [Flite TTS Engine for Android](https://github.com/happyalu/Flite-TTS-Engine-for-Android).
-
-Currently, human speech can be played directly from the internal speaker of 
-the THETA V. However, the volume is low. We are trying to figure out how
-to increase the volume.
-
-Here's a [test of the THETA V playing "I Have a Dream"](https://youtu.be/AeebH7ONTkg) by Dr. Martin Luther King Jr.
-
-
-## XMP Data
-[UPDATED May 1, 2018] Images produced by the Plugin Application have XMP data in them. These screenshots are just looking at image properties using the GNOME Image Viewer app on an Ubuntu laptop. 
-
-Here is an image taken with the Plugin Application, showing ProjectionType and more:
-
-![](img/custom/takenWITHplugin.png)
-
-In comparison, here is an normal image taken at my desk, using the RICOH THETA V as a camera, not in Plug-in Mode. 
-
-![](img/custom/takenWITHOUTplugin.png)
-
-However, I have access to an example of a dual fish-eye image taken with a plug-in built by a developer that does not include XMP data. This may indicate that as you develop your plug-in, you may need to inject XMP data. There's an uncomfirmed rumor that Ricoh is working
-on a library to help with this.
-
-Here's the example:
-
-![](img/custom/ichidualfisheyeplugin.png)
-
-
 
 

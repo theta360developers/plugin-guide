@@ -29,7 +29,8 @@ pages:
   - Setup: setup.md
   - Plugin Use: use.md
   - Using Vysor: vysor.md
-  - Custom Development: custom.md
+  - Custom Development Tutorial: custom.md
+  - Custom Development Tips: customtips.md
   - Plugin Configuration: configuration.md
   - Workflow Tips: workflow.md
   - Troubleshooting: troubleshoot.md
