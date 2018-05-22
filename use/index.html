@@ -285,15 +285,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-your-plugin-into-camera" title="Install Your Plugin into Camera" class="md-nav__link">
-    Install Your Plugin into Camera
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing-the-sample-plugin" title="Testing the Sample Plugin" class="md-nav__link">
-    Testing the Sample Plugin
+  <a href="#install-plugin-into-camera" title="Install Plugin into Camera" class="md-nav__link">
+    Install Plugin into Camera
   </a>
   
 </li>
@@ -302,6 +295,26 @@
   <a href="#put-camera-into-plugin-mode" title="Put Camera into Plugin Mode" class="md-nav__link">
     Put Camera into Plugin Mode
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-sdk-sample-plugin" title="Test SDK Sample Plugin" class="md-nav__link">
+    Test SDK Sample Plugin
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alternate-techniques-to-get-the-file-and-filename" title="Alternate techniques to get the file and filename." class="md-nav__link">
+    Alternate techniques to get the file and filename.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -489,15 +502,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-your-plugin-into-camera" title="Install Your Plugin into Camera" class="md-nav__link">
-    Install Your Plugin into Camera
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing-the-sample-plugin" title="Testing the Sample Plugin" class="md-nav__link">
-    Testing the Sample Plugin
+  <a href="#install-plugin-into-camera" title="Install Plugin into Camera" class="md-nav__link">
+    Install Plugin into Camera
   </a>
   
 </li>
@@ -506,6 +512,26 @@
   <a href="#put-camera-into-plugin-mode" title="Put Camera into Plugin Mode" class="md-nav__link">
     Put Camera into Plugin Mode
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-sdk-sample-plugin" title="Test SDK Sample Plugin" class="md-nav__link">
+    Test SDK Sample Plugin
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alternate-techniques-to-get-the-file-and-filename" title="Alternate techniques to get the file and filename." class="md-nav__link">
+    Alternate techniques to get the file and filename.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -576,7 +602,8 @@ List of devices attached
 * daemon started successfully *
 00101082    device
 </code></pre>
-<p>You can log into the camera, and do an <code>ls</code> to list all files, just like in any Android system</p>
+<p>Log into the camera and do an <code>ls</code> to list all files. The process is the same as 
+a standard Android phone.</p>
 <pre><code>$ adb shell
 msm8953_64:/ $ ls -l                                                                                                                                                 
 total 4240
@@ -626,7 +653,7 @@ total 554752
 -rw-rw-r-- 1 media_rw media_rw  52108839 2017-10-21 14:19 R0010038.MP4
 -rw-rw-r-- 1 media_rw media_rw 108450224 2017-10-21 14:20 R0010039.MP4
 </code></pre>
-<h2 id="install-your-plugin-into-camera">Install Your Plugin into Camera</h2>
+<h2 id="install-plugin-into-camera">Install Plugin into Camera</h2>
 <p>Use Android Studio
 or</p>
 <p>call <code>adb install -r ./plugin/build/outputs/apk/debug/plugin-debug.apk</code></p>
@@ -635,20 +662,6 @@ or</p>
 * daemon started successfully *
 Success
 </code></pre>
-<h2 id="testing-the-sample-plugin">Testing the Sample Plugin</h2>
-<p>Disconnect the camera from the USB cable. Press the physical button on the camera. There will be no sound,
-but the image will be captured. </p>
-<p>The picture will be given a filename that is in numerical sequential order incrementing up from the previous picture. The format will be similar to this example filename: R0010047.JPG. </p>
-<p>The plug-in will save the image to a file with the location
-and format similar to the example below.</p>
-<p><code>/sdcard/DCIM/100RICOH/R0010047.JPG</code>.</p>
-<p>To get the file to your local computer, you can either 
-use normal MTP as you would with a normal Android 
-phone or you can just download the one file with adb. If you
-use adb pull, you can get the filename by logging into the
-shell with <code>adb shell</code> or you can use a tool like Vysor
-to display a virtual graphic THETA V screen to your workstation.
-Refer to the next section on Vysor.</p>
 <h2 id="put-camera-into-plugin-mode">Put Camera into Plugin Mode</h2>
 <p>Plugin mode can only be enabled on
 the RICOH THETA V.</p>
@@ -664,6 +677,24 @@ on and then pressing the mode button. </p>
 <p><img alt="" src="../img/use/side-buttons.png" /></p>
 <p>Information on the front of the camera is shown below.</p>
 <p><img alt="" src="../img/use/front-buttons.png" /></p>
+<h2 id="test-sdk-sample-plugin">Test SDK Sample Plugin</h2>
+<p>Press the physical button on the camera. There will be a shutter sound.
+The image should be captured. </p>
+<p>The picture will be given a filename that is in numerical sequential order incrementing up from the previous picture. The format will be similar to this example filename: R0010047.JPG. </p>
+<p>The plug-in will save the image to a file with the location
+and format similar to the example below.</p>
+<p><code>/sdcard/DCIM/100RICOH/R0010047.JPG</code>.</p>
+<p>Get the file name by using <code>adb shell</code> described in the step above.</p>
+<p>Use <code>adb pull</code> to get the image file file to your local computer.</p>
+<p>Example:</p>
+<pre><code>adb pull /sdcard/DCIM/100RICOH/R0010047.JPG
+</code></pre>
+<h3 id="alternate-techniques-to-get-the-file-and-filename">Alternate techniques to get the file and filename.</h3>
+<ul>
+<li>use normal MTP as you would with a normal Android 
+phone </li>
+<li>use a tool like Vysor to display a virtual THETA V screen to your workstation. To set up and use Vysor, refer to the next section on Vysor.</li>
+</ul>
 <h2 id="set-active-plugin">Set Active Plugin</h2>
 <p>When you develop the plugin application, a companion mobile application can set the active plugin using the
 WiFi API of the camera. The Ricoh mobile application that
