@@ -105,10 +105,13 @@ If you are unsure about any of the steps above, refer to the previous sections. 
 also ask questions in the community at [http://plugin.community.theta360.guide](http://plugin.community.theta360.guide).
 If you are at a workshop, please raise your hand and someone will assist you.
 
-### 1.10 Use adb to install the apk into your camera
+### 1.10 cd into apk directory
 
+Change directory into the same directory that your apk is in.
 
+![](img/custom/led/change-directory.png)
 
+### 1.11 Use adb to install the apk into your camera
 
 ![](img/custom/led/magenta-led.png)
 
