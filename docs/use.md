@@ -33,7 +33,8 @@ of your THETA V. In the example below, my THETA V has a serial number of 0010108
     * daemon started successfully *
     00101082	device
 
-You can log into the camera, and do an `ls` to list all files, just like in any Android system
+Log into the camera and do an `ls` to list all files. The process is the same as 
+a standard Android phone.
 
     $ adb shell
     msm8953_64:/ $ ls -l                                                                                                                                                 
@@ -87,7 +88,7 @@ Locate pictures and movies.
     -rw-rw-r-- 1 media_rw media_rw 108450224 2017-10-21 14:20 R0010039.MP4
 
 
-## Install Your Plugin into Camera
+## Install Plugin into Camera
 
 Use Android Studio
 or
@@ -98,26 +99,6 @@ call `adb install -r ./plugin/build/outputs/apk/debug/plugin-debug.apk`
     * daemon not running. starting it now at tcp:5037 *
     * daemon started successfully *
     Success
-
-## Testing the Sample Plugin
-
-Disconnect the camera from the USB cable. Press the physical button on the camera. There will be no sound,
-but the image will be captured. 
-
-The picture will be given a filename that is in numerical sequential order incrementing up from the previous picture. The format will be similar to this example filename: R0010047.JPG. 
-
-The plug-in will save the image to a file with the location
-and format similar to the example below.
-
- `/sdcard/DCIM/100RICOH/R0010047.JPG`.
-
-To get the file to your local computer, you can either 
-use normal MTP as you would with a normal Android 
-phone or you can just download the one file with adb. If you
-use adb pull, you can get the filename by logging into the
-shell with `adb shell` or you can use a tool like Vysor
-to display a virtual graphic THETA V screen to your workstation.
-Refer to the next section on Vysor.
 
 
 ## Put Camera into Plugin Mode
@@ -147,6 +128,32 @@ Information on the front of the camera is shown below.
 
 ![](img/use/front-buttons.png)
 
+
+## Test SDK Sample Plugin
+
+Press the physical button on the camera. There will be a shutter sound.
+The image should be captured. 
+
+The picture will be given a filename that is in numerical sequential order incrementing up from the previous picture. The format will be similar to this example filename: R0010047.JPG. 
+
+The plug-in will save the image to a file with the location
+and format similar to the example below.
+
+ `/sdcard/DCIM/100RICOH/R0010047.JPG`.
+
+Get the file name by using `adb shell` described in the step above.
+
+Use `adb pull` to get the image file file to your local computer.
+
+Example:
+
+    adb pull /sdcard/DCIM/100RICOH/R0010047.JPG
+
+### Alternate techniques to get the file and filename.
+
+* use normal MTP as you would with a normal Android 
+phone 
+* use a tool like Vysor to display a virtual THETA V screen to your workstation. To set up and use Vysor, refer to the next section on Vysor.
 
 
 ## Set Active Plugin
