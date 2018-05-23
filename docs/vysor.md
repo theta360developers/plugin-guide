@@ -1,6 +1,7 @@
 
 # Using Vysor to Help With Testing
 
+## 1 Install Vysor
 Go to  [https://www.vysor.io/](https://www.vysor.io/) 
 and install Vysor.
 
@@ -8,7 +9,7 @@ and install Vysor.
 
 
 
-
+## 2 Select RICOH THETA_V as device
 After starting Vysor, you will be able to choose your device, *RICOH THETA_V*.  Press *View*.
 
 ![](img/vysor/vysor-device.png)
@@ -16,6 +17,8 @@ After starting Vysor, you will be able to choose your device, *RICOH THETA_V*.  
 Vysor will start up.
 
 ![](img/vysor/vysor-start.png)
+
+## 3 Review Installed Apps and Plug-ins
 
 Click on the home button.
 
@@ -29,24 +32,36 @@ You will see all the apps.
 
 ![](img/vysor/plugin-sample.png)
 
+## 4 Review Plug-in Permissions
+
 Go to App Settings
 
 ![](img/vysor/plugin-settings.png)
 
-Set Permissions for *Storage* and *Camera*.
+When developing your custom app, you may need to set Permissions for *Storage* and *Camera*.
 
 ![](img/vysor/storage-camera.png)
 
-Launch App
+The Plugin Application in the SDK has the permissions set automatically.
+
+## 5 Use Vysor to Launch Apps for Quick Testing
+
+Click on your plug-in inside of Vysor to launch your app directly in Vysor
+for quick testing.
 
 ![](img/vysor/launch-app.png)
 
-In the future, your plugin can be distributed through the THETA Store, downloaded, and used by all THETA V camera end-users. They will
-be able to install the plugin with a computer application that Ricoh will provide.
+## 6 Use Vysor to Veriify App Launching
 
-End-users can choose your plugin with the official RICOH THETA mobile app or a custom application that you provide. For development, you can also select the active plug-in with the WiFi API. 
+With your camera connected to Vysor, push the physical *mode* button on your camera to put the camera into
+plug-in mode. When the camera goes into plug-in mode, it will automatically
+launch the active plug-in. You can see this visually on Vysor.
 
-## Use Vysor to Verify Plugin Installation
+
+## 7 Use Vysor to Verify Plugin Installation
+
+Vysor will show your installed plug-ins as icons. This is a quick
+way to verify that your plug-in intalled correctly.
 
 You can install multiple plugins into the THETA V. In the example below,
 I'm using Vysor to verify that I installed my new plugin 
@@ -61,7 +76,7 @@ the permissions with Vysor. Settings -> Apps -> YourAppName
 ![](img/use/vysor-settings.png)
 
 
-## Verify Image File Names with Vysor
+## 8 Verify Image File Names with Vysor
 
 In order to download the picture with adb, you first need to find out the exact filename. You can use Vysor to find the filename.
 
@@ -89,20 +104,28 @@ Then use adb pull to download the picture to your local machine
     /sdcard/DCIM/100RICOH/R0010047.JPG: 1 file pulled. 21.2 MB/s (2790527 bytes in 0.126s)
 
 
-## Using the Keyboard and Back Button on Vysor
+## 9 Use Vysor to Configure WiFi and Test Apps
 
-You need to disable the THETA V camera process to use the keyboard and back button.
+You can use Vysor to connect your camera to the Internet, similar to connecting a normal
+Android phone to the Internet. The only tricky part is to enable the keyboard and back button on Vysor.
+
+### 9.1 Disable the THETA V camera process 
+
+The THETA V camera process interferes with the keyboard and backbutton.
+To use the keyboard and back button, you need to stop the camera process.
 
 The video [Getting Vysor Back Button to Work - RICOH THETA Development](https://youtu.be/dMBLHgyGZe4) 
 shows the setup process.
 
 The steps are also explained below.
 
-Connect your THETA V to Vysor.
+#### 9.1.1 Connect your THETA V to Vysor
 
 ![](img/workflow/keyboard/vysor-view.png)
 
-Expand the apps to find your settings.
+#### 9.1.2 Go to settings
+
+Expand apps.
 
 ![](img/workflow/keyboard/apps.png)
 
@@ -110,65 +133,39 @@ Go into settings.
 
 ![](img/workflow/keyboard/settings.png)
 
-Go to *Developer options*. You may need to [enable developer options](https://developer.android.com/studio/debug/dev-options) by going to *About phone* and 
+#### 9.1.3 Go to Developer options
+
+If you don't have *Developer options* visible on your camera, you may need to [enable developer options](https://developer.android.com/studio/debug/dev-options) by going to *About phone* and 
 tapping Build number 7 times.
 
 ![](img/workflow/keyboard/developer-options.png)
+
+#### 9.1.4 Go to Running services
 
 Access *Running services*.
 
 ![](img/workflow/keyboard/running-services.png)
 
-Select the *RICOH THETA V* process.
+#### 9.1.5 Select the *RICOH THETA V* process
 
 ![](img/workflow/keyboard/ricoh-theta-process.png)
 
-Stop the *CameraService*.
+#### 9.1.6 Locate the *CameraService*
 
 ![](img/workflow/keyboard/camera-service.png)
 
-Be bold and stop the service.
+#### 9.1.7 Stop the service
+Be bold.
 
 ![](img/workflow/keyboard/camera-stop.png)
 
-Test the keyboard.
+#### 9.1.8 Test the keyboard
 
 ![](img/workflow/keyboard/notepad.png)
 
-Test the back button.
+#### 9.1.9 Test the back button
 
 ![](img/workflow/keyboard/back-button.png)
 
 ![](img/workflow/keyboard/image-directory.png)
 
-
-## Using Vysor From Linux or Other OS
-
-I've found the easiest way to Vysor on Linux is to use the 
-[Vysor Chrome Extension](https://chrome.google.com/webstore/detail/vysor/gidgenkbbabolejbgbpnhbimgjbffefm?authuser=1) in the Chrome web browser on Linux.
-
-![Vysor Extension](img/workflow/vysor/vysor-in-chrome.png)
-
-On Linux, you can also install Vysor as a desktop application with the information [here](https://github.com/koush/electron-chrome).
-
-The basic process is shown below.
-
-    git clone https://github.com/koush/electron-chrome.git
-    cd electron-chrome
-    npm install
-
-
-Using the Chrome Store app id for Vysor:
-
-    electron --enable-logging . --app-id=gidgenkbbabolejbgbpnhbimgjbffefm
-
-![](img/vysor/vysor-linux.png)
-
-### Fixing Flickering Problem on Certain NVIDIA Cards
-
-On an old NVIDIA graphics card, I needed to disable flipping using the NVIDIA X Server Settings. I am using X11, not Wayland on Ubuntu 18.04.  You can check to see if you're running Wayland or X11 with this:
-
-    $ echo $XDG_SESSION_TYPE
-    x11
-
-![OpenGL Settings](img/workflow/vysor/opengl-settings.png)
