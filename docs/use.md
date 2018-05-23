@@ -196,46 +196,5 @@ This process is current as of version 1.17.1 of the Android application.
 ![](img/use/app-version.png)
 
 
-
-### Show List of Plugins With API
-
-The POST command:
-
-    $ curl -X POST 192.168.1.1/osc/commands/execute --data '{"name":"camera._listPlugins"}' -H 'content-type: application/json'
-
-The response
-
-    {
-    "name":"camera._listPlugins",
-    "results":{
-        "plugins":[
-            {
-                "applicationName":"Remote Playback",
-                "boot":false,
-                "bootOptions":"",
-                "force":false,
-                "foreground":false,
-                "packageName":"com.theta.remoteplayback",
-                "running":false,
-                "type":"extended",
-                "version":"1.00.20171106144412"
-            },
-            {
-                "applicationName":"PluginSample",
-                "boot":true,
-                "force":false,
-                "foreground":false,
-                "packageName":"com.theta360.pluginsample",
-                "running":false,
-                "type":"extended",
-                "version":"1.0"
-            }
-        ]
-    },
-    "state":"done"
-    }
-
-> __Note that this command was changed from `camera._listApplications`, which is now deprecated__
-
 This concludes the Plugin Use section. Congratulations!
 

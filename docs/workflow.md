@@ -39,7 +39,53 @@ WiFi API of the camera. The Ricoh mobile application that
 most of your users will also have can set the active plugin. For
 testing, you can either use the Ricoh mobile app, build your own mobile app, or send a REST command
 using an HTTP testing tool such as 
-[curl](https://curl.haxx.se/)  or [Postman](https://www.getpostman.com/). In the example below, I am using 
+[curl](https://curl.haxx.se/)  or [Postman](https://www.getpostman.com/). 
+
+
+
+### Show List of Plugins With API
+
+The POST command:
+
+    $ curl -X POST 192.168.1.1/osc/commands/execute --data '{"name":"camera._listPlugins"}' -H 'content-type: application/json'
+
+The response
+
+    {
+    "name":"camera._listPlugins",
+    "results":{
+        "plugins":[
+            {
+                "applicationName":"Remote Playback",
+                "boot":false,
+                "bootOptions":"",
+                "force":false,
+                "foreground":false,
+                "packageName":"com.theta.remoteplayback",
+                "running":false,
+                "type":"extended",
+                "version":"1.00.20171106144412"
+            },
+            {
+                "applicationName":"PluginSample",
+                "boot":true,
+                "force":false,
+                "foreground":false,
+                "packageName":"com.theta360.pluginsample",
+                "running":false,
+                "type":"extended",
+                "version":"1.0"
+            }
+        ]
+    },
+    "state":"done"
+    }
+
+> __Note that this command was changed from `camera._listApplications`, which is now deprecated__
+
+
+
+In the example below, I am using 
 Restlet Client, which is a browser-based Chrome tool similar to Postman.
 
 I am using THETA V firmware 1.20.1. This command may change in the future.  Use com.theta360.yourappname for the packageName. Note that in the example below, my package is called pluginsample.
