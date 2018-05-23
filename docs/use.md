@@ -109,10 +109,9 @@ call `adb install -r ./theta-plugin-sdk-master/app/build/outputs/apk/debug/app-d
 
 
 ## Put Camera into Plugin Mode
-Plugin mode can only be enabled on
-the RICOH THETA V.
+Plugin mode can only be enabled on the RICOH THETA V.
 
-Plugins will not work on the THETA S (older model), THETA SC or THETA m15. 
+Plugins will not work on older THETA models m15, S, or SC. 
 
 Every THETA V can be put into plugin mode by first turning the THETA V
 on and then pressing the mode button. 
@@ -123,7 +122,7 @@ After pressing the mode button for 2 seconds, release it.
 
 ![](img/use/mode-button-press.jpg)
 
-The *Camera status lamp* will turn solid white.
+The *Camera Status lamp* will turn solid white.
 
 ![](img/use/camera-status-lamp.png)
 
