@@ -99,10 +99,7 @@ Locate Pictures and Movies. These are standard Android directories. The THETA V 
 
 ## Install Plugin into Camera
 
-Use Android Studio
-or
-
-call `adb install -r ./theta-plugin-sdk-master/app/build/outputs/apk/debug/app-debug.apk`
+Call `adb install -r ./theta-plugin-sdk-master/app/build/outputs/apk/debug/app-debug.apk`
 
     $ adb install -r ./theta-plugin-sdk-master/app/build/outputs/apk/debug/app-debug.apk 
     * daemon not running. starting it now at tcp:5037 *
