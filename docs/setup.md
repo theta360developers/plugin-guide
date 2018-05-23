@@ -6,16 +6,20 @@ This community guide has been tested with the Android SDK 3.0.1 and 3.1.1 on Win
 
 ### Download Android Studio
 
-Download Android Studio from the site below.
+Download Android Studio here:
 
-https://developer.android.com/studio/index.html
+[https://developer.android.com/studio/index.html](https://developer.android.com/studio/index.html)
 
 ![](img/setup/android-studio-download.png)
 ![](img/setup/android-studio-version.png)
 
 ## Import Ricoh Plugin SDK and Update Android Build System
 
-Install Ricoh Plugin SDK and Update Android Build System.
+Download the RICOH Plugin SDK here:
+
+[https://github.com/ricohapi/theta-plugin-sdk](https://github.com/ricohapi/theta-plugin-sdk)
+
+Update the Android Build System:
 
     $ l
     app/          gradle/            gradlew      LICENSE.txt     README.md
