@@ -37,8 +37,9 @@ of your THETA V. In the example below, my THETA V has a serial number of 0010108
     * daemon started successfully *
     00101082	device
 
-Log into the camera and do an `ls` to list all files. The process is the same as 
-a standard Android phone.
+Log into the camera using 'adb shell'
+
+Do an `ls` to list all files. The directory structure and overall environment is the same as a standard Android phone.
 
     $ adb shell
     msm8953_64:/ $ ls -l                                                                                                                                                 
