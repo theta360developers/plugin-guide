@@ -107,38 +107,108 @@
         },
         {
             "location": "/vysor/",
-            "text": "Using Vysor to Help With Testing\n\n\nGo to  \nhttps://www.vysor.io/\n \nand install Vysor.\n\n\n\n\nAfter starting Vysor, you will be able to choose your device, \nRICOH THETA_V\n.  Press \nView\n.\n\n\n\n\nVysor will start up.\n\n\n\n\nClick on the home button.\n\n\n\n\nAny launcher will work. I'm using the Snapdragon Launcher.\n\n\n\n\nYou will see all the apps.\n\n\n\n\nGo to App Settings\n\n\n\n\nSet Permissions for \nStorage\n and \nCamera\n.\n\n\n\n\nLaunch App\n\n\n\n\nIn the future, your plugin can be distributed through the THETA Store, downloaded, and used by all THETA V camera end-users. They will\nbe able to install the plugin with a computer application that Ricoh will provide.\n\n\nEnd-users can choose your plugin with the official RICOH THETA mobile app or a custom application that you provide. For development, you can also select the active plug-in with the WiFi API. \n\n\nUse Vysor to Verify Plugin Installation\n\n\nYou can install multiple plugins into the THETA V. In the example below,\nI'm using Vysor to verify that I installed my new plugin \n\nConstructionPlugin\n in addition to the \nPluginSample\n I installed\nearlier.\n\n\n\n\nPrior to selecting with my new \nConstructionPlugin\n with the API, I set\nthe permissions with Vysor. Settings -> Apps -> YourAppName\n\n\n\n\nVerify Image File Names with Vysor\n\n\nIn order to download the picture with adb, you first need to find out the exact filename. You can use Vysor to find the filename.\n\n\nGo into File Manager\n\n\n\n\nDown into DCIM\n\n\n\n\nDown into 100RICOH\n\n\n\n\nIf you have a lot of images on the camera, you may need to scroll down to the bottom of the list.\n\n\n\n\nThere's your filename, the newest image. In this case, it's R0010047.JPG\n\n\nThen use adb pull to download the picture to your local machine   \n\n\n$ adb pull /sdcard/DCIM/100RICOH/R0010047.JPG\n/sdcard/DCIM/100RICOH/R0010047.JPG: 1 file pulled. 21.2 MB/s (2790527 bytes in 0.126s)\n\n\n\nUsing the Keyboard and Back Button on Vysor\n\n\nYou need to disable the THETA V camera process to use the keyboard and back button.\n\n\nThe video \nGetting Vysor Back Button to Work - RICOH THETA Development\n \nshows the setup process.\n\n\nThe steps are also explained below.\n\n\nConnect your THETA V to Vysor.\n\n\n\n\nExpand the apps to find your settings.\n\n\n\n\nGo into settings.\n\n\n\n\nGo to \nDeveloper options\n. You may need to \nenable developer options\n by going to \nAbout phone\n and \ntapping Build number 7 times.\n\n\n\n\nAccess \nRunning services\n.\n\n\n\n\nSelect the \nRICOH THETA V\n process.\n\n\n\n\nStop the \nCameraService\n.\n\n\n\n\nBe bold and stop the service.\n\n\n\n\nTest the keyboard.\n\n\n\n\nTest the back button.\n\n\n\n\n\n\nUsing Vysor From Linux or Other OS\n\n\nI've found the easiest way to Vysor on Linux is to use the \n\nVysor Chrome Extension\n in the Chrome web browser on Linux.\n\n\n\n\nOn Linux, you can also install Vysor as a desktop application with the information \nhere\n.\n\n\nThe basic process is shown below.\n\n\ngit clone https://github.com/koush/electron-chrome.git\ncd electron-chrome\nnpm install\n\n\n\nUsing the Chrome Store app id for Vysor:\n\n\nelectron --enable-logging . --app-id=gidgenkbbabolejbgbpnhbimgjbffefm\n\n\n\n\n\nFixing Flickering Problem on Certain NVIDIA Cards\n\n\nOn an old NVIDIA graphics card, I needed to disable flipping using the NVIDIA X Server Settings. I am using X11, not Wayland on Ubuntu 18.04.  You can check to see if you're running Wayland or X11 with this:\n\n\n$ echo $XDG_SESSION_TYPE\nx11",
+            "text": "Using Vysor to Help With Testing\n\n\n1 Install Vysor\n\n\nGo to  \nhttps://www.vysor.io/\n \nand install Vysor.\n\n\n\n\n2 Select RICOH THETA_V as device\n\n\nAfter starting Vysor, you will be able to choose your device, \nRICOH THETA_V\n.  Press \nView\n.\n\n\n\n\nVysor will start up.\n\n\n\n\n3 Review Installed Apps and Plug-ins\n\n\nClick on the home button.\n\n\n\n\nAny launcher will work. I'm using the Snapdragon Launcher.\n\n\n\n\nYou will see all the apps.\n\n\n\n\n4 Review Plug-in Permissions\n\n\nGo to App Settings\n\n\n\n\nWhen developing your custom app, you may need to set Permissions for \nStorage\n and \nCamera\n.\n\n\n\n\nThe Plugin Application in the SDK has the permissions set automatically.\n\n\n5 Use Vysor to Launch Apps for Quick Testing\n\n\nClick on your plug-in inside of Vysor to launch your app directly in Vysor\nfor quick testing.\n\n\n\n\n6 Use Vysor to Veriify App Launching\n\n\nWith your camera connected to Vysor, push the physical \nmode\n button on your camera to put the camera into\nplug-in mode. When the camera goes into plug-in mode, it will automatically\nlaunch the active plug-in. You can see this visually on Vysor.\n\n\n7 Use Vysor to Verify Plugin Installation\n\n\nVysor will show your installed plug-ins as icons. This is a quick\nway to verify that your plug-in intalled correctly.\n\n\nYou can install multiple plugins into the THETA V. In the example below,\nI'm using Vysor to verify that I installed my new plugin \n\nConstructionPlugin\n in addition to the \nPluginSample\n I installed\nearlier.\n\n\n\n\nPrior to selecting with my new \nConstructionPlugin\n with the API, I set\nthe permissions with Vysor. Settings -> Apps -> YourAppName\n\n\n\n\n8 Verify Image File Names with Vysor\n\n\nIn order to download the picture with adb, you first need to find out the exact filename. You can use Vysor to find the filename.\n\n\nGo into File Manager\n\n\n\n\nDown into DCIM\n\n\n\n\nDown into 100RICOH\n\n\n\n\nIf you have a lot of images on the camera, you may need to scroll down to the bottom of the list.\n\n\n\n\nThere's your filename, the newest image. In this case, it's R0010047.JPG\n\n\nThen use adb pull to download the picture to your local machine   \n\n\n$ adb pull /sdcard/DCIM/100RICOH/R0010047.JPG\n/sdcard/DCIM/100RICOH/R0010047.JPG: 1 file pulled. 21.2 MB/s (2790527 bytes in 0.126s)\n\n\n\n9 Use Vysor to Configure WiFi and Test Apps\n\n\nYou can use Vysor to connect your camera to the Internet, similar to connecting a normal\nAndroid phone to the Internet. The only tricky part is to enable the keyboard and back button on Vysor.\n\n\n9.1 Disable the THETA V camera process\n\n\nThe THETA V camera process interferes with the keyboard and backbutton.\nTo use the keyboard and back button, you need to stop the camera process.\n\n\nThe video \nGetting Vysor Back Button to Work - RICOH THETA Development\n \nshows the setup process.\n\n\nThe steps are also explained below.\n\n\n9.1.1 Connect your THETA V to Vysor\n\n\n\n\n9.1.2 Go to settings\n\n\nExpand apps.\n\n\n\n\nGo into settings.\n\n\n\n\n9.1.3 Go to Developer options\n\n\nIf you don't have \nDeveloper options\n visible on your camera, you may need to \nenable developer options\n by going to \nAbout phone\n and \ntapping Build number 7 times.\n\n\n\n\n9.1.4 Go to Running services\n\n\nAccess \nRunning services\n.\n\n\n\n\n9.1.5 Select the \nRICOH THETA V\n process\n\n\n\n\n9.1.6 Locate the \nCameraService\n\n\n\n\n9.1.7 Stop the service\n\n\nBe bold.\n\n\n\n\n9.1.8 Test the keyboard\n\n\n\n\n9.1.9 Test the back button",
             "title": "Using Vysor"
         },
         {
             "location": "/vysor/#using-vysor-to-help-with-testing",
-            "text": "Go to   https://www.vysor.io/  \nand install Vysor.   After starting Vysor, you will be able to choose your device,  RICOH THETA_V .  Press  View .   Vysor will start up.   Click on the home button.   Any launcher will work. I'm using the Snapdragon Launcher.   You will see all the apps.   Go to App Settings   Set Permissions for  Storage  and  Camera .   Launch App   In the future, your plugin can be distributed through the THETA Store, downloaded, and used by all THETA V camera end-users. They will\nbe able to install the plugin with a computer application that Ricoh will provide.  End-users can choose your plugin with the official RICOH THETA mobile app or a custom application that you provide. For development, you can also select the active plug-in with the WiFi API.",
+            "text": "",
             "title": "Using Vysor to Help With Testing"
         },
         {
-            "location": "/vysor/#use-vysor-to-verify-plugin-installation",
-            "text": "You can install multiple plugins into the THETA V. In the example below,\nI'm using Vysor to verify that I installed my new plugin  ConstructionPlugin  in addition to the  PluginSample  I installed\nearlier.   Prior to selecting with my new  ConstructionPlugin  with the API, I set\nthe permissions with Vysor. Settings -> Apps -> YourAppName",
-            "title": "Use Vysor to Verify Plugin Installation"
+            "location": "/vysor/#1-install-vysor",
+            "text": "Go to   https://www.vysor.io/  \nand install Vysor.",
+            "title": "1 Install Vysor"
         },
         {
-            "location": "/vysor/#verify-image-file-names-with-vysor",
+            "location": "/vysor/#2-select-ricoh-theta_v-as-device",
+            "text": "After starting Vysor, you will be able to choose your device,  RICOH THETA_V .  Press  View .   Vysor will start up.",
+            "title": "2 Select RICOH THETA_V as device"
+        },
+        {
+            "location": "/vysor/#3-review-installed-apps-and-plug-ins",
+            "text": "Click on the home button.   Any launcher will work. I'm using the Snapdragon Launcher.   You will see all the apps.",
+            "title": "3 Review Installed Apps and Plug-ins"
+        },
+        {
+            "location": "/vysor/#4-review-plug-in-permissions",
+            "text": "Go to App Settings   When developing your custom app, you may need to set Permissions for  Storage  and  Camera .   The Plugin Application in the SDK has the permissions set automatically.",
+            "title": "4 Review Plug-in Permissions"
+        },
+        {
+            "location": "/vysor/#5-use-vysor-to-launch-apps-for-quick-testing",
+            "text": "Click on your plug-in inside of Vysor to launch your app directly in Vysor\nfor quick testing.",
+            "title": "5 Use Vysor to Launch Apps for Quick Testing"
+        },
+        {
+            "location": "/vysor/#6-use-vysor-to-veriify-app-launching",
+            "text": "With your camera connected to Vysor, push the physical  mode  button on your camera to put the camera into\nplug-in mode. When the camera goes into plug-in mode, it will automatically\nlaunch the active plug-in. You can see this visually on Vysor.",
+            "title": "6 Use Vysor to Veriify App Launching"
+        },
+        {
+            "location": "/vysor/#7-use-vysor-to-verify-plugin-installation",
+            "text": "Vysor will show your installed plug-ins as icons. This is a quick\nway to verify that your plug-in intalled correctly.  You can install multiple plugins into the THETA V. In the example below,\nI'm using Vysor to verify that I installed my new plugin  ConstructionPlugin  in addition to the  PluginSample  I installed\nearlier.   Prior to selecting with my new  ConstructionPlugin  with the API, I set\nthe permissions with Vysor. Settings -> Apps -> YourAppName",
+            "title": "7 Use Vysor to Verify Plugin Installation"
+        },
+        {
+            "location": "/vysor/#8-verify-image-file-names-with-vysor",
             "text": "In order to download the picture with adb, you first need to find out the exact filename. You can use Vysor to find the filename.  Go into File Manager   Down into DCIM   Down into 100RICOH   If you have a lot of images on the camera, you may need to scroll down to the bottom of the list.   There's your filename, the newest image. In this case, it's R0010047.JPG  Then use adb pull to download the picture to your local machine     $ adb pull /sdcard/DCIM/100RICOH/R0010047.JPG\n/sdcard/DCIM/100RICOH/R0010047.JPG: 1 file pulled. 21.2 MB/s (2790527 bytes in 0.126s)",
-            "title": "Verify Image File Names with Vysor"
+            "title": "8 Verify Image File Names with Vysor"
         },
         {
-            "location": "/vysor/#using-the-keyboard-and-back-button-on-vysor",
-            "text": "You need to disable the THETA V camera process to use the keyboard and back button.  The video  Getting Vysor Back Button to Work - RICOH THETA Development  \nshows the setup process.  The steps are also explained below.  Connect your THETA V to Vysor.   Expand the apps to find your settings.   Go into settings.   Go to  Developer options . You may need to  enable developer options  by going to  About phone  and \ntapping Build number 7 times.   Access  Running services .   Select the  RICOH THETA V  process.   Stop the  CameraService .   Be bold and stop the service.   Test the keyboard.   Test the back button.",
-            "title": "Using the Keyboard and Back Button on Vysor"
+            "location": "/vysor/#9-use-vysor-to-configure-wifi-and-test-apps",
+            "text": "You can use Vysor to connect your camera to the Internet, similar to connecting a normal\nAndroid phone to the Internet. The only tricky part is to enable the keyboard and back button on Vysor.",
+            "title": "9 Use Vysor to Configure WiFi and Test Apps"
         },
         {
-            "location": "/vysor/#using-vysor-from-linux-or-other-os",
-            "text": "I've found the easiest way to Vysor on Linux is to use the  Vysor Chrome Extension  in the Chrome web browser on Linux.   On Linux, you can also install Vysor as a desktop application with the information  here .  The basic process is shown below.  git clone https://github.com/koush/electron-chrome.git\ncd electron-chrome\nnpm install  Using the Chrome Store app id for Vysor:  electron --enable-logging . --app-id=gidgenkbbabolejbgbpnhbimgjbffefm",
-            "title": "Using Vysor From Linux or Other OS"
+            "location": "/vysor/#91-disable-the-theta-v-camera-process",
+            "text": "The THETA V camera process interferes with the keyboard and backbutton.\nTo use the keyboard and back button, you need to stop the camera process.  The video  Getting Vysor Back Button to Work - RICOH THETA Development  \nshows the setup process.  The steps are also explained below.",
+            "title": "9.1 Disable the THETA V camera process"
         },
         {
-            "location": "/vysor/#fixing-flickering-problem-on-certain-nvidia-cards",
-            "text": "On an old NVIDIA graphics card, I needed to disable flipping using the NVIDIA X Server Settings. I am using X11, not Wayland on Ubuntu 18.04.  You can check to see if you're running Wayland or X11 with this:  $ echo $XDG_SESSION_TYPE\nx11",
-            "title": "Fixing Flickering Problem on Certain NVIDIA Cards"
+            "location": "/vysor/#911-connect-your-theta-v-to-vysor",
+            "text": "",
+            "title": "9.1.1 Connect your THETA V to Vysor"
+        },
+        {
+            "location": "/vysor/#912-go-to-settings",
+            "text": "Expand apps.   Go into settings.",
+            "title": "9.1.2 Go to settings"
+        },
+        {
+            "location": "/vysor/#913-go-to-developer-options",
+            "text": "If you don't have  Developer options  visible on your camera, you may need to  enable developer options  by going to  About phone  and \ntapping Build number 7 times.",
+            "title": "9.1.3 Go to Developer options"
+        },
+        {
+            "location": "/vysor/#914-go-to-running-services",
+            "text": "Access  Running services .",
+            "title": "9.1.4 Go to Running services"
+        },
+        {
+            "location": "/vysor/#915-select-the-ricoh-theta-v-process",
+            "text": "",
+            "title": "9.1.5 Select the RICOH THETA V process"
+        },
+        {
+            "location": "/vysor/#916-locate-the-cameraservice",
+            "text": "",
+            "title": "9.1.6 Locate the CameraService"
+        },
+        {
+            "location": "/vysor/#917-stop-the-service",
+            "text": "Be bold.",
+            "title": "9.1.7 Stop the service"
+        },
+        {
+            "location": "/vysor/#918-test-the-keyboard",
+            "text": "",
+            "title": "9.1.8 Test the keyboard"
+        },
+        {
+            "location": "/vysor/#919-test-the-back-button",
+            "text": "",
+            "title": "9.1.9 Test the back button"
         },
         {
             "location": "/custom/",
@@ -399,6 +469,26 @@
             "location": "/workflow/#enabling-wifi-for-all-apps",
             "text": "With the keyboard enabled, you can now type in your password for your WiFi hotspot to connect to the Internet.   Connect to WiFi and all your apps and plug-ins will be able to connect to the Internet.",
             "title": "Enabling WiFi for All Apps"
+        },
+        {
+            "location": "/vysortips/",
+            "text": "Vysor Tips\n\n\nUsing Vysor From Linux or Other OS\n\n\nI've found the easiest way to Vysor on Linux is to use the \n\nVysor Chrome Extension\n in the Chrome web browser on Linux.\n\n\n\n\nOn Linux, you can also install Vysor as a desktop application with the information \nhere\n.\n\n\nThe basic process is shown below.\n\n\ngit clone https://github.com/koush/electron-chrome.git\ncd electron-chrome\nnpm install\n\n\n\nUsing the Chrome Store app id for Vysor:\n\n\nelectron --enable-logging . --app-id=gidgenkbbabolejbgbpnhbimgjbffefm\n\n\n\n\n\nFixing Flickering Problem on Certain NVIDIA Cards\n\n\nOn an old NVIDIA graphics card, I needed to disable flipping using the NVIDIA X Server Settings. I am using X11, not Wayland on Ubuntu 18.04.  You can check to see if you're running Wayland or X11 with this:\n\n\n$ echo $XDG_SESSION_TYPE\nx11",
+            "title": "Vysor Tips"
+        },
+        {
+            "location": "/vysortips/#vysor-tips",
+            "text": "",
+            "title": "Vysor Tips"
+        },
+        {
+            "location": "/vysortips/#using-vysor-from-linux-or-other-os",
+            "text": "I've found the easiest way to Vysor on Linux is to use the  Vysor Chrome Extension  in the Chrome web browser on Linux.   On Linux, you can also install Vysor as a desktop application with the information  here .  The basic process is shown below.  git clone https://github.com/koush/electron-chrome.git\ncd electron-chrome\nnpm install  Using the Chrome Store app id for Vysor:  electron --enable-logging . --app-id=gidgenkbbabolejbgbpnhbimgjbffefm",
+            "title": "Using Vysor From Linux or Other OS"
+        },
+        {
+            "location": "/vysortips/#fixing-flickering-problem-on-certain-nvidia-cards",
+            "text": "On an old NVIDIA graphics card, I needed to disable flipping using the NVIDIA X Server Settings. I am using X11, not Wayland on Ubuntu 18.04.  You can check to see if you're running Wayland or X11 with this:  $ echo $XDG_SESSION_TYPE\nx11",
+            "title": "Fixing Flickering Problem on Certain NVIDIA Cards"
         },
         {
             "location": "/troubleshoot/",

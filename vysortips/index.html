@@ -13,7 +13,7 @@
         <meta name="description" content="RICOH THETA development for plug-ins and 360 applications include AR and VR applications">
       
       
-        <link rel="canonical" href="http://theta360.guide/plugin-guide/customtips/">
+        <link rel="canonical" href="http://theta360.guide/plugin-guide/vysortips/">
       
       
         <meta name="author" content="Craig Oda and Jesse Casman">
@@ -38,7 +38,7 @@
     
     
       
-        <title>Custom Development Tips - THETA V Plugin Development Community Guide</title>
+        <title>Vysor Tips - THETA V Plugin Development Community Guide</title>
       
     
     
@@ -100,7 +100,7 @@
                 THETA V Plugin Development Community Guide
               </span>
               <span class="md-header-nav__topic">
-                Custom Development Tips
+                Vysor Tips
               </span>
             
           
@@ -285,75 +285,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Custom Development Tips
-      </label>
-    
-    <a href="./" title="Custom Development Tips" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../customtips/" title="Custom Development Tips" class="md-nav__link">
       Custom Development Tips
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#internal-storage" title="Internal Storage" class="md-nav__link">
-    Internal Storage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-the-wifi-web-api" title="Using the WiFi Web API" class="md-nav__link">
-    Using the WiFi Web API
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dual-fish-still-image-example" title="Dual-Fish Still Image Example" class="md-nav__link">
-    Dual-Fish Still Image Example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#text-to-speech-status" title="Text to Speech Status" class="md-nav__link">
-    Text to Speech Status
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#xmp-data" title="XMP Data" class="md-nav__link">
-    XMP Data
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -385,11 +321,54 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../vysortips/" title="Vysor Tips" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Vysor Tips
+      </label>
+    
+    <a href="./" title="Vysor Tips" class="md-nav__link md-nav__link--active">
       Vysor Tips
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-vysor-from-linux-or-other-os" title="Using Vysor From Linux or Other OS" class="md-nav__link">
+    Using Vysor From Linux or Other OS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fixing-flickering-problem-on-certain-nvidia-cards" title="Fixing Flickering Problem on Certain NVIDIA Cards" class="md-nav__link">
+    Fixing Flickering Problem on Certain NVIDIA Cards
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -486,36 +465,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#internal-storage" title="Internal Storage" class="md-nav__link">
-    Internal Storage
+  <a href="#using-vysor-from-linux-or-other-os" title="Using Vysor From Linux or Other OS" class="md-nav__link">
+    Using Vysor From Linux or Other OS
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-the-wifi-web-api" title="Using the WiFi Web API" class="md-nav__link">
-    Using the WiFi Web API
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dual-fish-still-image-example" title="Dual-Fish Still Image Example" class="md-nav__link">
-    Dual-Fish Still Image Example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#text-to-speech-status" title="Text to Speech Status" class="md-nav__link">
-    Text to Speech Status
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#xmp-data" title="XMP Data" class="md-nav__link">
-    XMP Data
+  <a href="#fixing-flickering-problem-on-certain-nvidia-cards" title="Fixing Flickering Problem on Certain NVIDIA Cards" class="md-nav__link">
+    Fixing Flickering Problem on Certain NVIDIA Cards
   </a>
   
 </li>
@@ -534,62 +492,30 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/theta360developers/plugin-guide/edit/master/docs/customtips.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/theta360developers/plugin-guide/edit/master/docs/vysortips.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="custom-development-tips">Custom Development Tips</h1>
-<p>There is extensive documentation on the 
-<a href="https://api.ricoh/docs/theta-plugin/sdk/">RICOH Developer Connection THETA Plug-in portal</a></p>
-<p>The plug-in SDK is a great place to get started. The SDK can be downloaded from <a href="https://github.com/ricohapi/theta-plugin-sdk">GitHub</a>. If
-you have any problems 
-please send an email to jcasman@oppkey.com for
- friendly (I hope) help.  :-)</p>
-<h2 id="internal-storage">Internal Storage</h2>
-<p>The THETA V has a maximum storage size of 32GB. Developers can use 19GB  for storage of their plug-in applications and approximately 1.5GB for the plug-in itself. The partition for data is <code>/data</code>.</p>
-<p><code>/sdcard/DCIM/</code> can be used.</p>
-<p>This is an example of saving all your images to a sub-directory <code>Construction</code> and then
-adding a number to the file name. There's a separate bit of code to iterate the roomNumber.</p>
-<pre><code>String fileUrl = "/storage/emulated/0/DCIM/Construction/room" + roomNumberStr + "sect01.jpg";
+                <h1 id="vysor-tips">Vysor Tips</h1>
+<h2 id="using-vysor-from-linux-or-other-os">Using Vysor From Linux or Other OS</h2>
+<p>I've found the easiest way to Vysor on Linux is to use the 
+<a href="https://chrome.google.com/webstore/detail/vysor/gidgenkbbabolejbgbpnhbimgjbffefm?authuser=1">Vysor Chrome Extension</a> in the Chrome web browser on Linux.</p>
+<p><img alt="Vysor Extension" src="../img/workflow/vysor/vysor-in-chrome.png" /></p>
+<p>On Linux, you can also install Vysor as a desktop application with the information <a href="https://github.com/koush/electron-chrome">here</a>.</p>
+<p>The basic process is shown below.</p>
+<pre><code>git clone https://github.com/koush/electron-chrome.git
+cd electron-chrome
+npm install
 </code></pre>
-<h2 id="using-the-wifi-web-api">Using the WiFi Web API</h2>
-<p>In addition to the Android Camera class, your plug-in can also use the 
-<a href="https://developers.theta360.com/en/docs/v2.1/api_reference/">RICOH THETA API v2.1</a> web API. Send POST commands 
-to the camera's Web API at (http://localhost:8080/). When using the Web API from the plug-in, digest authentication is not required regardless of the wireless LAN mode. For detailed specifications of the Web API, please refer to <a href="https://developers.theta360.com/en/docs/v2.1/api_reference/">API Reference - v2.1 - API &amp; SDK | RICOH THETA Developers</a></p>
-<p>The Web API can not be used when the plug-in controls the camera device using the Camera API.</p>
-<h2 id="dual-fish-still-image-example">Dual-Fish Still Image Example</h2>
-<p>If you want to save still images as dual-fisheye, use this parameter:</p>
-<pre><code>mParameters.set("RIC_PROC_STITCHING_TYPE", "RicNonStitching");
+<p>Using the Chrome Store app id for Vysor:</p>
+<pre><code>electron --enable-logging . --app-id=gidgenkbbabolejbgbpnhbimgjbffefm
 </code></pre>
-<p>The size of the dual-fish image is 5792x2896. Use the command below:</p>
-<pre><code>mParameters.setPictureSize(5792, 2896);
+<p><img alt="" src="../img/vysor/vysor-linux.png" /></p>
+<h2 id="fixing-flickering-problem-on-certain-nvidia-cards">Fixing Flickering Problem on Certain NVIDIA Cards</h2>
+<p>On an old NVIDIA graphics card, I needed to disable flipping using the NVIDIA X Server Settings. I am using X11, not Wayland on Ubuntu 18.04.  You can check to see if you're running Wayland or X11 with this:</p>
+<pre><code>$ echo $XDG_SESSION_TYPE
+x11
 </code></pre>
-<p><a href="https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/8?u=codetricity">This article</a> 
-provides more information on a plug-in built by community
-developer Ichi Hirota.</p>
-<p>The picture below is from Ichi Hirota.</p>
-<p><img alt="" src="../img/custom/dual-fish-sample.jpg" /></p>
-<p><img alt="" src="../img/custom/dual-fish-meta-data.png" /></p>
-<p>Here's example code from Ichi Hirota for bracketing.</p>
-<p><img alt="" src="../img/custom/dualfish-bracketing.png" /></p>
-<h2 id="text-to-speech-status">Text to Speech Status</h2>
-<p>As of May 21, 2018, <code>android.speech.tts</code> does not work. This may
-start working in a future update. For now, you can try other Text-Speech engines
-for Android. A list of untested engines is <a href="http://hyperionics.com/TtsSetup/eng/TtsInfo.html">here</a>. Another untested possibility
-could be the <a href="https://github.com/happyalu/Flite-TTS-Engine-for-Android">Flite TTS Engine for Android</a>.</p>
-<p>Currently, human speech can be played directly from the internal speaker of 
-the THETA V. However, the volume is low. We are trying to figure out how
-to increase the volume.</p>
-<p>Here's a <a href="https://youtu.be/AeebH7ONTkg">test of the THETA V playing "I Have a Dream"</a> by Dr. Martin Luther King Jr.</p>
-<h2 id="xmp-data">XMP Data</h2>
-<p>[UPDATED May 1, 2018] Images produced by the Plugin Application have XMP data in them. These screenshots are just looking at image properties using the GNOME Image Viewer app on an Ubuntu laptop. </p>
-<p>Here is an image taken with the Plugin Application, showing ProjectionType and more:</p>
-<p><img alt="" src="../img/custom/takenWITHplugin.png" /></p>
-<p>In comparison, here is an normal image taken at my desk, using the RICOH THETA V as a camera, not in Plug-in Mode. </p>
-<p><img alt="" src="../img/custom/takenWITHOUTplugin.png" /></p>
-<p>However, I have access to an example of a dual fish-eye image taken with a plug-in built by a developer that does not include XMP data. This may indicate that as you develop your plug-in, you may need to inject XMP data. There's an uncomfirmed rumor that Ricoh is working
-on a library to help with this.</p>
-<p>Here's the example:</p>
-<p><img alt="" src="../img/custom/ichidualfisheyeplugin.png" /></p>
+<p><img alt="OpenGL Settings" src="../img/workflow/vysor/opengl-settings.png" /></p>
                 
                   
                 
@@ -608,7 +534,7 @@ on a library to help with this.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../custom/" title="Custom Development Tutorial" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../workflow/" title="Workflow Tips" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -617,19 +543,19 @@ on a library to help with this.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Custom Development Tutorial
+                Workflow Tips
               </span>
             </div>
           </a>
         
         
-          <a href="../configuration/" title="Plugin Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../troubleshoot/" title="Troubleshooting" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Plugin Configuration
+                Troubleshooting
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
