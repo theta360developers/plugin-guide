@@ -156,8 +156,13 @@ a mobile phone app
 
 ## 2 Control LED Target
 
-The example below shows how to blink LEDs 4, 5, 6, 7, and 8. Note that the
-color is ignored.
+In the the next example, we will blink LEDs 4, 5, 6, 7, and 8. We will not be 
+controlling the color as only the color for LED3 can be controlled. 
+
+### 2.1 Edit MainActivity in Android Studio
+
+Go back to `MainActivity`. Comment out the line for LED3 and add the following lines to test the other 
+LEDs.
 
     notificationLedBlink(LedTarget.LED4, LedColor.BLUE, 300);
     notificationLedBlink(LedTarget.LED5, LedColor.BLUE, 300);
@@ -166,20 +171,43 @@ color is ignored.
     notificationLedBlink(LedTarget.LED7, LedColor.RED, 300);
     notificationLedBlink(LedTarget.LED8, LedColor.RED, 300);
 
+![](img/custom/led/led-4-8-code.png)
+
+### 2.2 Build, Install, Reboot
+
+Follow the same process described in the section above.
+
+1. Build the apk from within Android Studio
+2. Find the location of the APK
+3. cd into that directory
+4. install the apk with `adb install -r app-debug.apk`
+5. reboot camera
+
+### 2.3 Test
+
+Press the lower mode button for longer than 2 seconds to put the camera into 
+plug-in mode. 
+
+You should see all LEDs 4-8 blinking with a delay of 300ms between blinks.
+    
 ![](img/custom/led/led-4-8.png)
+
+Congratulations!  You've just finished your second custom plug-in for the RICOH 
+THETA V.
 
 ## 3 Control Camera Buttons
 
+In the next example, we'll control the buttons of the camera.
 
-There are three buttons you can map:
+### 3.1 Inspect pluginlibrary
 
-| Button Common Name | Name in Library | Code | Location |
-| ------------------ | ------------------- |:----:| -------- |
-| WiFi               | KEYCODE_WLAN_ON_OFF | 284  | side middle |
-| Mode               | KEYCODE_MEDIA_RECORD | 130  | side bottom |
-| Shutter            | KEYCODE_CAMERA | 27   | front       |
+From inside of Android Studio, go back to pluginlibrary. It is part of the SDK.
+Look for the `KeyReceiver` file.
 
-In the pluginlibrary for the SDK, the `KeyReceiver` file has these values:
+![](img/custom/key/keyreceiver-file.png)
+
+In the KeyReceiver subclass of BroadcastReceiver, you can see that the three usable 
+buttons are defined as constants.
 
     public class KeyReceiver extends BroadcastReceiver {
         public static final int KEYCODE_CAMERA = 27;
@@ -190,6 +218,23 @@ In the pluginlibrary for the SDK, the `KeyReceiver` file has these values:
         public static final String ACTION_KEY_UP = "com.theta360.plugin.ACTION_KEY_UP";
         private static final String KEY_CODE = "keyCode";
         private static final String KEY_EVENT = "KeyEvent";
+
+### 3.2 Locate buttons on camera
+
+There are three buttons you can map:
+
+| Button Common Name | Name in Library | Code | Location |
+| ------------------ | ------------------- |:----:| -------- |
+| WiFi               | KEYCODE_WLAN_ON_OFF | 284  | side middle |
+| Mode               | KEYCODE_MEDIA_RECORD | 130  | side bottom |
+| Shutter            | KEYCODE_CAMERA | 27   | front       |
+
+Two of the buttons are on the side of the camera, below the power button. The third
+button is on the front of the camera. It is the big *shutter* button.
+
+### 3.3 Open `MainActivity`
+
+In Android Studio, go back to `MainActivity` and look for the `onKeyDown` method.
 
 In `MainActivity.java`, there is an example of using the `keyCode`.
 
@@ -211,3 +256,30 @@ In `MainActivity.java`, there is an example of using the `keyCode`.
             }
 
 
+### 3.4 Map takePicture to Middle Side Button
+
+As a simple test, we will map the middle side or *wifi* button to take a picture. 
+If you forget the constant name, you can use Android Studio code completion to find it.
+
+![](img/custom/key/code-completion.png)
+
+### 3.5 Build, install, test
+
+Follow these steps:
+
+1. build the apk from inside of Android Studio
+2. install it with adb
+3. reboot camera
+4. put camera into plug-in mode
+5. test it on the camera by pressing the middle button on the side of the camera
+
+### 3.6 Celebration and next steps
+
+Congratulations! You've successfully built three plug-ins. You can now go
+back to the main Android developer documentation on the Android site to 
+add in standard Android functionality. You can also  test different libraries 
+for network and image processing.  The next section of this guide, 
+[Custom Development Tips](/customtips),
+will show you how to adjust the stitching of the THETA images. We'll update this
+document regularly.  If you have questions, the 
+[community](https://community.theta360.guide/c/theta-api-usage/plugin) is here to help.
