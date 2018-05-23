@@ -1,5 +1,7 @@
 # Plugin Use
 
+This section will walk you through using adb to install a plugin into the camera. You will put the camera into Plugin Mode and test the SDK sample Plugin. You will set the active Plugin using the RICOH THETA mobile app, and you will show a list of all the Plugins installing in the camera using the API.
+
 ## adb
 
 Connect the THETA V to your developer workstation with a USB cable.
@@ -237,3 +239,6 @@ The response
     }
 
 > __Note that this command was changed from `camera._listApplications`, which is now deprecated__
+
+This concludes the Plugin Use section. Congratulations!
+
