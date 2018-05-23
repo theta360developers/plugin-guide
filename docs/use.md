@@ -145,7 +145,7 @@ The picture will be given a filename that is in numerical sequential order incre
 The plug-in will save the image to a file with the location
 and format similar to the example below.
 
- `/sdcard/DCIM/100RICOH/R0010047.JPG`.
+ `/sdcard/DCIM/100RICOH/R0010047.JPG`
 
 Get the file name by using `adb shell` described in the step above.
 
