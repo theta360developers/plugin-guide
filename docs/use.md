@@ -76,7 +76,7 @@ Change directory into DCIM/0. The RICOH THETA Plug-in SDK uses the
     -rw-rw-r-- 1 media_rw media_rw 15972 2017-09-25 23:35 btsnoop_hci.log
     drwxrwxr-x 2 media_rw media_rw  4096 2017-09-21 14:26 ptp
 
-Locate pictures and movies.
+Locate Pictures and Movies. These are standard Android directories. The THETA V stores images in /DCIM/0/DCIM/100RICOH
 
     msm8953_64:/DCIM/0/DCIM/100RICOH $
 
