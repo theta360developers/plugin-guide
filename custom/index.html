@@ -451,12 +451,87 @@
     2 Control LED Target
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-edit-mainactivity-in-android-studio" title="2.1 Edit MainActivity in Android Studio" class="md-nav__link">
+    2.1 Edit MainActivity in Android Studio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-build-install-reboot" title="2.2 Build, Install, Reboot" class="md-nav__link">
+    2.2 Build, Install, Reboot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-test" title="2.3 Test" class="md-nav__link">
+    2.3 Test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#3-control-camera-buttons" title="3 Control Camera Buttons" class="md-nav__link">
     3 Control Camera Buttons
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-inspect-pluginlibrary" title="3.1 Inspect pluginlibrary" class="md-nav__link">
+    3.1 Inspect pluginlibrary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-locate-buttons-on-camera" title="3.2 Locate buttons on camera" class="md-nav__link">
+    3.2 Locate buttons on camera
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-open-mainactivity" title="3.3 Open MainActivity" class="md-nav__link">
+    3.3 Open MainActivity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-map-takepicture-to-middle-side-button" title="3.4 Map takePicture to Middle Side Button" class="md-nav__link">
+    3.4 Map takePicture to Middle Side Button
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-build-install-test" title="3.5 Build, install, test" class="md-nav__link">
+    3.5 Build, install, test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-celebration-and-next-steps" title="3.6 Celebration and next steps" class="md-nav__link">
+    3.6 Celebration and next steps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -747,12 +822,87 @@
     2 Control LED Target
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-edit-mainactivity-in-android-studio" title="2.1 Edit MainActivity in Android Studio" class="md-nav__link">
+    2.1 Edit MainActivity in Android Studio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-build-install-reboot" title="2.2 Build, Install, Reboot" class="md-nav__link">
+    2.2 Build, Install, Reboot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-test" title="2.3 Test" class="md-nav__link">
+    2.3 Test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#3-control-camera-buttons" title="3 Control Camera Buttons" class="md-nav__link">
     3 Control Camera Buttons
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-inspect-pluginlibrary" title="3.1 Inspect pluginlibrary" class="md-nav__link">
+    3.1 Inspect pluginlibrary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-locate-buttons-on-camera" title="3.2 Locate buttons on camera" class="md-nav__link">
+    3.2 Locate buttons on camera
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-open-mainactivity" title="3.3 Open MainActivity" class="md-nav__link">
+    3.3 Open MainActivity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-map-takepicture-to-middle-side-button" title="3.4 Map takePicture to Middle Side Button" class="md-nav__link">
+    3.4 Map takePicture to Middle Side Button
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-build-install-test" title="3.5 Build, install, test" class="md-nav__link">
+    3.5 Build, install, test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-celebration-and-next-steps" title="3.6 Celebration and next steps" class="md-nav__link">
+    3.6 Celebration and next steps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -878,8 +1028,11 @@ a plug-in developer!</p>
 a mobile phone app</li>
 </ul>
 <h2 id="2-control-led-target">2 Control LED Target</h2>
-<p>The example below shows how to blink LEDs 4, 5, 6, 7, and 8. Note that the
-color is ignored.</p>
+<p>In the the next example, we will blink LEDs 4, 5, 6, 7, and 8. We will not be 
+controlling the color as only the color for LED3 can be controlled. </p>
+<h3 id="21-edit-mainactivity-in-android-studio">2.1 Edit MainActivity in Android Studio</h3>
+<p>Go back to <code>MainActivity</code>. Comment out the line for LED3 and add the following lines to test the other 
+LEDs.</p>
 <pre><code>notificationLedBlink(LedTarget.LED4, LedColor.BLUE, 300);
 notificationLedBlink(LedTarget.LED5, LedColor.BLUE, 300);
 
@@ -887,8 +1040,42 @@ notificationLedBlink(LedTarget.LED6, LedColor.BLUE, 300);
 notificationLedBlink(LedTarget.LED7, LedColor.RED, 300);
 notificationLedBlink(LedTarget.LED8, LedColor.RED, 300);
 </code></pre>
+<p><img alt="" src="../img/custom/led/led-4-8-code.png" /></p>
+<h3 id="22-build-install-reboot">2.2 Build, Install, Reboot</h3>
+<p>Follow the same process described in the section above.</p>
+<ol>
+<li>Build the apk from within Android Studio</li>
+<li>Find the location of the APK</li>
+<li>cd into that directory</li>
+<li>install the apk with <code>adb install -r app-debug.apk</code></li>
+<li>reboot camera</li>
+</ol>
+<h3 id="23-test">2.3 Test</h3>
+<p>Press the lower mode button for longer than 2 seconds to put the camera into 
+plug-in mode. </p>
+<p>You should see all LEDs 4-8 blinking with a delay of 300ms between blinks.</p>
 <p><img alt="" src="../img/custom/led/led-4-8.png" /></p>
+<p>Congratulations!  You've just finished your second custom plug-in for the RICOH 
+THETA V.</p>
 <h2 id="3-control-camera-buttons">3 Control Camera Buttons</h2>
+<p>In the next example, we'll control the buttons of the camera.</p>
+<h3 id="31-inspect-pluginlibrary">3.1 Inspect pluginlibrary</h3>
+<p>From inside of Android Studio, go back to pluginlibrary. It is part of the SDK.
+Look for the <code>KeyReceiver</code> file.</p>
+<p><img alt="" src="../img/custom/key/keyreceiver-file.png" /></p>
+<p>In the KeyReceiver subclass of BroadcastReceiver, you can see that the three usable 
+buttons are defined as constants.</p>
+<pre><code>public class KeyReceiver extends BroadcastReceiver {
+    public static final int KEYCODE_CAMERA = 27;
+    public static final int KEYCODE_MEDIA_RECORD = 130;
+    public static final int KEYCODE_WLAN_ON_OFF = 284;
+
+    public static final String ACTION_KEY_DOWN = "com.theta360.plugin.ACTION_KEY_DOWN";
+    public static final String ACTION_KEY_UP = "com.theta360.plugin.ACTION_KEY_UP";
+    private static final String KEY_CODE = "keyCode";
+    private static final String KEY_EVENT = "KeyEvent";
+</code></pre>
+<h3 id="32-locate-buttons-on-camera">3.2 Locate buttons on camera</h3>
 <p>There are three buttons you can map:</p>
 <table>
 <thead>
@@ -920,17 +1107,10 @@ notificationLedBlink(LedTarget.LED8, LedColor.RED, 300);
 </tr>
 </tbody>
 </table>
-<p>In the pluginlibrary for the SDK, the <code>KeyReceiver</code> file has these values:</p>
-<pre><code>public class KeyReceiver extends BroadcastReceiver {
-    public static final int KEYCODE_CAMERA = 27;
-    public static final int KEYCODE_MEDIA_RECORD = 130;
-    public static final int KEYCODE_WLAN_ON_OFF = 284;
-
-    public static final String ACTION_KEY_DOWN = "com.theta360.plugin.ACTION_KEY_DOWN";
-    public static final String ACTION_KEY_UP = "com.theta360.plugin.ACTION_KEY_UP";
-    private static final String KEY_CODE = "keyCode";
-    private static final String KEY_EVENT = "KeyEvent";
-</code></pre>
+<p>Two of the buttons are on the side of the camera, below the power button. The third
+button is on the front of the camera. It is the big <em>shutter</em> button.</p>
+<h3 id="33-open-mainactivity">3.3 Open <code>MainActivity</code></h3>
+<p>In Android Studio, go back to <code>MainActivity</code> and look for the <code>onKeyDown</code> method.</p>
 <p>In <code>MainActivity.java</code>, there is an example of using the <code>keyCode</code>.</p>
 <pre><code>protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -949,6 +1129,28 @@ notificationLedBlink(LedTarget.LED8, LedColor.RED, 300);
             }
         }
 </code></pre>
+<h3 id="34-map-takepicture-to-middle-side-button">3.4 Map takePicture to Middle Side Button</h3>
+<p>As a simple test, we will map the middle side or <em>wifi</em> button to take a picture. 
+If you forget the constant name, you can use Android Studio code completion to find it.</p>
+<p><img alt="" src="../img/custom/key/code-completion.png" /></p>
+<h3 id="35-build-install-test">3.5 Build, install, test</h3>
+<p>Follow these steps:</p>
+<ol>
+<li>build the apk from inside of Android Studio</li>
+<li>install it with adb</li>
+<li>reboot camera</li>
+<li>put camera into plug-in mode</li>
+<li>test it on the camera by pressing the middle button on the side of the camera</li>
+</ol>
+<h3 id="36-celebration-and-next-steps">3.6 Celebration and next steps</h3>
+<p>Congratulations! You've successfully built three plug-ins. You can now go
+back to the main Android developer documentation on the Android site to 
+add in standard Android functionality. You can also  test different libraries 
+for network and image processing.  The next section of this guide, 
+<a href="../customtips">Custom Development Tips</a>,
+will show you how to adjust the stitching of the THETA images. We'll update this
+document regularly.  If you have questions, the 
+<a href="https://community.theta360.guide/c/theta-api-usage/plugin">community</a> is here to help.</p>
                 
                   
                 
