@@ -11,6 +11,10 @@ Use adb to connect to the camera
 On Windows, adb is installed into 
 
     C:\Users\[user]\AppData\Local\Android\sdk\platform-tools
+    
+On the Mac, adb is installed into
+
+    /Users/[user]/Library/Android/sdk/platform-tools/adb
 
 ![](img/adb/adb-location.png)
 
