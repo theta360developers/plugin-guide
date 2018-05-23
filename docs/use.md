@@ -157,7 +157,7 @@ Example:
 
 ### Alternate techniques to get the file and filename.
 
-* Use normal MTP as you would with a normal Android 
+* Use MTP as you would with a normal Android 
 phone 
 * Use a tool like Vysor to display a virtual THETA V screen to your workstation. To set up and use Vysor, refer to the next section on Vysor.
 
