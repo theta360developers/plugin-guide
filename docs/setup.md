@@ -2,7 +2,9 @@
 
 ## Android SDK Installation
 
-This community guide has been tested with the Android SDK 3.0.1 and 3.1.1 on Windows 10 (1709) 64bit and Ubuntu 17.10. The process should be similar on Mac OS X.
+This section will walk you through the steps to setup your RICOH THETA V development environment, including Android SDK installation, downloading Android Studio, and importing the Ricoh Plugin SDK and Updating the Android Build System.
+
+This community guide has been tested with the Android SDK 3.0.1 and 3.1.1 on Windows 10 (1709) 64bit and Ubuntu 17.10. The process is similar on Mac OS X.
 
 ### Download Android Studio
 
@@ -85,3 +87,4 @@ Locate the file `plugin-debug.apk` and install it onto the THETA V
 
 ![](img/setup/plugin-find-apk.png)
 
+This concludes the SDK Setup section. Congratulations!
