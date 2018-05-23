@@ -100,9 +100,9 @@ Locate Pictures and Movies. These are standard Android directories. The THETA V 
 Use Android Studio
 or
 
-call `adb install -r ./plugin/build/outputs/apk/debug/plugin-debug.apk`
+call `adb install -r ./theta-plugin-sdk-master/app/build/outputs/apk/debug/app-debug.apk`
 
-    $ adb install -r ./plugin/build/outputs/apk/debug/plugin-debug.apk 
+    $ adb install -r ./theta-plugin-sdk-master/app/build/outputs/apk/debug/app-debug.apk 
     * daemon not running. starting it now at tcp:5037 *
     * daemon started successfully *
     Success
