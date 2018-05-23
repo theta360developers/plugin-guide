@@ -511,14 +511,17 @@
                 
                 <h1 id="sdk-setup">SDK Setup</h1>
 <h2 id="android-sdk-installation">Android SDK Installation</h2>
-<p>This community guide has been tested with the Android SDK 3.0.1 and 3.1.1 on Windows 10 (1709) 64bit and Ubuntu 17.10. The process should be similar on Mac OS X.</p>
+<p>This section will walk you through the steps to setup your RICOH THETA V development environment, including Android SDK installation, downloading Android Studio, and importing the Ricoh Plugin SDK and Updating the Android Build System.</p>
+<p>This community guide has been tested with the Android SDK 3.0.1 and 3.1.1 on Windows 10 (1709) 64bit, Ubuntu 17.10, and macOS High Sierra Version 10.13.4.</p>
 <h3 id="download-android-studio">Download Android Studio</h3>
-<p>Download Android Studio from the site below.</p>
-<p>https://developer.android.com/studio/index.html</p>
+<p>Download Android Studio here:</p>
+<p><a href="https://developer.android.com/studio/index.html">https://developer.android.com/studio/index.html</a></p>
 <p><img alt="" src="../img/setup/android-studio-download.png" />
 <img alt="" src="../img/setup/android-studio-version.png" /></p>
 <h2 id="import-ricoh-plugin-sdk-and-update-android-build-system">Import Ricoh Plugin SDK and Update Android Build System</h2>
-<p>Install Ricoh Plugin SDK and Update Android Build System.</p>
+<p>Download the Ricoh Plugin SDK here:</p>
+<p><a href="https://github.com/ricohapi/theta-plugin-sdk">https://github.com/ricohapi/theta-plugin-sdk</a></p>
+<p>Update the Android Build System:</p>
 <pre><code>$ l
 app/          gradle/            gradlew      LICENSE.txt     README.md
 build.gradle  gradle.properties  gradlew.bat  pluginlibrary/  settings.gradle
@@ -553,6 +556,7 @@ build.gradle  gradle.properties  gradlew.bat  pluginlibrary/  settings.gradle
 <p><img alt="" src="../img/setup/build-locate.png" /></p>
 <p>Locate the file <code>plugin-debug.apk</code> and install it onto the THETA V</p>
 <p><img alt="" src="../img/setup/plugin-find-apk.png" /></p>
+<p>This concludes the SDK Setup section. Congratulations!</p>
                 
                   
                 

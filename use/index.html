@@ -578,12 +578,16 @@
                 
                 
                 <h1 id="plugin-use">Plugin Use</h1>
+<p>This section will walk you through using adb to install a plugin into the camera. You will put the camera into Plugin Mode and test the SDK sample Plugin. You will set the active Plugin using the RICOH THETA mobile app, and you will show a list of all the Plugins installing in the camera using the API.</p>
 <h2 id="adb">adb</h2>
 <p>Connect the THETA V to your developer workstation with a USB cable.</p>
 <p><img alt="" src="../img/adb/usb-cable.png" /></p>
 <p>Use adb to connect to the camera</p>
 <p>On Windows, adb is installed into </p>
 <pre><code>C:\Users\[user]\AppData\Local\Android\sdk\platform-tools
+</code></pre>
+<p>On the Mac, adb is installed into</p>
+<pre><code>/Users/[user]/Library/Android/sdk/platform-tools
 </code></pre>
 <p><img alt="" src="../img/adb/adb-location.png" /></p>
 <p>You should add this into your PATH.  On Windows, you can edit the PATH with <em>Control Panel -&gt; System and Security -&gt; System -&gt; Advanced system settings -&gt; Environment Variables -&gt; Path</em></p>
@@ -600,8 +604,8 @@ List of devices attached
 * daemon started successfully *
 00101082    device
 </code></pre>
-<p>Log into the camera and do an <code>ls</code> to list all files. The process is the same as 
-a standard Android phone.</p>
+<p>Log into the camera using <code>adb shell</code></p>
+<p>Do an <code>ls</code> to list all files. The directory structure and overall environment is the same as a standard Android phone.</p>
 <pre><code>$ adb shell
 msm8953_64:/ $ ls -l                                                                                                                                                 
 total 4240
@@ -618,7 +622,8 @@ drwxrwx--x  43 system   system      4096 2017-09-21 14:00 data
 drwxr-xr-x  15 root     root        3180 2017-11-27 12:50 dev
 drwxr-xr-x   3 root     root        4096 1970-01-01 00:00 dsp
 </code></pre>
-<p>Change directory into DCIM. The RICOH THETA Plug-in SDK uses the
+<p>Change directory into DCIM/0 </p>
+<p>The RICOH THETA Plug-in SDK uses the
 <a href="https://developer.android.com/reference/android/hardware/Camera.html">android.hardware.Camera</a> class. It saves images into the normal location you would expect from an Android device. You can also use the <a href="https://developers.theta360.com/en/docs/v2.1/api_reference/">RICOH THETA API v2.1</a>, which is is a WebAPI based on OSC to take pictures from your plug-in by sending a POST command to the internal camera web server.</p>
 <pre><code>127|msm8953_64:/DCIM/0 $ ls -l
 total 128
@@ -636,7 +641,7 @@ drwxrwxr-x 2 media_rw media_rw  4096 2017-01-01 00:00 Ringtones
 -rw-rw-r-- 1 media_rw media_rw 15972 2017-09-25 23:35 btsnoop_hci.log
 drwxrwxr-x 2 media_rw media_rw  4096 2017-09-21 14:26 ptp
 </code></pre>
-<p>Locate pictures and movies.</p>
+<p>Locate Pictures and Movies. These are standard Android directories. The THETA V stores images in /DCIM/0/DCIM/100RICOH</p>
 <pre><code>msm8953_64:/DCIM/0/DCIM/100RICOH $
 
 msm8953_64:/DCIM/0/DCIM/100RICOH $ ls -l                                                                                                             
@@ -654,22 +659,21 @@ total 554752
 <h2 id="install-plugin-into-camera">Install Plugin into Camera</h2>
 <p>Use Android Studio
 or</p>
-<p>call <code>adb install -r ./plugin/build/outputs/apk/debug/plugin-debug.apk</code></p>
-<pre><code>$ adb install -r ./plugin/build/outputs/apk/debug/plugin-debug.apk 
+<p>call <code>adb install -r ./theta-plugin-sdk-master/app/build/outputs/apk/debug/app-debug.apk</code></p>
+<pre><code>$ adb install -r ./theta-plugin-sdk-master/app/build/outputs/apk/debug/app-debug.apk 
 * daemon not running. starting it now at tcp:5037 *
 * daemon started successfully *
 Success
 </code></pre>
 <h2 id="put-camera-into-plugin-mode">Put Camera into Plugin Mode</h2>
-<p>Plugin mode can only be enabled on
-the RICOH THETA V.</p>
-<p>Plugins will not work on the THETA S (older model), THETA SC or THETA m15. </p>
+<p>Plugin mode can only be enabled on the RICOH THETA V.</p>
+<p>Plugins will not work on older THETA models m15, S, or SC. </p>
 <p>Every THETA V can be put into plugin mode by first turning the THETA V
 on and then pressing the mode button. </p>
 <p><img alt="" src="../img/use/mode-button.jpg" /></p>
 <p>After pressing the mode button for 2 seconds, release it.</p>
 <p><img alt="" src="../img/use/mode-button-press.jpg" /></p>
-<p>The <em>Camera status lamp</em> will turn solid white.</p>
+<p>The <em>Camera Status lamp</em> will turn solid white.</p>
 <p><img alt="" src="../img/use/camera-status-lamp.png" /></p>
 <p>Additional information on the side buttons is shown below.</p>
 <p><img alt="" src="../img/use/side-buttons.png" /></p>
@@ -681,7 +685,7 @@ The image should be captured. </p>
 <p>The picture will be given a filename that is in numerical sequential order incrementing up from the previous picture. The format will be similar to this example filename: R0010047.JPG. </p>
 <p>The plug-in will save the image to a file with the location
 and format similar to the example below.</p>
-<p><code>/sdcard/DCIM/100RICOH/R0010047.JPG</code>.</p>
+<p><code>/sdcard/DCIM/100RICOH/R0010047.JPG</code></p>
 <p>Get the file name by using <code>adb shell</code> described in the step above.</p>
 <p>Use <code>adb pull</code> to get the image file file to your local computer.</p>
 <p>Example:</p>
@@ -689,9 +693,9 @@ and format similar to the example below.</p>
 </code></pre>
 <h3 id="alternate-techniques-to-get-the-file-and-filename">Alternate techniques to get the file and filename.</h3>
 <ul>
-<li>use normal MTP as you would with a normal Android 
+<li>Use MTP as you would with a normal Android 
 phone </li>
-<li>use a tool like Vysor to display a virtual THETA V screen to your workstation. To set up and use Vysor, refer to the next section on Vysor.</li>
+<li>Use a tool like Vysor to display a virtual THETA V screen to your workstation. To set up and use Vysor, refer to the next section on Vysor.</li>
 </ul>
 <h2 id="set-active-plugin-with-mobile-app">Set Active Plugin with Mobile App</h2>
 <p>Using the Ricoh mobile app, you can see and select the
@@ -749,6 +753,7 @@ of available plug-ins.</p>
 <blockquote>
 <p><strong>Note that this command was changed from <code>camera._listApplications</code>, which is now deprecated</strong></p>
 </blockquote>
+<p>This concludes the Plugin Use section. Congratulations!</p>
                 
                   
                 
