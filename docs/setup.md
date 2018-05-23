@@ -17,7 +17,7 @@ Download Android Studio here:
 
 ## Import Ricoh Plugin SDK and Update Android Build System
 
-Download the RICOH Plugin SDK here:
+Download the Ricoh Plugin SDK here:
 
 [https://github.com/ricohapi/theta-plugin-sdk](https://github.com/ricohapi/theta-plugin-sdk)
 
