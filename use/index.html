@@ -323,19 +323,6 @@
     Set Active Plugin with Mobile App
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#show-list-of-plugins-with-api" title="Show List of Plugins With API" class="md-nav__link">
-    Show List of Plugins With API
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
       
@@ -545,19 +532,6 @@
     Set Active Plugin with Mobile App
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#show-list-of-plugins-with-api" title="Show List of Plugins With API" class="md-nav__link">
-    Show List of Plugins With API
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
       
@@ -657,9 +631,7 @@ total 554752
 -rw-rw-r-- 1 media_rw media_rw 108450224 2017-10-21 14:20 R0010039.MP4
 </code></pre>
 <h2 id="install-plugin-into-camera">Install Plugin into Camera</h2>
-<p>Use Android Studio
-or</p>
-<p>call <code>adb install -r ./theta-plugin-sdk-master/app/build/outputs/apk/debug/app-debug.apk</code></p>
+<p>Call <code>adb install -r ./theta-plugin-sdk-master/app/build/outputs/apk/debug/app-debug.apk</code></p>
 <pre><code>$ adb install -r ./theta-plugin-sdk-master/app/build/outputs/apk/debug/app-debug.apk 
 * daemon not running. starting it now at tcp:5037 *
 * daemon started successfully *
@@ -715,44 +687,6 @@ of available plug-ins.</p>
 <p><img alt="" src="../img/use/plug-in-selection.png" /></p>
 <p>This process is current as of version 1.17.1 of the Android application.</p>
 <p><img alt="" src="../img/use/app-version.png" /></p>
-<h3 id="show-list-of-plugins-with-api">Show List of Plugins With API</h3>
-<p>The POST command:</p>
-<pre><code>$ curl -X POST 192.168.1.1/osc/commands/execute --data '{"name":"camera._listPlugins"}' -H 'content-type: application/json'
-</code></pre>
-<p>The response</p>
-<pre><code>{
-"name":"camera._listPlugins",
-"results":{
-    "plugins":[
-        {
-            "applicationName":"Remote Playback",
-            "boot":false,
-            "bootOptions":"",
-            "force":false,
-            "foreground":false,
-            "packageName":"com.theta.remoteplayback",
-            "running":false,
-            "type":"extended",
-            "version":"1.00.20171106144412"
-        },
-        {
-            "applicationName":"PluginSample",
-            "boot":true,
-            "force":false,
-            "foreground":false,
-            "packageName":"com.theta360.pluginsample",
-            "running":false,
-            "type":"extended",
-            "version":"1.0"
-        }
-    ]
-},
-"state":"done"
-}
-</code></pre>
-<blockquote>
-<p><strong>Note that this command was changed from <code>camera._listApplications</code>, which is now deprecated</strong></p>
-</blockquote>
 <p>This concludes the Plugin Use section. Congratulations!</p>
                 
                   

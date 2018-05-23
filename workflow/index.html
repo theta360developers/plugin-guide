@@ -373,6 +373,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#show-list-of-plugins-with-api" title="Show List of Plugins With API" class="md-nav__link">
+    Show List of Plugins With API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#save-http-test-scripts-in-separate-tool" title="Save HTTP Test Scripts in Separate Tool" class="md-nav__link">
     Save HTTP Test Scripts in Separate Tool
   </a>
@@ -535,6 +542,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#show-list-of-plugins-with-api" title="Show List of Plugins With API" class="md-nav__link">
+    Show List of Plugins With API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#save-http-test-scripts-in-separate-tool" title="Save HTTP Test Scripts in Separate Tool" class="md-nav__link">
     Save HTTP Test Scripts in Separate Tool
   </a>
@@ -606,7 +620,46 @@ WiFi API of the camera. The Ricoh mobile application that
 most of your users will also have can set the active plugin. For
 testing, you can either use the Ricoh mobile app, build your own mobile app, or send a REST command
 using an HTTP testing tool such as 
-<a href="https://curl.haxx.se/">curl</a>  or <a href="https://www.getpostman.com/">Postman</a>. In the example below, I am using 
+<a href="https://curl.haxx.se/">curl</a>  or <a href="https://www.getpostman.com/">Postman</a>. </p>
+<h3 id="show-list-of-plugins-with-api">Show List of Plugins With API</h3>
+<p>The POST command:</p>
+<pre><code>$ curl -X POST 192.168.1.1/osc/commands/execute --data '{"name":"camera._listPlugins"}' -H 'content-type: application/json'
+</code></pre>
+<p>The response</p>
+<pre><code>{
+"name":"camera._listPlugins",
+"results":{
+    "plugins":[
+        {
+            "applicationName":"Remote Playback",
+            "boot":false,
+            "bootOptions":"",
+            "force":false,
+            "foreground":false,
+            "packageName":"com.theta.remoteplayback",
+            "running":false,
+            "type":"extended",
+            "version":"1.00.20171106144412"
+        },
+        {
+            "applicationName":"PluginSample",
+            "boot":true,
+            "force":false,
+            "foreground":false,
+            "packageName":"com.theta360.pluginsample",
+            "running":false,
+            "type":"extended",
+            "version":"1.0"
+        }
+    ]
+},
+"state":"done"
+}
+</code></pre>
+<blockquote>
+<p><strong>Note that this command was changed from <code>camera._listApplications</code>, which is now deprecated</strong></p>
+</blockquote>
+<p>In the example below, I am using 
 Restlet Client, which is a browser-based Chrome tool similar to Postman.</p>
 <p>I am using THETA V firmware 1.20.1. This command may change in the future.  Use com.theta360.yourappname for the packageName. Note that in the example below, my package is called pluginsample.</p>
 <p><img alt="" src="../img/use/setPlugin.png" /></p>
