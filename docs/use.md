@@ -16,7 +16,7 @@ On Windows, adb is installed into
     
 On the Mac, adb is installed into
 
-    /Users/[user]/Library/Android/sdk/platform-tools/adb
+    /Users/[user]/Library/Android/sdk/platform-tools
 
 ![](img/adb/adb-location.png)
 
