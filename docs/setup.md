@@ -20,12 +20,6 @@ Download Android Studio here:
 Download the Ricoh Plugin SDK here:
 
 [https://github.com/ricohapi/theta-plugin-sdk](https://github.com/ricohapi/theta-plugin-sdk)
-
-Update the Android Build System:
-
-    $ l
-    app/          gradle/            gradlew      LICENSE.txt     README.md
-    build.gradle  gradle.properties  gradlew.bat  pluginlibrary/  settings.gradle
     
 If you've just installed Android Studio, you may choose Import project from the Welcome to Android Studio start up screen:
 
