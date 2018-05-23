@@ -57,7 +57,7 @@ Do an `ls` to list all files. The directory structure and overall environment is
     drwxr-xr-x  15 root     root        3180 2017-11-27 12:50 dev
     drwxr-xr-x   3 root     root        4096 1970-01-01 00:00 dsp
 
-Change directory into DCIM. The RICOH THETA Plug-in SDK uses the
+Change directory into DCIM/0. The RICOH THETA Plug-in SDK uses the
 [android.hardware.Camera](https://developer.android.com/reference/android/hardware/Camera.html) class. It saves images into the normal location you would expect from an Android device. You can also use the [RICOH THETA API v2.1](https://developers.theta360.com/en/docs/v2.1/api_reference/), which is is a WebAPI based on OSC to take pictures from your plug-in by sending a POST command to the internal camera web server.
 
     127|msm8953_64:/DCIM/0 $ ls -l
