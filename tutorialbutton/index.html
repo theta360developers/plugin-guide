@@ -13,7 +13,7 @@
         <meta name="description" content="RICOH THETA development for plug-ins and 360 applications include AR and VR applications">
       
       
-        <link rel="canonical" href="http://theta360.guide/plugin-guide/fun/">
+        <link rel="canonical" href="http://theta360.guide/plugin-guide/tutorialbutton/">
       
       
         <meta name="author" content="Craig Oda and Jesse Casman">
@@ -38,7 +38,7 @@
     
     
       
-        <title>Fun Tests - THETA V Plugin Development Community Guide</title>
+        <title>Tutorial - Camera Buttons - THETA V Plugin Development Community Guide</title>
       
     
     
@@ -100,7 +100,7 @@
                 THETA V Plugin Development Community Guide
               </span>
               <span class="md-header-nav__topic">
-                Fun Tests
+                Tutorial - Camera Buttons
               </span>
             
           
@@ -309,11 +309,75 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../tutorialbutton/" title="Tutorial - Camera Buttons" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Tutorial - Camera Buttons
+      </label>
+    
+    <a href="./" title="Tutorial - Camera Buttons" class="md-nav__link md-nav__link--active">
       Tutorial - Camera Buttons
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-inspect-pluginlibrary" title="1 Inspect pluginlibrary" class="md-nav__link">
+    1 Inspect pluginlibrary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-locate-buttons-on-camera" title="2 Locate buttons on camera" class="md-nav__link">
+    2 Locate buttons on camera
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-open-mainactivity" title="3 Open MainActivity" class="md-nav__link">
+    3 Open MainActivity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-map-takepicture-to-middle-side-button" title="4 Map takePicture to Middle Side Button" class="md-nav__link">
+    4 Map takePicture to Middle Side Button
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-build-install-test" title="5 Build, install, test" class="md-nav__link">
+    5 Build, install, test
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -405,54 +469,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Fun Tests
-      </label>
-    
-    <a href="./" title="Fun Tests" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../fun/" title="Fun Tests" class="md-nav__link">
       Fun Tests
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#apps" title="Apps" class="md-nav__link">
-    Apps
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sound" title="Sound" class="md-nav__link">
-    Sound
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -513,15 +534,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#apps" title="Apps" class="md-nav__link">
-    Apps
+  <a href="#1-inspect-pluginlibrary" title="1 Inspect pluginlibrary" class="md-nav__link">
+    1 Inspect pluginlibrary
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sound" title="Sound" class="md-nav__link">
-    Sound
+  <a href="#2-locate-buttons-on-camera" title="2 Locate buttons on camera" class="md-nav__link">
+    2 Locate buttons on camera
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-open-mainactivity" title="3 Open MainActivity" class="md-nav__link">
+    3 Open MainActivity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-map-takepicture-to-middle-side-button" title="4 Map takePicture to Middle Side Button" class="md-nav__link">
+    4 Map takePicture to Middle Side Button
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-build-install-test" title="5 Build, install, test" class="md-nav__link">
+    5 Build, install, test
   </a>
   
 </li>
@@ -540,20 +582,94 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/theta360developers/plugin-guide/edit/master/docs/fun.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/theta360developers/plugin-guide/edit/master/docs/tutorialbutton.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="fun-tests-to-explore-theta-v-capability">Fun Tests To Explore THETA V Capability</h1>
-<p>This section is intended to show off some functionality and tests that are a "good start" but maybe need more effort. It's constantly a work in progress. But hopefully it helps point you in the right direction or give you some interesting starting points to do more. </p>
-<h2 id="apps">Apps</h2>
-<p>Since you've got a full Android OS funning inside the camera, there are quite a bit of apps and utilities that are already available. This is a real strength of the camera. This video shows some GREAT tips and tricks for setting up different Android apps running inside of the THETA V in plug-in mode. In includes details on setting up Developer Mode, turning off the camera services, using Vysor and using a virtual keyboard to connect to wifi, and tons more. </p>
-<p><a href="https://www.youtube.com/watch?v=UxKTV5WAqSA"><img alt="" src="../img/fun/youtubeicon-apps.png" /></a></p>
-<p>Here's a simple test after installed Facebook Messenger in a THETA V. We used Facebook Messenger to receive video and audio streams from the Internet. The video also shows the  THETA V playing music and audio from internal plug-ins.</p>
-<p><a href="https://www.youtube.com/watch?v=6NYnHdfQh0c"><img alt="" src="../img/fun/youtubeicon-facebook.png" /></a></p>
-<h2 id="sound">Sound</h2>
-<p>The THETA has all the functionality of a normal Android system. This includes using its speakers and mics (4 total) to interact with users. It's clear that the THETA V plug-in technology can be used to provide audio prompts to users, including human voice feedback. "Hey, THETA, take a picture now," for example.</p>
-<p>Here's a short, cool test using the internal speaker to play human speech. The audio file is single channel, 22050Hz 32-bit.  </p>
-<p><a href="https://www.youtube.com/watch?v=AeebH7ONTkg"><img alt="" src="../img/fun/youtubeicon-speech.png" /></a></p>
+                <h1 id="camera-buttons-tutorial">Camera Buttons Tutorial</h1>
+<p>In the next example, we'll control the buttons of the camera.</p>
+<h2 id="1-inspect-pluginlibrary">1 Inspect pluginlibrary</h2>
+<p>From inside of Android Studio, go back to pluginlibrary. It is part of the SDK.
+Look for the <code>KeyReceiver</code> file.</p>
+<p><img alt="" src="../img/custom/key/keyreceiver-file.png" /></p>
+<p>In the KeyReceiver subclass of BroadcastReceiver, you can see that the three usable 
+buttons are defined as constants.</p>
+<pre><code>public class KeyReceiver extends BroadcastReceiver {
+    public static final int KEYCODE_CAMERA = 27;
+    public static final int KEYCODE_MEDIA_RECORD = 130;
+    public static final int KEYCODE_WLAN_ON_OFF = 284;
+
+    public static final String ACTION_KEY_DOWN = "com.theta360.plugin.ACTION_KEY_DOWN";
+    public static final String ACTION_KEY_UP = "com.theta360.plugin.ACTION_KEY_UP";
+    private static final String KEY_CODE = "keyCode";
+    private static final String KEY_EVENT = "KeyEvent";
+</code></pre>
+<h2 id="2-locate-buttons-on-camera">2 Locate buttons on camera</h2>
+<p>There are three buttons you can map:</p>
+<table>
+<thead>
+<tr>
+<th>Button Common Name</th>
+<th>Name in Library</th>
+<th align="center">Code</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WiFi</td>
+<td>KEYCODE_WLAN_ON_OFF</td>
+<td align="center">284</td>
+<td>side middle</td>
+</tr>
+<tr>
+<td>Mode</td>
+<td>KEYCODE_MEDIA_RECORD</td>
+<td align="center">130</td>
+<td>side bottom</td>
+</tr>
+<tr>
+<td>Shutter</td>
+<td>KEYCODE_CAMERA</td>
+<td align="center">27</td>
+<td>front</td>
+</tr>
+</tbody>
+</table>
+<p>Two of the buttons are on the side of the camera, below the power button. The third
+button is on the front of the camera. It is the big <em>shutter</em> button.</p>
+<h2 id="3-open-mainactivity">3 Open <code>MainActivity</code></h2>
+<p>In Android Studio, go back to <code>MainActivity</code> and look for the <code>onKeyDown</code> method.</p>
+<p>In <code>MainActivity.java</code>, there is an example of using the <code>keyCode</code>.</p>
+<pre><code>protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+
+    // Set a callback when a button operation event is acquired.
+    setKeyCallback(new KeyCallback() {
+        @Override
+        public void onKeyDown(int keyCode, KeyEvent event) {
+            if (keyCode == KeyReceiver.KEYCODE_CAMERA) {
+                /*
+                 * To take a static picture, use the takePicture method.
+                 * You can receive a fileUrl of the static picture in the callback.
+                 */
+                new TakePictureTask(mTakePictureTaskCallback).execute();
+            }
+        }
+</code></pre>
+<h2 id="4-map-takepicture-to-middle-side-button">4 Map takePicture to Middle Side Button</h2>
+<p>As a simple test, we will map the middle side or <em>wifi</em> button to take a picture. 
+If you forget the constant name, you can use Android Studio code completion to find it.</p>
+<p><img alt="" src="../img/custom/key/code-completion.png" /></p>
+<h2 id="5-build-install-test">5 Build, install, test</h2>
+<p>Follow these steps:</p>
+<ol>
+<li>build the apk from inside of Android Studio</li>
+<li>install it with adb</li>
+<li>reboot camera</li>
+<li>put camera into plug-in mode</li>
+<li>test it on the camera by pressing the middle button on the side of the camera</li>
+</ol>
                 
                   
                 
@@ -572,7 +688,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../hardware/" title="Camera Hardware" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../tutorialcommunication/" title="Tutorial - LED Communication" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -581,19 +697,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Camera Hardware
+                Tutorial - LED Communication
               </span>
             </div>
           </a>
         
         
-          <a href="../concept/" title="Concept Ideas" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../wifiapi/" title="Using WiFi API" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Concept Ideas
+                Using WiFi API
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

@@ -212,163 +212,178 @@
         }, 
         {
             "location": "/custom/", 
-            "text": "Custom Development Tutorial\n\n\nOverview\n\n\nYour primary way to control the camera is with the Android Camera class. Although this API was\ndeprecated in level 21, it still works. Make sure you use the older Camera class and not\nthe newer camera2 API.\n\n\nUse the offiical Android API documentation as your main reference.\n\n\nhttps://developer.android.com/reference/android/hardware/Camera.html\n\n\nThere are a set of THETA features that are not covered by the Android \n\nCamera\n\nAPI. These are covered by using \n\nCamera.Parameters\n\n\n1 Control Camera LEDs\n\n\n1.1 First steps with pluginlibrary\n\n\nOpen Android Studio. Identify the available colors. In \npluginlibrary\n, the LED colors are defined in \nLedColor\n. Open\nthe file to inspect the available colors.\n\n\npluginlibrary -\n java -\n com.theta360pluginlibrary -\n values -\n LedColor\n\n\n\n\n\n1.2 Identify LED Colors\n\n\nYou'll only be able to change the color for the WiFi LED on the front of the camera.  Take note of the color\nyou want to use. This tutorial will use MAGENTA.\n\n\nRED(\"red\", 0b001),\nGREEN(\"green\", 0b010),\nBLUE(\"blue\", 0b100),\nCYAN(\"cyan\", 0b110),\nMAGENTA(\"magenta\", 0b101),\nYELLOW(\"yellow\", 0b011),\nWHITE(\"white\", 0b111),;\n\n\n\n1.3 Identify Camera LED Targets\n\n\nThe camera has 8 LEDs. You can control LEDs 3 through 8.\nThis tutorial will focus on LED3, the WiFi LED. You can try different LEDs\non your own. \n\n\n\n\n1.4 Review LED Example in SDK.\n\n\nIn \nMainActivity\n, there is an example that blinks the WiFi LED.\n\n\napp -\n java -\n com.theta360.pluginapplication -\n MainActivity\n\n\n\n\n\nLook for this code section.\n\n\npublic void onKeyUp(int keyCode, KeyEvent event) {\n    /**\n        * You can control the LED of the camera.\n        * It is possible to change the way of lighting, the cycle of blinking, the color of light emission.\n        * Light emitting color can be changed only LED3.\n        */\n    notificationLedBlink(LedTarget.LED3, LedColor.BLUE, 1000);\n\n\n\nYou can change the target, color, and blink rate. The higher the number, the slower the rate.\nThe example below will use a delay of 300 between blinks to cause the LED to blink faster.\n\n\n1.5 Change LED color and blink rate\n\n\nThe example below will flash LED3, the WiFi LED, faster and display\na magenta color.  Edit \nMainActivity\n as follows.\n\n\n    notificationLedBlink(LedTarget.LED3, LedColor.MAGENTA, 300);\n\n\n\n1.6 Save changes\n\n\nSelect \nSave all\n from the \nFile\n menu. \n\n\n\n\n1.7 Build apk\n\n\n\n\n1.8 Identify location of apk\n\n\n\n\ntheta-plugin-sdk \n app \n build \n outputs \n apk \n debug \n app-debug.apk\n\n\n\n1.9 Check installation setup\n\n\nWe will use adb to install the apk into your THETA V. Confirm that you have the following set up:\n\n\n\n\nYour THETA V should be connected to your computer with a USB cable.\n\n\nYou must be using an unlocked THETA V that is in \nDeveloper Mode\n\n\nadb needs to be in your PATH\n\n\n\n\nIf you are unsure about any of the steps above, refer to the previous sections. You can\nalso ask questions in the community at \nhttp://plugin.community.theta360.guide\n.\nIf you are at a workshop, please raise your hand and someone will assist you.\n\n\n1.10 cd into apk directory\n\n\nChange directory into the same directory that your apk is in.\n\n\n\n\n1.11 Use adb to install the apk into your camera\n\n\nIn the directory that your apk is in, run the following command:\n\n\nadb install -r app-debug.apk\n\n\n\nYou should see  \nSuccess\n. If your daemon is not running, you will see message that it is starting.\n\n\n\n\n1.12 Reboot camera\n\n\nHold the camera power button down for 4 seconds to shutdown the camera. You will see red LEDs flash.\nIf you do not hold the power button down for 4 seconds, the camera will go into sleep mode. Once the \ncamera is shutdown, turn on the camera again by pressing the power button.\n\n\n1.13 Put camera into plug-in mode\n\n\nPress the mode button for longer than 2 seconds. LED2 will turn white.\n\n\n1.14 Verify LED is blinking\n\n\nAfter placing the camera into plug-in mode, you should see LED3 blinking with a magenta color.\n\n\n\n\nCongratulations!  You've just successfully built and installed your first custom plug-in. You are now\na plug-in developer!\n\n\n1.15 Troubleshooting\n\n\nProblem: \nadb install -r app-debug.apk\n hangs\n\n\nUnplug the USB cable from your computer and try again.\n\n\nProblem: Install succeeds, but nothing happens\n\n\n\n\nUse the RICOH mobile app or the API to verify that plugin application is selected as the active plugin\n\n\nUse Vysor to uninstall old plug-in\n\n\nUse Vysor to start the plug-in. Click on the plug-in icon in Vysor with the same process you would use to launch\na mobile phone app\n\n\n\n\n2 Control LED Target\n\n\nIn the the next example, we will blink LEDs 4, 5, 6, 7, and 8. We will not be \ncontrolling the color as only the color for LED3 can be controlled. \n\n\n2.1 Edit MainActivity in Android Studio\n\n\nGo back to \nMainActivity\n. Comment out the line for LED3 and add the following lines to test the other \nLEDs.\n\n\nnotificationLedBlink(LedTarget.LED4, LedColor.BLUE, 300);\nnotificationLedBlink(LedTarget.LED5, LedColor.BLUE, 300);\n\nnotificationLedBlink(LedTarget.LED6, LedColor.BLUE, 300);\nnotificationLedBlink(LedTarget.LED7, LedColor.RED, 300);\nnotificationLedBlink(LedTarget.LED8, LedColor.RED, 300);\n\n\n\n\n\n2.2 Build, Install, Reboot\n\n\nFollow the same process described in the section above.\n\n\n\n\nBuild the apk from within Android Studio\n\n\nFind the location of the APK\n\n\ncd into that directory\n\n\ninstall the apk with \nadb install -r app-debug.apk\n\n\nreboot camera\n\n\n\n\n2.3 Test\n\n\nPress the lower mode button for longer than 2 seconds to put the camera into \nplug-in mode. \n\n\nYou should see all LEDs 4-8 blinking with a delay of 300ms between blinks.\n\n\n\n\nCongratulations!  You've just finished your second custom plug-in for the RICOH \nTHETA V.\n\n\n3 Control Camera Buttons\n\n\nIn the next example, we'll control the buttons of the camera.\n\n\n3.1 Inspect pluginlibrary\n\n\nFrom inside of Android Studio, go back to pluginlibrary. It is part of the SDK.\nLook for the \nKeyReceiver\n file.\n\n\n\n\nIn the KeyReceiver subclass of BroadcastReceiver, you can see that the three usable \nbuttons are defined as constants.\n\n\npublic class KeyReceiver extends BroadcastReceiver {\n    public static final int KEYCODE_CAMERA = 27;\n    public static final int KEYCODE_MEDIA_RECORD = 130;\n    public static final int KEYCODE_WLAN_ON_OFF = 284;\n\n    public static final String ACTION_KEY_DOWN = \"com.theta360.plugin.ACTION_KEY_DOWN\";\n    public static final String ACTION_KEY_UP = \"com.theta360.plugin.ACTION_KEY_UP\";\n    private static final String KEY_CODE = \"keyCode\";\n    private static final String KEY_EVENT = \"KeyEvent\";\n\n\n\n3.2 Locate buttons on camera\n\n\nThere are three buttons you can map:\n\n\n\n\n\n\n\n\nButton Common Name\n\n\nName in Library\n\n\nCode\n\n\nLocation\n\n\n\n\n\n\n\n\n\n\nWiFi\n\n\nKEYCODE_WLAN_ON_OFF\n\n\n284\n\n\nside middle\n\n\n\n\n\n\nMode\n\n\nKEYCODE_MEDIA_RECORD\n\n\n130\n\n\nside bottom\n\n\n\n\n\n\nShutter\n\n\nKEYCODE_CAMERA\n\n\n27\n\n\nfront\n\n\n\n\n\n\n\n\nTwo of the buttons are on the side of the camera, below the power button. The third\nbutton is on the front of the camera. It is the big \nshutter\n button.\n\n\n3.3 Open \nMainActivity\n\n\nIn Android Studio, go back to \nMainActivity\n and look for the \nonKeyDown\n method.\n\n\nIn \nMainActivity.java\n, there is an example of using the \nkeyCode\n.\n\n\nprotected void onCreate(Bundle savedInstanceState) {\n    super.onCreate(savedInstanceState);\n    setContentView(R.layout.activity_main);\n\n    // Set a callback when a button operation event is acquired.\n    setKeyCallback(new KeyCallback() {\n        @Override\n        public void onKeyDown(int keyCode, KeyEvent event) {\n            if (keyCode == KeyReceiver.KEYCODE_CAMERA) {\n                /*\n                 * To take a static picture, use the takePicture method.\n                 * You can receive a fileUrl of the static picture in the callback.\n                 */\n                new TakePictureTask(mTakePictureTaskCallback).execute();\n            }\n        }\n\n\n\n3.4 Map takePicture to Middle Side Button\n\n\nAs a simple test, we will map the middle side or \nwifi\n button to take a picture. \nIf you forget the constant name, you can use Android Studio code completion to find it.\n\n\n\n\n3.5 Build, install, test\n\n\nFollow these steps:\n\n\n\n\nbuild the apk from inside of Android Studio\n\n\ninstall it with adb\n\n\nreboot camera\n\n\nput camera into plug-in mode\n\n\ntest it on the camera by pressing the middle button on the side of the camera\n\n\n\n\n3.6 Celebration and next steps\n\n\nCongratulations! You've successfully built three plug-ins. You can now go\nback to the main Android developer documentation on the Android site to \nadd in standard Android functionality. You can also  test different libraries \nfor network and image processing.  The next section of this guide, \n\nCustom Development Tips\n,\nwill show you how to adjust the stitching of the THETA images. We'll update this\ndocument regularly.  If you have questions, the \n\ncommunity\n is here to help.", 
-            "title": "Custom Development Tutorial"
+            "text": "Development Tutorials\n\n\nOverview\n\n\nYour primary way to control the camera is with the Android Camera class. Although this API was\ndeprecated in level 21, it still works. Make sure you use the older Camera class and not\nthe newer camera2 API.\n\n\nUse the offiical Android API documentation as your main reference.\n\n\nhttps://developer.android.com/reference/android/hardware/Camera.html\n\n\nThere are a set of THETA features that are not covered by the Android \n\nCamera\n\nAPI. These are covered by using \n\nCamera.Parameters\n\n\nWe have prepared four tutorials for you to get started.\n\n\n\n\n\n\n\n\nTutorial\n\n\nLearning Objective\n\n\n\n\n\n\n\n\n\n\nLED Color\n\n\nIntroduction to plug-in library. Control LED color.\n\n\n\n\n\n\nLED Communication\n\n\nBasic status communication to users with the LEDs.\n\n\n\n\n\n\nCamera Buttons\n\n\nUsing camera buttons to get user input.\n\n\n\n\n\n\n\n\nNext steps\n\n\nYou can now go back to the main Android developer documentation on the Android site to \nadd in standard Android functionality. You can also  test different libraries \nfor network and image processing.  The next section of this guide, \n\nCustom Development Tips\n,\nwill show you how to adjust the stitching of the THETA images. We'll update this\ndocument regularly.  If you have questions, the \n\ncommunity\n is here to help.", 
+            "title": "Tutorials Overview"
         }, 
         {
-            "location": "/custom/#custom-development-tutorial", 
+            "location": "/custom/#development-tutorials", 
             "text": "", 
-            "title": "Custom Development Tutorial"
+            "title": "Development Tutorials"
         }, 
         {
             "location": "/custom/#overview", 
-            "text": "Your primary way to control the camera is with the Android Camera class. Although this API was\ndeprecated in level 21, it still works. Make sure you use the older Camera class and not\nthe newer camera2 API.  Use the offiical Android API documentation as your main reference.  https://developer.android.com/reference/android/hardware/Camera.html  There are a set of THETA features that are not covered by the Android  Camera \nAPI. These are covered by using  Camera.Parameters", 
+            "text": "Your primary way to control the camera is with the Android Camera class. Although this API was\ndeprecated in level 21, it still works. Make sure you use the older Camera class and not\nthe newer camera2 API.  Use the offiical Android API documentation as your main reference.  https://developer.android.com/reference/android/hardware/Camera.html  There are a set of THETA features that are not covered by the Android  Camera \nAPI. These are covered by using  Camera.Parameters  We have prepared four tutorials for you to get started.     Tutorial  Learning Objective      LED Color  Introduction to plug-in library. Control LED color.    LED Communication  Basic status communication to users with the LEDs.    Camera Buttons  Using camera buttons to get user input.", 
             "title": "Overview"
         }, 
         {
-            "location": "/custom/#1-control-camera-leds", 
-            "text": "", 
-            "title": "1 Control Camera LEDs"
+            "location": "/custom/#next-steps", 
+            "text": "You can now go back to the main Android developer documentation on the Android site to \nadd in standard Android functionality. You can also  test different libraries \nfor network and image processing.  The next section of this guide,  Custom Development Tips ,\nwill show you how to adjust the stitching of the THETA images. We'll update this\ndocument regularly.  If you have questions, the  community  is here to help.", 
+            "title": "Next steps"
         }, 
         {
-            "location": "/custom/#11-first-steps-with-pluginlibrary", 
+            "location": "/tutorialcolor/", 
+            "text": "LED Color Tutorial\n\n\n1 First steps with pluginlibrary\n\n\nOpen Android Studio. Identify the available colors. In \npluginlibrary\n, the LED colors are defined in \nLedColor\n. Open\nthe file to inspect the available colors.\n\n\npluginlibrary -\n java -\n com.theta360pluginlibrary -\n values -\n LedColor\n\n\n\n\n\n2 Identify LED Colors\n\n\nYou'll only be able to change the color for the WiFi LED on the front of the camera.  Take note of the color\nyou want to use. This tutorial will use MAGENTA.\n\n\nRED(\"red\", 0b001),\nGREEN(\"green\", 0b010),\nBLUE(\"blue\", 0b100),\nCYAN(\"cyan\", 0b110),\nMAGENTA(\"magenta\", 0b101),\nYELLOW(\"yellow\", 0b011),\nWHITE(\"white\", 0b111),;\n\n\n\n3 Identify Camera LED Targets\n\n\nThe camera has 8 LEDs. You can control LEDs 3 through 8.\nThis tutorial will focus on LED3, the WiFi LED. You can try different LEDs\non your own. \n\n\n\n\n4 Review LED Example in SDK.\n\n\nIn \nMainActivity\n, there is an example that blinks the WiFi LED.\n\n\napp -\n java -\n com.theta360.pluginapplication -\n MainActivity\n\n\n\n\n\nLook for this code section.\n\n\npublic void onKeyUp(int keyCode, KeyEvent event) {\n    /**\n        * You can control the LED of the camera.\n        * It is possible to change the way of lighting, the cycle of blinking, the color of light emission.\n        * Light emitting color can be changed only LED3.\n        */\n    notificationLedBlink(LedTarget.LED3, LedColor.BLUE, 1000);\n\n\n\nYou can change the target, color, and blink rate. The higher the number, the slower the rate.\nThe example below will use a delay of 300 between blinks to cause the LED to blink faster.\n\n\n5 Change LED color and blink rate\n\n\nThe example below will flash LED3, the WiFi LED, faster and display\na magenta color.  Edit \nMainActivity\n as follows.\n\n\n    notificationLedBlink(LedTarget.LED3, LedColor.MAGENTA, 300);\n\n\n\n6 Save changes\n\n\nSelect \nSave all\n from the \nFile\n menu. \n\n\n\n\n7 Build apk\n\n\n\n\n8 Identify location of apk\n\n\n\n\ntheta-plugin-sdk \n app \n build \n outputs \n apk \n debug \n app-debug.apk\n\n\n\n9 Check installation setup\n\n\nWe will use adb to install the apk into your THETA V. Confirm that you have the following set up:\n\n\n\n\nYour THETA V should be connected to your computer with a USB cable.\n\n\nYou must be using an unlocked THETA V that is in \nDeveloper Mode\n\n\nadb needs to be in your PATH\n\n\n\n\nIf you are unsure about any of the steps above, refer to the previous sections. You can\nalso ask questions in the community at \nhttp://plugin.community.theta360.guide\n.\nIf you are at a workshop, please raise your hand and someone will assist you.\n\n\n10 cd into apk directory\n\n\nChange directory into the same directory that your apk is in.\n\n\n\n\n11 Use adb to install the apk into your camera\n\n\nIn the directory that your apk is in, run the following command:\n\n\nadb install -r app-debug.apk\n\n\n\nYou should see  \nSuccess\n. If your daemon is not running, you will see message that it is starting.\n\n\n\n\n12 Reboot camera\n\n\nHold the camera power button down for 4 seconds to shutdown the camera. You will see red LEDs flash.\nIf you do not hold the power button down for 4 seconds, the camera will go into sleep mode. Once the \ncamera is shutdown, turn on the camera again by pressing the power button.\n\n\n13 Put camera into plug-in mode\n\n\nPress the mode button for longer than 2 seconds. LED2 will turn white.\n\n\n14 Verify LED is blinking\n\n\nAfter placing the camera into plug-in mode, you should see LED3 blinking with a magenta color.\n\n\n\n\nCongratulations!  You've just successfully built and installed your first custom plug-in. You are now\na plug-in developer!\n\n\n15 Troubleshooting\n\n\nProblem: \nadb install -r app-debug.apk\n hangs\n\n\nUnplug the USB cable from your computer and try again.\n\n\nProblem: Install succeeds, but nothing happens\n\n\n\n\nUse the RICOH mobile app or the API to verify that plugin application is selected as the active plugin\n\n\nUse Vysor to uninstall old plug-in\n\n\nUse Vysor to start the plug-in. Click on the plug-in icon in Vysor with the same process you would use to launch\na mobile phone app", 
+            "title": "Tutorial - LED Color"
+        }, 
+        {
+            "location": "/tutorialcolor/#led-color-tutorial", 
+            "text": "", 
+            "title": "LED Color Tutorial"
+        }, 
+        {
+            "location": "/tutorialcolor/#1-first-steps-with-pluginlibrary", 
             "text": "Open Android Studio. Identify the available colors. In  pluginlibrary , the LED colors are defined in  LedColor . Open\nthe file to inspect the available colors.  pluginlibrary -  java -  com.theta360pluginlibrary -  values -  LedColor", 
-            "title": "1.1 First steps with pluginlibrary"
+            "title": "1 First steps with pluginlibrary"
         }, 
         {
-            "location": "/custom/#12-identify-led-colors", 
+            "location": "/tutorialcolor/#2-identify-led-colors", 
             "text": "You'll only be able to change the color for the WiFi LED on the front of the camera.  Take note of the color\nyou want to use. This tutorial will use MAGENTA.  RED(\"red\", 0b001),\nGREEN(\"green\", 0b010),\nBLUE(\"blue\", 0b100),\nCYAN(\"cyan\", 0b110),\nMAGENTA(\"magenta\", 0b101),\nYELLOW(\"yellow\", 0b011),\nWHITE(\"white\", 0b111),;", 
-            "title": "1.2 Identify LED Colors"
+            "title": "2 Identify LED Colors"
         }, 
         {
-            "location": "/custom/#13-identify-camera-led-targets", 
+            "location": "/tutorialcolor/#3-identify-camera-led-targets", 
             "text": "The camera has 8 LEDs. You can control LEDs 3 through 8.\nThis tutorial will focus on LED3, the WiFi LED. You can try different LEDs\non your own.", 
-            "title": "1.3 Identify Camera LED Targets"
+            "title": "3 Identify Camera LED Targets"
         }, 
         {
-            "location": "/custom/#14-review-led-example-in-sdk", 
+            "location": "/tutorialcolor/#4-review-led-example-in-sdk", 
             "text": "In  MainActivity , there is an example that blinks the WiFi LED.  app -  java -  com.theta360.pluginapplication -  MainActivity   Look for this code section.  public void onKeyUp(int keyCode, KeyEvent event) {\n    /**\n        * You can control the LED of the camera.\n        * It is possible to change the way of lighting, the cycle of blinking, the color of light emission.\n        * Light emitting color can be changed only LED3.\n        */\n    notificationLedBlink(LedTarget.LED3, LedColor.BLUE, 1000);  You can change the target, color, and blink rate. The higher the number, the slower the rate.\nThe example below will use a delay of 300 between blinks to cause the LED to blink faster.", 
-            "title": "1.4 Review LED Example in SDK."
+            "title": "4 Review LED Example in SDK."
         }, 
         {
-            "location": "/custom/#15-change-led-color-and-blink-rate", 
+            "location": "/tutorialcolor/#5-change-led-color-and-blink-rate", 
             "text": "The example below will flash LED3, the WiFi LED, faster and display\na magenta color.  Edit  MainActivity  as follows.      notificationLedBlink(LedTarget.LED3, LedColor.MAGENTA, 300);", 
-            "title": "1.5 Change LED color and blink rate"
+            "title": "5 Change LED color and blink rate"
         }, 
         {
-            "location": "/custom/#16-save-changes", 
+            "location": "/tutorialcolor/#6-save-changes", 
             "text": "Select  Save all  from the  File  menu.", 
-            "title": "1.6 Save changes"
+            "title": "6 Save changes"
         }, 
         {
-            "location": "/custom/#17-build-apk", 
+            "location": "/tutorialcolor/#7-build-apk", 
             "text": "", 
-            "title": "1.7 Build apk"
+            "title": "7 Build apk"
         }, 
         {
-            "location": "/custom/#18-identify-location-of-apk", 
+            "location": "/tutorialcolor/#8-identify-location-of-apk", 
             "text": "theta-plugin-sdk   app   build   outputs   apk   debug   app-debug.apk", 
-            "title": "1.8 Identify location of apk"
+            "title": "8 Identify location of apk"
         }, 
         {
-            "location": "/custom/#19-check-installation-setup", 
+            "location": "/tutorialcolor/#9-check-installation-setup", 
             "text": "We will use adb to install the apk into your THETA V. Confirm that you have the following set up:   Your THETA V should be connected to your computer with a USB cable.  You must be using an unlocked THETA V that is in  Developer Mode  adb needs to be in your PATH   If you are unsure about any of the steps above, refer to the previous sections. You can\nalso ask questions in the community at  http://plugin.community.theta360.guide .\nIf you are at a workshop, please raise your hand and someone will assist you.", 
-            "title": "1.9 Check installation setup"
+            "title": "9 Check installation setup"
         }, 
         {
-            "location": "/custom/#110-cd-into-apk-directory", 
+            "location": "/tutorialcolor/#10-cd-into-apk-directory", 
             "text": "Change directory into the same directory that your apk is in.", 
-            "title": "1.10 cd into apk directory"
+            "title": "10 cd into apk directory"
         }, 
         {
-            "location": "/custom/#111-use-adb-to-install-the-apk-into-your-camera", 
+            "location": "/tutorialcolor/#11-use-adb-to-install-the-apk-into-your-camera", 
             "text": "In the directory that your apk is in, run the following command:  adb install -r app-debug.apk  You should see   Success . If your daemon is not running, you will see message that it is starting.", 
-            "title": "1.11 Use adb to install the apk into your camera"
+            "title": "11 Use adb to install the apk into your camera"
         }, 
         {
-            "location": "/custom/#112-reboot-camera", 
+            "location": "/tutorialcolor/#12-reboot-camera", 
             "text": "Hold the camera power button down for 4 seconds to shutdown the camera. You will see red LEDs flash.\nIf you do not hold the power button down for 4 seconds, the camera will go into sleep mode. Once the \ncamera is shutdown, turn on the camera again by pressing the power button.", 
-            "title": "1.12 Reboot camera"
+            "title": "12 Reboot camera"
         }, 
         {
-            "location": "/custom/#113-put-camera-into-plug-in-mode", 
+            "location": "/tutorialcolor/#13-put-camera-into-plug-in-mode", 
             "text": "Press the mode button for longer than 2 seconds. LED2 will turn white.", 
-            "title": "1.13 Put camera into plug-in mode"
+            "title": "13 Put camera into plug-in mode"
         }, 
         {
-            "location": "/custom/#114-verify-led-is-blinking", 
+            "location": "/tutorialcolor/#14-verify-led-is-blinking", 
             "text": "After placing the camera into plug-in mode, you should see LED3 blinking with a magenta color.   Congratulations!  You've just successfully built and installed your first custom plug-in. You are now\na plug-in developer!", 
-            "title": "1.14 Verify LED is blinking"
+            "title": "14 Verify LED is blinking"
         }, 
         {
-            "location": "/custom/#115-troubleshooting", 
+            "location": "/tutorialcolor/#15-troubleshooting", 
             "text": "", 
-            "title": "1.15 Troubleshooting"
+            "title": "15 Troubleshooting"
         }, 
         {
-            "location": "/custom/#problem-adb-install-r-app-debugapk-hangs", 
+            "location": "/tutorialcolor/#problem-adb-install-r-app-debugapk-hangs", 
             "text": "Unplug the USB cable from your computer and try again.", 
             "title": "Problem: adb install -r app-debug.apk hangs"
         }, 
         {
-            "location": "/custom/#problem-install-succeeds-but-nothing-happens", 
+            "location": "/tutorialcolor/#problem-install-succeeds-but-nothing-happens", 
             "text": "Use the RICOH mobile app or the API to verify that plugin application is selected as the active plugin  Use Vysor to uninstall old plug-in  Use Vysor to start the plug-in. Click on the plug-in icon in Vysor with the same process you would use to launch\na mobile phone app", 
             "title": "Problem: Install succeeds, but nothing happens"
         }, 
         {
-            "location": "/custom/#2-control-led-target", 
-            "text": "In the the next example, we will blink LEDs 4, 5, 6, 7, and 8. We will not be \ncontrolling the color as only the color for LED3 can be controlled.", 
-            "title": "2 Control LED Target"
+            "location": "/tutorialcommunication/", 
+            "text": "LED Communication\n\n\nAs the RICOH THETA does not have a screen, your Android plug-in will need to use\nLEDs and sound as the primary way to communicate the status of your application\nto the user.\n\n\nThere are three variables you can control.\n\n\n\n\nColor of LED3\n\n\nWhich LED\n\n\nLED blink rate\n\n\n\n\nBy varying the location, speed and color of the camera LEDs, you can communicate\nthe status of your plug-in to the user.\n\n\nIn the the next example, we will blink LEDs 4, 5, 6, 7, and 8. We will not be \ncontrolling the color as only the color for LED3 can be controlled. \n\n\n1 Edit MainActivity in Android Studio\n\n\nGo back to \nMainActivity\n. Comment out the line for LED3 and add the following lines to test the other \nLEDs.\n\n\nnotificationLedBlink(LedTarget.LED4, LedColor.BLUE, 300);\nnotificationLedBlink(LedTarget.LED5, LedColor.BLUE, 300);\n\nnotificationLedBlink(LedTarget.LED6, LedColor.BLUE, 300);\nnotificationLedBlink(LedTarget.LED7, LedColor.RED, 300);\nnotificationLedBlink(LedTarget.LED8, LedColor.RED, 300);\n\n\n\n\n\n2 Build, Install, Reboot\n\n\nFollow the same process described in the section above.\n\n\n\n\nBuild the apk from within Android Studio\n\n\nFind the location of the APK\n\n\ncd into that directory\n\n\ninstall the apk with \nadb install -r app-debug.apk\n\n\nreboot camera\n\n\n\n\n3 Test\n\n\nPress the lower mode button for longer than 2 seconds to put the camera into \nplug-in mode. \n\n\nYou should see all LEDs 4-8 blinking with a delay of 300ms between blinks.\n\n\n\n\nCongratulations!  You've just finished your second custom plug-in for the RICOH \nTHETA V.", 
+            "title": "Tutorial - LED Communication"
         }, 
         {
-            "location": "/custom/#21-edit-mainactivity-in-android-studio", 
+            "location": "/tutorialcommunication/#led-communication", 
+            "text": "As the RICOH THETA does not have a screen, your Android plug-in will need to use\nLEDs and sound as the primary way to communicate the status of your application\nto the user.  There are three variables you can control.   Color of LED3  Which LED  LED blink rate   By varying the location, speed and color of the camera LEDs, you can communicate\nthe status of your plug-in to the user.  In the the next example, we will blink LEDs 4, 5, 6, 7, and 8. We will not be \ncontrolling the color as only the color for LED3 can be controlled.", 
+            "title": "LED Communication"
+        }, 
+        {
+            "location": "/tutorialcommunication/#1-edit-mainactivity-in-android-studio", 
             "text": "Go back to  MainActivity . Comment out the line for LED3 and add the following lines to test the other \nLEDs.  notificationLedBlink(LedTarget.LED4, LedColor.BLUE, 300);\nnotificationLedBlink(LedTarget.LED5, LedColor.BLUE, 300);\n\nnotificationLedBlink(LedTarget.LED6, LedColor.BLUE, 300);\nnotificationLedBlink(LedTarget.LED7, LedColor.RED, 300);\nnotificationLedBlink(LedTarget.LED8, LedColor.RED, 300);", 
-            "title": "2.1 Edit MainActivity in Android Studio"
+            "title": "1 Edit MainActivity in Android Studio"
         }, 
         {
-            "location": "/custom/#22-build-install-reboot", 
+            "location": "/tutorialcommunication/#2-build-install-reboot", 
             "text": "Follow the same process described in the section above.   Build the apk from within Android Studio  Find the location of the APK  cd into that directory  install the apk with  adb install -r app-debug.apk  reboot camera", 
-            "title": "2.2 Build, Install, Reboot"
+            "title": "2 Build, Install, Reboot"
         }, 
         {
-            "location": "/custom/#23-test", 
+            "location": "/tutorialcommunication/#3-test", 
             "text": "Press the lower mode button for longer than 2 seconds to put the camera into \nplug-in mode.   You should see all LEDs 4-8 blinking with a delay of 300ms between blinks.   Congratulations!  You've just finished your second custom plug-in for the RICOH \nTHETA V.", 
-            "title": "2.3 Test"
+            "title": "3 Test"
         }, 
         {
-            "location": "/custom/#3-control-camera-buttons", 
+            "location": "/tutorialbutton/", 
+            "text": "Camera Buttons Tutorial\n\n\nIn the next example, we'll control the buttons of the camera.\n\n\n1 Inspect pluginlibrary\n\n\nFrom inside of Android Studio, go back to pluginlibrary. It is part of the SDK.\nLook for the \nKeyReceiver\n file.\n\n\n\n\nIn the KeyReceiver subclass of BroadcastReceiver, you can see that the three usable \nbuttons are defined as constants.\n\n\npublic class KeyReceiver extends BroadcastReceiver {\n    public static final int KEYCODE_CAMERA = 27;\n    public static final int KEYCODE_MEDIA_RECORD = 130;\n    public static final int KEYCODE_WLAN_ON_OFF = 284;\n\n    public static final String ACTION_KEY_DOWN = \"com.theta360.plugin.ACTION_KEY_DOWN\";\n    public static final String ACTION_KEY_UP = \"com.theta360.plugin.ACTION_KEY_UP\";\n    private static final String KEY_CODE = \"keyCode\";\n    private static final String KEY_EVENT = \"KeyEvent\";\n\n\n\n2 Locate buttons on camera\n\n\nThere are three buttons you can map:\n\n\n\n\n\n\n\n\nButton Common Name\n\n\nName in Library\n\n\nCode\n\n\nLocation\n\n\n\n\n\n\n\n\n\n\nWiFi\n\n\nKEYCODE_WLAN_ON_OFF\n\n\n284\n\n\nside middle\n\n\n\n\n\n\nMode\n\n\nKEYCODE_MEDIA_RECORD\n\n\n130\n\n\nside bottom\n\n\n\n\n\n\nShutter\n\n\nKEYCODE_CAMERA\n\n\n27\n\n\nfront\n\n\n\n\n\n\n\n\nTwo of the buttons are on the side of the camera, below the power button. The third\nbutton is on the front of the camera. It is the big \nshutter\n button.\n\n\n3 Open \nMainActivity\n\n\nIn Android Studio, go back to \nMainActivity\n and look for the \nonKeyDown\n method.\n\n\nIn \nMainActivity.java\n, there is an example of using the \nkeyCode\n.\n\n\nprotected void onCreate(Bundle savedInstanceState) {\n    super.onCreate(savedInstanceState);\n    setContentView(R.layout.activity_main);\n\n    // Set a callback when a button operation event is acquired.\n    setKeyCallback(new KeyCallback() {\n        @Override\n        public void onKeyDown(int keyCode, KeyEvent event) {\n            if (keyCode == KeyReceiver.KEYCODE_CAMERA) {\n                /*\n                 * To take a static picture, use the takePicture method.\n                 * You can receive a fileUrl of the static picture in the callback.\n                 */\n                new TakePictureTask(mTakePictureTaskCallback).execute();\n            }\n        }\n\n\n\n4 Map takePicture to Middle Side Button\n\n\nAs a simple test, we will map the middle side or \nwifi\n button to take a picture. \nIf you forget the constant name, you can use Android Studio code completion to find it.\n\n\n\n\n5 Build, install, test\n\n\nFollow these steps:\n\n\n\n\nbuild the apk from inside of Android Studio\n\n\ninstall it with adb\n\n\nreboot camera\n\n\nput camera into plug-in mode\n\n\ntest it on the camera by pressing the middle button on the side of the camera", 
+            "title": "Tutorial - Camera Buttons"
+        }, 
+        {
+            "location": "/tutorialbutton/#camera-buttons-tutorial", 
             "text": "In the next example, we'll control the buttons of the camera.", 
-            "title": "3 Control Camera Buttons"
+            "title": "Camera Buttons Tutorial"
         }, 
         {
-            "location": "/custom/#31-inspect-pluginlibrary", 
+            "location": "/tutorialbutton/#1-inspect-pluginlibrary", 
             "text": "From inside of Android Studio, go back to pluginlibrary. It is part of the SDK.\nLook for the  KeyReceiver  file.   In the KeyReceiver subclass of BroadcastReceiver, you can see that the three usable \nbuttons are defined as constants.  public class KeyReceiver extends BroadcastReceiver {\n    public static final int KEYCODE_CAMERA = 27;\n    public static final int KEYCODE_MEDIA_RECORD = 130;\n    public static final int KEYCODE_WLAN_ON_OFF = 284;\n\n    public static final String ACTION_KEY_DOWN = \"com.theta360.plugin.ACTION_KEY_DOWN\";\n    public static final String ACTION_KEY_UP = \"com.theta360.plugin.ACTION_KEY_UP\";\n    private static final String KEY_CODE = \"keyCode\";\n    private static final String KEY_EVENT = \"KeyEvent\";", 
-            "title": "3.1 Inspect pluginlibrary"
+            "title": "1 Inspect pluginlibrary"
         }, 
         {
-            "location": "/custom/#32-locate-buttons-on-camera", 
+            "location": "/tutorialbutton/#2-locate-buttons-on-camera", 
             "text": "There are three buttons you can map:     Button Common Name  Name in Library  Code  Location      WiFi  KEYCODE_WLAN_ON_OFF  284  side middle    Mode  KEYCODE_MEDIA_RECORD  130  side bottom    Shutter  KEYCODE_CAMERA  27  front     Two of the buttons are on the side of the camera, below the power button. The third\nbutton is on the front of the camera. It is the big  shutter  button.", 
-            "title": "3.2 Locate buttons on camera"
+            "title": "2 Locate buttons on camera"
         }, 
         {
-            "location": "/custom/#33-open-mainactivity", 
+            "location": "/tutorialbutton/#3-open-mainactivity", 
             "text": "In Android Studio, go back to  MainActivity  and look for the  onKeyDown  method.  In  MainActivity.java , there is an example of using the  keyCode .  protected void onCreate(Bundle savedInstanceState) {\n    super.onCreate(savedInstanceState);\n    setContentView(R.layout.activity_main);\n\n    // Set a callback when a button operation event is acquired.\n    setKeyCallback(new KeyCallback() {\n        @Override\n        public void onKeyDown(int keyCode, KeyEvent event) {\n            if (keyCode == KeyReceiver.KEYCODE_CAMERA) {\n                /*\n                 * To take a static picture, use the takePicture method.\n                 * You can receive a fileUrl of the static picture in the callback.\n                 */\n                new TakePictureTask(mTakePictureTaskCallback).execute();\n            }\n        }", 
-            "title": "3.3 Open MainActivity"
+            "title": "3 Open MainActivity"
         }, 
         {
-            "location": "/custom/#34-map-takepicture-to-middle-side-button", 
+            "location": "/tutorialbutton/#4-map-takepicture-to-middle-side-button", 
             "text": "As a simple test, we will map the middle side or  wifi  button to take a picture. \nIf you forget the constant name, you can use Android Studio code completion to find it.", 
-            "title": "3.4 Map takePicture to Middle Side Button"
+            "title": "4 Map takePicture to Middle Side Button"
         }, 
         {
-            "location": "/custom/#35-build-install-test", 
+            "location": "/tutorialbutton/#5-build-install-test", 
             "text": "Follow these steps:   build the apk from inside of Android Studio  install it with adb  reboot camera  put camera into plug-in mode  test it on the camera by pressing the middle button on the side of the camera", 
-            "title": "3.5 Build, install, test"
-        }, 
-        {
-            "location": "/custom/#36-celebration-and-next-steps", 
-            "text": "Congratulations! You've successfully built three plug-ins. You can now go\nback to the main Android developer documentation on the Android site to \nadd in standard Android functionality. You can also  test different libraries \nfor network and image processing.  The next section of this guide,  Custom Development Tips ,\nwill show you how to adjust the stitching of the THETA images. We'll update this\ndocument regularly.  If you have questions, the  community  is here to help.", 
-            "title": "3.6 Celebration and next steps"
+            "title": "5 Build, install, test"
         }, 
         {
             "location": "/wifiapi/", 

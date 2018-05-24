@@ -13,7 +13,7 @@
         <meta name="description" content="RICOH THETA development for plug-ins and 360 applications include AR and VR applications">
       
       
-        <link rel="canonical" href="http://theta360.guide/plugin-guide/fun/">
+        <link rel="canonical" href="http://theta360.guide/plugin-guide/tutorialcommunication/">
       
       
         <meta name="author" content="Craig Oda and Jesse Casman">
@@ -38,7 +38,7 @@
     
     
       
-        <title>Fun Tests - THETA V Plugin Development Community Guide</title>
+        <title>Tutorial - LED Communication - THETA V Plugin Development Community Guide</title>
       
     
     
@@ -100,7 +100,7 @@
                 THETA V Plugin Development Community Guide
               </span>
               <span class="md-header-nav__topic">
-                Fun Tests
+                Tutorial - LED Communication
               </span>
             
           
@@ -297,11 +297,61 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../tutorialcommunication/" title="Tutorial - LED Communication" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Tutorial - LED Communication
+      </label>
+    
+    <a href="./" title="Tutorial - LED Communication" class="md-nav__link md-nav__link--active">
       Tutorial - LED Communication
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-edit-mainactivity-in-android-studio" title="1 Edit MainActivity in Android Studio" class="md-nav__link">
+    1 Edit MainActivity in Android Studio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-build-install-reboot" title="2 Build, Install, Reboot" class="md-nav__link">
+    2 Build, Install, Reboot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-test" title="3 Test" class="md-nav__link">
+    3 Test
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -405,54 +455,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Fun Tests
-      </label>
-    
-    <a href="./" title="Fun Tests" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../fun/" title="Fun Tests" class="md-nav__link">
       Fun Tests
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#apps" title="Apps" class="md-nav__link">
-    Apps
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sound" title="Sound" class="md-nav__link">
-    Sound
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -513,15 +520,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#apps" title="Apps" class="md-nav__link">
-    Apps
+  <a href="#1-edit-mainactivity-in-android-studio" title="1 Edit MainActivity in Android Studio" class="md-nav__link">
+    1 Edit MainActivity in Android Studio
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sound" title="Sound" class="md-nav__link">
-    Sound
+  <a href="#2-build-install-reboot" title="2 Build, Install, Reboot" class="md-nav__link">
+    2 Build, Install, Reboot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-test" title="3 Test" class="md-nav__link">
+    3 Test
   </a>
   
 </li>
@@ -540,20 +554,50 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/theta360developers/plugin-guide/edit/master/docs/fun.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/theta360developers/plugin-guide/edit/master/docs/tutorialcommunication.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="fun-tests-to-explore-theta-v-capability">Fun Tests To Explore THETA V Capability</h1>
-<p>This section is intended to show off some functionality and tests that are a "good start" but maybe need more effort. It's constantly a work in progress. But hopefully it helps point you in the right direction or give you some interesting starting points to do more. </p>
-<h2 id="apps">Apps</h2>
-<p>Since you've got a full Android OS funning inside the camera, there are quite a bit of apps and utilities that are already available. This is a real strength of the camera. This video shows some GREAT tips and tricks for setting up different Android apps running inside of the THETA V in plug-in mode. In includes details on setting up Developer Mode, turning off the camera services, using Vysor and using a virtual keyboard to connect to wifi, and tons more. </p>
-<p><a href="https://www.youtube.com/watch?v=UxKTV5WAqSA"><img alt="" src="../img/fun/youtubeicon-apps.png" /></a></p>
-<p>Here's a simple test after installed Facebook Messenger in a THETA V. We used Facebook Messenger to receive video and audio streams from the Internet. The video also shows the  THETA V playing music and audio from internal plug-ins.</p>
-<p><a href="https://www.youtube.com/watch?v=6NYnHdfQh0c"><img alt="" src="../img/fun/youtubeicon-facebook.png" /></a></p>
-<h2 id="sound">Sound</h2>
-<p>The THETA has all the functionality of a normal Android system. This includes using its speakers and mics (4 total) to interact with users. It's clear that the THETA V plug-in technology can be used to provide audio prompts to users, including human voice feedback. "Hey, THETA, take a picture now," for example.</p>
-<p>Here's a short, cool test using the internal speaker to play human speech. The audio file is single channel, 22050Hz 32-bit.  </p>
-<p><a href="https://www.youtube.com/watch?v=AeebH7ONTkg"><img alt="" src="../img/fun/youtubeicon-speech.png" /></a></p>
+                <h1 id="led-communication">LED Communication</h1>
+<p>As the RICOH THETA does not have a screen, your Android plug-in will need to use
+LEDs and sound as the primary way to communicate the status of your application
+to the user.</p>
+<p>There are three variables you can control.</p>
+<ol>
+<li>Color of LED3</li>
+<li>Which LED</li>
+<li>LED blink rate</li>
+</ol>
+<p>By varying the location, speed and color of the camera LEDs, you can communicate
+the status of your plug-in to the user.</p>
+<p>In the the next example, we will blink LEDs 4, 5, 6, 7, and 8. We will not be 
+controlling the color as only the color for LED3 can be controlled. </p>
+<h2 id="1-edit-mainactivity-in-android-studio">1 Edit MainActivity in Android Studio</h2>
+<p>Go back to <code>MainActivity</code>. Comment out the line for LED3 and add the following lines to test the other 
+LEDs.</p>
+<pre><code>notificationLedBlink(LedTarget.LED4, LedColor.BLUE, 300);
+notificationLedBlink(LedTarget.LED5, LedColor.BLUE, 300);
+
+notificationLedBlink(LedTarget.LED6, LedColor.BLUE, 300);
+notificationLedBlink(LedTarget.LED7, LedColor.RED, 300);
+notificationLedBlink(LedTarget.LED8, LedColor.RED, 300);
+</code></pre>
+<p><img alt="" src="../img/custom/led/led-4-8-code.png" /></p>
+<h2 id="2-build-install-reboot">2 Build, Install, Reboot</h2>
+<p>Follow the same process described in the section above.</p>
+<ol>
+<li>Build the apk from within Android Studio</li>
+<li>Find the location of the APK</li>
+<li>cd into that directory</li>
+<li>install the apk with <code>adb install -r app-debug.apk</code></li>
+<li>reboot camera</li>
+</ol>
+<h2 id="3-test">3 Test</h2>
+<p>Press the lower mode button for longer than 2 seconds to put the camera into 
+plug-in mode. </p>
+<p>You should see all LEDs 4-8 blinking with a delay of 300ms between blinks.</p>
+<p><img alt="" src="../img/custom/led/led-4-8.png" /></p>
+<p>Congratulations!  You've just finished your second custom plug-in for the RICOH 
+THETA V.</p>
                 
                   
                 
@@ -572,7 +616,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../hardware/" title="Camera Hardware" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../tutorialcolor/" title="Tutorial - LED Color" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -581,19 +625,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Camera Hardware
+                Tutorial - LED Color
               </span>
             </div>
           </a>
         
         
-          <a href="../concept/" title="Concept Ideas" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../tutorialbutton/" title="Tutorial - Camera Buttons" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Concept Ideas
+                Tutorial - Camera Buttons
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
