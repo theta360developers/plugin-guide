@@ -1,5 +1,16 @@
 
-# Using Vysor to Help With Testing
+# Vysor Tutorial
+
+Vysor is a great tool to provide quick feedback on how your app is doing. Vysor 
+will display a virtual screen from the THETA V to your desktop workstation. Vysor
+is useful for the following development processes:
+
+1. verify plug-in was installed
+2. set plug-in permissions
+3. connect camera to Internet for network testing
+4. verify plug-in launches
+5. test functionality of third-party Android apps to see if it runs on the THETA V before building your own app
+6. quickly view and send pictures directly from the camera to test functionality
 
 ## 1 Install Vysor
 Go to  [https://www.vysor.io/](https://www.vysor.io/) 

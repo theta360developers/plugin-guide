@@ -19,12 +19,13 @@ API. These are covered by using
 
 We have prepared four tutorials for you to get started.
 
-| Tutorial       |  Learning Objective     |
-| ------------------- | -------------------------  |
-| [LED Color](/tutorialcolor/)       | Introduction to plug-in library. Control LED color. |
-| [LED Communication](/tutorialcommunication/)    | Basic status communication to users with the LEDs. |
-| [Camera Buttons](/tutorialbutton/) | Using camera buttons to get user input. |
-| [Dual-Fisheye](/tutorialfisheye/)  | Equirectangular stitching control and rapid shooting. |
+| Tutorial       |  Learning Objective             |  Benefit of Learning      |   
+| ------------------- | -------------------------  |  -------------------      |
+| [Vysor](tutorialvysor) | Learn techniques to to test plug-in and related technologies | Test plug-in without mobile phone display |
+| [LED Color](/tutorialcolor/)       | Understand structure of plug-in library. Control LED color. | Be able to use plugin library.  |
+| [LED Communication](/tutorialcommunication/)    | Learn how to communicate status of app or camera to users using the LEDs. | Communicate to users without mobile phone display |
+| [Camera Buttons](/tutorialbutton/) | Learn to use camera buttons to get user input. | Get user input without mobile phone touchscreen |
+| [Dual-Fisheye](/tutorialfisheye/)  | Understand how to change equirectangular stitching and reduce time between shots. | Start basic image processing |
 
 
 
