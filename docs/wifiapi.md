@@ -19,6 +19,36 @@ The Web API can not be used when the plug-in controls the camera device using th
 
 ## Companion App Access to WiFi API
 
+**NOTE: Community has not verified these steps. Please
+verify and if possible submit an example.**
+
+Steps:
+
+1. Finish plug-in to return control to camera
+1. Plug-in releases camera resources
+1. Establish a network connection between mobile phone and camera
+1. Send HTTP POST or GET command
+
+### Finish Plug-in
+Use `com.theta360.plugin.ACTION_FINISH_PLUGIN` with Broadcast Intent to finish the plug-in.
+A notification of the completion of the plug-in will be sent. When using Broadcast Intent, the following extension data must be set:
+
+| Key | Type | Description |
+| --------------- | ---------------- | ------------------ |
+| `packageName` | String  | Package Name |
+| `exitStatus` | String | "success" or "failure". Default is "success". |
+| `message`   | String | Optional. Default is an empty string. |
+
+With packageName, specify the package name of the plugin itself. With exitStatus, specify “success” when the plug-in ends normally, and “failure” when it ends abnormally. Setting “exitStatus” to “failure” will cause the warning sound to be played and LED2 to blink red.
+
+### Release camera resources
+
+When using “com.theta360.plugin.ACTION_MAIN_CAMERA_CLOSE” with Broadcast Intent, the fact that the plug-in is controlling camera resources will be reported to the camera, and the Camera API will be able to be used.
+
+When using “com.theta360.plugin.ACTION_MAIN_CAMERA_OPEN” with Broadcast Intent, the fact that the plug-in has released camera resources will be reported to the camera, and the Camera API will not be able to be used.
+
+### Network Connection To Camera
+
 In order to connect your companion mobile application to the camera, 
 you will need to establish a WiFi connection connection between the camera and the mobile phone.
 
@@ -36,3 +66,13 @@ official Ricoh documentation.
 | OFF            | `com.theta360plugin.ACTION_WLAN_OFF` |
 | AP Mode        | `com.theta360plugin.ACTION_WLAN_AP` |
 | CL Mode        | `com.theta360plugin.ACTION_WLAN_CL` |
+
+
+### POST and GET commands
+
+Comprehensive HTTP API document is available at
+[https://developers.theta360.com/en/docs/v2.1/api_reference/](https://developers.theta360.com/en/docs/v2.1/api_reference/).
+
+If you have questions about the WiFi (Open Spherical Camera) API, please post them
+in the [THETA API Usage category](https://community.theta360.guide/c/theta-api-usage) 
+of the community.
