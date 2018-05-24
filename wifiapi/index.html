@@ -325,6 +325,40 @@
     Companion App Access to WiFi API
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finish-plug-in" title="Finish Plug-in" class="md-nav__link">
+    Finish Plug-in
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release-camera-resources" title="Release camera resources" class="md-nav__link">
+    Release camera resources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-connection-to-camera" title="Network Connection To Camera" class="md-nav__link">
+    Network Connection To Camera
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-and-get-commands" title="POST and GET commands" class="md-nav__link">
+    POST and GET commands
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -488,6 +522,40 @@
     Companion App Access to WiFi API
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finish-plug-in" title="Finish Plug-in" class="md-nav__link">
+    Finish Plug-in
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release-camera-resources" title="Release camera resources" class="md-nav__link">
+    Release camera resources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-connection-to-camera" title="Network Connection To Camera" class="md-nav__link">
+    Network Connection To Camera
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-and-get-commands" title="POST and GET commands" class="md-nav__link">
+    POST and GET commands
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -521,6 +589,49 @@ Some developers find that using the WiFi API is easier. It is based on simple PO
 to the camera's Web API at (http://localhost:8080/). When using the Web API from the plug-in, digest authentication is not required regardless of the wireless LAN mode. For detailed specifications of the Web API, please refer to <a href="https://developers.theta360.com/en/docs/v2.1/api_reference/">API Reference - v2.1 - API &amp; SDK | RICOH THETA Developers</a></p>
 <p>The Web API can not be used when the plug-in controls the camera device using the Camera API.</p>
 <h2 id="companion-app-access-to-wifi-api">Companion App Access to WiFi API</h2>
+<p><strong>NOTE: Community has not verified these steps. Please
+verify and if possible submit an example.</strong></p>
+<p>Steps:</p>
+<ol>
+<li>Finish plug-in to return control to camera</li>
+<li>Plug-in releases camera resources</li>
+<li>Establish a network connection between mobile phone and camera</li>
+<li>Send HTTP POST or GET command</li>
+</ol>
+<h3 id="finish-plug-in">Finish Plug-in</h3>
+<p>Use <code>com.theta360.plugin.ACTION_FINISH_PLUGIN</code> with Broadcast Intent to finish the plug-in.
+A notification of the completion of the plug-in will be sent. When using Broadcast Intent, the following extension data must be set:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>packageName</code></td>
+<td>String</td>
+<td>Package Name</td>
+</tr>
+<tr>
+<td><code>exitStatus</code></td>
+<td>String</td>
+<td>"success" or "failure". Default is "success".</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>String</td>
+<td>Optional. Default is an empty string.</td>
+</tr>
+</tbody>
+</table>
+<p>With packageName, specify the package name of the plugin itself. With exitStatus, specify “success” when the plug-in ends normally, and “failure” when it ends abnormally. Setting “exitStatus” to “failure” will cause the warning sound to be played and LED2 to blink red.</p>
+<h3 id="release-camera-resources">Release camera resources</h3>
+<p>When using “com.theta360.plugin.ACTION_MAIN_CAMERA_CLOSE” with Broadcast Intent, the fact that the plug-in is controlling camera resources will be reported to the camera, and the Camera API will be able to be used.</p>
+<p>When using “com.theta360.plugin.ACTION_MAIN_CAMERA_OPEN” with Broadcast Intent, the fact that the plug-in has released camera resources will be reported to the camera, and the Camera API will not be able to be used.</p>
+<h3 id="network-connection-to-camera">Network Connection To Camera</h3>
 <p>In order to connect your companion mobile application to the camera, 
 you will need to establish a WiFi connection connection between the camera and the mobile phone.</p>
 <p>You can either use Access Point (AP) Mode or Client (CL) Mode. </p>
@@ -551,6 +662,12 @@ official Ricoh documentation.</p>
 </tr>
 </tbody>
 </table>
+<h3 id="post-and-get-commands">POST and GET commands</h3>
+<p>Comprehensive HTTP API document is available at
+<a href="https://developers.theta360.com/en/docs/v2.1/api_reference/">https://developers.theta360.com/en/docs/v2.1/api_reference/</a>.</p>
+<p>If you have questions about the WiFi (Open Spherical Camera) API, please post them
+in the <a href="https://community.theta360.guide/c/theta-api-usage">THETA API Usage category</a> 
+of the community.</p>
                 
                   
                 
