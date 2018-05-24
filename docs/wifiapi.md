@@ -67,6 +67,49 @@ official Ricoh documentation.
 | AP Mode        | `com.theta360plugin.ACTION_WLAN_AP` |
 | CL Mode        | `com.theta360plugin.ACTION_WLAN_CL` |
 
+#### AP Mode
+
+In AP Mode, the user must first connect their mobile phone to the camera
+by using the camera as SSID or *WiFi router* that they connect to. In this
+mode, the user will not have Internet access.
+
+![](img/wifi/wifi-ap-mode.png)
+
+On some Android devices, the user must also manually allow the phone to
+stay connected to the camera.
+
+![](img/wifi/stay-connected.png)
+
+#### Client Mode
+
+In CL Mode, the camera connects to the same WiFi router that people use to connect to the Internet.
+For example, the camera can connect to the user's office or home router.  The user connects their
+mobile phone to the same router.
+
+
+More information on developing Client Mode Applications is available in the video below.
+
+[![Client Mode App Development YouTube Video](img/wifi/video-image.png)](http://www.youtube.com/watch?v=z_9elAmeXv4)
+
+
+To ensure security, the commands between the companion app and the camera uses Digest Authentication.
+
+The official Ricoh Mobile app can be used to set up the password for Digest Authentication.
+
+![](img/wifi/digest-authentication.jpg)
+
+
+In this mode, the camera WiFi LED will be green.
+
+![](img/wifi/green-led.png)
+
+Your users can configure the camera to connect to their router with WPS. The video below explains the 
+process of client mode configuration with WPS.
+
+[![Client Mode WPS Configuration YouTube Video](img/wifi/video-cover-wps.png)](http://www.youtube.com/watch?v=0djxUbn13kM)
+
+[![Client Mode Usage YouTube Video](img/wifi/video-client-mode-usage.png)](http://www.youtube.com/watch?v=aRPX2SXTBqI)
+
 
 ### POST and GET commands
 
