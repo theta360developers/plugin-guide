@@ -13,7 +13,7 @@
         <meta name="description" content="RICOH THETA development for plug-ins and 360 applications include AR and VR applications">
       
       
-        <link rel="canonical" href="http://theta360.guide/plugin-guide/custom/">
+        <link rel="canonical" href="http://theta360.guide/plugin-guide/tutorialfisheye/">
       
       
         <meta name="author" content="Craig Oda and Jesse Casman">
@@ -38,7 +38,7 @@
     
     
       
-        <title>Tutorials Overview - THETA V Plugin Development Community Guide</title>
+        <title>Tutorial - Dual Fisheye - THETA V Plugin Development Community Guide</title>
       
     
     
@@ -100,7 +100,7 @@
                 THETA V Plugin Development Community Guide
               </span>
               <span class="md-header-nav__topic">
-                Tutorials Overview
+                Tutorial - Dual Fisheye
               </span>
             
           
@@ -273,54 +273,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Tutorials Overview
-      </label>
-    
-    <a href="./" title="Tutorials Overview" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../custom/" title="Tutorials Overview" class="md-nav__link">
       Tutorials Overview
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" title="Overview" class="md-nav__link">
-    Overview
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" title="Next steps" class="md-nav__link">
-    Next steps
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -364,11 +321,20 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../tutorialfisheye/" title="Tutorial - Dual Fisheye" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="Tutorial - Dual Fisheye" class="md-nav__link md-nav__link--active">
       Tutorial - Dual Fisheye
     </a>
+    
   </li>
 
     
@@ -521,27 +487,6 @@
     
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" title="Overview" class="md-nav__link">
-    Overview
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" title="Next steps" class="md-nav__link">
-    Next steps
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -552,55 +497,36 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/theta360developers/plugin-guide/edit/master/docs/custom.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/theta360developers/plugin-guide/edit/master/docs/tutorialfisheye.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="development-tutorials">Development Tutorials</h1>
-<h2 id="overview">Overview</h2>
-<p>Your primary way to control the camera is with the Android Camera class. Although this API was
-deprecated in level 21, it still works. Make sure you use the older Camera class and not
-the newer camera2 API.</p>
-<p>Use the offiical Android API documentation as your main reference.</p>
-<p><a href="https://developer.android.com/reference/android/hardware/Camera.html">https://developer.android.com/reference/android/hardware/Camera.html</a></p>
-<p>There are a set of THETA features that are not covered by the Android 
-<a href="https://developer.android.com/reference/android/hardware/Camera.html">Camera</a>
-API. These are covered by using 
-<a href="https://developer.android.com/reference/android/hardware/Camera.Parameters.html">Camera.Parameters</a></p>
-<p>We have prepared four tutorials for you to get started.</p>
-<table>
-<thead>
-<tr>
-<th>Tutorial</th>
-<th>Learning Objective</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../tutorialcolor/">LED Color</a></td>
-<td>Introduction to plug-in library. Control LED color.</td>
-</tr>
-<tr>
-<td><a href="../tutorialcommunication/">LED Communication</a></td>
-<td>Basic status communication to users with the LEDs.</td>
-</tr>
-<tr>
-<td><a href="../tutorialbutton/">Camera Buttons</a></td>
-<td>Using camera buttons to get user input.</td>
-</tr>
-<tr>
-<td><a href="../tutorialfisheye/">Dual-Fisheye</a></td>
-<td>Equirectangular stitching control and rapid shooting.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="next-steps">Next steps</h2>
-<p>You can now go back to the main Android developer documentation on the Android site to 
-add in standard Android functionality. You can also  test different libraries 
-for network and image processing.  The next section of this guide, 
-<a href="../customtips">Custom Development Tips</a>,
-will show you how to adjust the stitching of the THETA images. We'll update this
-document regularly.  If you have questions, the 
-<a href="https://community.theta360.guide/c/theta-api-usage/plugin">community</a> is here to help.</p>
+                <h1 id="dual-fisheye-still-image-tutorial">Dual-Fisheye Still Image Tutorial</h1>
+<p>By using plug-in technology, you can improve the user experience for your customers. One example is to
+reduce the time between still image shots. The RICOH THETA S requires approximately 8 seconds between
+shots. The RICOH THETA V reduced this time to 4 seconds.</p>
+<p>Most of the time is used for internal stitching of the dual-fisheye images into a single equirectangular image.</p>
+<p>By saving the images as dual-fisheye images in the camera, you can reduce the time taken between pictures to 
+less than a second.  This is useful for the following applications:</p>
+<ol>
+<li>HDR</li>
+<li>Timelapse</li>
+<li>High volume pictures such as taking 1,000 images at a large construction site</li>
+<li>Factory or workflow optimization (Taking pictures of an assembly line or other process involving people moving items)</li>
+</ol>
+<p>Still images can be saved as dual-fisheye by adjusting the stitching parameter.</p>
+<pre><code>mParameters.set("RIC_PROC_STITCHING_TYPE", "RicNonStitching");
+</code></pre>
+<p>The size of the dual-fish image is 5792x2896. Use the command below:</p>
+<pre><code>mParameters.setPictureSize(5792, 2896);
+</code></pre>
+<p><a href="https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/8?u=codetricity">This article</a> 
+provides more information on a plug-in built by community
+developer Ichi Hirota.</p>
+<p>The picture below is from Ichi Hirota.</p>
+<p><img alt="" src="../img/custom/dual-fish-sample.jpg" /></p>
+<p><img alt="" src="../img/custom/dual-fish-meta-data.png" /></p>
+<p>Here's example code from Ichi Hirota for bracketing.</p>
+<p><img alt="" src="../img/custom/dualfish-bracketing.png" /></p>
                 
                   
                 
@@ -619,7 +545,7 @@ document regularly.  If you have questions, the
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../vysor/" title="Using Vysor" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../tutorialbutton/" title="Tutorial - Camera Buttons" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -628,19 +554,19 @@ document regularly.  If you have questions, the
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Using Vysor
+                Tutorial - Camera Buttons
               </span>
             </div>
           </a>
         
         
-          <a href="../tutorialcolor/" title="Tutorial - LED Color" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../wifiapi/" title="Using WiFi API" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Tutorial - LED Color
+                Using WiFi API
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

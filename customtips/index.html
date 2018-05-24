@@ -323,6 +323,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../tutorialfisheye/" title="Tutorial - Dual Fisheye" class="md-nav__link">
+      Tutorial - Dual Fisheye
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../wifiapi/" title="Using WiFi API" class="md-nav__link">
       Using WiFi API
     </a>
@@ -364,13 +376,6 @@
         <li class="md-nav__item">
   <a href="#internal-storage" title="Internal Storage" class="md-nav__link">
     Internal Storage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dual-fish-still-image-example" title="Dual-Fish Still Image Example" class="md-nav__link">
-    Dual-Fish Still Image Example
   </a>
   
 </li>
@@ -534,13 +539,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dual-fish-still-image-example" title="Dual-Fish Still Image Example" class="md-nav__link">
-    Dual-Fish Still Image Example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#text-to-speech-status" title="Text to Speech Status" class="md-nav__link">
     Text to Speech Status
   </a>
@@ -585,21 +583,6 @@ please send an email to jcasman@oppkey.com for
 adding a number to the file name. There's a separate bit of code to iterate the roomNumber.</p>
 <pre><code>String fileUrl = "/storage/emulated/0/DCIM/Construction/room" + roomNumberStr + "sect01.jpg";
 </code></pre>
-<h2 id="dual-fish-still-image-example">Dual-Fish Still Image Example</h2>
-<p>If you want to save still images as dual-fisheye, use this parameter:</p>
-<pre><code>mParameters.set("RIC_PROC_STITCHING_TYPE", "RicNonStitching");
-</code></pre>
-<p>The size of the dual-fish image is 5792x2896. Use the command below:</p>
-<pre><code>mParameters.setPictureSize(5792, 2896);
-</code></pre>
-<p><a href="https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/8?u=codetricity">This article</a> 
-provides more information on a plug-in built by community
-developer Ichi Hirota.</p>
-<p>The picture below is from Ichi Hirota.</p>
-<p><img alt="" src="../img/custom/dual-fish-sample.jpg" /></p>
-<p><img alt="" src="../img/custom/dual-fish-meta-data.png" /></p>
-<p>Here's example code from Ichi Hirota for bracketing.</p>
-<p><img alt="" src="../img/custom/dualfish-bracketing.png" /></p>
 <h2 id="text-to-speech-status">Text to Speech Status</h2>
 <p>As of May 21, 2018, <code>android.speech.tts</code> does not work. This may
 start working in a future update. For now, you can try other Text-Speech engines
