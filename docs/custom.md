@@ -24,7 +24,7 @@ We have prepared four tutorials for you to get started.
 | [LED Color](/tutorialcolor/)       | Introduction to plug-in library. Control LED color. |
 | [LED Communication](/tutorialcommunication/)    | Basic status communication to users with the LEDs. |
 | [Camera Buttons](/tutorialbutton/) | Using camera buttons to get user input. |
-| [Dual Fisheye](/tutorialfisheye/)  | Equirectangular stitching control and rapid shooting. |
+| [Dual-Fisheye](/tutorialfisheye/)  | Equirectangular stitching control and rapid shooting. |
 
 
 
