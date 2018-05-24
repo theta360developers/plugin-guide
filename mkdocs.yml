@@ -30,6 +30,7 @@ pages:
   - Plugin Use: use.md
   - Using Vysor: vysor.md
   - Custom Development Tutorial: custom.md
+  - Using WiFi API: wifiapi.md
   - Custom Development Tips: customtips.md
   - Plugin Configuration: configuration.md
   - Workflow Tips: workflow.md

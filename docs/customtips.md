@@ -18,13 +18,6 @@ adding a number to the file name. There's a separate bit of code to iterate the 
     String fileUrl = "/storage/emulated/0/DCIM/Construction/room" + roomNumberStr + "sect01.jpg";
 
 
-## Using the WiFi Web API 
-
-In addition to the Android Camera class, your plug-in can also use the 
-[RICOH THETA API v2.1](https://developers.theta360.com/en/docs/v2.1/api_reference/) web API. Send POST commands 
-to the camera's Web API at (http://localhost:8080/). When using the Web API from the plug-in, digest authentication is not required regardless of the wireless LAN mode. For detailed specifications of the Web API, please refer to [API Reference - v2.1 - API & SDK \| RICOH THETA Developers](https://developers.theta360.com/en/docs/v2.1/api_reference/)
-
-The Web API can not be used when the plug-in controls the camera device using the Camera API.
 
 ## Dual-Fish Still Image Example
 
