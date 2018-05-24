@@ -19,31 +19,6 @@ adding a number to the file name. There's a separate bit of code to iterate the 
 
 
 
-## Dual-Fish Still Image Example
-
-If you want to save still images as dual-fisheye, use this parameter:
-
-    mParameters.set("RIC_PROC_STITCHING_TYPE", "RicNonStitching");
-
-The size of the dual-fish image is 5792x2896. Use the command below:
-
-    mParameters.setPictureSize(5792, 2896);
-
-[This article](https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/8?u=codetricity) 
-provides more information on a plug-in built by community
-developer Ichi Hirota.
-
-The picture below is from Ichi Hirota.
-
-![](img/custom/dual-fish-sample.jpg)
-
-![](img/custom/dual-fish-meta-data.png)
-
-Here's example code from Ichi Hirota for bracketing.
-
-![](img/custom/dualfish-bracketing.png)
-
-
 ## Text to Speech Status
 As of May 21, 2018, `android.speech.tts` does not work. This may
 start working in a future update. For now, you can try other Text-Speech engines
