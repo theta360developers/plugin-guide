@@ -285,6 +285,18 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../wifiapi/" title="Using WiFi API" class="md-nav__link">
+      Using WiFi API
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -316,13 +328,6 @@
         <li class="md-nav__item">
   <a href="#internal-storage" title="Internal Storage" class="md-nav__link">
     Internal Storage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-the-wifi-web-api" title="Using the WiFi Web API" class="md-nav__link">
-    Using the WiFi Web API
   </a>
   
 </li>
@@ -493,13 +498,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-the-wifi-web-api" title="Using the WiFi Web API" class="md-nav__link">
-    Using the WiFi Web API
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#dual-fish-still-image-example" title="Dual-Fish Still Image Example" class="md-nav__link">
     Dual-Fish Still Image Example
   </a>
@@ -551,11 +549,6 @@ please send an email to jcasman@oppkey.com for
 adding a number to the file name. There's a separate bit of code to iterate the roomNumber.</p>
 <pre><code>String fileUrl = "/storage/emulated/0/DCIM/Construction/room" + roomNumberStr + "sect01.jpg";
 </code></pre>
-<h2 id="using-the-wifi-web-api">Using the WiFi Web API</h2>
-<p>In addition to the Android Camera class, your plug-in can also use the 
-<a href="https://developers.theta360.com/en/docs/v2.1/api_reference/">RICOH THETA API v2.1</a> web API. Send POST commands 
-to the camera's Web API at (http://localhost:8080/). When using the Web API from the plug-in, digest authentication is not required regardless of the wireless LAN mode. For detailed specifications of the Web API, please refer to <a href="https://developers.theta360.com/en/docs/v2.1/api_reference/">API Reference - v2.1 - API &amp; SDK | RICOH THETA Developers</a></p>
-<p>The Web API can not be used when the plug-in controls the camera device using the Camera API.</p>
 <h2 id="dual-fish-still-image-example">Dual-Fish Still Image Example</h2>
 <p>If you want to save still images as dual-fisheye, use this parameter:</p>
 <pre><code>mParameters.set("RIC_PROC_STITCHING_TYPE", "RicNonStitching");
@@ -608,7 +601,7 @@ on a library to help with this.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../custom/" title="Custom Development Tutorial" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../wifiapi/" title="Using WiFi API" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -617,7 +610,7 @@ on a library to help with this.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Custom Development Tutorial
+                Using WiFi API
               </span>
             </div>
           </a>

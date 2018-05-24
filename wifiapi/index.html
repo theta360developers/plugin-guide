@@ -13,7 +13,7 @@
         <meta name="description" content="RICOH THETA development for plug-ins and 360 applications include AR and VR applications">
       
       
-        <link rel="canonical" href="http://theta360.guide/plugin-guide/configuration/">
+        <link rel="canonical" href="http://theta360.guide/plugin-guide/wifiapi/">
       
       
         <meta name="author" content="Craig Oda and Jesse Casman">
@@ -38,7 +38,7 @@
     
     
       
-        <title>Plugin Configuration - THETA V Plugin Development Community Guide</title>
+        <title>Using WiFi API - THETA V Plugin Development Community Guide</title>
       
     
     
@@ -100,7 +100,7 @@
                 THETA V Plugin Development Community Guide
               </span>
               <span class="md-header-nav__topic">
-                Plugin Configuration
+                Using WiFi API
               </span>
             
           
@@ -285,11 +285,54 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../wifiapi/" title="Using WiFi API" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Using WiFi API
+      </label>
+    
+    <a href="./" title="Using WiFi API" class="md-nav__link md-nav__link--active">
       Using WiFi API
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#plug-in-access-to-wifi-api" title="Plug-in Access to WiFi API" class="md-nav__link">
+    Plug-in Access to WiFi API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#companion-app-access-to-wifi-api" title="Companion App Access to WiFi API" class="md-nav__link">
+    Companion App Access to WiFi API
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -309,47 +352,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Plugin Configuration
-      </label>
-    
-    <a href="./" title="Plugin Configuration" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../configuration/" title="Plugin Configuration" class="md-nav__link">
       Plugin Configuration
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#configuration-of-plug-in-with-web-server" title="Configuration of Plug-in With Web Server" class="md-nav__link">
-    Configuration of Plug-in With Web Server
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -470,8 +477,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuration-of-plug-in-with-web-server" title="Configuration of Plug-in With Web Server" class="md-nav__link">
-    Configuration of Plug-in With Web Server
+  <a href="#plug-in-access-to-wifi-api" title="Plug-in Access to WiFi API" class="md-nav__link">
+    Plug-in Access to WiFi API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#companion-app-access-to-wifi-api" title="Companion App Access to WiFi API" class="md-nav__link">
+    Companion App Access to WiFi API
   </a>
   
 </li>
@@ -490,31 +504,22 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/theta360developers/plugin-guide/edit/master/docs/configuration.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/theta360developers/plugin-guide/edit/master/docs/wifiapi.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="configuring-your-plug-in">Configuring Your Plug-in</h1>
-<h2 id="configuration-of-plug-in-with-web-server">Configuration of Plug-in With Web Server</h2>
-<p>If you want to configure your plug-in with an external mobile app, one strategy is to embed an HTTP server into
-your plug-in. A simple mobile app can then talk to the plug-in through the embedded HTTP server.
-With this configuration strategy, the plug-in can launch a web server on port 8888 that provides a WebUI or its own API. </p>
-<p>You must use port 8888 on the plug-in web server, as the other ports are blocked. You can then
-build a basic app on a smartphone to access the 
-plug-in web server on the THETA V.</p>
-<p>Developers have reported success using NanoHttpd, which is available from GitHub at 
-<a href="https://github.com/NanoHttpd/nanohttpd">https://github.com/NanoHttpd/nanohttpd</a>.</p>
-<p>Another way to access the plug-in configuration page you create is to use the OpenPluginPage API from the Ricoh v2.1 WiFi API on port 80. It will redirect to port 8888.</p>
-<p>Information on the OpenPluginPage API is available here:</p>
-<p><a href="https://developers.theta360.com/en/docs/v2.1/api_reference/protocols/open_plugin_page.html">https://developers.theta360.com/en/docs/v2.1/api_reference/protocols/open_plugin_page.html</a></p>
-<p>Your app can look for the presence or absence of the web server by using the Web API's <a href="https://developers.theta360.com/en/docs/v2.1/api_reference/commands/camera._list_plugins.html">camera._listPlugins</a>. The information from camera._listPlugins consists of information described in the configuration file (\assets\settings.json) of each plug-in. If the setting file does not exist or the setting value is incorrect, the default value is written in the camera._listPlugins information. </p>
-<p>Sample configuration file:</p>
-<pre><code>{
- &quot;webServer&quot;: true
-}
-</code></pre>
-
-<p>From talking with the community, we think the process is shown below.</p>
-<p><img alt="" src="../img/custom/theta-v-plugin-configuration.png" /></p>
+                <h1 id="theta-wifi-api">THETA WiFi API</h1>
+<p>In addition to the Android Camera class, your plug-in can also use the 
+<a href="https://developers.theta360.com/en/docs/v2.1/api_reference/">RICOH THETA API v2.1</a> web API. </p>
+<p>There are two ways to access the WiFi API:</p>
+<ol>
+<li>Your plug-in can use the WiFi API from inside of the camera</li>
+<li>A companion mobile or desktop app can use the WiFi API</li>
+</ol>
+<h2 id="plug-in-access-to-wifi-api">Plug-in Access to WiFi API</h2>
+<p>Send POST commands 
+to the camera's Web API at (http://localhost:8080/). When using the Web API from the plug-in, digest authentication is not required regardless of the wireless LAN mode. For detailed specifications of the Web API, please refer to <a href="https://developers.theta360.com/en/docs/v2.1/api_reference/">API Reference - v2.1 - API &amp; SDK | RICOH THETA Developers</a></p>
+<p>The Web API can not be used when the plug-in controls the camera device using the Camera API.</p>
+<h2 id="companion-app-access-to-wifi-api">Companion App Access to WiFi API</h2>
                 
                   
                 
@@ -533,7 +538,7 @@ plug-in web server on the THETA V.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../customtips/" title="Custom Development Tips" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../custom/" title="Custom Development Tutorial" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -542,19 +547,19 @@ plug-in web server on the THETA V.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Custom Development Tips
+                Custom Development Tutorial
               </span>
             </div>
           </a>
         
         
-          <a href="../workflow/" title="Workflow Tips" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../customtips/" title="Custom Development Tips" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Workflow Tips
+                Custom Development Tips
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
