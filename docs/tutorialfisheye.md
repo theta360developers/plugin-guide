@@ -1,4 +1,4 @@
-# Dual-Fish Still Image Tutorial
+# Dual-Fisheye Still Image Tutorial
 
 By using plug-in technology, you can improve the user experience for your customers. One example is to
 reduce the time between still image shots. The RICOH THETA S requires approximately 8 seconds between
