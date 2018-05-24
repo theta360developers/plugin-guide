@@ -31,6 +31,7 @@ This document covers the following development process and tips:
 - [Test the plug-in](/setup/#import-ricoh-plugin-sdk-and-update-android-build-system)
 - [Use Vysor to help with testing ](/vysor/)
 - [Custom Development Tutorial](/custom/)
+- [Using THETA WiFi API](/wifiapi/)
 - [Custom Development Tips](/customtips/)
 - [Configuring your plug-in](/configuration/)
 - [Development Workflow Tips](/workflow/)
