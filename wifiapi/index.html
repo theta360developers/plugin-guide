@@ -509,7 +509,8 @@
                 
                 <h1 id="theta-wifi-api">THETA WiFi API</h1>
 <p>In addition to the Android Camera class, your plug-in can also use the 
-<a href="https://developers.theta360.com/en/docs/v2.1/api_reference/">RICOH THETA API v2.1</a> web API. </p>
+<a href="https://developers.theta360.com/en/docs/v2.1/api_reference/">RICOH THETA API v2.1</a> web API. 
+Some developers find that using the WiFi API is easier. It is based on simple POST and GET HTTP commands.</p>
 <p>There are two ways to access the WiFi API:</p>
 <ol>
 <li>Your plug-in can use the WiFi API from inside of the camera</li>
@@ -520,6 +521,36 @@
 to the camera's Web API at (http://localhost:8080/). When using the Web API from the plug-in, digest authentication is not required regardless of the wireless LAN mode. For detailed specifications of the Web API, please refer to <a href="https://developers.theta360.com/en/docs/v2.1/api_reference/">API Reference - v2.1 - API &amp; SDK | RICOH THETA Developers</a></p>
 <p>The Web API can not be used when the plug-in controls the camera device using the Camera API.</p>
 <h2 id="companion-app-access-to-wifi-api">Companion App Access to WiFi API</h2>
+<p>In order to connect your companion mobile application to the camera, 
+you will need to establish a WiFi connection connection between the camera and the mobile phone.</p>
+<p>You can either use Access Point (AP) Mode or Client (CL) Mode. </p>
+<p><strong>NOTE: Community has not verified that both AP and CL modes work for WiFi API access to the plug-in. Please
+verify and if possible submit an example.</strong></p>
+<p>Information on controlling the WLAN is included in the 
+<a href="https://api.ricoh/docs/theta-plugin-reference/broadcast-intent/">broadcast intent section</a> of the 
+official Ricoh documentation.</p>
+<table>
+<thead>
+<tr>
+<th>Operation Mode</th>
+<th>Intent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OFF</td>
+<td><code>com.theta360plugin.ACTION_WLAN_OFF</code></td>
+</tr>
+<tr>
+<td>AP Mode</td>
+<td><code>com.theta360plugin.ACTION_WLAN_AP</code></td>
+</tr>
+<tr>
+<td>CL Mode</td>
+<td><code>com.theta360plugin.ACTION_WLAN_CL</code></td>
+</tr>
+</tbody>
+</table>
                 
                   
                 
