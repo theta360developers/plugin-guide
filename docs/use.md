@@ -1,30 +1,32 @@
 # Plugin Use
 
-This section will walk you through using adb to install a plugin into the camera. You will put the camera into Plugin Mode and test the SDK sample Plugin. You will set the active Plugin using the RICOH THETA mobile app, and you will show a list of all the Plugins installing in the camera using the API.
+This section will walk you through using Android Debub Bridge (adb) to install a plugin into the camera. You will put the camera into Plugin Mode and test the SDK sample Plugin. You will set the active Plugin using the RICOH THETA mobile app, and you will show a list of all the Plugins installing in the camera using the API.
 
-## adb
+## 1 Use adb to Connect
 
 Connect the THETA V to your developer workstation with a USB cable.
 
 ![](img/adb/usb-cable.png)
 
-Use adb to connect to the camera
-
-On Windows, adb is installed into 
+On Windows, `adb` is installed into 
 
     C:\Users\[user]\AppData\Local\Android\sdk\platform-tools
     
-On the Mac, adb is installed into
+On the Mac, `adb` is installed into
 
     /Users/[user]/Library/Android/sdk/platform-tools
 
 ![](img/adb/adb-location.png)
 
-You should add this into your PATH.  On Windows, you can edit the PATH with *Control Panel -> System and Security -> System -> Advanced system settings -> Environment Variables -> Path*
+### 1.1 Add adb to your PATH
+
+You should add `adb` into your PATH.  On Windows, you can edit the PATH with *Control Panel -> System and Security -> System -> Advanced system settings -> Environment Variables -> Path*
 
 ![](img/adb/path.png)
 
-After putting adb into your `PATH`, start a new cmd shell and run 
+### 1.2 Use adb to confirm connection
+
+After putting `adb` into your PATH, start a new cmd shell and run 
 
     adb devices -l
 
@@ -38,6 +40,8 @@ of your THETA V. In the example below, my THETA V has a serial number of 0010108
     * daemon not running. starting it now at tcp:5037 *
     * daemon started successfully *
     00101082	device
+
+### 1.3 Use adb to explore file system
 
 Log into the camera using `adb shell`
 
@@ -96,8 +100,7 @@ Locate Pictures and Movies. These are standard Android directories. The THETA V 
     -rw-rw-r-- 1 media_rw media_rw  52108839 2017-10-21 14:19 R0010038.MP4
     -rw-rw-r-- 1 media_rw media_rw 108450224 2017-10-21 14:20 R0010039.MP4
 
-
-## Install Plugin into Camera
+## 2 Install Plugin into Camera
 
 Call `adb install -r ./theta-plugin-sdk-master/app/build/outputs/apk/debug/app-debug.apk`
 
@@ -106,8 +109,7 @@ Call `adb install -r ./theta-plugin-sdk-master/app/build/outputs/apk/debug/app-d
     * daemon started successfully *
     Success
 
-
-## Put Camera into Plugin Mode
+## 3 Put Camera into Plugin Mode
 Plugin mode can only be enabled on the RICOH THETA V.
 
 Plugins will not work on older THETA models m15, S, or SC. 
@@ -133,11 +135,9 @@ Information on the front of the camera is shown below.
 
 ![](img/use/front-buttons.png)
 
+## 4 Test SDK Sample Plugin
 
-## Test SDK Sample Plugin
-
-Press the physical button on the camera. There will be a shutter sound.
-The image should be captured. 
+Press the physical button on the camera. There will be a shutter sound. An image will be captured. 
 
 The picture will be given a filename that is in numerical sequential order incrementing up from the previous picture. The format will be similar to this example filename: R0010047.JPG. 
 
@@ -145,8 +145,10 @@ The plug-in will save the image to a file with the location
 and format similar to the example below.
 
  `/sdcard/DCIM/100RICOH/R0010047.JPG`
+ 
+### 4.1 Get the picture off the camera
 
-Get the file name by using `adb shell` described in the step above.
+Get the file name by using `adb shell`.
 
 Use `adb pull` to get the image file file to your local computer.
 
@@ -154,17 +156,14 @@ Example:
 
     adb pull /sdcard/DCIM/100RICOH/R0010047.JPG
 
-### Alternate techniques to get the file and filename.
+### 4.2 Alternate techniques to get the file and filename
 
-* Use MTP as you would with a normal Android 
-phone 
-* Use a tool like Vysor to display a virtual THETA V screen to your workstation. To set up and use Vysor, refer to the next section on Vysor.
+* Use MTP as you would with a normal Android phone 
+* Use a tool like Vysor to display a virtual THETA V screen to your workstation. To set up and use Vysor, refer to the section in this community guide on Vysor.
 
+## 5 Set Active Plugin with Mobile App
 
-## Set Active Plugin with Mobile App
-
-Using the Ricoh mobile app, you can see and select the
-active plugin. 
+Using the Ricoh mobile app, you can see and select the active plugin. 
 
 Connect your RICOH THETA mobile app to your THETA V.
 
@@ -172,22 +171,17 @@ Go to Settings.
 
 ![](img/use/mobile-app-settings-01.png)
 
-
-On the *Settings* screen of your mobile app, click on
-*Camera settings*.
+On the *Settings* screen of your mobile app, click on *Camera settings*.
 
 ![](img/use/mobile-app-settings-02.png)
 
-
 On your *Camera settings* screen you will be able to see your
 Plug-in. On the screen at the top of this section, my plug-in is called
-*PluginSample*.
+*Plugin Application*.
 
+![](img/use/mobile-plugin.png)
 
-![](img/setup/mobile/mobile-plugin.png)
-
-Click on the active plug-in name to display a choice
-of available plug-ins.
+Click on the active plug-in name to display a choice of available plug-ins.
 
 ![](img/use/plug-in-selection.png)
 
