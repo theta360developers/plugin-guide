@@ -177,7 +177,7 @@ On the *Settings* screen of your mobile app, click on *Camera settings*.
 
 On your *Camera settings* screen you will be able to see your
 Plug-in. On the screen at the top of this section, my plug-in is called
-*PluginSample*.
+*Plugin Application*.
 
 ![](img/use/mobile-plugin.png)
 
