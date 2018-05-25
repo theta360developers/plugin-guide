@@ -37,11 +37,15 @@ You will see the following status bar for a few minutes.
 
 ![](img/setup/building.jpg)
 
+### 2.2 Security Updates
+
 After the process completes, you will see a Windows Security Alert.
 
 ![](img/setup/firewall-allow.png)
 
 Allow access to the OpenJDK Platform.
+
+### 2.3 Update Build Tools
 
 You may need to update your Build Tools or Install missing platforms and sync project. 
 
@@ -59,6 +63,8 @@ Allow Gradle enough time to resync your project.
 
 ![](img/setup/gradle-sync.png)
 
+### 2.4 Update Gradle
+
 Although not necessary, I decided to update Gradle.
 
 ![](img/setup/gradle-update.png)
@@ -67,7 +73,7 @@ You can now inspect your Project in the navigation area.
 
 ![](img/setup/inspect.jpg)
 
-Build the APK
+### 2.5 Build the APK
 
 ![](img/setup/build.jpg)
 
@@ -78,6 +84,8 @@ At the bottom of the Android Studio window, you will see the status of the build
 Click on the status bar to show your Event Log and locate the APK.
 
 ![](img/setup/build-locate.png)
+
+### 2.6 Locate the APK
 
 Locate the file `plugin-debug.apk` and install it onto the THETA V
 
