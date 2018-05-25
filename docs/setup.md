@@ -31,8 +31,6 @@ Otherwise, use the menus. Import Project from File -> New -> Import Project.
 
 ![](img/setup/import-project.png)
 
-![](img/setup/select-plugin.png)
-
 You will see the following status bar for a few minutes.
 
 ![](img/setup/building.jpg)
