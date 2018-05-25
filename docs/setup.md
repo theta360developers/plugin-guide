@@ -6,7 +6,7 @@ This section will walk you through the steps to setup your RICOH THETA V develop
 
 This community guide has been tested with the Android SDK 3.0.1 and 3.1.1 on Windows 10 (1709) 64bit, Ubuntu 17.10, and macOS High Sierra Version 10.13.4.
 
-### 1 Download Android Studio
+## 1 Download Android Studio
 
 Download Android Studio here:
 
@@ -21,7 +21,9 @@ Download the Ricoh Plugin SDK here:
 
 [https://github.com/ricohapi/theta-plugin-sdk](https://github.com/ricohapi/theta-plugin-sdk)
     
-2.1 If you've just installed Android Studio, you may choose Import project from the Welcome to Android Studio start up screen:
+### 2.1 Import Project
+
+If you've just installed Android Studio, you may choose Import project from the Welcome to Android Studio start up screen:
 
 ![](img/setup/androidstudio-startup-selection.jpg)
 
