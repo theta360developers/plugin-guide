@@ -158,8 +158,31 @@ Example:
 
 ### 4.2 Alternate techniques to get the file and filename
 
-* Use MTP as you would with a normal Android phone 
+* Open the THETA in File Explorer as you would with a normal Android phone. Uses MTP.
 * Use a tool like Vysor to display a virtual THETA V screen to your workstation. To set up and use Vysor, refer to the section in this community guide on Vysor.
+
+Example of opening camera images up in File Explorer.
+
+Select RICOH THETA V.
+
+![](img/use/file-explorer-theta.png)
+
+If you use the default storage location, the images will be in:
+
+*Fixed storage > DCIM > 100RICOH*
+
+![](img/use/theta-mtp.png)
+
+Double-click on the image to open an equirectangular view in Photos.
+
+![](img/use/photos.png)
+
+To test 360 navigation, drag and drop the image onto a 
+temporary folder on your computer. Then, drag and drop the local
+file onto the RICOH THETA desktop application.
+
+![](img/use/theta-app.png)
+
 
 ## 5 Set Active Plugin with Mobile App
 
