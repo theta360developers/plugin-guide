@@ -69,11 +69,14 @@ Although not necessary, you can update Gradle here.
 
 ![](img/setup/gradle-update.png)
 
+
+## 3 Build the APK
+
 You can now inspect your Project in the navigation area.
 
 ![](img/setup/inspect.jpg)
 
-## 3 Build the APK
+Build your APK.
 
 ![](img/setup/build.jpg)
 
