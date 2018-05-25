@@ -82,13 +82,11 @@ At the bottom of the Android Studio window, you will see the status of the build
 
 ![](img/setup/build-status.png)
 
-Click on the status bar to show your Event Log and locate the APK.
-
-![](img/setup/build-locate.png)
-
 ### 3.1 Locate the APK
 
-Locate the file `plugin-debug.apk`
+Click on the status bar to show your Event Log and locate the APK. Locate the file `plugin-debug.apk` You'll need to know this information to install the APK into your RICOH THETA camera.
+
+![](img/setup/build-locate.png)
 
 ![](img/setup/plugin-find-apk.png)
 
