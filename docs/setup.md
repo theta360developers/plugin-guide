@@ -65,7 +65,7 @@ Allow Gradle enough time to resync your project.
 
 ### 2.4 Update Gradle
 
-Although not necessary, I decided to update Gradle.
+Although not necessary, you can update Gradle here.
 
 ![](img/setup/gradle-update.png)
 
@@ -73,7 +73,7 @@ You can now inspect your Project in the navigation area.
 
 ![](img/setup/inspect.jpg)
 
-### 2.5 Build the APK
+## 3 Build the APK
 
 ![](img/setup/build.jpg)
 
@@ -85,9 +85,9 @@ Click on the status bar to show your Event Log and locate the APK.
 
 ![](img/setup/build-locate.png)
 
-### 2.6 Locate the APK
+### 3.1 Locate the APK
 
-Locate the file `plugin-debug.apk` and install it onto the THETA V
+Locate the file `plugin-debug.apk`
 
 ![](img/setup/plugin-find-apk.png)
 
