@@ -179,7 +179,7 @@ On your *Camera settings* screen you will be able to see your
 Plug-in. On the screen at the top of this section, my plug-in is called
 *PluginSample*.
 
-![](img/setup/mobile/mobile-plugin.png)
+![](img/setup/use/mobile-plugin.png)
 
 Click on the active plug-in name to display a choice of available plug-ins.
 
