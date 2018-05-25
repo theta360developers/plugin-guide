@@ -33,7 +33,7 @@ pages:
   - Tutorial - LED Color: tutorialcolor.md
   - Tutorial - LED Communication: tutorialcommunication.md
   - Tutorial - Camera Buttons: tutorialbutton.md
-  - Tutorial - Dual Fisheye: tutorialfisheye.md
+  - Dual Fisheye Tips: fisheye.md
   - Using WiFi API: wifiapi.md
   - Custom Development Tips: customtips.md
   - Plugin Configuration: configuration.md

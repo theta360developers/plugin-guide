@@ -25,9 +25,6 @@ We have prepared four tutorials for you to get started.
 | [LED Color](/tutorialcolor/)       | Understand structure of plug-in library. Control LED color. | Be able to use plugin library.  |
 | [LED Communication](/tutorialcommunication/)    | Learn how to communicate status of app or camera to users using the LEDs. | Communicate to users without mobile phone display |
 | [Camera Buttons](/tutorialbutton/) | Learn to use camera buttons to get user input. | Get user input without mobile phone touchscreen |
-| [Dual-Fisheye](/tutorialfisheye/)  | Understand how to change equirectangular stitching and reduce time between shots. | Start basic image processing |
-
-
 
 ## Next steps
 
