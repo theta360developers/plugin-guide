@@ -9,4 +9,6 @@
 - Shutdown versus Sleep mode
      - Press and hold power button 3-4 seconds to shutdown, red LEDs will flash - Pressing power button quickly will start Sleep Mode, no LEDs
 - Battery Status
-     - No display on Camera, requires using THETA mobile app or REST API commend
+     - No display on Camera, requires using THETA mobile app or REST API command
+     
+
