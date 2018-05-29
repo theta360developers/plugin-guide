@@ -1,8 +1,12 @@
 # Troubleshooting
 
+- Entering/Exiting Plug-in Mode on the camera
+    - Press Mode Button to enter and exit; White LED indicates Plug-in Mode engaged, Blue LED indicates regular Camera Mode - Note exiting Plug-in Mode triggers Red LED to flash and disengage sound to play
 - Force power down
     - Press WLAN + POWER buttons for 10 seconds
 - WLAN reset
      - Press WLAN button for 10 seconds
 - Shutdown versus Sleep mode
      - Press and hold power button 3-4 seconds to shutdown, red LEDs will flash - Pressing power button quickly will start Sleep Mode, no LEDs
+- Battery Status
+     - No display on Camera, requires using THETA mobile app or REST API commend
