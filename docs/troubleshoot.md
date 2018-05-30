@@ -12,4 +12,5 @@
      - No display on Camera, requires using THETA mobile app or REST API command
      
 [![](img/troubleshoot/buttons-fauxyoutube-thumbnail.png)](https://www.youtube.com/watch?v=4ubhnsahlNQ)
+[Top 5 Most Useful Button Combinations for RICOH THETA V Developers](https://www.youtube.com/watch?v=4ubhnsahlNQ)
 
