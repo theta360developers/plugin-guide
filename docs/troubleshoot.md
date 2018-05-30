@@ -9,7 +9,8 @@
 - Shutdown versus Sleep mode
      - Press and hold power button 3-4 seconds to shutdown, indicated with three slow blinks of red LED - Pressing power button quickly will engage Sleep Mode, no LEDs
 - Battery Status
-     - No display on Camera, requires using THETA mobile app or REST API command
+     - No display on Camera, requires using THETA mobile app or REST API command. On Windows, you can 
+     right-click on the THETA icon in File Explorer to see the battery level.
      
 [![](img/troubleshoot/buttons-fauxyoutube-thumbnail.png)](https://www.youtube.com/watch?v=4ubhnsahlNQ)
 [Top 5 Most Useful Button Combinations for RICOH THETA V Developers](https://www.youtube.com/watch?v=4ubhnsahlNQ)
