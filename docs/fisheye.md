@@ -84,6 +84,8 @@ Scroll down until you see apps.
 - Confirm that that the LED above the shutter button is white
 - WiFi LED below shutter will be aqua color and flashing
 
+[![](img/dualfish/aqua-led.png)](https://youtu.be/r3CgivJ0j-Y)
+
 ### Take Picture
 
 The camera will take three dual-fisheye pictures for bracketing.
@@ -91,6 +93,9 @@ The camera will take three dual-fisheye pictures for bracketing.
 Place the camera on tripod on stand it up on a table.
 
 Press the shutter button.
+
+Refer to the video above for the expected behavior of the camera,
+including LED and audio feedback.
 
 ### Confirm Pictures were Taken
 Connect camera to your computer with a USB cable.
