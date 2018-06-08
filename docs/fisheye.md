@@ -14,6 +14,13 @@ This is useful for the following applications:
 3. High volume pictures such as taking 1,000 images at a large construction site
 4. Factory or workflow optimization (Taking pictures of an assembly line or other process involving people moving items)
 
+## Concepts Covered
+
+- Image stitching control
+- Permission setting to access storage and camera
+- Post-production workflow 
+- Using third-party libraries
+
 ## Quick Start with pre-compiled apk
 
 ### Download apk and source
@@ -37,9 +44,38 @@ be unlocked and in Developer Mode. If you need assistance on joining the
 partner program to enable your THETA V with Developer Mode, please contact
 jcasman@oppkey.com
 
+    install -r dualfisheye_plugin.apk
+
+![](img/dualfish/adb-install.png)
+
+### use Vysor to set apk permissions
+
+#### Start Vysor
+
+![](img/dualfish/vysor.png)
+
+#### Select Apps in Settings
+
+![](img/dualfish/settings.png)
+
+Scroll down until you see apps.
+
+![](img/dualfish/settings-apps.png)
+
+#### Select *Plugin Application*
+
+![](img/dualfish/apps.png)
+
+#### In App Info select Permissions
+
+![](img/dualfish/app-info.png)
+
+#### Enable storage and camera
 
 
-## Stitching Dual-fisheye Images Into an Equirectangular
+![](img/dualfish/permission.png)
+
+## Stitching Dual-fisheye Images Into Equirectangular
 
 For most applications, you will need to stitch the images in post-production processing
 using your own stitching library. You can also commercially license Ichi's stitching library.
