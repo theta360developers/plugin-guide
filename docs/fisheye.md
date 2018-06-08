@@ -84,6 +84,21 @@ Scroll down until you see apps.
 - Confirm that that the LED above the shutter button is white
 - WiFi LED below shutter will be aqua color and flashing
 
+### Take Picture
+
+The camera will take three dual-fisheye pictures for bracketing.
+
+Place the camera on tripod on stand it up on a table.
+
+Press the shutter button.
+
+### Confirm Pictures were Taken
+Connect camera to your computer with a USB cable.
+
+In a file browser such as File Explorer, click into RICOH THETA V in
+the same process you use for a normal camera or storage device.
+Go into `DCIM/100RICOH`. You will see the dual-fisheye images with
+filenames that contain a date and time stamp.
 
 ## Stitching Dual-fisheye Images Into Equirectangular
 
