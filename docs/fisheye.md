@@ -75,6 +75,16 @@ Scroll down until you see apps.
 
 ![](img/dualfish/permission.png)
 
+### Reboot Camera and Put Into Plug-in Mode
+
+- Unplug camera 
+- Hold power button for 8 seconds 
+- Turn camera back on
+- Hold mode button for 2 seconds or longer
+- Confirm that that the LED above the shutter button is white
+- WiFi LED below shutter will be aqua color and flashing
+
+
 ## Stitching Dual-fisheye Images Into Equirectangular
 
 For most applications, you will need to stitch the images in post-production processing
