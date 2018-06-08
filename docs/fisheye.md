@@ -2,18 +2,51 @@
 
 By using plug-in technology, you can improve the user experience for your customers. One example is to
 reduce the time between still image shots. The RICOH THETA S requires approximately 8 seconds between
-shots. The RICOH THETA V reduced this time to 4 seconds.
+shots. The RICOH THETA V reduced this time to 4 seconds. The dual-fisheye plug-in reduces
+the time between shots to less than a second. 
 
-Most of the time is used for internal stitching of the dual-fisheye images into a single equirectangular image.
+The reduction in time is achieved by delaying the process of converting dual-fisheye images into a single equirectangular image inside the camera.
 
-By saving the images as dual-fisheye images in the camera, you can reduce the time taken between pictures to 
-less than a second.  This is useful for the following applications:
+This is useful for the following applications:
 
 1. HDR
 2. Timelapse
 3. High volume pictures such as taking 1,000 images at a large construction site
 4. Factory or workflow optimization (Taking pictures of an assembly line or other process involving people moving items)
 
+## Quick Start with pre-compiled apk
+
+### Download apk and source
+
+Download the zipped file [ichi-hirota-dual-fish.zip](https://drive.google.com/file/d/1Coq_91-U0YmX_I6Q5afuf2IY9_Aju3mU/view?usp=sharing)
+
+### Extract contents
+
+Use zip, 7zip or the archive application of your choice.
+
+![](img/dualfish/apk-file.png)
+
+### Locate dualfisheye_plugin.apk
+
+Go into the folder `apk` and locate `dualfisheye_plugin.apk`.
+
+### use adb to install apk
+
+Connect your THETA V to your workstation with a USB cable. Your THETA V must
+be unlocked and in Developer Mode. If you need assistance on joining the
+partner program to enable your THETA V with Developer Mode, please contact
+jcasman@oppkey.com
+
+
+
+## Stitching Dual-fisheye Images Into an Equirectangular
+
+For most applications, you will need to stitch the images in post-production processing
+using your own stitching library. You can also commercially license Ichi's stitching library.
+For more information on licensing a stitching library, please contact Jesse 
+Casman at jcasman@oppkey.com.
+
+## Control of Stitching
 
 Still images can be saved as dual-fisheye by adjusting the stitching parameter.
 
