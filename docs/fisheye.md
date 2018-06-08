@@ -100,6 +100,8 @@ the same process you use for a normal camera or storage device.
 Go into `DCIM/100RICOH`. You will see the dual-fisheye images with
 filenames that contain a date and time stamp.
 
+![](img/dualfish/dual-fisheye-file.png)
+
 ## Stitching Dual-fisheye Images Into Equirectangular
 
 For most applications, you will need to stitch the images in post-production processing
