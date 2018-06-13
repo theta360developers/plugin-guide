@@ -84,7 +84,7 @@ Scroll down until you see apps.
 - Confirm that that the LED above the shutter button is white
 - WiFi LED below shutter will be aqua color and flashing
 
-[![](img/dualfish/aqua-led.png)](https://youtu.be/r3CgivJ0j-Y)
+[![](img/dualfish/aqua-led.png)](https://youtu.be/aGk5LsZP5do)
 
 ### Take Picture
 
