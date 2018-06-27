@@ -40,8 +40,6 @@ You can message us directly on https://community.theta360.guide. Or you can send
 
 A number of workshops are planned to cover different aspects of plug-in development. We also hold physical and online meetings to explore the booming business around applications for 360 cameras. Here are some of the upcoming events for developers:
 
-* VRLA (May 4-5, Los Angeles, CA)
-* DeveloperWeek (June 18-20, New York City, NY)
 * TechCrunch DISRUPT (Sept 5-7, San Francisco, CA)
 
 
