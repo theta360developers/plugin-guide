@@ -35,7 +35,7 @@ _Please note: "You cannot start a service" - Running a service as a part of your
   * Please limit the size of the plug-in to 256MB
   * Plug-in and package names cannot exceed 64 characters and an extension must use apk
   * Version number must follow the [versioning information](https://api.ricoh/docs/theta-plugin/how-to-develop/#version-information)
-  * Use of [open source licenses]9https://api.ricoh/docs/theta-plugin/how-to-develop/#open-source-licenses) must be explicitly stated
+  * Use of [open source licenses](https://api.ricoh/docs/theta-plugin/how-to-develop/#open-source-licenses) must be explicitly stated
   * You cannot start a service
   * When you press and hold the mode button for 2 seconds or more, the plug-in must terminate
   * When the plug-in is terminated, the plug-in must give a [notification of termination for the plug-in](https://api.ricoh/docs/theta-plugin-reference/broadcast-intent/#notifying-completion-of-plug-in)
