@@ -29,7 +29,7 @@
 ## Warnings When Developing Plug-ins
 This list is taken directly from the How To Develop section of the official RICOH THETA documentation [here](https://api.ricoh/docs/theta-plugin/how-to-develop/#warnings-when-developing-plug-ins)
 
-_Please note: "You cannot start a service" in the list below - Running a service as a part of your plug-in is not allowed by RICOH. It’s possible that the service continues to run in the background after the plug-in is stopped. This can end up being a resource issue for the camera. Therefore, implementing something like an “account manager service” will mean your plug-in will be rejected by RICOH._  
+_Please note "You cannot start a service" in the list below - Running a service as a part of your plug-in is not allowed by RICOH. It’s possible that the service continues to run in the background after the plug-in is stopped. This can end up being a resource issue for the camera. Therefore, implementing something like an “account manager service” will mean your plug-in will be rejected by RICOH._  
 
   * To install the developed plug-in on RICOH THETA V you need to enable ADB. Please register as a developer with RICOH and enable ADB according to the documentation. (Please be patient as we are planning to release the developer registration mechanism and effective ADB usage techniques in the near future.)
   * Please limit the size of the plug-in to 256MB
