@@ -267,6 +267,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#warnings-when-developing-plug-ins" title="Warnings When Developing Plug-ins" class="md-nav__link">
+    Warnings When Developing Plug-ins
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -538,6 +545,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#warnings-when-developing-plug-ins" title="Warnings When Developing Plug-ins" class="md-nav__link">
+    Warnings When Developing Plug-ins
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -592,6 +606,19 @@ on unlocking your camera.</li>
 <li>targetSdkVersion 25</li>
 </ul>
 </li>
+</ul>
+<h2 id="warnings-when-developing-plug-ins">Warnings When Developing Plug-ins</h2>
+<p>This list is taken directly from the How To Develop section of the official RICOH THETA documentation <a href="https://api.ricoh/docs/theta-plugin/how-to-develop/#warnings-when-developing-plug-ins">here</a></p>
+<p><em>Please note "You cannot start a service" in the list below - Running a service as a part of your plug-in is not allowed by RICOH. It’s possible that the service continues to run in the background after the plug-in is stopped. This can end up being a resource issue for the camera. Therefore, implementing something like an “account manager service” will mean your plug-in will be rejected by RICOH.</em>  </p>
+<ul>
+<li>To install the developed plug-in on RICOH THETA V you need to enable ADB. Please register as a developer with RICOH and enable ADB according to the documentation. (Please be patient as we are planning to release the developer registration mechanism and effective ADB usage techniques in the near future.)</li>
+<li>Please limit the size of the plug-in to 256MB</li>
+<li>Plug-in and package names cannot exceed 64 characters and an extension must use apk</li>
+<li>Version number must follow the <a href="https://api.ricoh/docs/theta-plugin/how-to-develop/#version-information">versioning information</a></li>
+<li>Use of <a href="https://api.ricoh/docs/theta-plugin/how-to-develop/#open-source-licenses">open source licenses</a> must be explicitly stated</li>
+<li>You cannot start a service</li>
+<li>When you press and hold the mode button for 2 seconds or more, the plug-in must terminate</li>
+<li>When the plug-in is terminated, the plug-in must give a <a href="https://api.ricoh/docs/theta-plugin-reference/broadcast-intent/#notifying-completion-of-plug-in">notification of termination for the plug-in</a></li>
 </ul>
                 
                   
