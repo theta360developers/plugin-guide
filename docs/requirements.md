@@ -25,4 +25,18 @@
       * buildToolsVersion "26.0.3"
       * minSdkVersion 25
       * targetSdkVersion 25
+      
+## Warnings When Developing Plug-ins
+This list is taken directly from the How To Develop section of the official RICOH THETA documentation [here](https://api.ricoh/docs/theta-plugin/how-to-develop/#warnings-when-developing-plug-ins)
+
+Please note: "You cannot start a service" - Running a service as a part of your plug-in is not allowed by RICOH. It’s possible that the service continues to run in the background after the plug-in is stopped. This can end up being a resource issue for the camera. Therefore, implementing something like an “account manager service” will mean your plug-in will be rejected by RICOH.  
+
+  * To install the developed plug-in on RICOH THETA V you need to enable ADB. Please register as a developer with RICOH and enable ADB according to the documentation. (Please be patient as we are planning to release the developer registration mechanism and effective ADB usage techniques in the near future.)
+  * Please limit the size of the plug-in to 256MB
+  * Plug-in and package names cannot exceed 64 characters and an extension must use apk
+  * Version number must follow the [versioning information](https://api.ricoh/docs/theta-plugin/how-to-develop/#version-information)
+  * Use of [open source licenses]9https://api.ricoh/docs/theta-plugin/how-to-develop/#open-source-licenses) must be explicitly stated
+  * You cannot start a service
+  * When you press and hold the mode button for 2 seconds or more, the plug-in must terminate
+  * When the plug-in is terminated, the plug-in must give a [notification of termination for the plug-in](https://api.ricoh/docs/theta-plugin-reference/broadcast-intent/#notifying-completion-of-plug-in)
 
