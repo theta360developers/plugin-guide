@@ -6,9 +6,10 @@
     * Hardware
       - RICOH THETA V
     * Firmware
-      - ver.2.20.1 and above
+      - ver.2.30.1 and above
         - Information on checking and updating the firmware is [here](https://theta360.com/en/support/manual/s/content/pc/pc_09.html)
-    * The camera must be unlocked and in developer mode. Contact jcasman@oppkey.com for information
+    * The camera must be unlocked and in developer mode. Join the 
+    [RICOH THETA Plug-in Partner Program](https://api.ricoh/products/theta-plugin/) for information
     on unlocking your camera.
   
 ##  Software for Development
