@@ -24,6 +24,31 @@ THETA V partner program is launched in 2018 (specific date of launch has not bee
 
 This document covers the following development process and tips:
 
+  - Resources and Setup:
+    - [Requirements](/requirements/)
+    - [Camera Hardware](/hardware/) 
+    - [Setup](setup)
+  - Development Workflow:
+    - [Plugin Use](/use/)
+    - Using WiFi API: wifiapi.md
+    - Custom Development Tips: customtips.md
+    - Plugin Configuration: configuration.md
+    - Workflow Tips: workflow.md
+    - Vysor Tips: vysortips.md
+    - Troubleshooting: troubleshoot.md
+  - Tutorials:
+    - Tutorials Overview: custom.md
+    - Tutorial - Vysor: tutorialvysor.md
+    - Tutorial - LED Color: tutorialcolor.md
+    - Tutorial - LED Communication: tutorialcommunication.md
+    - Tutorial - Camera Buttons: tutorialbutton.md
+    - Tutorial - Dual Fisheye: fisheye.md
+  - Community Resources:
+    - Fun Tests: fun.md
+    - Concept Ideas: concept.md
+    - Community: community.md
+    - About: about.md
+
 - [Requirements](/requirements/)
 - [Android SDK Installation and Setup](/setup/) 
 - [RICOH THETA Plugin SDK Import](/setup/#import-ricoh-plugin-sdk-and-update-android-build-system)

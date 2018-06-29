@@ -24,24 +24,28 @@ extra:
       link: 'https://www.facebook.com/theta360guide/'
   
 pages: 
-  - Overview: index.md
-  - Requirements: requirements.md
-  - Setup: setup.md
-  - Plugin Use: use.md
-  - Tutorials Overview: custom.md
-  - Tutorial - Vysor: tutorialvysor.md
-  - Tutorial - LED Color: tutorialcolor.md
-  - Tutorial - LED Communication: tutorialcommunication.md
-  - Tutorial - Camera Buttons: tutorialbutton.md
-  - Tutorial - Dual Fisheye: fisheye.md
-  - Using WiFi API: wifiapi.md
-  - Custom Development Tips: customtips.md
-  - Plugin Configuration: configuration.md
-  - Workflow Tips: workflow.md
-  - Vysor Tips: vysortips.md
-  - Troubleshooting: troubleshoot.md
-  - Camera Hardware: hardware.md
-  - Fun Tests: fun.md
-  - Concept Ideas: concept.md
-  - Community: community.md
-  - About: about.md
+  - Resources and Setup:
+    - Overview: index.md
+    - Requirements: requirements.md
+    - Camera Hardware: hardware.md
+    - Setup: setup.md
+  - Development Workflow:
+    - Plugin Use: use.md
+    - Using WiFi API: wifiapi.md
+    - Custom Development Tips: customtips.md
+    - Plugin Configuration: configuration.md
+    - Workflow Tips: workflow.md
+    - Vysor Tips: vysortips.md
+    - Troubleshooting: troubleshoot.md
+  - Tutorials:
+    - Tutorials Overview: custom.md
+    - Tutorial - Vysor: tutorialvysor.md
+    - Tutorial - LED Color: tutorialcolor.md
+    - Tutorial - LED Communication: tutorialcommunication.md
+    - Tutorial - Camera Buttons: tutorialbutton.md
+    - Tutorial - Dual Fisheye: fisheye.md
+  - Community Resources:
+    - Fun Tests: fun.md
+    - Concept Ideas: concept.md
+    - Community: community.md
+    - About: about.md
