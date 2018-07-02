@@ -14,8 +14,9 @@
 
 ## Process to Unlock
 
-Once you sign up for the partner program, you can use the Ricoh Desktop
-application version 3.5 or above to put the camera into Developer Mode.
+Once you sign up for the partner program, you can use the free Ricoh Desktop
+application version 3.5 or above to put the camera into Developer Mode using
+a USB cable.
 
 ![](img/setup/developer-mode.png)
   
