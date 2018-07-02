@@ -110,9 +110,25 @@ filenames that contain a date and time stamp.
 ## Stitching Dual-fisheye Images Into Equirectangular
 
 For most applications, you will need to stitch the images in post-production processing
-using your own stitching library. You can also commercially license Ichi's stitching library.
-For more information on licensing a stitching library, please contact Jesse 
-Casman at jcasman@oppkey.com.
+using your own stitching library. You can also commercially license Ichi's stitching library 
+and Android application.
+For more information on licensing Ichi's stitching library and Android application, 
+please contact Jesse Casman at jcasman@oppkey.com.
+
+Ichi's stitching library requires a one-time callibration for each camera. A trial version
+of the callibration app is available that will put a watermark on the image. There is 
+no time limit on the trial version.
+
+![](img/dualfish/callibration-app.jpg)
+
+Community member Svendus has 
+[reported](https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/31?u=codetricity) success stitching hundreds of spheres on 
+PC and Mac using [PTGui](https://www.ptgui.com/) 11.2. A free trial version
+is available. If you test this, please post your experience.
+
+Community member squizard360 is [experimenting](https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/28?u=codetricity) with Hugin and the 
+[dualfisheye2equirectangular_ffmpeg_remap project](https://github.com/evertvorster/dualfisheye2equirectangular_ffmpeg_remap) from 
+[evertvorster](https://github.com/evertvorster).
 
 ## Control of Stitching
 
