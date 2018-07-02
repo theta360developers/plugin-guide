@@ -121,6 +121,17 @@ no time limit on the trial version.
 
 ![](img/dualfish/callibration-app.jpg)
 
+The lens distortion is compensated for by adjusting the stitch line which is 
+adjusted by selecting points on the edges of the spheres. This is a one time process. 
+The lens distortion information is then stored in the mobile app.
+
+![](img/dualfish/callibration-2.jpg)
+
+HDR is handled by the application.
+
+![](img/dualfish/callibration-3.jpg)
+
+
 Community member Svendus has 
 [reported](https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/31?u=codetricity) success stitching hundreds of spheres on 
 PC and Mac using [PTGui](https://www.ptgui.com/) 11.2. A free trial version
