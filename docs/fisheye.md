@@ -121,8 +121,8 @@ no time limit on the trial version.
 
 ![](img/dualfish/callibration-app.jpg)
 
-The lens distortion is compensated for by adjusting the stitch line which is 
-adjusted by selecting points on the edges of the spheres. This is a one time process. 
+The lens distortion is compensated for by adjusting the stitch line 
+by selecting points on the edges of the spheres. This is a one time process. 
 The lens distortion information is then stored in the mobile app.
 
 ![](img/dualfish/callibration-2.jpg)
