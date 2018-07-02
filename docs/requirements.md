@@ -8,9 +8,16 @@
     * Firmware
       - ver.2.30.1 and above
         - Information on checking and updating the firmware is [here](https://theta360.com/en/support/manual/s/content/pc/pc_09.html)
-    * The camera must be unlocked and in developer mode. Join the 
+    * The camera must be unlocked in Developer Mode. Join the 
     [RICOH THETA Plug-in Partner Program](https://api.ricoh/products/theta-plugin/) for information
     on unlocking your camera.
+
+## Process to Unlock
+
+Once you sign up for the partner program, you can use the Ricoh Desktop
+application version 3.5 or above to put the camera into Developer Mode.
+
+![](img/setup/developer-mode.png)
   
 ##  Software for Development
 
