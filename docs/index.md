@@ -17,7 +17,7 @@ update this document using pull requests on [GitHub](https://github.com/theta360
 
 The THETA V uses Android as the operating system. Because of this, the THETA V application development process is the same as the development process for an Android phone. Connect the THETA V to a development workstation, either Mac, Windows, or Linux with a micro USB cable and connect to the camera with adb. You will need a THETA V 
 that is in developer mode. To put your THETA V into developer mode, please
-join the [RICOH THETA Plug-in Partner Program](https://api.ricoh/products/theta-plugin/).
+[join the RICOH THETA Plug-in Partner Program](https://www8.webcas.net/db/pub/ricoh/thetaplugin/create/input).
 
 This document covers the following development process and tips:
 
