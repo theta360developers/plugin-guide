@@ -86,11 +86,27 @@ Scroll down until you see apps.
 
 [![](img/dualfish/aqua-led.png)](https://youtu.be/aGk5LsZP5do)
 
-### Take Picture
+### Taking Picture
 
-The camera will take three dual-fisheye pictures for bracketing.
+The camera has two modes by default. It can either take a single dual-fisheye image or 
+take three dual-fisheye pictures in rapid succession for bracketing.  You can switch
+between single image and bracketing mode by pressing the Wi-Fi button on the side of the camera.
 
-Place the camera on tripod on stand it up on a table.
+#### Single Image
+
+In single image mode. the Wi-Fi LED will be aqua and flashing.
+
+[![](img/dualfish/aqua-led.png)](https://youtu.be/r3CgivJ0j-Y)
+
+
+#### Bracketing
+
+In bracketing mode, the Wi-Fi LED will be magenta and flashing faster.
+
+![](img/dualfish/bracketing-led.png)
+
+For bracketing mode, you need to stabilize the camera for the duration of 
+the three shots. Place the camera on tripod or stand it up on a table.
 
 Press the shutter button.
 
@@ -116,12 +132,11 @@ For more information on licensing Ichi's stitching library and Android applicati
 please contact Jesse Casman at jcasman@oppkey.com.
 
 Ichi's stitching library requires a one-time callibration for each camera. A trial version
-of the callibration app is available that will put a watermark on the image. There is 
-no time limit on the trial version.
+of the callibration app is available.
 
 ![](img/dualfish/callibration-app.jpg)
 
-The lens distortion is compensated for by adjusting the stitch line 
+The lens distortion is compensated for
 by selecting points on the edges of the spheres. This is a one time process. 
 The lens distortion information is then stored in the mobile app.
 
@@ -131,6 +146,36 @@ HDR is handled by the application.
 
 ![](img/dualfish/callibration-3.jpg)
 
+### Overview of Ichi's Stitching App
+
+#### Original Dual-fisheye Image
+![](img/dualfish/original.jpg)
+
+#### Stitched Image
+
+![](img/dualfish/stitched.jpg)
+
+#### Close-Up on Stitch Line
+
+Viewed using the Ricoh Desktop Appplication
+
+![](img/dualfish/closeup-1.jpg)
+
+![](img/dualfish/closeup-2.jpg)
+
+![](img/dualfish/closeup-3.jpg)
+
+#### Callibration Application
+
+![](img/dualfish/callib-1.jpg)
+
+![](img/dualfish/callib-2.jpg)
+
+![](img/dualfish/callib-3.jpg)
+
+
+
+### Other Stitching Solutions
 
 Community member Svendus has 
 [reported](https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/31?u=codetricity) success stitching hundreds of spheres on 
