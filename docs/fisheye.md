@@ -1,4 +1,4 @@
-# Dual-Fisheye Still Image 
+# Dual-Fisheye Still Image
 
 By using plug-in technology, you can improve the user experience for your customers. One example is to
 reduce the time between still image shots. The RICOH THETA S requires approximately 8 seconds between
@@ -18,8 +18,8 @@ This is useful for the following applications:
 
 - Image stitching control
 - Permission setting to access storage and camera
-- Post-production workflow 
-- Using third-party libraries
+- Post-production workflow
+- Conversion of dual-fisheye to equirectangular
 
 ## Quick Start with pre-compiled apk
 
@@ -77,8 +77,8 @@ Scroll down until you see apps.
 
 ### Reboot Camera and Put Into Plug-in Mode
 
-- Unplug camera 
-- Hold power button for 8 seconds 
+- Unplug camera
+- Hold power button for 8 seconds
 - Turn camera back on
 - Hold mode button for 2 seconds or longer
 - Confirm that that the LED above the shutter button is white
@@ -86,7 +86,7 @@ Scroll down until you see apps.
 
 [![](img/dualfish/aqua-led.png)](https://youtu.be/aGk5LsZP5do)
 
-### Taking Picture
+### Taking Pictures
 
 The camera has two modes by default. It can either take a single dual-fisheye image or 
 take three dual-fisheye pictures in rapid succession for bracketing.  You can switch
@@ -101,9 +101,14 @@ In single image mode. the Wi-Fi LED will be aqua and flashing.
 
 #### Bracketing
 
-In bracketing mode, the Wi-Fi LED will be magenta and flashing faster.
+In bracketing mode, the Wi-Fi LED will be magenta and flashing faster compared
+ to when the camera is in still image mode..
 
 ![](img/dualfish/bracketing-led.png)
+
+The gif below was contributed by community member @juantonto.
+
+![HDR bracketing mode magenta LED](dualfish/img/hdr.gif)
 
 For bracketing mode, you need to stabilize the camera for the duration of 
 the three shots. Place the camera on tripod or stand it up on a table.
@@ -114,6 +119,7 @@ Refer to the video above for the expected behavior of the camera,
 including LED and audio feedback.
 
 ### Confirm Pictures were Taken
+
 Connect camera to your computer with a USB cable.
 
 In a file browser such as File Explorer, click into RICOH THETA V in
@@ -126,32 +132,51 @@ filenames that contain a date and time stamp.
 ## Stitching Dual-fisheye Images Into Equirectangular
 
 For most applications, you will need to stitch the images in post-production processing
-using your own stitching library. You can also commercially license Ichi's stitching library 
+using your own stitching library. 
+
+### Ichi Hirota Stitching Application
+
+You can also commercially license Ichi's stitching library 
 and Android application.
-For more information on licensing Ichi's stitching library and Android application, 
+For more information on licensing Ichi's stitching library and Android application,
 please contact Jesse Casman at jcasman@oppkey.com.
 
 Ichi's stitching library requires a one-time callibration for each camera. A trial version
-of the callibration app is available.
+of the callibration app is available [here](https://drive.google.com/file/d/1FyXHzDXUmuuqJyNgrYt0sOa_IidDSHcC/view?usp=sharing).  This
+app will time-out at the end of July, 2018.
 
-![](img/dualfish/callibration-app.jpg)
+#### Original Dual-fisheye Image
+
+![dual-fisheye image](img/dualfish/original.jpg)
+
+#### Callibration Application
+
+![Instructions](img/dualfish/callib-1.jpg)
+
+Dual-fisheye image loaded into callibration app.
+
+![Image loaded into callibration app](img/dualfish/callib-2.jpg)
 
 The lens distortion is compensated for
 by selecting points on the edges of the spheres. This is a one time process. 
 The lens distortion information is then stored in the mobile app.
 
-![](img/dualfish/callibration-2.jpg)
+![](img/dualfish/callib-3.jpg)
+
+![Callibration App](img/dualfish/callibration-app.jpg)
+
+When you select the points of overlap, the callibration app
+will present a zoom view so that you can precisely select 
+the overlap. In the view below, we're using the tree branch
+as the callibration point.
+
+![Zoom of callibration](img/dualfish/callibration-2.jpg)
 
 HDR is handled by the application.
 
 ![](img/dualfish/callibration-3.jpg)
 
-### Overview of Ichi's Stitching App
-
-#### Original Dual-fisheye Image
-![](img/dualfish/original.jpg)
-
-#### Stitched Image
+#### Stitching Results
 
 ![](img/dualfish/stitched.jpg)
 
@@ -165,22 +190,32 @@ Viewed using the Ricoh Desktop Appplication
 
 ![](img/dualfish/closeup-3.jpg)
 
-#### Callibration Application
-
-![](img/dualfish/callib-1.jpg)
-
-![](img/dualfish/callib-2.jpg)
-
-![](img/dualfish/callib-3.jpg)
-
-
-
-### Other Stitching Solutions
+### PTGui
 
 Community member Svendus has 
 [reported](https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/31?u=codetricity) success stitching hundreds of spheres on 
 PC and Mac using [PTGui](https://www.ptgui.com/) 11.2. A free trial version
-is available. If you test this, please post your experience.
+is available.
+
+This [project file bundle](https://drive.google.com/file/d/1RzvS-VfOvAQuu7UIDkpHa2RB2OlYmosF/view?usp=sharing) has both a preset for THETA images as well as an example image.
+
+![ptgui menu](dualfish/img/ptgui/ptgui-menu.png)
+
+#### Original Image
+
+![original image](dualfish/img/ptgui/original.jpg)
+
+#### Stitched Image
+
+![stitched image](dualfish/img/ptgui/stitched.jpg)
+
+#### Close-up Image
+
+Using the THETA Desktop Application to view the stitched image.
+
+![close-up image](dualfish/img/ptgui/closeup.jpg)
+
+### Other Stitching Solutions
 
 Community member squizard360 is [experimenting](https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/28?u=codetricity) with Hugin and the 
 [dualfisheye2equirectangular_ffmpeg_remap project](https://github.com/evertvorster/dualfisheye2equirectangular_ffmpeg_remap) from 
