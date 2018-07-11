@@ -36,6 +36,7 @@ pages:
     - Plugin Configuration: configuration.md
     - Workflow Tips: workflow.md
     - Vysor Tips: vysortips.md
+    - Plug-in Submission: 'workflow/submit.md'
     - Troubleshooting: troubleshoot.md
   - Tutorials:
     - Tutorials Overview: custom.md
