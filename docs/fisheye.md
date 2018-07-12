@@ -72,7 +72,6 @@ Scroll down until you see apps.
 
 #### Enable storage and camera
 
-
 ![](img/dualfish/permission.png)
 
 ### Reboot Camera and Put Into Plug-in Mode
