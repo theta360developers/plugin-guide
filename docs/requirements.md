@@ -34,6 +34,46 @@ a USB cable.
       * buildToolsVersion "26.0.3"
       * minSdkVersion 25
       * targetSdkVersion 25
+   
+   
+## THETA Plugin Technology Components
+
+  * Photography（images/video）    
+      * Camera API
+      * AudioManager API
+      * WebAPI
+    
+  * Sensors  
+      * Gyroscope (3-axis)
+      * Accelerometer (3-axis)
+      * Magnetometer (3-axis)
+    
+  * UI Elements
+      * Buttons
+      * Microphones
+      * LEDs
+      * Speakers
+    
+  * USB    
+      * Device
+      * Host
+    
+  * Wi-Fi    
+      * Direct Mode（Ad hoc Mode）
+      * Client Mode（Infrastructure Mode）
+    
+  * BLE Peripherals    
+      * Central
+        
+  * Application Examples   
+      * Image Recognition
+      * Image Quality Improvement
+      * Zenith Correction
+      * Shooting Sequence Control
+      * Cloud/Social Media Sharing
+      * External Device Connectivity
+      * WebUI
+      * WebRTC      
       
 ## Warnings When Developing Plug-ins
 This list is taken directly from the How To Develop section of the official RICOH THETA documentation [here](https://api.ricoh/docs/theta-plugin/how-to-develop/#warnings-when-developing-plug-ins)
