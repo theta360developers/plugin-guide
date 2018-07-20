@@ -393,6 +393,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#basic-use-of-leds" title="Basic Use of LEDs" class="md-nav__link">
+    Basic Use of LEDs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-plug-in-to-change-the-colors-of-the-wireless-led" title="Creating a Plug-in to Change the Colors of the Wireless LED" class="md-nav__link">
+    Creating a Plug-in to Change the Colors of the Wireless LED
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-mainactivity" title="Changing MainActivity" class="md-nav__link">
+    Changing MainActivity
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#internal-storage" title="Internal Storage" class="md-nav__link">
     Internal Storage
   </a>
@@ -710,6 +737,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#basic-use-of-leds" title="Basic Use of LEDs" class="md-nav__link">
+    Basic Use of LEDs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-plug-in-to-change-the-colors-of-the-wireless-led" title="Creating a Plug-in to Change the Colors of the Wireless LED" class="md-nav__link">
+    Creating a Plug-in to Change the Colors of the Wireless LED
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changing-mainactivity" title="Changing MainActivity" class="md-nav__link">
+    Changing MainActivity
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#internal-storage" title="Internal Storage" class="md-nav__link">
     Internal Storage
   </a>
@@ -849,6 +903,241 @@ please send an email to jcasman@oppkey.com for
     }
 </code></pre>
 <p>Similarly, <code>onKeyUp</code> is run when the button is released, and <code>onKeyLongPress</code> is run when the button is pushed for a long time. Unlike <code>onKeyDown</code> where there is a choice, pressing any button will run it. </p>
+<h2 id="basic-use-of-leds">Basic Use of LEDs</h2>
+<p>When working with LEDs, there are 3 main points to remember:</p>
+<ul>
+<li>3 types of control—On, Off, Flashing</li>
+<li>Can control LED3 through LED8 for the below list</li>
+<li>LED3's LED color can be changed</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>LED</th>
+<th>LED No</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6</td>
+<td>Wi-Fi LED</td>
+<td>LED3</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Shooting Mode LED</td>
+<td>(Camera)LED4, (Video)LED5, (Live)LED6</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Video Recording LED</td>
+<td>LED7</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Memory Warning LED</td>
+<td>LED8</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="" src="../img/customtips/thetavbuttonsandleds.png" /></p>
+<p>Working with the <a href="https://github.com/ricohapi/theta-plugin-sdk">SKD</a>...</p>
+<p>In <code>pluginlibrary</code>, the functions below are available for controlling LEDs.</p>
+<p>Specify a color and switch LED3 on. </p>
+<p><code>public void notificationLed3Show(@NonNull LedColor ledColor)</code></p>
+<p>Select LED3 through LED8 and switch the LED on.</p>
+<p><code>public void notificationLedShow(@NonNull LedTarget ledTarget)</code></p>
+<p>Flash the LED</p>
+<p><code>public void notificationLedBlink(@NonNull LedTarget ledTarget, LedColor ledColor, int period)</code></p>
+<p>Turn the LED off</p>
+<p><code>public void notificationLedHide(@NonNull LedTarget ledTarget)</code></p>
+<ul>
+<li>
+<p><code>LedTarget</code> - With <code>enum</code>, select one from LED3, LED4, ..., LED8</p>
+</li>
+<li>
+<p><code>LedColor</code> - With <code>enum</code>, select one from RED, GREEN, BLUE, CYAN, MAGENTA, YELLOW, WHITE. Default is BLUE.</p>
+</li>
+<li>
+<p><code>period</code> - When using flash control, 1 cycle period (ms) is set between 250-2000. A number below 250 will be set at 250, and a number above 2000 will be set at 2000.</p>
+</li>
+</ul>
+<h3 id="creating-a-plug-in-to-change-the-colors-of-the-wireless-led">Creating a Plug-in to Change the Colors of the Wireless LED</h3>
+<p>Here is an example of a plug-in that changes the wireless LED colors randomly and stops when the shutter button is pressed. It was created by RICOH's @meronpan). <a href="https://www.youtube.com/watch?v=8iqS-FFAIYg">This video shows the results</a>. </p>
+<p>The 2 changes below will be added.</p>
+<ul>
+<li><code>MainActivity</code></li>
+<li>AndroidManifest.xml</li>
+</ul>
+<h3 id="changing-mainactivity">Changing <code>MainActivity</code></h3>
+<p><code>MainActivity</code> was changed as shown below.</p>
+<pre><code>package com.theta360.pluginapplication;
+
+import android.os.Bundle;
+import android.view.KeyEvent;
+import com.theta360.pluginapplication.task.TakePictureTask;
+import com.theta360.pluginapplication.task.TakePictureTask.Callback;
+import com.theta360.pluginlibrary.activity.PluginActivity;
+import com.theta360.pluginlibrary.callback.KeyCallback;
+import com.theta360.pluginlibrary.receiver.KeyReceiver;
+import com.theta360.pluginlibrary.values.LedColor;
+import com.theta360.pluginlibrary.values.LedTarget;
+
+import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class MainActivity extends PluginActivity {
+
+    //define schedule time interval
+    private static final int TIMER_INTERVAL_PERIOD = 250;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        //set timer so LED color will renew at certain time interval
+        Timer timer = new Timer();
+
+        Random ledColorRand = new Random();
+        Random ledTargetRand = new Random();
+        Random ledHideRand = new Random();
+
+        //set run to perform every 250ms
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                //select LED color randomly
+                int ledColorNum = ledColorRand.nextInt(LedColor.values().length);
+                //select turning on LED randomly
+                int ledTargetNum = ledTargetRand.nextInt(LedTarget.values().length);
+                //select turning off LED randomly
+                int ledHideNum = ledHideRand.nextInt(LedTarget.values().length);
+
+                //turn on LED3 with randomly selected color
+                notificationLed3Show(LedColor.values()[ledColorNum]);
+                //turn on randomly selected LED
+                notificationLedShow(LedTarget.values()[ledTargetNum]);
+                //turn off randomly selected LED
+                notificationLedHide(LedTarget.values()[ledHideNum]);
+            }
+        }, 0, TIMER_INTERVAL_PERIOD);
+
+
+        // Set a callback when a button operation event is acquired.
+        setKeyCallback(new KeyCallback() {
+            @Override
+            public void onKeyDown(int keyCode, KeyEvent event) {
+                if (keyCode == KeyReceiver.KEYCODE_CAMERA) {
+                    //by ending Timer, end randomly flashing color with certain interval
+                    timer.cancel();
+                    //turn off LED
+                    notificationLedHide(LedTarget.LED3);
+                    notificationLedHide(LedTarget.LED4);
+                    notificationLedHide(LedTarget.LED5);
+                    notificationLedHide(LedTarget.LED6);
+                    notificationLedHide(LedTarget.LED7);
+                    notificationLedHide(LedTarget.LED8);
+                }
+            }
+
+            @Override
+            public void onKeyUp(int keyCode, KeyEvent event) {
+            }
+
+            @Override
+            public void onKeyLongPress(int keyCode, KeyEvent event) {
+                //by ending Timer, end randomly flashing color with certain interval
+                timer.cancel();
+                //turn off LED
+                notificationLedHide(LedTarget.LED3);
+                notificationLedHide(LedTarget.LED4);
+                notificationLedHide(LedTarget.LED5);
+                notificationLedHide(LedTarget.LED6);
+                notificationLedHide(LedTarget.LED7);
+                notificationLedHide(LedTarget.LED8);
+                //notification that plug-in has ended correctly
+                notificationSuccess();
+            }
+        });
+    }
+}
+</code></pre>
+<p>Looking at the details…</p>
+<pre><code>//set run to perform every 250ms
+timer.schedule(new TimerTask() {
+    @Override
+    public void run() {
+        //select LED color randomly
+        int ledColorNum = ledColorRand.nextInt(LedColor.values().length);
+        //select turning on LED randomly
+        int ledTargetNum = ledTargetRand.nextInt(LedTarget.values().length);
+        //select turning off LED randomly
+        int ledHideNum = ledHideRand.nextInt(LedTarget.values().length);
+
+        //turn on LED3 with randomly selected color
+        notificationLed3Show(LedColor.values()[ledColorNum]);
+        //select turning on LED randomly
+        notificationLedShow(LedTarget.values()[ledTargetNum]);
+        //select turning off LED randomly
+        notificationLedHide(LedTarget.values()[ledHideNum]);
+    }
+}, 0, TIMER_INTERVAL_PERIOD);
+</code></pre>
+<p><code>timer.schedule</code> will be called only once after running, because it was placed within <code>onCreate</code>. However, the run inside of <code>onCreate</code> will be called up periodically. With <code>timer.schedule</code>, run will be performed every 250ms. </p>
+<pre><code>    @Override
+    public void onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyReceiver.KEYCODE_CAMERA) {
+            //by ending Timer, end randomly flashing color with certain interval
+            timer.cancel();
+            //turn off LED
+            notificationLedHide(LedTarget.LED3);
+            notificationLedHide(LedTarget.LED4);
+            notificationLedHide(LedTarget.LED5);
+            notificationLedHide(LedTarget.LED6);
+            notificationLedHide(LedTarget.LED7);
+            notificationLedHide(LedTarget.LED8);
+        }
+    }
+</code></pre>
+<p>Originally, the code to take pictures with the camera was placed inside <code>onKeyDown</code>, but that part was rewritten to deal with turning off the LED. <code>run</code>, which had been periodically running with <code>timer.cancel</code>, is stopped. After that, updating the LED ends.</p>
+<p>The last step is to turn the LED off by <code>notificationLedHide</code>.</p>
+<pre><code>        @Override
+        public void onKeyLongPress(int keyCode, KeyEvent event) {
+            //by ending Timer, end randomly flashing color with certain interval
+            timer.cancel();
+            //turn LED off
+            notificationLedHide(LedTarget.LED3);
+            notificationLedHide(LedTarget.LED4);
+            notificationLedHide(LedTarget.LED5);
+            notificationLedHide(LedTarget.LED6);
+            notificationLedHide(LedTarget.LED7);
+            notificationLedHide(LedTarget.LED8);
+            //notification that plug-in has ended correctly
+            notificationSuccess();
+        }
+</code></pre>
+<p><code>onKeyLongPress</code> is called up when the Mode Button is pressed for a long time. 
+Inside of <code>onKeyLongPress</code>, the process of ending the plug-in is performed.
+<code>timer.cancel</code> and <code>notificationLedHide</code> have the same processing purpose as <code>onKeyDown</code>.
+Finally, <code>notificationSuccess</code> is run to notify that the plug-in has ended correctly.</p>
+<p><strong>CHANGING AndroidManifest.xml</strong></p>
+<p>Because the THETA has no screen, the following change was made.</p>
+<pre><code>AndroidManifest.xml
+        &lt;activity android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            &gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name="android.intent.action.MAIN" /&gt;
+
+                &lt;category android:name="android.intent.category.LAUNCHER" /&gt;
+            &lt;/intent-filter&gt;
+        &lt;/activity&gt;
+</code></pre>
+<p>In order to set the screen orientation, <code>android:screenOrientation=“portrait”</code> was added.
+Without this code, when the THETA is tilted, it would be recognized that the screen has turned and <code>onCreate</code> would be run. As long as Android is running, when the screen is turned, the app is initialized. </p>
 <h2 id="internal-storage">Internal Storage</h2>
 <p>The THETA V has a maximum storage size of 32GB. Developers can use 19GB  for storage of their plug-in applications and approximately 1.5GB for the plug-in itself. The partition for data is <code>/data</code>.</p>
 <p><code>/sdcard/DCIM/</code> can be used.</p>
