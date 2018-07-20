@@ -686,6 +686,100 @@
 you have any problems 
 please send an email to jcasman@oppkey.com for
  friendly (I hope) help.  :-)</p>
+<p>### BASIC USE OF THETA’S BUTTONS</p>
+<p>There are 2 points to remember in using buttons: 
+- Button types
+- Button operation types</p>
+<p><strong>BUTTON TYPES</strong>
+Below are button types. Let’s confirm the key code constant which corresponds to them. </p>
+<table>
+<thead>
+<tr>
+<th>Number</th>
+<th>Button</th>
+<th>Keycode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>Shutter Button</td>
+<td><code>KeyReceiver.KEYCODE_CAMERA</code></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Wi-Fi Button</td>
+<td><code>KeyReceiver.KEYCODE_WLAN_ON_OFF</code></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Mode Button</td>
+<td><code>KeyReceiver.KEYCODE_MEDIA_RECORD</code></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="" src="../img/customtips/thetavbuttonsandleds.jpg" /></p>
+<p><strong>BUTTON OPERATION TYPES</strong>
+For button operation, the following callback functions are available: </p>
+<table>
+<thead>
+<tr>
+<th>Button Operation</th>
+<th>Callback Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Press button</td>
+<td><code>onKeyDown</code></td>
+</tr>
+<tr>
+<td>Release button</td>
+<td><code>onKeyUp</code></td>
+</tr>
+<tr>
+<td>Long press of Mode Button</td>
+<td><code>onKeyLongPress</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>HOW TO USE BUTTONS</strong></p>
+<p>The concept is you are going to combine button information introduced in the Basics of Buttons section and button operation types.</p>
+<p>Let’s see how to use it with the <a href="https://github.com/ricohapi/theta-plugin-sdk">SDK</a>. </p>
+<p>When using the SDK, <code>MainActivity</code> is the first to be called, but this section focuses on buttons. </p>
+<pre><code>    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+</code></pre>
+<p><code>onCreate</code> will be called up at the very beginning just once, when <code>MainActivity</code> is run. </p>
+<pre><code>    @Override
+    public void onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyReceiver.KEYCODE_CAMERA) {
+            /*
+             * To take a static picture, use the takePicture method.
+             * You can receive a fileUrl of the static picture in the callback.
+             */
+            new TakePictureTask(mTakePictureTaskCallback).execute();
+        }
+    }
+</code></pre>
+<p><code>onKeyDown</code> will be run when the button is pushed. In the middle, it’s spilt so that if the <code>KEYCODE_CAMERA</code> button is pressed, when the shutter button is pressed new <code>TakePictureTask</code> will be run. </p>
+<pre><code>    @Override
+    public void onKeyUp(int keyCode, KeyEvent event) {
+        /**
+         * You can control the LED of the camera.
+         * It is possible to change the way of lighting, the cycle of blinking, the color of light emission.
+         * Light emitting color can be changed only LED3.
+         */
+        notificationLedBlink(LedTarget.LED3, LedColor.BLUE, 1000);
+    }
+
+    @Override
+    public void onKeyLongPress(int keyCode, KeyEvent event) {
+        notificationError("");
+    }
+</code></pre>
+<p>Similarly, <code>onKeyUp</code> is run when the button is released, and <code>onKeyLongPress</code> is run when the button is pushed for a long time. Unlike <code>onKeyDown</code> where there is a choice, pressing any button will run it. </p>
 <h2 id="internal-storage">Internal Storage</h2>
 <p>The THETA V has a maximum storage size of 32GB. Developers can use 19GB  for storage of their plug-in applications and approximately 1.5GB for the plug-in itself. The partition for data is <code>/data</code>.</p>
 <p><code>/sdcard/DCIM/</code> can be used.</p>
