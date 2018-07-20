@@ -414,6 +414,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#changing-androidmanifestxml" title="Changing AndroidManifest.xml**" class="md-nav__link">
+    Changing AndroidManifest.xml**
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -758,6 +765,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#changing-androidmanifestxml" title="Changing AndroidManifest.xml**" class="md-nav__link">
+    Changing AndroidManifest.xml**
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -964,7 +978,7 @@ please send an email to jcasman@oppkey.com for
 </li>
 </ul>
 <h3 id="creating-a-plug-in-to-change-the-colors-of-the-wireless-led">Creating a Plug-in to Change the Colors of the Wireless LED</h3>
-<p>Here is an example of a plug-in that changes the wireless LED colors randomly and stops when the shutter button is pressed. It was created by RICOH's @meronpan). <a href="https://www.youtube.com/watch?v=8iqS-FFAIYg">This video shows the results</a>. </p>
+<p>Here is an example of a plug-in that changes the wireless LED colors randomly and stops when the shutter button is pressed. It was created by RICOH's @meronpan. <a href="https://www.youtube.com/watch?v=8iqS-FFAIYg">This video shows the results</a>. </p>
 <p>The 2 changes below will be added.</p>
 <ul>
 <li><code>MainActivity</code></li>
@@ -1123,7 +1137,7 @@ timer.schedule(new TimerTask() {
 Inside of <code>onKeyLongPress</code>, the process of ending the plug-in is performed.
 <code>timer.cancel</code> and <code>notificationLedHide</code> have the same processing purpose as <code>onKeyDown</code>.
 Finally, <code>notificationSuccess</code> is run to notify that the plug-in has ended correctly.</p>
-<p><strong>CHANGING AndroidManifest.xml</strong></p>
+<h3 id="changing-androidmanifestxml">Changing AndroidManifest.xml**</h3>
 <p>Because the THETA has no screen, the following change was made.</p>
 <pre><code>AndroidManifest.xml
         &lt;activity android:name=".MainActivity"
