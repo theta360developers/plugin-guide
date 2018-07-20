@@ -5,7 +5,7 @@ There is a very active and fun community around the RICOH THETA V development. C
 ## community.theta360.guide
 
 The main hub THETA developer discussion is the independent developer community at [community.theta360.guide](https://community.theta360.guide). There are more than
-a 1,000 registered THETA developers on the community
+a 1,200 registered THETA developers on the community
 site viewing 70,000 pages a month. You do not need to register to read the content, but it would be great if
 you signed for free and asked a question or shared some information.
 
@@ -32,7 +32,7 @@ Write the title of your question and the details in the body.
 If you are new to the community, your question will need to get approved for the first post only.
 
 ### Private Question
-You can message us directly on https://community.theta360.guide. Or you can send email to jcasman@oppkey.com.
+You can message us directly on [community.theta360.guide](https://community.theta360.guide). Or you can send email to jcasman@oppkey.com.
 
 
 
@@ -40,7 +40,11 @@ You can message us directly on https://community.theta360.guide. Or you can send
 
 A number of workshops are planned to cover different aspects of plug-in development. We also hold physical and online meetings to explore the booming business around applications for 360 cameras. Here are some of the upcoming events for developers:
 
+
+* SIGGRAPH (Aug 12-16, Vancouver, BC)
+* Plug-in Technical Workshop (Aug 30, San Francisco, CA)
 * TechCrunch DISRUPT (Sept 5-7, San Francisco, CA)
+* NYVR (Oct 25-27, New York, NY)
 
 
 ![](img/community/meetup.png)
