@@ -456,11 +456,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      Tutorials
+      Tutorials and Examples
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        Tutorials
+        Tutorials and Examples
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -533,6 +533,30 @@
   <li class="md-nav__item">
     <a href="fisheye/" title="Tutorial - Dual Fisheye" class="md-nav__link">
       Tutorial - Dual Fisheye
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="example/wireless/" title="Example - Wireless Live Streaming" class="md-nav__link">
+      Example - Wireless Live Streaming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="example/cloudupload/" title="Example - File Cloud Upload" class="md-nav__link">
+      Example - File Cloud Upload
     </a>
   </li>
 
@@ -666,19 +690,13 @@
                 
                 
                 <h1 id="ricoh-theta-v-plugin-application-development-community-guide">Ricoh THETA V Plugin Application Development - Community Guide</h1>
-<p><img alt="" src="./img/product/front-image.png" /></p>
+<p><img alt="Make Your THETA" src="./img/product/front-image.png" /></p>
 <p><em>By <a href="./about/">Craig Oda and Jesse Casman</a> of <a href="http://oppkey.com/">Oppkey</a></em></p>
 <blockquote>
-<p>This guide is being updated with additional source code examples for plug-ins. We hope
-to have the examples ready for you at the end of July 2018.
-We are building examples for live streaming, plug-in configuration with a browser GUI, Google account authentication,
-cloud upload with Wi-Fi, and many additional techniques. We hope to have examples to connect the camera directly to
-popular services such as Google, YouTube, Facebook, and Periscope. There are currently source code
-examples for
-basic camera control and stitching in the SDK and dual-fisheye plug-in packages. Please check back regularly.</p>
+<p>Internal Note: This guide is being updated and will be published to be timed with the launch of the THETA Store.</p>
 </blockquote>
 <p>This is a compilation of community experiences and tests from members of <a href="http://theta360.guide">theta360.guide</a>, an
-independent developer community for RICOH THETA cameras.  The <em>community-created</em> document you are reading may contain factual errors. Please help the community to 
+independent developer community for RICOH THETA cameras.  The <em>community-created</em> document you are reading may contain factual errors. Please help the community to
 update this document using pull requests on <a href="https://github.com/theta360developers/plugin-guide">GitHub</a>.</p>
 <h2 id="official-ricoh-information">Official Ricoh Information</h2>
 <ul>
@@ -686,14 +704,14 @@ update this document using pull requests on <a href="https://github.com/theta360
 <li><a href="https://api.ricoh/docs/theta-plugin/api/?utm_source=theta360guide">Plug-in API</a></li>
 </ul>
 <h2 id="theta-v-plugin-application-development-overview">THETA V Plugin Application Development Overview</h2>
-<p>The THETA V uses Android as the operating system. Because of this, the THETA V application development process is the same as the development process for an Android phone. Connect the THETA V to a development workstation, either Mac, Windows, or Linux with a micro USB cable and connect to the camera with adb. You will need a THETA V 
+<p>The THETA V uses Android as the operating system. Because of this, the THETA V application development process is the same as the development process for an Android phone. Connect the THETA V to a development workstation, either Mac, Windows, or Linux with a micro USB cable and connect to the camera with adb. You will need a THETA V
 that is in developer mode. To put your THETA V into developer mode, please
 <a href="https://www8.webcas.net/db/pub/ricoh/thetaplugin/create/input">join the RICOH THETA Plug-in Partner Program</a>.</p>
 <p>This document covers the following development process and tips:</p>
 <ul>
 <li>Resources and Setup:<ul>
 <li><a href="./requirements/">Requirements</a></li>
-<li><a href="./hardware/">Camera Hardware</a> </li>
+<li><a href="./hardware/">Camera Hardware</a></li>
 <li><a href="./setup">Setup</a></li>
 </ul>
 </li>
@@ -701,26 +719,26 @@ that is in developer mode. To put your THETA V into developer mode, please
 <li><a href="./use/">Plugin Use</a></li>
 <li><a href="./wifiapi/">Using WiFi API</a></li>
 <li><a href="./customtips/">Custom Development Tips</a></li>
-<li><a href="./configuration/">Plugin Configuration</a> </li>
-<li><a href="./workflow/">Workflow Tips</a> </li>
+<li><a href="./configuration/">Plugin Configuration</a></li>
+<li><a href="./workflow/">Workflow Tips</a></li>
 <li><a href="./vysortips/">Vysor Tips</a></li>
 <li><a href="./troubleshoot/">Troubleshooting</a></li>
 </ul>
 </li>
 <li>Tutorials:<ul>
-<li><a href="./custom/">Tutorials Overview</a> </li>
-<li><a href="./tutorialvysor/">Tutorial - Vysor</a> </li>
-<li><a href="./tutorialcolor/">Tutorial - LED Color</a> </li>
-<li><a href="./tutorialcommunication/">Tutorial - LED Communication</a> </li>
+<li><a href="./custom/">Tutorials Overview</a></li>
+<li><a href="./tutorialvysor/">Tutorial - Vysor</a></li>
+<li><a href="./tutorialcolor/">Tutorial - LED Color</a></li>
+<li><a href="./tutorialcommunication/">Tutorial - LED Communication</a></li>
 <li><a href="./tutorialbutton/">Tutorial - Camera Buttons</a></li>
-<li><a href="./fisheye/">Tutorial - Dual Fisheye</a> </li>
+<li><a href="./fisheye/">Tutorial - Dual Fisheye</a></li>
 </ul>
 </li>
 <li>Community Resources:<ul>
-<li><a href="./fun/">Fun Tests</a> </li>
-<li><a href="./concept/">Concept Ideas</a> </li>
-<li><a href="./community/">Community</a> </li>
-<li><a href="./about/">About</a> </li>
+<li><a href="./fun/">Fun Tests</a></li>
+<li><a href="./concept/">Concept Ideas</a></li>
+<li><a href="./community/">Community</a></li>
+<li><a href="./about/">About</a></li>
 </ul>
 </li>
 </ul>
