@@ -38,13 +38,15 @@ pages:
     - Vysor Tips: vysortips.md
     - Plug-in Submission: 'workflow/submit.md'
     - Troubleshooting: troubleshoot.md
-  - Tutorials:
+  - Tutorials and Examples:
     - Tutorials Overview: custom.md
     - Tutorial - Vysor: tutorialvysor.md
     - Tutorial - LED Color: tutorialcolor.md
     - Tutorial - LED Communication: tutorialcommunication.md
     - Tutorial - Camera Buttons: tutorialbutton.md
     - Tutorial - Dual Fisheye: fisheye.md
+    - Example - Wireless Live Streaming: 'example/wireless.md'
+    - Example - File Cloud Upload: 'example/cloudupload.md'
   - Community Resources:
     - Fun Tests: fun.md
     - Concept Ideas: concept.md

@@ -34,8 +34,8 @@ a USB cable.
       * buildToolsVersion "26.0.3"
       * minSdkVersion 25
       * targetSdkVersion 25
-   
-   
+
+
 ## THETA Plugin Technology Components
 
   * Photography（images/video）    
@@ -74,6 +74,7 @@ a USB cable.
       * External Device Connectivity
       * WebUI
       * WebRTC      
+
       
 ## Warnings When Developing Plug-ins
 This list is taken directly from the How To Develop section of the official RICOH THETA documentation [here](https://api.ricoh/docs/theta-plugin/how-to-develop/#warnings-when-developing-plug-ins)
