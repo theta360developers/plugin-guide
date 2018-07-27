@@ -19,7 +19,7 @@ You do not need to build from source if you want to test the plug-in functionali
 You can go to the THETA Store and download the plug-in for free.
 
 After extracting the files, you will see a standard project structure. If you extracted
-the zipped file, the pre-compiled apk will not work. You must build from source.
+from a zipped file, the pre-compiled apk will not work. You must build from source.
 
 ![extracted files](/example/img/wireless/extracted.png)
 
