@@ -2,7 +2,7 @@
 
 The source code is available on GitHub. 
 
-https://github.com/ricohapi/theta-wireless-live-streaming-plugin
+[https://github.com/ricohapi/theta-wireless-live-streaming-plugin](https://github.com/ricohapi/theta-wireless-live-streaming-plugin)
 
 You may need
 to clone the repo with [Git Large File Storage](https://git-lfs.github.com/) 
@@ -12,9 +12,6 @@ covers working with the source code and compiling it within Android Studio.
 Usage of the Wireless Live Streaming plug-in is covered extensively in the 
 [Plug-in User Guide](https://community.theta360.guide/t/plug-in-user-guide/3183) 
 (free registration to community required).
-
-If you have any problems finding the GitHub repository, you can
-also download a zipped file of version 1.0.8 [here](https://drive.google.com/file/d/1w62jcZ5vdjE-EE9rv73buCUSrFg9v8QF/view?usp=sharing).
 
 ## Import Project
 
