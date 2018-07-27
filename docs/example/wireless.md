@@ -18,10 +18,6 @@ Usage of the Wireless Live Streaming plug-in is covered extensively in the
 You do not need to build from source if you want to test the plug-in functionality.
 You can go to the THETA Store and download the plug-in for free.
 
-If you donwloaded the zipped file, extract it.
-
-![zipped file](/example/img/wireless/zipped.png)
-
 After extracting the files, you will see a standard project structure. If you extracted
 the zipped file, the pre-compiled apk will not work. You must build from source.
 
