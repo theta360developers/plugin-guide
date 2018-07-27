@@ -76,7 +76,7 @@ a USB cable.
       * WebRTC      
       
 ## Warnings When Developing Plug-ins
-This list is taken directly from the How To Develop section of the official RICOH THETA documentation [here](https://api.ricoh/docs/theta-plugin/how-to-develop/#warnings-when-developing-plug-ins)
+This list is taken directly from the How To Develop section of the official RICOH THETA documentation [here](https://api.ricoh/docs/theta-plugin/how-to-develop/#warnings-when-developing-plug-ins). Please see the [Plug-in Submission](http://theta360.guide/plugin-guide/workflow/submit) section for more information.
 
 _Please note "You cannot start a service" in the list below - Running a service as a part of your plug-in is not allowed by RICOH. It’s possible that the service continues to run in the background after the plug-in is stopped. This can end up being a resource issue for the camera. Therefore, implementing something like an “account manager service” will mean your plug-in will be rejected by RICOH._  
 
