@@ -29,7 +29,7 @@ the Plug-in User Guide for more information
 * THETA THETA V firmware 2.31.1
 * Android Studio 3.1.3
 * Windows 10 64 bit
-* File Cloud Upload Plug-in 1.0.8
+* File Cloud Upload Plug-in ver.1.0.9 (2018/07/23)
 
 ## Import Project
 
