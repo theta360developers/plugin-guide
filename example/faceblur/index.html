@@ -532,9 +532,85 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Example - Automatic Face Blue
+      </label>
+    
     <a href="./" title="Example - Automatic Face Blue" class="md-nav__link md-nav__link--active">
       Example - Automatic Face Blue
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#build-project" title="Build Project" class="md-nav__link">
+    Build Project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import" title="Import" class="md-nav__link">
+    Import
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build" title="Build" class="md-nav__link">
+    Build
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install" title="Install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable" title="Enable" class="md-nav__link">
+    Enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-plug-in-permissions" title="Set Plug-in Permissions" class="md-nav__link">
+    Set Plug-in Permissions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure" title="Configure" class="md-nav__link">
+    Configure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test" title="Test" class="md-nav__link">
+    Test
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -633,6 +709,69 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#build-project" title="Build Project" class="md-nav__link">
+    Build Project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import" title="Import" class="md-nav__link">
+    Import
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build" title="Build" class="md-nav__link">
+    Build
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install" title="Install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable" title="Enable" class="md-nav__link">
+    Enable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-plug-in-permissions" title="Set Plug-in Permissions" class="md-nav__link">
+    Set Plug-in Permissions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure" title="Configure" class="md-nav__link">
+    Configure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test" title="Test" class="md-nav__link">
+    Test
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -647,9 +786,47 @@
                 
                 
                 <h1 id="automatic-face-blur-example">Automatic Face Blur Example</h1>
-<p>The source code is available on GitHub.  To use the pre-compiled apk,
-you may need to clone the repo with <a href="https://git-lfs.github.com/">Git Large File Storage</a></p>
+<p>The source code is available on GitHub.  </p>
 <p><a href="https://github.com/ricohapi/theta-automatic-face-blur-plugin">https://github.com/ricohapi/theta-automatic-face-blur-plugin</a></p>
+<h2 id="build-project">Build Project</h2>
+<h2 id="import">Import</h2>
+<p><img alt="import" src="../../example/img/faceblur/import-project.png" /></p>
+<p>Verify that you imported the correct project.  :-)</p>
+<p><img alt="Face code" src="../../example/img/faceblur/face-java.png" /></p>
+<h2 id="build">Build</h2>
+<p><em>Build -&gt; Build APK(s)</em></p>
+<p><img alt="build" src="../../example/img/faceblur/build.png" /></p>
+<p>You should see a successful build.</p>
+<p><img alt="success build" src="../../example/img/faceblur/build-success.png" /></p>
+<p>My APK is 1,891 KB.</p>
+<h2 id="install">Install</h2>
+<pre><code>adb install -r PATH/app-debug.apk
+</code></pre>
+<p><img alt="install success" src="../../example/img/faceblur/install-success.png" /></p>
+<h2 id="enable">Enable</h2>
+<p>In the Ricoh desktop application, go to <em>File -&gt; Plug-in management...</em>.</p>
+<p><img alt="plug-in management" src="../../example/img/faceblur/plug-in-management.png" /></p>
+<p>Select Automatic Face Blur.</p>
+<p><img alt="select face blur" src="../../example/img/faceblur/select-face-blur.png" /></p>
+<h2 id="set-plug-in-permissions">Set Plug-in Permissions</h2>
+<p>In Vysor, go to app settings.</p>
+<p><img alt="App Selection" src="../../example/img/faceblur/app-selection.png" /></p>
+<p>Enable storage permission.</p>
+<p><img alt="Storage Permission" src="../../example/img/faceblur/storage-permission.png" /></p>
+<h2 id="configure">Configure</h2>
+<p>Get IP address. In the example below, I'm using Vysor.</p>
+<p><img alt="IP address" src="../../example/img/faceblur/ip-address.png" /></p>
+<p>Go to your IP address at port 8888.</p>
+<pre><code>http://192.168.2.100:8888/
+</code></pre>
+<h2 id="test">Test</h2>
+<p>Put camera in plug-in mode. </p>
+<p>Take picture.</p>
+<p>The camera will save two pictures. The original file starts with R. The 
+blurred file starts with B.</p>
+<p><img alt="Face Blurred" src="../../example/img/faceblur/face-blurred.png" /></p>
+<p>The original image is shown below.</p>
+<p><img alt="Original" src="../../example/img/faceblur/original.png" /></p>
                 
                   
                 

@@ -972,13 +972,53 @@
         }, 
         {
             "location": "/example/faceblur/", 
-            "text": "Automatic Face Blur Example\n\n\nThe source code is available on GitHub.  To use the pre-compiled apk,\nyou may need to clone the repo with \nGit Large File Storage\n\n\nhttps://github.com/ricohapi/theta-automatic-face-blur-plugin", 
+            "text": "Automatic Face Blur Example\n\n\nThe source code is available on GitHub.  \n\n\nhttps://github.com/ricohapi/theta-automatic-face-blur-plugin\n\n\nBuild Project\n\n\nImport\n\n\n\n\nVerify that you imported the correct project.  :-)\n\n\n\n\nBuild\n\n\nBuild -\n Build APK(s)\n\n\n\n\nYou should see a successful build.\n\n\n\n\nMy APK is 1,891 KB.\n\n\nInstall\n\n\nadb install -r PATH/app-debug.apk\n\n\n\n\n\nEnable\n\n\nIn the Ricoh desktop application, go to \nFile -\n Plug-in management...\n.\n\n\n\n\nSelect Automatic Face Blur.\n\n\n\n\nSet Plug-in Permissions\n\n\nIn Vysor, go to app settings.\n\n\n\n\nEnable storage permission.\n\n\n\n\nConfigure\n\n\nGet IP address. In the example below, I'm using Vysor.\n\n\n\n\nGo to your IP address at port 8888.\n\n\nhttp://192.168.2.100:8888/\n\n\n\nTest\n\n\nPut camera in plug-in mode. \n\n\nTake picture.\n\n\nThe camera will save two pictures. The original file starts with R. The \nblurred file starts with B.\n\n\n\n\nThe original image is shown below.", 
             "title": "Example - Automatic Face Blue"
         }, 
         {
             "location": "/example/faceblur/#automatic-face-blur-example", 
-            "text": "The source code is available on GitHub.  To use the pre-compiled apk,\nyou may need to clone the repo with  Git Large File Storage  https://github.com/ricohapi/theta-automatic-face-blur-plugin", 
+            "text": "The source code is available on GitHub.    https://github.com/ricohapi/theta-automatic-face-blur-plugin", 
             "title": "Automatic Face Blur Example"
+        }, 
+        {
+            "location": "/example/faceblur/#build-project", 
+            "text": "", 
+            "title": "Build Project"
+        }, 
+        {
+            "location": "/example/faceblur/#import", 
+            "text": "Verify that you imported the correct project.  :-)", 
+            "title": "Import"
+        }, 
+        {
+            "location": "/example/faceblur/#build", 
+            "text": "Build -  Build APK(s)   You should see a successful build.   My APK is 1,891 KB.", 
+            "title": "Build"
+        }, 
+        {
+            "location": "/example/faceblur/#install", 
+            "text": "adb install -r PATH/app-debug.apk", 
+            "title": "Install"
+        }, 
+        {
+            "location": "/example/faceblur/#enable", 
+            "text": "In the Ricoh desktop application, go to  File -  Plug-in management... .   Select Automatic Face Blur.", 
+            "title": "Enable"
+        }, 
+        {
+            "location": "/example/faceblur/#set-plug-in-permissions", 
+            "text": "In Vysor, go to app settings.   Enable storage permission.", 
+            "title": "Set Plug-in Permissions"
+        }, 
+        {
+            "location": "/example/faceblur/#configure", 
+            "text": "Get IP address. In the example below, I'm using Vysor.   Go to your IP address at port 8888.  http://192.168.2.100:8888/", 
+            "title": "Configure"
+        }, 
+        {
+            "location": "/example/faceblur/#test", 
+            "text": "Put camera in plug-in mode.   Take picture.  The camera will save two pictures. The original file starts with R. The \nblurred file starts with B.   The original image is shown below.", 
+            "title": "Test"
         }, 
         {
             "location": "/fun/", 
