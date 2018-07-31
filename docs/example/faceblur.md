@@ -67,6 +67,8 @@ Go to your IP address at port 8888.
     http://192.168.2.100:8888/
 
 
+![Web Interface](/example/img/faceblur/test-shot.png)
+
 
 ## Test
 
