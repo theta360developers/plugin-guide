@@ -47,6 +47,7 @@ pages:
     - Tutorial - Dual Fisheye: fisheye.md
     - Example - Wireless Live Streaming: 'example/wireless.md'
     - Example - File Cloud Upload: 'example/cloudupload.md'
+    - Example - Automatic Face Blue: 'example/faceblur.md'
   - Community Resources:
     - Fun Tests: fun.md
     - Concept Ideas: concept.md
