@@ -84,3 +84,53 @@ blurred file starts with B.
 The original image is shown below.
 
 ![Original](/example/img/faceblur/original.png)
+
+## Inspect Code
+
+### Face Detection
+
+Under `/task/` 
+[ImageProcessorTask.java](https://github.com/ricohapi/theta-automatic-face-blur-plugin/blob/master/app/src/main/java/com/theta360/automaticfaceblur/task/ImageProcessorTask.java) has the code to detect a human face.
+
+It uses [android.media.FaceDetector](https://developer.android.com/reference/android/media/FaceDetector).
+
+At the top of the code, there are constants that define the max number of faces, and the edges
+of the equirectangular image. The image is divided into four quandrants.
+
+  //Divide the equirectangular image into similar four parts, the rightmost x coordinate of the leftmost part.
+  private static final int RIGHTMOST_OF_LEFT_IMAGE = 1344;
+  //Divide the equirectangular image into similar four, the leftmost x coordinate of the rightmost part.
+  private static final int LEFTMOST_OF_RIGHT_IMAGE = 4032;
+  //Maximum of faces can be detected.
+  private static final int MAX_FACE = 256;
+  public static final String BLURRED_FILE_KEY = "blurred_file_url";
+  public static final String ORIGINAL_FILE_KEY = "original_file_url";
+
+There are numerous examples of FaceDection for Android online.
+
+Blurring is accomplished with [FaceDetector.Face](https://developer.android.com/reference/android/media/FaceDetector.Face). Inspect the code
+to see the example.
+
+### LivePreview
+
+Streaming to the web browser is handled with [camera.getLivePreview](https://developers.theta360.com/en/docs/v2.1/api_reference/commands/camera.get_live_preview.html),
+which is the THETA API 2.1, the API based on OSC. We sometimes refer to this API as the Wi-Fi API.
+
+In the file [ShowLiveViewTask.java](https://github.com/ricohapi/theta-automatic-face-blur-plugin/blob/master/app/src/main/java/com/theta360/automaticfaceblur/task/ShowLiveViewTask.java), you can see the code.
+
+  publishProgress("start Live view");
+  HttpConnector camera = new HttpConnector();
+  InputStream is = camera.getLivePreview();
+  mjis = new MJpegInputStream(is);
+ 
+You can see that the output of `getLivePreview` is a MotionJPEG stream, not H.264.
+Using `getLivePreview` with the THETA V will result in a maximum
+resolution of 1920x960 using MotionJPEG, not the 3840x1920 for
+Live Streaming. As shown with the Wireless Live Streaming plug-in,
+Wi-Fi streaming at 4K is smooth from the camera directly.
+
+It's important to note that this method does not use the `RicMoviePreview3840` or similar value for `RIC_SHOOTING_MODE` that is explained in the 
+[THETA Plug-in API](https://api.ricoh/docs/theta-plugin-reference/camera-api/).
+
+The LivePreview method shown above uses the THETA API 2.1 for simplicity and ease of implementation. It does
+not use the THETA Plug-in API.
