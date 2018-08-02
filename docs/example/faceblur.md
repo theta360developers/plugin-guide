@@ -97,14 +97,14 @@ It uses [android.media.FaceDetector](https://developer.android.com/reference/and
 At the top of the code, there are constants that define the max number of faces, and the edges
 of the equirectangular image. The image is divided into four quandrants.
 
-  //Divide the equirectangular image into similar four parts, the rightmost x coordinate of the leftmost part.
-  private static final int RIGHTMOST_OF_LEFT_IMAGE = 1344;
-  //Divide the equirectangular image into similar four, the leftmost x coordinate of the rightmost part.
-  private static final int LEFTMOST_OF_RIGHT_IMAGE = 4032;
-  //Maximum of faces can be detected.
-  private static final int MAX_FACE = 256;
-  public static final String BLURRED_FILE_KEY = "blurred_file_url";
-  public static final String ORIGINAL_FILE_KEY = "original_file_url";
+    //Divide the equirectangular image into similar four parts, the rightmost x coordinate of the leftmost part.
+    private static final int RIGHTMOST_OF_LEFT_IMAGE = 1344;
+    //Divide the equirectangular image into similar four, the leftmost x coordinate of the rightmost part.
+    private static final int LEFTMOST_OF_RIGHT_IMAGE = 4032;
+    //Maximum of faces can be detected.
+    private static final int MAX_FACE = 256;
+    public static final String BLURRED_FILE_KEY = "blurred_file_url";
+    public static final String ORIGINAL_FILE_KEY = "original_file_url";
 
 There are numerous examples of FaceDection for Android online.
 
@@ -118,10 +118,10 @@ which is the THETA API 2.1, the API based on OSC. We sometimes refer to this API
 
 In the file [ShowLiveViewTask.java](https://github.com/ricohapi/theta-automatic-face-blur-plugin/blob/master/app/src/main/java/com/theta360/automaticfaceblur/task/ShowLiveViewTask.java), you can see the code.
 
-  publishProgress("start Live view");
-  HttpConnector camera = new HttpConnector();
-  InputStream is = camera.getLivePreview();
-  mjis = new MJpegInputStream(is);
+    publishProgress("start Live view");
+    HttpConnector camera = new HttpConnector();
+    InputStream is = camera.getLivePreview();
+    mjis = new MJpegInputStream(is);
  
 You can see that the output of `getLivePreview` is a MotionJPEG stream, not H.264.
 Using `getLivePreview` with the THETA V will result in a maximum
