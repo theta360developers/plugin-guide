@@ -889,14 +889,15 @@ blurred file starts with B.</p>
 <p>It uses <a href="https://developer.android.com/reference/android/media/FaceDetector">android.media.FaceDetector</a>.</p>
 <p>At the top of the code, there are constants that define the max number of faces, and the edges
 of the equirectangular image. The image is divided into four quandrants.</p>
-<p>//Divide the equirectangular image into similar four parts, the rightmost x coordinate of the leftmost part.
-  private static final int RIGHTMOST_OF_LEFT_IMAGE = 1344;
-  //Divide the equirectangular image into similar four, the leftmost x coordinate of the rightmost part.
-  private static final int LEFTMOST_OF_RIGHT_IMAGE = 4032;
-  //Maximum of faces can be detected.
-  private static final int MAX_FACE = 256;
-  public static final String BLURRED_FILE_KEY = "blurred_file_url";
-  public static final String ORIGINAL_FILE_KEY = "original_file_url";</p>
+<pre><code>//Divide the equirectangular image into similar four parts, the rightmost x coordinate of the leftmost part.
+private static final int RIGHTMOST_OF_LEFT_IMAGE = 1344;
+//Divide the equirectangular image into similar four, the leftmost x coordinate of the rightmost part.
+private static final int LEFTMOST_OF_RIGHT_IMAGE = 4032;
+//Maximum of faces can be detected.
+private static final int MAX_FACE = 256;
+public static final String BLURRED_FILE_KEY = "blurred_file_url";
+public static final String ORIGINAL_FILE_KEY = "original_file_url";
+</code></pre>
 <p>There are numerous examples of FaceDection for Android online.</p>
 <p>Blurring is accomplished with <a href="https://developer.android.com/reference/android/media/FaceDetector.Face">FaceDetector.Face</a>. Inspect the code
 to see the example.</p>
@@ -904,10 +905,11 @@ to see the example.</p>
 <p>Streaming to the web browser is handled with <a href="https://developers.theta360.com/en/docs/v2.1/api_reference/commands/camera.get_live_preview.html">camera.getLivePreview</a>,
 which is the THETA API 2.1, the API based on OSC. We sometimes refer to this API as the Wi-Fi API.</p>
 <p>In the file <a href="https://github.com/ricohapi/theta-automatic-face-blur-plugin/blob/master/app/src/main/java/com/theta360/automaticfaceblur/task/ShowLiveViewTask.java">ShowLiveViewTask.java</a>, you can see the code.</p>
-<p>publishProgress("start Live view");
-  HttpConnector camera = new HttpConnector();
-  InputStream is = camera.getLivePreview();
-  mjis = new MJpegInputStream(is);</p>
+<pre><code>publishProgress("start Live view");
+HttpConnector camera = new HttpConnector();
+InputStream is = camera.getLivePreview();
+mjis = new MJpegInputStream(is);
+</code></pre>
 <p>You can see that the output of <code>getLivePreview</code> is a MotionJPEG stream, not H.264.
 Using <code>getLivePreview</code> with the THETA V will result in a maximum
 resolution of 1920x960 using MotionJPEG, not the 3840x1920 for
