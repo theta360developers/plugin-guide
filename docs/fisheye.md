@@ -27,6 +27,9 @@ This is useful for the following applications:
 
 Download the zipped file [ichi-hirota-dual-fish.zip](https://drive.google.com/file/d/1Coq_91-U0YmX_I6Q5afuf2IY9_Aju3mU/view?usp=sharing)
 
+Updated apk on August 6, 2018. 
+[Download apk, no source](https://drive.google.com/file/d/1DCHBuMGQUsn5ZTolp6YObuiCIsmiZJAX/view?usp=sharing).
+
 ### Extract contents
 
 Use zip, 7zip or the archive application of your choice.
