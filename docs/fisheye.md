@@ -101,9 +101,9 @@ In single image mode. the Wi-Fi LED will be aqua and flashing.
 [![](img/dualfish/aqua-led.png)](https://youtu.be/r3CgivJ0j-Y)
 
 
-#### Bracketing
+#### 3 Shot Mode
 
-In bracketing mode, the Wi-Fi LED will be magenta and flashing faster compared
+In 3 shot mode, the Wi-Fi LED will be magenta and flashing faster compared
  to when the camera is in still image mode..
 
 ![](img/dualfish/bracketing-led.png)
@@ -112,7 +112,7 @@ The gif below was contributed by community member @juantonto.
 
 ![HDR bracketing mode magenta LED](dualfish/img/hdr.gif)
 
-For bracketing mode, you need to stabilize the camera for the duration of 
+For 3 shot mode, you need to stabilize the camera for the duration of 
 the three shots. Place the camera on tripod or stand it up on a table.
 
 Press the shutter button.
@@ -245,7 +245,7 @@ provides more information on a plug-in built by community
 developer Ichi Hirota.
 
 
-Here's example code from Ichi Hirota for bracketing.
+Here's example code from Ichi Hirota.
 
 ![](img/custom/dualfish-bracketing.png)
 
@@ -513,3 +513,17 @@ This code sample was contributed by Ichi Hirota.
 
 
 
+## Using Picturenaut for HDRi blend
+
+You can can [Picturenaut](http://www.hdrlabs.com/picturenaut/) from HDR Labs to combine the 3 images into a single image.
+
+![picturenaut GUI](example/img/fisheye/picturenaut.jpg)
+
+![picturenaut 3 image HDR](example/img/fisheye/3-image-hdr.jpg)
+
+Picturenaut outputs a TIFF file. I converted this to jpeg using another graphics
+program, then used PTGui to stitch the dual-fisheye to equirectangular.
+
+![Stitching with PTGui](example/img/fisheye/ptgui-stitched.jpg)
+
+![PTGui interface](example/img/fisheye/ptgui-interface.png)
