@@ -628,8 +628,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bracketing" title="Bracketing" class="md-nav__link">
-    Bracketing
+  <a href="#3-shot-mode" title="3 Shot Mode" class="md-nav__link">
+    3 Shot Mode
   </a>
   
 </li>
@@ -756,6 +756,13 @@
         <li class="md-nav__item">
   <a href="#full-code" title="Full Code" class="md-nav__link">
     Full Code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-picturenaut-for-hdri-blend" title="Using Picturenaut for HDRi blend" class="md-nav__link">
+    Using Picturenaut for HDRi blend
   </a>
   
 </li>
@@ -1016,8 +1023,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bracketing" title="Bracketing" class="md-nav__link">
-    Bracketing
+  <a href="#3-shot-mode" title="3 Shot Mode" class="md-nav__link">
+    3 Shot Mode
   </a>
   
 </li>
@@ -1148,6 +1155,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#using-picturenaut-for-hdri-blend" title="Using Picturenaut for HDRi blend" class="md-nav__link">
+    Using Picturenaut for HDRi blend
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -1233,13 +1247,13 @@ between single image and bracketing mode by pressing the Wi-Fi button on the sid
 <h4 id="single-image">Single Image</h4>
 <p>In single image mode. the Wi-Fi LED will be aqua and flashing.</p>
 <p><a href="https://youtu.be/r3CgivJ0j-Y"><img alt="" src="../img/dualfish/aqua-led.png" /></a></p>
-<h4 id="bracketing">Bracketing</h4>
-<p>In bracketing mode, the Wi-Fi LED will be magenta and flashing faster compared
+<h4 id="3-shot-mode">3 Shot Mode</h4>
+<p>In 3 shot mode, the Wi-Fi LED will be magenta and flashing faster compared
  to when the camera is in still image mode..</p>
 <p><img alt="" src="../img/dualfish/bracketing-led.png" /></p>
 <p>The gif below was contributed by community member @juantonto.</p>
 <p><img alt="HDR bracketing mode magenta LED" src="../dualfish/img/hdr.gif" /></p>
-<p>For bracketing mode, you need to stabilize the camera for the duration of 
+<p>For 3 shot mode, you need to stabilize the camera for the duration of 
 the three shots. Place the camera on tripod or stand it up on a table.</p>
 <p>Press the shutter button.</p>
 <p>Refer to the video above for the expected behavior of the camera,
@@ -1318,7 +1332,7 @@ is available.</p>
 <p><a href="https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/8?u=codetricity">This article</a> 
 provides more information on a plug-in built by community
 developer Ichi Hirota.</p>
-<p>Here's example code from Ichi Hirota for bracketing.</p>
+<p>Here's example code from Ichi Hirota.</p>
 <p><img alt="" src="../img/custom/dualfish-bracketing.png" /></p>
 <h2 id="full-code">Full Code</h2>
 <p>This code sample was contributed by Ichi Hirota.</p>
@@ -1579,6 +1593,14 @@ public class CameraActivity extends PluginActivity implements SurfaceHolder.Call
 
 }
 </code></pre>
+<h2 id="using-picturenaut-for-hdri-blend">Using Picturenaut for HDRi blend</h2>
+<p>You can can <a href="http://www.hdrlabs.com/picturenaut/">Picturenaut</a> from HDR Labs to combine the 3 images into a single image.</p>
+<p><img alt="picturenaut GUI" src="../example/img/fisheye/picturenaut.jpg" /></p>
+<p><img alt="picturenaut 3 image HDR" src="../example/img/fisheye/3-image-hdr.jpg" /></p>
+<p>Picturenaut outputs a TIFF file. I converted this to jpeg using another graphics
+program, then used PTGui to stitch the dual-fisheye to equirectangular.</p>
+<p><img alt="Stitching with PTGui" src="../example/img/fisheye/ptgui-stitched.jpg" /></p>
+<p><img alt="PTGui interface" src="../example/img/fisheye/ptgui-interface.png" /></p>
                 
                   
                 
