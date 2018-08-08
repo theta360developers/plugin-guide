@@ -103,8 +103,14 @@ In single image mode. the Wi-Fi LED will be aqua and flashing.
 
 #### 3 Shot Mode
 
+Press the Wi-Fi button on the side of the camera to get
+the camera into 3 shot mode.
+
+**WARNING: If you press the Wi-Fi button for more than a second, the plug-in may not work properly. Press the Wi-Fi button on the side of the camera firmly and release 
+it quickly.**
+
 In 3 shot mode, the Wi-Fi LED will be magenta and flashing faster compared
- to when the camera is in still image mode..
+ to when the camera is in still image mode. 
 
 ![](img/dualfish/bracketing-led.png)
 
@@ -138,14 +144,13 @@ using your own stitching library.
 
 ### Ichi Hirota Stitching Application
 
+Ichi's stitching library requires a one-time callibration for each camera. A trial version
+of the callibration app is available [here](https://drive.google.com/file/d/1FyXHzDXUmuuqJyNgrYt0sOa_IidDSHcC/view?usp=sharing).  This trial version of the app has a watermark.
+
 You can also commercially license Ichi's stitching library 
 and Android application.
 For more information on licensing Ichi's stitching library and Android application,
 please contact Jesse Casman at jcasman@oppkey.com.
-
-Ichi's stitching library requires a one-time callibration for each camera. A trial version
-of the callibration app is available [here](https://drive.google.com/file/d/1FyXHzDXUmuuqJyNgrYt0sOa_IidDSHcC/view?usp=sharing).  This
-app will time-out at the end of July, 2018.
 
 #### Original Dual-fisheye Image
 
