@@ -255,7 +255,7 @@ The code for setting exposure compensation is shown below.
 
         bcnt = bcnt - 1;
 
-I used picturenaut to merge the 7 images into a single HDR image.
+Use picturenaut to merge the 7 images into a single HDR image.
 
 ![Picturenaut with 7 images](example/img/fisheye/picturenaut.png)
 
