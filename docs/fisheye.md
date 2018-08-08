@@ -140,17 +140,24 @@ filenames that contain a date and time stamp.
 ## Stitching Dual-fisheye Images Into Equirectangular
 
 For most applications, you will need to stitch the images in post-production processing
-using your own stitching library. 
+using your own stitching library. For this tutorial, we will use a few 
+commercial products to stitch the dual-fisheye image into equirectangular. 
+Third-party stitching libraries do not have the lens parameter information
+from Ricoh and thus require manual callibration for each camera. Ricoh does
+not make the lens parameter information available.
 
-### Ichi Hirota Stitching Application
+### Android Phone Stitching Application
 
-Ichi's stitching library requires a one-time callibration for each camera. A trial version
+Ichi Hirota has produced a stitching library and Android mobile phone app that requires a one-time callibration for each camera. A trial version
 of the callibration app is available [here](https://drive.google.com/file/d/1FyXHzDXUmuuqJyNgrYt0sOa_IidDSHcC/view?usp=sharing).  This trial version of the app has a watermark.
 
 You can also commercially license Ichi's stitching library 
 and Android application.
 For more information on licensing Ichi's stitching library and Android application,
 please contact Jesse Casman at jcasman@oppkey.com.
+
+If you prefer to use a desktop application, you can use PTGui. The guide to use PTGui
+to stitch the image is provided at the end of this article.
 
 #### Original Dual-fisheye Image
 
@@ -197,38 +204,83 @@ Viewed using the Ricoh Desktop Appplication
 
 ![](img/dualfish/closeup-3.jpg)
 
-### PTGui
 
-Community member Svendus has 
-[reported](https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/31?u=codetricity) success stitching hundreds of spheres on 
-PC and Mac using [PTGui](https://www.ptgui.com/) 11.2. A free trial version
-is available.
 
-This [project file bundle](https://drive.google.com/file/d/1RzvS-VfOvAQuu7UIDkpHa2RB2OlYmosF/view?usp=sharing) has both a preset for THETA images as well as an example image.
+## HDR - Blending 3 Shots into Single Image
 
-![ptgui menu](dualfish/img/ptgui/ptgui-menu.png)
+You can can [Picturenaut](http://www.hdrlabs.com/picturenaut/) from HDR Labs to combine the 3 images into a single image.
 
-#### Original Image
+![picturenaut GUI](example/img/fisheye/picturenaut.jpg)
 
-![original image](dualfish/img/ptgui/original.jpg)
+![picturenaut 3 image HDR](example/img/fisheye/3-image-hdr.jpg)
 
-#### Stitched Image
+Picturenaut outputs a TIFF file. I converted this to jpeg using another graphics
+program, then used PTGui to stitch the dual-fisheye to equirectangular.
 
-![stitched image](dualfish/img/ptgui/stitched.jpg)
+![Stitching with PTGui](example/img/fisheye/ptgui-stitched.jpg)
 
-#### Close-up Image
+![PTGui interface](example/img/fisheye/ptgui-interface.png)
 
-Using the THETA Desktop Application to view the stitched image.
+## Modify Code to Take 7 Images
 
-![close-up image](dualfish/img/ptgui/closeup.jpg)
+This example will modify the code to take 7 pictures with 7 different 
+exposure compensation values.
 
-### Other Stitching Solutions
+The modified code is here:
 
-Community member squizard360 is [experimenting](https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/28?u=codetricity) with Hugin and the 
-[dualfisheye2equirectangular_ffmpeg_remap project](https://github.com/evertvorster/dualfisheye2equirectangular_ffmpeg_remap) from 
-[evertvorster](https://github.com/evertvorster).
+[https://github.com/codetricity/theta-7-image-dual-fisheye](https://github.com/codetricity/theta-7-image-dual-fisheye)
 
-## Control of Stitching
+Import it into Android Studio and build it.
+
+The plug-in will now take 7 images with exposure compensation values of:
+-2.0, -1.3, -0.7, 0.0, 0.7, 1.3, 2.0
+
+![7 images](example/img/fisheye/7-image.jpg)
+
+RICOH Camera API for plug-in API for exposure compensation is available at: 
+
+[https://api.ricoh/docs/theta-plugin-reference/camera-api/](https://api.ricoh/docs/theta-plugin-reference/camera-api/)
+
+The code for setting exposure compensation is shown below.
+
+    if(bcnt > 0) {
+        params = mCamera.getParameters();
+        params.set("RIC_SHOOTING_MODE", "RicStillCaptureStd");
+        if (numberOfImages == 7) {
+            params.setExposureCompensation(exposureCompensationValue);
+            exposureCompensationValue = exposureCompensationValue + 2;
+        } else {
+            params.setExposureCompensation(3 * ((bcnt - 2)));
+        }
+
+        bcnt = bcnt - 1;
+
+I used picturenaut to merge the 7 images into a single HDR image.
+
+![Picturenaut with 7 images](example/img/fisheye/picturenaut.png)
+
+![merged](example/img/fisheye/merged-image.jpg)
+
+I used Ichi Hirota's mobile app for the stitching.
+
+![stitched image](example/img/fisheye/stitched-image.jpg)
+
+![closeup image](example/img/fisheye/closeup.jpg)
+
+Here's a view of the stitch line on the other side of the picture.
+
+![2nd stitch line](example/img/fisheye/stitch-line-2.jpg)
+
+Here's a closeup of the stitch line. It's almost impossible to see it.
+
+![Closeup 2](example/img/fisheye/closeup-2.jpg)
+
+**Congratulations! You've completed the dual-fisheye tutorial!**
+
+## References and Resources
+
+
+## Turning off THETA V Stitching
 
 Still images can be saved as dual-fisheye by adjusting the stitching parameter.
 
@@ -255,7 +307,45 @@ Here's example code from Ichi Hirota.
 ![](img/custom/dualfish-bracketing.png)
 
 
-## Full Code 
+
+### Stitching with Post-Shoot Tools
+
+Instead of stitching the dual-fisheye image inside of the camera, you will
+need to use tools on your PC to convert the dual-fisheye image into equirectangular.
+
+#### PTGui
+
+Community member Svendus has 
+[reported](https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/31?u=codetricity) success stitching hundreds of spheres on 
+PC and Mac using [PTGui](https://www.ptgui.com/) 11.2. A free trial version
+is available.
+
+This [project file bundle](https://drive.google.com/file/d/1RzvS-VfOvAQuu7UIDkpHa2RB2OlYmosF/view?usp=sharing) has both a preset for THETA images as well as an example image.
+
+![ptgui menu](dualfish/img/ptgui/ptgui-menu.png)
+
+##### Original Image
+
+![original image](dualfish/img/ptgui/original.jpg)
+
+##### Stitched Image
+
+![stitched image](dualfish/img/ptgui/stitched.jpg)
+
+##### Close-up Image
+
+Using the THETA Desktop Application to view the stitched image.
+
+![close-up image](dualfish/img/ptgui/closeup.jpg)
+
+#### Other Stitching Solutions
+
+Community member squizard360 is [experimenting](https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/28?u=codetricity) with Hugin and the 
+[dualfisheye2equirectangular_ffmpeg_remap project](https://github.com/evertvorster/dualfisheye2equirectangular_ffmpeg_remap) from 
+[evertvorster](https://github.com/evertvorster).
+
+
+## Full Code Listing of Plug-in
 
 This code sample was contributed by Ichi Hirota.
 
@@ -515,75 +605,4 @@ This code sample was contributed by Ichi Hirota.
 
 
     }
-
-
-
-## Using Picturenaut for HDRi blend
-
-You can can [Picturenaut](http://www.hdrlabs.com/picturenaut/) from HDR Labs to combine the 3 images into a single image.
-
-![picturenaut GUI](example/img/fisheye/picturenaut.jpg)
-
-![picturenaut 3 image HDR](example/img/fisheye/3-image-hdr.jpg)
-
-Picturenaut outputs a TIFF file. I converted this to jpeg using another graphics
-program, then used PTGui to stitch the dual-fisheye to equirectangular.
-
-![Stitching with PTGui](example/img/fisheye/ptgui-stitched.jpg)
-
-![PTGui interface](example/img/fisheye/ptgui-interface.png)
-
-## Modifying Code
-
-This example will modify the code to take 7 pictures with 7 different 
-exposure compensation values.
-
-The modified code is here:
-
-[https://github.com/codetricity/theta-7-image-dual-fisheye](https://github.com/codetricity/theta-7-image-dual-fisheye)
-
-Import it into Android Studio and build it.
-
-The plug-in will now take 7 images with exposure compensation values of:
--2.0, -1.3, -0.7, 0.0, 0.7, 1.3, 2.0
-
-![7 images](example/img/fisheye/7-image.jpg)
-
-RICOH Camera API for plug-in API for exposure compensation is available at: 
-
-[https://api.ricoh/docs/theta-plugin-reference/camera-api/](https://api.ricoh/docs/theta-plugin-reference/camera-api/)
-
-The code for setting exposure compensation is shown below.
-
-    if(bcnt > 0) {
-        params = mCamera.getParameters();
-        params.set("RIC_SHOOTING_MODE", "RicStillCaptureStd");
-        if (numberOfImages == 7) {
-            params.setExposureCompensation(exposureCompensationValue);
-            exposureCompensationValue = exposureCompensationValue + 2;
-        } else {
-            params.setExposureCompensation(3 * ((bcnt - 2)));
-        }
-
-        bcnt = bcnt - 1;
-
-I used picturenaut to merge the 7 images into a single HDR image.
-
-![Picturenaut with 7 images](example/img/fisheye/picturenaut.png)
-
-![merged](example/img/fisheye/merged-image.jpg)
-
-I used Ichi Hirota's mobile app for the stitching.
-
-![stitched image](example/img/fisheye/stitched-image.jpg)
-
-![closeup image](example/img/fisheye/closeup.jpg)
-
-Here's a view of the stitch line on the other side of the picture.
-
-![2nd stitch line](example/img/fisheye/stitch-line-2.jpg)
-
-Here's a closeup of the stitch line. It's almost impossible to see it.
-
-![Closeup 2](example/img/fisheye/closeup-2.jpg)
 
