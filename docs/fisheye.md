@@ -527,3 +527,49 @@ program, then used PTGui to stitch the dual-fisheye to equirectangular.
 ![Stitching with PTGui](example/img/fisheye/ptgui-stitched.jpg)
 
 ![PTGui interface](example/img/fisheye/ptgui-interface.png)
+
+## Modifying Code
+
+This example will modify the code to take 7 pictures with 7 different 
+exposure compensation values.
+
+The modified code is here:
+
+[https://github.com/codetricity/theta-7-image-dual-fisheye](https://github.com/codetricity/theta-7-image-dual-fisheye)
+
+Import it into Android Studio and build it.
+
+The plug-in will now take 7 images with exposure compensation values of:
+-2.0, -1.3, -0.7, 0.0, 0.7, 1.3, 2.0
+
+![7 images](example/img/fisheye/7-image.jpg)
+
+RICOH Camera API for plug-in API for exposure compensation is available at: 
+
+[https://api.ricoh/docs/theta-plugin-reference/camera-api/](https://api.ricoh/docs/theta-plugin-reference/camera-api/)
+
+The code for setting exposure compensation is shown below.
+
+    if(bcnt > 0) {
+        params = mCamera.getParameters();
+        params.set("RIC_SHOOTING_MODE", "RicStillCaptureStd");
+        if (numberOfImages == 7) {
+            params.setExposureCompensation(exposureCompensationValue);
+            exposureCompensationValue = exposureCompensationValue + 2;
+        } else {
+            params.setExposureCompensation(3 * ((bcnt - 2)));
+        }
+
+        bcnt = bcnt - 1;
+
+I used picturenaut to merge the 7 images into a single HDR image.
+
+![Picturenaut with 7 images](example/img/fisheye/picturenaut.png)
+
+![merged](example/img/fisheye/merged-image.jpg)
+
+I used Ichi Hirota's mobile app for the stitching.
+
+![stitched image](example/img/fisheye/stitched-image.jpg)
+
+![closeup image](example/img/fisheye/closeup.jpg)
