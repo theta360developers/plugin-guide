@@ -208,7 +208,7 @@ Viewed using the Ricoh Desktop Appplication
 
 ## HDR - Blending 3 Shots into Single Image
 
-You can can [Picturenaut](http://www.hdrlabs.com/picturenaut/) from HDR Labs to combine the 3 images into a single image.
+You can use [Picturenaut](http://www.hdrlabs.com/picturenaut/) from HDR Labs to combine the 3 images into a single image.
 
 ![picturenaut GUI](example/img/fisheye/picturenaut.jpg)
 
@@ -237,7 +237,7 @@ The plug-in will now take 7 images with exposure compensation values of:
 
 ![7 images](example/img/fisheye/7-image.jpg)
 
-RICOH Camera API for plug-in API for exposure compensation is available at: 
+RICOH Camera API for exposure compensation is available at: 
 
 [https://api.ricoh/docs/theta-plugin-reference/camera-api/](https://api.ricoh/docs/theta-plugin-reference/camera-api/)
 
