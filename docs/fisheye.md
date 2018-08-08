@@ -573,3 +573,12 @@ I used Ichi Hirota's mobile app for the stitching.
 ![stitched image](example/img/fisheye/stitched-image.jpg)
 
 ![closeup image](example/img/fisheye/closeup.jpg)
+
+Here's a view of the stitch line on the other side of the picture.
+
+![2nd stitch line](example/img/fisheye/stitch-line-2.jpg)
+
+Here's a closeup of the stitch line. It's almost impossible to see it.
+
+![Closeup 2](example/img/fisheye/closeup-2.jpg)
+
