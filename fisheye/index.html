@@ -767,6 +767,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#modifying-code" title="Modifying Code" class="md-nav__link">
+    Modifying Code
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -1158,6 +1165,13 @@
         <li class="md-nav__item">
   <a href="#using-picturenaut-for-hdri-blend" title="Using Picturenaut for HDRi blend" class="md-nav__link">
     Using Picturenaut for HDRi blend
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifying-code" title="Modifying Code" class="md-nav__link">
+    Modifying Code
   </a>
   
 </li>
@@ -1601,6 +1615,36 @@ public class CameraActivity extends PluginActivity implements SurfaceHolder.Call
 program, then used PTGui to stitch the dual-fisheye to equirectangular.</p>
 <p><img alt="Stitching with PTGui" src="../example/img/fisheye/ptgui-stitched.jpg" /></p>
 <p><img alt="PTGui interface" src="../example/img/fisheye/ptgui-interface.png" /></p>
+<h2 id="modifying-code">Modifying Code</h2>
+<p>This example will modify the code to take 7 pictures with 7 different 
+exposure compensation values.</p>
+<p>The modified code is here:</p>
+<p><a href="https://github.com/codetricity/theta-7-image-dual-fisheye">https://github.com/codetricity/theta-7-image-dual-fisheye</a></p>
+<p>Import it into Android Studio and build it.</p>
+<p>The plug-in will now take 7 images with exposure compensation values of:
+-2.0, -1.3, -0.7, 0.0, 0.7, 1.3, 2.0</p>
+<p><img alt="7 images" src="../example/img/fisheye/7-image.jpg" /></p>
+<p>RICOH Camera API for plug-in API for exposure compensation is available at: </p>
+<p><a href="https://api.ricoh/docs/theta-plugin-reference/camera-api/">https://api.ricoh/docs/theta-plugin-reference/camera-api/</a></p>
+<p>The code for setting exposure compensation is shown below.</p>
+<pre><code>if(bcnt &gt; 0) {
+    params = mCamera.getParameters();
+    params.set("RIC_SHOOTING_MODE", "RicStillCaptureStd");
+    if (numberOfImages == 7) {
+        params.setExposureCompensation(exposureCompensationValue);
+        exposureCompensationValue = exposureCompensationValue + 2;
+    } else {
+        params.setExposureCompensation(3 * ((bcnt - 2)));
+    }
+
+    bcnt = bcnt - 1;
+</code></pre>
+<p>I used picturenaut to merge the 7 images into a single HDR image.</p>
+<p><img alt="Picturenaut with 7 images" src="../example/img/fisheye/picturenaut.png" /></p>
+<p><img alt="merged" src="../example/img/fisheye/merged-image.jpg" /></p>
+<p>I used Ichi Hirota's mobile app for the stitching.</p>
+<p><img alt="stitched image" src="../example/img/fisheye/stitched-image.jpg" /></p>
+<p><img alt="closeup image" src="../example/img/fisheye/closeup.jpg" /></p>
                 
                   
                 
