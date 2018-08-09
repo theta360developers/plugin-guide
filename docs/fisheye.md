@@ -248,18 +248,55 @@ will give you a feel for how HDRI can help with lighting and perspective.
 
 ### Steps
 
+#### 1. Open MainActivity.java
+
 Under `app/java/com.theta360.pluginapplication`, locate `MainActivity`.
 
 ![MainActivity](example/img/fisheye/mainactivity.png)
+
+#### 2. Add Variable for NumberOfImages
 
 In `MainActivity.java`, add an integer variable called numberOfImages and set the value to 7.
 
 ![NumberOfImages](example/img/fisheye/numberOfImages.png)
 
+#### 3. Locate nextShutter()
+
+At roughly line 192, identify the section for `nextShutter()`
+
+![nextShutter()](example/img/fisheye/next-shutter.png)
+
+#### 4. Create if statement for modification
+
+We will use an if statement to isolate your modification and preserve
+the original 3 image algorithm as a reference.
+
+At roughly line 200, look for the line `if(bcnt > 0)`. Inside that 
+statement create an if statement under the line, 
+
+    params.set("RIC_SHOOTING_MODE", "RicStillCaptureStd");
+
+Below this line, add `if (numberOfImages == 7) {}`
+
+![if statement](example/img/fisheye/if-statement.png)
+
+#### 5. Review Exposure Compensation API 
+
+We will adjust the exposure compensation value for every image
+in our 7 image set. Before modifying the code, let's look at
+the options the API provides for adjustment.
 
 RICOH Camera API for exposure compensation is available at: 
 
 [https://api.ricoh/docs/theta-plugin-reference/camera-api/](https://api.ricoh/docs/theta-plugin-reference/camera-api/)
+
+![Exposure Compensation](example/img/fisheye/exposure-compensation-api.png)
+
+#### 6. Adjust Exposure Compensation 
+
+We will start the exposure compensation value at -6 and adjust it up by 
+2 for each image. With 7 images, this value will be changed with these values for
+each image: -6, -4, -2, 0, 2, 4, 6.
 
 The code for setting exposure compensation is shown below.
 
@@ -275,18 +312,32 @@ The code for setting exposure compensation is shown below.
 
         bcnt = bcnt - 1;
 
-
 A complete repository of the modified code is here:
 
 [https://github.com/codetricity/theta-7-image-dual-fisheye](https://github.com/codetricity/theta-7-image-dual-fisheye)
 
 
+#### 7. Build and Install
+
+Build the apk. Before installing the apk, you must manually delete the 
+existing Plugin Application from your camera. 
+
+Follow this process:
+
+1. build apk in Android Studio
+2. use Vysor or the Ricoh desktop app to uninstall the existing plug-in application
+3. use adb install -r app-debug.apk to install the new apk you just built
+
+
+#### 8. Create Single HDR Image
 
 Use picturenaut to merge the 7 images into a single HDR image.
 
 ![Picturenaut with 7 images](example/img/fisheye/picturenaut.png)
 
 ![merged](example/img/fisheye/merged-image.jpg)
+
+#### 9. Stitch Dual-fisheye Image into Equirectangular
 
 I used Ichi Hirota's mobile app for the stitching.
 
