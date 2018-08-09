@@ -256,7 +256,7 @@ You can use [Picturenaut](http://www.hdrlabs.com/picturenaut/) from HDR Labs to 
 Picturenaut outputs a TIFF file. I converted this to jpeg using another graphics
 program called [GIMP](https://www.gimp.org/). 
 
-![gimp export](example/img/fisheye/gimp-export.jpg)
+![gimp export](example/img/fisheye/gimp-export.png)
 
 ![gimp jpg](example/img/fisheye/gimp-jpg.png)
 
