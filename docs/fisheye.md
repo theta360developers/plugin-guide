@@ -104,8 +104,6 @@ Scroll down until you see apps.
 - Confirm that that the LED above the shutter button is white
 - Wi-Fi LED below shutter will be aqua color and flashing
 
-[![](img/dualfish/aqua-led.png)](https://youtu.be/aGk5LsZP5do)
-
 ### Taking Pictures
 
 The camera has two modes by default. It can either take a single dual-fisheye image or 
