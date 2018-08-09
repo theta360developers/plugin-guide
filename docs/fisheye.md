@@ -175,7 +175,7 @@ Ichi Hirota has produced a stitching library and Android mobile phone app that r
 of the callibration app is available [here](https://drive.google.com/file/d/1FyXHzDXUmuuqJyNgrYt0sOa_IidDSHcC/view?usp=sharing).  This trial version of the app has a watermark.
 
 The mobile app apk is also available in the GitHub repository you downloaded for this tutorial.
-It is under the directory `tools/stitcher`
+It is under the directory [tools/stitcher](https://github.com/codetricity/original-dual-fisheye-plugin/tree/master/tools/stitcher).
 
 You can commercially license Ichi's stitching library 
 and Android application.
