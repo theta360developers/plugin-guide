@@ -185,11 +185,10 @@ not make the lens parameter information available.
 
 ### Android Phone Stitching Application
 
-Ichi Hirota has produced a stitching library and Android mobile phone app that requires a one-time callibration for each camera. A trial version
-of the callibration app is available [here](https://drive.google.com/file/d/1FyXHzDXUmuuqJyNgrYt0sOa_IidDSHcC/view?usp=sharing).  This trial version of the app has a watermark.
+Ichi Hirota has produced a stitching library and Android mobile phone app that requires a one-time callibration for each camera.   
+A trial version of the mobile app apk is available in the GitHub repository you downloaded for this tutorial.
+It is under the directory [tools/stitcher](https://github.com/codetricity/original-dual-fisheye-plugin/tree/master/tools/stitcher).  This trial version of the app has a watermark.
 
-The mobile app apk is also available in the GitHub repository you downloaded for this tutorial.
-It is under the directory [tools/stitcher](https://github.com/codetricity/original-dual-fisheye-plugin/tree/master/tools/stitcher).
 
 You can commercially license Ichi's stitching library 
 and Android application.
@@ -300,11 +299,15 @@ Under `app/java/com.theta360.pluginapplication`, locate `MainActivity`.
 
 ![MainActivity](example/img/fisheye/mainactivity.png)
 
-#### 2. Add Variable for NumberOfImages
+#### 2. Add Variables for NumberOfImages and for ExposureCompensationValue
 
 In `MainActivity.java`, add an integer variable called numberOfImages and set the value to 7.
+Add a second variable for ExposureCompensationValue and set the value to -6. Later in the 
+tutorial, we will use this variable to move the exposure compensation from -6 to +6.
 
 ![NumberOfImages](example/img/fisheye/numberOfImages.png)
+
+
 
 #### 3. Reset Bracket Count
 
@@ -349,6 +352,13 @@ RICOH Camera API for exposure compensation is available at:
 We will start the exposure compensation value at -6 and adjust it up by 
 2 for each image. With 7 images, this value will be changed with these values for
 each image: -6, -4, -2, 0, 2, 4, 6.
+
+At the top of the code, we set the variable ExposureCompensationValue to -6 in step
+2 of this tutorial. The first time through the loop, the line 
+`params.setExposureCompensation(ExposureCompensationValue)` will pass the value -6,
+which corresponds to to a -2 adjustment. We increment ExposureCompensationValue by 2.
+The next time through the loop, ExposureCompensationValue will be -4, which corresponds
+to an adjustment of -1.3.
 
 The code for setting exposure compensation is shown below.
 
