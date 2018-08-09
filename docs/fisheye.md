@@ -21,6 +21,7 @@ This is useful for the following applications:
 - Permission setting to access storage and camera
 - Post-production workflow
 - Conversion of dual-fisheye to equirectangular
+- High Dynamic Range Images
 
 ## Install apk from Source
 
