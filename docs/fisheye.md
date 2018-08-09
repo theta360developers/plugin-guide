@@ -223,19 +223,39 @@ program, then used PTGui to stitch the dual-fisheye to equirectangular.
 
 ## Modify Code to Take 7 Images
 
-This example will modify the code to take 7 pictures with 7 different 
-exposure compensation values.
+Let's modify the code to take 7 pictures with 7 different 
+exposure compensation values:
 
-The modified code is here:
-
-[https://github.com/codetricity/theta-7-image-dual-fisheye](https://github.com/codetricity/theta-7-image-dual-fisheye)
-
-Import it into Android Studio and build it.
-
-The plug-in will now take 7 images with exposure compensation values of:
 -2.0, -1.3, -0.7, 0.0, 0.7, 1.3, 2.0
 
 ![7 images](example/img/fisheye/7-image.jpg)
+
+### Benefits
+
+Basic information on High Dynamic Range Imaging (HDRi) is available on 
+[Wikipedia](https://en.wikipedia.org/wiki/High-dynamic-range_imaging).
+
+This image shows some of the benefits.
+
+![Wikipedia](example/img/fisheye/wikipedia-hdri.png)
+
+HDRi is also commonly used in the digital graphics industry. The
+graphic below from the [Unity HDRI view documentation](https://docs.unity3d.com/Manual/LookDevHDRIView.html) 
+will give you a feel for how HDRI can help with lighting and perspective.
+
+![Unity documentation](example/img/fisheye/LookDevHDRIView-0.png)
+
+
+### Steps
+
+Under `app/java/com.theta360.pluginapplication`, locate `MainActivity`.
+
+![MainActivity](example/img/fisheye/mainactivity.png)
+
+In `MainActivity.java`, add an integer variable called numberOfImages and set the value to 7.
+
+![NumberOfImages](example/img/fisheye/numberOfImages.png)
+
 
 RICOH Camera API for exposure compensation is available at: 
 
@@ -254,6 +274,13 @@ The code for setting exposure compensation is shown below.
         }
 
         bcnt = bcnt - 1;
+
+
+A complete repository of the modified code is here:
+
+[https://github.com/codetricity/theta-7-image-dual-fisheye](https://github.com/codetricity/theta-7-image-dual-fisheye)
+
+
 
 Use picturenaut to merge the 7 images into a single HDR image.
 
