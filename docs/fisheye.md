@@ -30,7 +30,13 @@ Clone or download the [GitHub repository for this tutorial](https://github.com/c
 
 ![GitHub Repo](example/img/fisheye/github-repo.png)
 
-> TIP: If you want to use the plug-in first and do not want to modify the source, an 
+Repository Organization
+
+    /apk/app-debug.apk - binary to install in the RICOH THETA V
+    /tools/stitcher/MiSphereConverter_for_THETAV.apk - mobile stitching application for your Android phone
+    /app/src/main/java/com/theta360/pluginapplication/MainActivity.java - main plug-in source code
+
+> TIP: If you want to use the plug-in first and do not want to download the source, an 
 > updated apk was released on August 6, 2018. You can [download the apk](https://drive.google.com/file/d/1DCHBuMGQUsn5ZTolp6YObuiCIsmiZJAX/view?usp=sharing) 
 > only. This version is not the same as the apk in the GitHub
 > repository.
@@ -168,7 +174,10 @@ not make the lens parameter information available.
 Ichi Hirota has produced a stitching library and Android mobile phone app that requires a one-time callibration for each camera. A trial version
 of the callibration app is available [here](https://drive.google.com/file/d/1FyXHzDXUmuuqJyNgrYt0sOa_IidDSHcC/view?usp=sharing).  This trial version of the app has a watermark.
 
-You can also commercially license Ichi's stitching library 
+The mobile app apk is also available in the GitHub repository you downloaded for this tutorial.
+It is under the directory `tools/stitcher`
+
+You can commercially license Ichi's stitching library 
 and Android application.
 For more information on licensing Ichi's stitching library and Android application,
 please contact Jesse Casman at jcasman@oppkey.com.
