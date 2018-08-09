@@ -301,7 +301,7 @@ Under `app/java/com.theta360.pluginapplication`, locate `MainActivity`.
 
 #### 2. Add Variables for NumberOfImages and for ExposureCompensationValue
 
-In `MainActivity.java`, add an integer variable called numberOfImages and set the value to 7.
+In [MainActivity.java](https://github.com/codetricity/theta-7-image-dual-fisheye/blob/master/app/src/main/java/com/theta360/pluginapplication/MainActivity.java), add an integer variable called numberOfImages and set the value to 7.
 Add a second variable for ExposureCompensationValue and set the value to -6. Later in the 
 tutorial, we will use this variable to move the exposure compensation from -6 to +6.
 
@@ -309,11 +309,22 @@ tutorial, we will use this variable to move the exposure compensation from -6 to
 
 
 
-#### 3. Reset Bracket Count
+#### 3. Reset Bracket Count and exposureCompensationValue
 
 At roughly line 167, reset the variable bcnt to the numberOfImages.
 
+Set exposureCompensationValue to -6.
+
 ![Reset Bracket Count](example/img/fisheye/reset-bcnt.png)
+
+In single shot mode, the exposureCompensation will be zero.
+
+![Single shot](example/img/fisheye/exposureCompensationZero.png)
+
+If you have any problems following this example, you can also copy and
+paste the relevant sections from the completed file on GitHub 
+[MainActivity.java](https://github.com/codetricity/theta-7-image-dual-fisheye/blob/master/app/src/main/java/com/theta360/pluginapplication/MainActivity.java).
+
 
 #### 4. Locate nextShutter()
 
