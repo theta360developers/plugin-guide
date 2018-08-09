@@ -25,6 +25,19 @@ This is useful for the following applications:
 
 ## Install apk from Source
 
+### Requirements
+
+* Tested with THETA V firmware 2.40.2
+
+### Known Issues
+
+This is a simplified plug-in example with limited error checking. This example is sensitive
+to the duration of button presses.
+
+* if you press the plug-in mode button for too long or too short, the plug-in may crash
+* if you press the Wi-Fi button for too long, the application may crash
+* if you press the shutter button for too long, the application may crash
+
 ### Download GitHub Repository
 
 Clone or download the [GitHub repository for this tutorial](https://github.com/codetricity/original-dual-fisheye-plugin).
