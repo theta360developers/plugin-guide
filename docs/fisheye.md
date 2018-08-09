@@ -35,8 +35,8 @@ This is a simplified plug-in example with limited error checking. This example i
 to the duration of button presses.
 
 * if you press the plug-in mode button for too long or too short, the plug-in may crash
-* if you press the Wi-Fi button for too long, the application may crash
-* if you press the shutter button for too long, the application may crash
+* if you press the Wi-Fi button for too long to change from single to multi-shot mode, the application may crash
+* if you press the shutter button for too long when you take the picture or pictures, the application may crash
 
 ### Download GitHub Repository
 
