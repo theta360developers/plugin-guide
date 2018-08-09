@@ -771,8 +771,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-reset-bracket-count" title="3. Reset Bracket Count" class="md-nav__link">
-    3. Reset Bracket Count
+  <a href="#3-reset-bracket-count-and-exposurecompensationvalue" title="3. Reset Bracket Count and exposureCompensationValue" class="md-nav__link">
+    3. Reset Bracket Count and exposureCompensationValue
   </a>
   
 </li>
@@ -1309,8 +1309,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-reset-bracket-count" title="3. Reset Bracket Count" class="md-nav__link">
-    3. Reset Bracket Count
+  <a href="#3-reset-bracket-count-and-exposurecompensationvalue" title="3. Reset Bracket Count and exposureCompensationValue" class="md-nav__link">
+    3. Reset Bracket Count and exposureCompensationValue
   </a>
   
 </li>
@@ -1662,13 +1662,19 @@ will give you a feel for how HDRI can help with lighting and perspective.</p>
 <p>Under <code>app/java/com.theta360.pluginapplication</code>, locate <code>MainActivity</code>.</p>
 <p><img alt="MainActivity" src="../example/img/fisheye/mainactivity.png" /></p>
 <h4 id="2-add-variables-for-numberofimages-and-for-exposurecompensationvalue">2. Add Variables for NumberOfImages and for ExposureCompensationValue</h4>
-<p>In <code>MainActivity.java</code>, add an integer variable called numberOfImages and set the value to 7.
+<p>In <a href="https://github.com/codetricity/theta-7-image-dual-fisheye/blob/master/app/src/main/java/com/theta360/pluginapplication/MainActivity.java">MainActivity.java</a>, add an integer variable called numberOfImages and set the value to 7.
 Add a second variable for ExposureCompensationValue and set the value to -6. Later in the 
 tutorial, we will use this variable to move the exposure compensation from -6 to +6.</p>
 <p><img alt="NumberOfImages" src="../example/img/fisheye/numberOfImages.png" /></p>
-<h4 id="3-reset-bracket-count">3. Reset Bracket Count</h4>
+<h4 id="3-reset-bracket-count-and-exposurecompensationvalue">3. Reset Bracket Count and exposureCompensationValue</h4>
 <p>At roughly line 167, reset the variable bcnt to the numberOfImages.</p>
+<p>Set exposureCompensationValue to -6.</p>
 <p><img alt="Reset Bracket Count" src="../example/img/fisheye/reset-bcnt.png" /></p>
+<p>In single shot mode, the exposureCompensation will be zero.</p>
+<p><img alt="Single shot" src="../example/img/fisheye/exposureCompensationZero.png" /></p>
+<p>If you have any problems following this example, you can also copy and
+paste the relevant sections from the completed file on GitHub 
+<a href="https://github.com/codetricity/theta-7-image-dual-fisheye/blob/master/app/src/main/java/com/theta360/pluginapplication/MainActivity.java">MainActivity.java</a>.</p>
 <h4 id="4-locate-nextshutter">4. Locate nextShutter()</h4>
 <p>At roughly line 192, identify the section for <code>nextShutter()</code></p>
 <p><img alt="nextShutter()" src="../example/img/fisheye/next-shutter.png" /></p>
