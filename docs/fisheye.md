@@ -260,13 +260,19 @@ In `MainActivity.java`, add an integer variable called numberOfImages and set th
 
 ![NumberOfImages](example/img/fisheye/numberOfImages.png)
 
-#### 3. Locate nextShutter()
+#### 3. Reset Bracket Count
+
+At roughly line 167, reset the variable bcnt to the numberOfImages.
+
+![Reset Bracket Count](example/img/fisheye/reset-bcnt.png)
+
+#### 4. Locate nextShutter()
 
 At roughly line 192, identify the section for `nextShutter()`
 
 ![nextShutter()](example/img/fisheye/next-shutter.png)
 
-#### 4. Create if statement for modification
+#### 5. Create if statement for modification
 
 We will use an if statement to isolate your modification and preserve
 the original 3 image algorithm as a reference.
@@ -280,7 +286,7 @@ Below this line, add `if (numberOfImages == 7) {}`
 
 ![if statement](example/img/fisheye/if-statement.png)
 
-#### 5. Review Exposure Compensation API 
+#### 6. Review Exposure Compensation API 
 
 We will adjust the exposure compensation value for every image
 in our 7 image set. Before modifying the code, let's look at
@@ -292,7 +298,7 @@ RICOH Camera API for exposure compensation is available at:
 
 ![Exposure Compensation](example/img/fisheye/exposure-compensation-api.png)
 
-#### 6. Adjust Exposure Compensation 
+#### 7. Adjust Exposure Compensation 
 
 We will start the exposure compensation value at -6 and adjust it up by 
 2 for each image. With 7 images, this value will be changed with these values for
@@ -316,8 +322,7 @@ A complete repository of the modified code is here:
 
 [https://github.com/codetricity/theta-7-image-dual-fisheye](https://github.com/codetricity/theta-7-image-dual-fisheye)
 
-
-#### 7. Build and Install
+#### 8. Build and Install
 
 Build the apk. Before installing the apk, you must manually delete the 
 existing Plugin Application from your camera. 
@@ -329,7 +334,7 @@ Follow this process:
 3. use adb install -r app-debug.apk to install the new apk you just built
 
 
-#### 8. Create Single HDR Image
+#### 9. Create Single HDR Image
 
 Use picturenaut to merge the 7 images into a single HDR image.
 
@@ -337,7 +342,7 @@ Use picturenaut to merge the 7 images into a single HDR image.
 
 ![merged](example/img/fisheye/merged-image.jpg)
 
-#### 9. Stitch Dual-fisheye Image into Equirectangular
+#### 10. Stitch Dual-fisheye Image into Equirectangular
 
 I used Ichi Hirota's mobile app for the stitching.
 
