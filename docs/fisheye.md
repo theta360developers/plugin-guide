@@ -9,7 +9,7 @@ The reduction in time is achieved by delaying the process of converting dual-fis
 
 This is useful for the following applications:
 
-1. HDR
+1. HDR - High Definition Range - photography technique for greater luminosity
 2. Timelapse
 3. High volume pictures such as taking 1,000 images at a large construction site
 4. Factory or workflow optimization (Taking pictures of an assembly line or other process involving people moving items)
