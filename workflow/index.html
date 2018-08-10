@@ -404,15 +404,22 @@
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#enable-wi-fi-when-using-adb" title="Enable Wi-Fi when using adb" class="md-nav__link">
+    Enable Wi-Fi when using adb
+  </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#using-adb-with-wi-fi" title="Using adb with Wi-Fi" class="md-nav__link">
-    Using adb with Wi-Fi
+        
+          <li class="md-nav__item">
+  <a href="#use-adb-from-an-ip-address" title="Use adb from an IP address" class="md-nav__link">
+    Use adb from an IP address
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -753,15 +760,22 @@
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#enable-wi-fi-when-using-adb" title="Enable Wi-Fi when using adb" class="md-nav__link">
+    Enable Wi-Fi when using adb
+  </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#using-adb-with-wi-fi" title="Using adb with Wi-Fi" class="md-nav__link">
-    Using adb with Wi-Fi
+        
+          <li class="md-nav__item">
+  <a href="#use-adb-from-an-ip-address" title="Use adb from an IP address" class="md-nav__link">
+    Use adb from an IP address
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -846,11 +860,23 @@ reboot when it encounters the bug and you'll lose the connection.</p>
 <p>Example debug output with the camera connected to my Linux computer with a USB cable 
 and in plug-in mode.</p>
 <p><img alt="" src="../img/debug/debug-screen.png" /></p>
-<h2 id="using-adb-with-wi-fi">Using adb with Wi-Fi</h2>
+<h3 id="enable-wi-fi-when-using-adb">Enable Wi-Fi when using adb</h3>
 <p>THETA is set so that Wi-Fi is unavailable while connected to USB. But this will make development more difficult for network connected plug-ins. However, in development mode, Wi-Fi becomes available while connected to USB using the command below.</p>
 <pre><code>adb shell settings put global usb_debug true
 </code></pre>
 <p><img alt="adb with Wi-Fi" src="../workflow/img/adb-with-wifi.png" /></p>
+<h3 id="use-adb-from-an-ip-address">Use adb from an IP address</h3>
+<p>To get Vysor or adb to work with TCP/IP, you need to run the following command first with the camera connected with a USB cable:</p>
+<pre><code>adb tcpip 5555
+</code></pre>
+<p>I got the IP address from my router.</p>
+<p>Once connected, I was able to establish adb connection with:</p>
+<pre><code>adb connect IP.address:PORT
+</code></pre>
+<p>or with my IP address of 192.168.2.102</p>
+<pre><code>adb connect 192.168.2.102:5555
+</code></pre>
+<p>You can also use Vysor with an IP address that is established using Wi-Fi or Ethernet.</p>
 <h2 id="set-active-plugin">Set Active Plugin</h2>
 <p>When you develop the plugin application, a companion mobile application can set the active plugin using the
 WiFi API of the camera. The Ricoh mobile application that
