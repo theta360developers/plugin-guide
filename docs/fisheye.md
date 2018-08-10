@@ -75,7 +75,7 @@ Repository Organization
 ![locate apk](example/img/fisheye/locate-apk.png)
 
 
-### use adb to install apk
+### Use adb to install apk
 
 Connect your THETA V to your workstation with a USB cable. 
 
@@ -89,7 +89,7 @@ cd into the directory that your apk is in.
 > detected, verify that your camera is unlocked. You must join the partner
 > program to unlock your camera.
 
-### use Vysor to set apk permissions
+### Use Vysor to set apk permissions
 
 #### Start Vysor
 
@@ -111,7 +111,7 @@ Scroll down until you see apps.
 
 ![](img/dualfish/app-info.png)
 
-#### Enable storage and camera
+#### Enable Camera and Storage
 
 ![](img/dualfish/permission.png)
 
@@ -120,7 +120,7 @@ Scroll down until you see apps.
 - Unplug camera
 - Hold power button for 8 seconds
 - Turn camera back on
-- Hold mode button for 2 seconds or longer
+- Hold Mode button for 2 seconds or longer
 - Confirm that that the LED above the shutter button is white
 - Wi-Fi LED below shutter will be aqua color and flashing
 
@@ -158,12 +158,13 @@ The gif below was contributed by community member @juantonto.
 For 3 shot mode, you need to stabilize the camera for the duration of 
 the three shots. Place the camera on tripod or stand it up on a table.
 
-Press the shutter button.
+Press the shutter button. This must be a short press of less than 2 seconds.
+
 
 Refer to the video above for the expected behavior of the camera,
 including LED and audio feedback.
 
-### Confirm Pictures were Taken
+### Confirm pictures were taken
 
 Connect camera to your computer with a USB cable.
 
@@ -185,9 +186,7 @@ not make the lens parameter information available.
 
 ### Android Phone Stitching Application
 
-Ichi Hirota has produced a stitching library and Android mobile phone app that requires a one-time callibration for each camera.   
-A trial version of the mobile app apk is available in the GitHub repository you downloaded for this tutorial.
-It is under the directory [tools/stitcher](https://github.com/codetricity/original-dual-fisheye-plugin/tree/master/tools/stitcher).  This trial version of the app has a watermark.
+Ichi Hirota has produced a stitching library and Android mobile phone app that requires a one-time callibration for each camera. A trial version of the mobile app apk is available in the GitHub repository you downloaded for this tutorial. It is under the directory [tools/stitcher](https://github.com/codetricity/original-dual-fisheye-plugin/tree/master/tools/stitcher). This trial version of the app has a watermark.
 
 
 You can commercially license Ichi's stitching library 
@@ -272,6 +271,8 @@ Let's modify the code to take 7 pictures with 7 different
 exposure compensation values:
 
 -2.0, -1.3, -0.7, 0.0, 0.7, 1.3, 2.0
+
+Here is an example output:
 
 ![7 images](example/img/fisheye/7-image.jpg)
 
@@ -396,14 +397,14 @@ existing Plugin Application from your camera.
 
 Follow this process:
 
-1. build apk in Android Studio
-2. use Vysor or the Ricoh desktop app to uninstall the existing plug-in application
-3. use adb install -r app-debug.apk to install the new apk you just built
+1. Build apk in Android Studio
+2. Use Vysor or the Ricoh desktop app to uninstall the existing plug-in application
+3. Use adb install -r app-debug.apk to install the new apk you just built
 
 
 #### 9. Create Single HDR Image
 
-Use picturenaut to merge the 7 images into a single HDR image.
+Use Picturenaut to merge the 7 images into a single HDR image.
 
 ![Picturenaut with 7 images](example/img/fisheye/picturenaut.png)
 
@@ -490,7 +491,7 @@ Using the THETA Desktop Application to view the stitched image.
 
 #### Other Stitching Solutions
 
-Community member squizard360 is [experimenting](https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/28?u=codetricity) with Hugin and the 
+Community member @squizard360 is [experimenting](https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/28?u=codetricity) with Hugin and the 
 [dualfisheye2equirectangular_ffmpeg_remap project](https://github.com/evertvorster/dualfisheye2equirectangular_ffmpeg_remap) from 
 [evertvorster](https://github.com/evertvorster).
 
