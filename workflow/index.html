@@ -451,16 +451,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-standard-android-packages" title="Using Standard Android Packages" class="md-nav__link">
-    Using Standard Android Packages
+  <a href="#testing-standard-android-packages" title="Testing Standard Android Packages" class="md-nav__link">
+    Testing Standard Android Packages
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#enabling-wifi-for-all-apps" title="Enabling WiFi for All Apps" class="md-nav__link">
-    Enabling WiFi for All Apps
+  <a href="#enabling-network-for-all-apps" title="Enabling Network for All Apps" class="md-nav__link">
+    Enabling Network for All Apps
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ethernet" title="Ethernet" class="md-nav__link">
+    Ethernet
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#important-note-about-powering-camera" title="Important Note about Powering Camera" class="md-nav__link">
+    Important Note about Powering Camera
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wi-fi" title="Wi-Fi" class="md-nav__link">
+    Wi-Fi
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -807,16 +840,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-standard-android-packages" title="Using Standard Android Packages" class="md-nav__link">
-    Using Standard Android Packages
+  <a href="#testing-standard-android-packages" title="Testing Standard Android Packages" class="md-nav__link">
+    Testing Standard Android Packages
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#enabling-wifi-for-all-apps" title="Enabling WiFi for All Apps" class="md-nav__link">
-    Enabling WiFi for All Apps
+  <a href="#enabling-network-for-all-apps" title="Enabling Network for All Apps" class="md-nav__link">
+    Enabling Network for All Apps
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ethernet" title="Ethernet" class="md-nav__link">
+    Ethernet
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#important-note-about-powering-camera" title="Important Note about Powering Camera" class="md-nav__link">
+    Important Note about Powering Camera
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wi-fi" title="Wi-Fi" class="md-nav__link">
+    Wi-Fi
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -953,7 +1019,7 @@ saved a script for  <code>camera._setPlugin</code>. You can get a list of plugin
 JSON response in <em>pretty</em> format automatically. With curl, you will need to
 pipe the output to another tool to get <em>pretty print</em>.</p>
 <p><img alt="" src="../img/custom/restlet-client-response.png" /></p>
-<h2 id="using-standard-android-packages">Using Standard Android Packages</h2>
+<h2 id="testing-standard-android-packages">Testing Standard Android Packages</h2>
 <p>You can download apks from many sites for testing things like 
 communication protocol with Facebook Messenger or video transmission.</p>
 <p>I've been using this site with good results.</p>
@@ -961,7 +1027,21 @@ communication protocol with Facebook Messenger or video transmission.</p>
 <p>For example, I can send 360 images directly from the THETA V storage to Facebook Messenger.
 The images are viewable in 360 by the recipient.</p>
 <p><img alt="" src="../img/workflow/facebook-messenger.png" /></p>
-<h2 id="enabling-wifi-for-all-apps">Enabling WiFi for All Apps</h2>
+<h2 id="enabling-network-for-all-apps">Enabling Network for All Apps</h2>
+<p>The Android OS handles both Wi-Fi and Ethernet access. Once the OS has
+established network connection, all apps can access the Internet.</p>
+<h3 id="ethernet">Ethernet</h3>
+<p>You can use use an Ethernet USB OTG adapter.  </p>
+<p><img alt="Ethernet with USB OTG" src="../workflow/img/ethernet-otg.jpg" /></p>
+<p>Not all adapters work.
+I am using a Plugable USB 2.0 OTG with ASIX AX88772A chipset. 
+It is now $13.89 with free shipping http://a.co/7MCF1J5</p>
+<p><img alt="Ethernet USB OTG on Amazon" src="../workflow/img/ethernet-adapter.jpg" /></p>
+<p>Worked immediately. Did not require any drivers or any other software. MAC address is written on adapter. Use your router to match up the MAC address with the IP, then assign a static IP to the camera from the DHCP server on your router.</p>
+<p><img alt="Ethernet Vysor" src="../workflow/img/ethernet-vysor.png" /></p>
+<h4 id="important-note-about-powering-camera">Important Note about Powering Camera</h4>
+<p>Please note that the camera cannot be powered by Ethernet when it is in OTG mode. This means that you must use the camera’s internal battery during the time you are using Ethernet with USB OTG. This may limit the efficacy of this solution depending on your application.</p>
+<h3 id="wi-fi">Wi-Fi</h3>
 <p>With the keyboard enabled, you can now type in your password for your WiFi hotspot to connect to the Internet.</p>
 <p><img alt="" src="../img/workflow/wifi/wlan-switch.png" /></p>
 <p>Connect to WiFi and all your apps and plug-ins will be able to connect to the Internet.</p>
