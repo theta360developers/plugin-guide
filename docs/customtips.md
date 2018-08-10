@@ -22,11 +22,6 @@ the folder may not show up in Android Studio. StackOverflow has a
 You should now be able to import the pluginlibrary into your project.
 
 
-## Using adb with Wi-Fi
-
-THETA is set so that Wi-Fi is unavailable while connected to USB. But this will make development more difficult for network connected plug-ins. However, in development mode, Wi-Fi becomes available while connected to USB using the command below.
-
-    adb shell settings put global usb_debug true
 
 ## Internal Storage
 
