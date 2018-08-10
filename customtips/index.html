@@ -366,13 +366,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-adb-with-wi-fi" title="Using adb with Wi-Fi" class="md-nav__link">
-    Using adb with Wi-Fi
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#internal-storage" title="Internal Storage" class="md-nav__link">
     Internal Storage
   </a>
@@ -706,13 +699,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-adb-with-wi-fi" title="Using adb with Wi-Fi" class="md-nav__link">
-    Using adb with Wi-Fi
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#internal-storage" title="Internal Storage" class="md-nav__link">
     Internal Storage
   </a>
@@ -775,10 +761,6 @@ the folder may not show up in Android Studio. StackOverflow has a
 <li>Sync by selecting "File"-"Sync Project with Gradle Files".</li>
 </ol>
 <p>You should now be able to import the pluginlibrary into your project.</p>
-<h2 id="using-adb-with-wi-fi">Using adb with Wi-Fi</h2>
-<p>THETA is set so that Wi-Fi is unavailable while connected to USB. But this will make development more difficult for network connected plug-ins. However, in development mode, Wi-Fi becomes available while connected to USB using the command below.</p>
-<pre><code>adb shell settings put global usb_debug true
-</code></pre>
 <h2 id="internal-storage">Internal Storage</h2>
 <p>The THETA V has a maximum storage size of 32GB. Developers can use 19GB  for storage of their plug-in applications and approximately 1.5GB for the plug-in itself. The partition for data is <code>/data</code>.</p>
 <p><code>/sdcard/DCIM/</code> can be used.</p>

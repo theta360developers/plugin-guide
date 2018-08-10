@@ -410,6 +410,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#using-adb-with-wi-fi" title="Using adb with Wi-Fi" class="md-nav__link">
+    Using adb with Wi-Fi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#set-active-plugin" title="Set Active Plugin" class="md-nav__link">
     Set Active Plugin
   </a>
@@ -752,6 +759,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#using-adb-with-wi-fi" title="Using adb with Wi-Fi" class="md-nav__link">
+    Using adb with Wi-Fi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#set-active-plugin" title="Set Active Plugin" class="md-nav__link">
     Set Active Plugin
   </a>
@@ -832,6 +846,10 @@ reboot when it encounters the bug and you'll lose the connection.</p>
 <p>Example debug output with the camera connected to my Linux computer with a USB cable 
 and in plug-in mode.</p>
 <p><img alt="" src="../img/debug/debug-screen.png" /></p>
+<h2 id="using-adb-with-wi-fi">Using adb with Wi-Fi</h2>
+<p>THETA is set so that Wi-Fi is unavailable while connected to USB. But this will make development more difficult for network connected plug-ins. However, in development mode, Wi-Fi becomes available while connected to USB using the command below.</p>
+<pre><code>adb shell settings put global usb_debug true
+</code></pre>
 <h2 id="set-active-plugin">Set Active Plugin</h2>
 <p>When you develop the plugin application, a companion mobile application can set the active plugin using the
 WiFi API of the camera. The Ricoh mobile application that
