@@ -32,7 +32,7 @@ and in plug-in mode.
 ![](img/debug/debug-screen.png)
 
 
-## Using adb with Wi-Fi
+### Enable Wi-Fi when using adb
 
 THETA is set so that Wi-Fi is unavailable while connected to USB. But this will make development more difficult for network connected plug-ins. However, in development mode, Wi-Fi becomes available while connected to USB using the command below.
 
@@ -40,7 +40,23 @@ THETA is set so that Wi-Fi is unavailable while connected to USB. But this will 
 
 ![adb with Wi-Fi](workflow/img/adb-with-wifi.png)
 
+### Use adb from an IP address
 
+To get Vysor or adb to work with TCP/IP, you need to run the following command first with the camera connected with a USB cable:
+
+    adb tcpip 5555
+
+I got the IP address from my router.
+
+Once connected, I was able to establish adb connection with:
+
+    adb connect IP.address:PORT
+
+or with my IP address of 192.168.2.102
+  
+    adb connect 192.168.2.102:5555
+
+You can also use Vysor with an IP address that is established using Wi-Fi or Ethernet.
 
 ## Set Active Plugin
 
