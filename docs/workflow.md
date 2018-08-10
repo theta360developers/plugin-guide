@@ -153,7 +153,8 @@ pipe the output to another tool to get *pretty print*.
 
 ![](img/custom/restlet-client-response.png)
 
-## Using Standard Android Packages
+## Testing Standard Android Packages
+
 You can download apks from many sites for testing things like 
 communication protocol with Facebook Messenger or video transmission.
 
@@ -167,8 +168,34 @@ The images are viewable in 360 by the recipient.
 ![](img/workflow/facebook-messenger.png)
 
 
+## Enabling Network for All Apps
 
-## Enabling WiFi for All Apps
+The Android OS handles both Wi-Fi and Ethernet access. Once the OS has
+established network connection, all apps can access the Internet.
+
+### Ethernet
+
+You can use use an Ethernet USB OTG adapter.  
+
+![Ethernet with USB OTG](workflow/img/ethernet-otg.jpg)
+
+Not all adapters work.
+I am using a Plugable USB 2.0 OTG with ASIX AX88772A chipset. 
+It is now $13.89 with free shipping http://a.co/7MCF1J5
+
+
+![Ethernet USB OTG on Amazon](workflow/img/ethernet-adapter.jpg)
+
+Worked immediately. Did not require any drivers or any other software. MAC address is written on adapter. Use your router to match up the MAC address with the IP, then assign a static IP to the camera from the DHCP server on your router.
+
+![Ethernet Vysor](workflow/img/ethernet-vysor.png)
+
+
+#### Important Note about Powering Camera
+
+Please note that the camera cannot be powered by Ethernet when it is in OTG mode. This means that you must use the camera’s internal battery during the time you are using Ethernet with USB OTG. This may limit the efficacy of this solution depending on your application.
+
+### Wi-Fi
 
 With the keyboard enabled, you can now type in your password for your WiFi hotspot to connect to the Internet.
 
