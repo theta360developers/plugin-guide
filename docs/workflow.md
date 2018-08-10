@@ -38,6 +38,9 @@ THETA is set so that Wi-Fi is unavailable while connected to USB. But this will 
 
     adb shell settings put global usb_debug true
 
+![adb with Wi-Fi](workflow/img/adb-with-wifi.png)
+
+
 
 ## Set Active Plugin
 
