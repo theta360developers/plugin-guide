@@ -432,6 +432,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ricoh-desktop-app" title="Ricoh Desktop App" class="md-nav__link">
+    Ricoh Desktop App
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-app" title="Mobile App" class="md-nav__link">
+    Mobile App
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#show-list-of-plugins-with-api" title="Show List of Plugins With API" class="md-nav__link">
     Show List of Plugins With API
   </a>
@@ -821,6 +835,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ricoh-desktop-app" title="Ricoh Desktop App" class="md-nav__link">
+    Ricoh Desktop App
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-app" title="Mobile App" class="md-nav__link">
+    Mobile App
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#show-list-of-plugins-with-api" title="Show List of Plugins With API" class="md-nav__link">
     Show List of Plugins With API
   </a>
@@ -944,12 +972,30 @@ and in plug-in mode.</p>
 </code></pre>
 <p>You can also use Vysor with an IP address that is established using Wi-Fi or Ethernet.</p>
 <h2 id="set-active-plugin">Set Active Plugin</h2>
-<p>When you develop the plugin application, a companion mobile application can set the active plugin using the
-WiFi API of the camera. The Ricoh mobile application that
-most of your users will also have can set the active plugin. For
-testing, you can either use the Ricoh mobile app, build your own mobile app, or send a REST command
+<p>When you develop the plugin application, the Ricoh mobile application as well as the Ricoh
+Desktop application can set the active plugin. </p>
+<p>Although most people will set the active plug-in with either the desktop or mobile app, you can 
+also build your own mobile app. For testing purposes, you can also send a REST command
 using an HTTP testing tool such as 
 <a href="https://curl.haxx.se/">curl</a>  or <a href="https://www.getpostman.com/">Postman</a>. </p>
+<h3 id="ricoh-desktop-app">Ricoh Desktop App</h3>
+<p>The Ricoh Desktop app is available on Windows and Mac. You can download it
+from the <a href="https://theta360.com/en/about/application/pc.html">Ricoh site</a>.</p>
+<p><img alt="plug-in manager" src="../workflow/img/plug-in-manager.png" /></p>
+<p><img alt="plug-in list" src="../workflow/img/plug-in-list.png" /></p>
+<h3 id="mobile-app">Mobile App</h3>
+<p>The <a href="https://theta360.com/en/about/application/basic.html">Ricoh mobile apps</a> 
+are available for Android and iOS. The mobile
+apps can set the active plug-in.</p>
+<p>The setting for the plug-in is a bit buried on the mobile app. Some members
+of the community have had difficulty finding the setting. </p>
+<p><img alt="First screen" src="../workflow/img/mobile-initial.png" /></p>
+<p><img alt="mobile camera config" src="../workflow/img/mobile-camera.png" /></p>
+<p><img alt="mobile go settings" src="../workflow/img/mobile-go-settings.png" /></p>
+<p><img alt="mobile camera settings" src="../workflow/img/camera-settings.png" /></p>
+<p><img alt="select plugin" src="../workflow/img/select-plugin-1.png" /></p>
+<p><img alt="plug-in radio buttons" src="../workflow/img/radio-buttons.png" /></p>
+<p><img alt="active plug-in" src="../workflow/img/active-plugin.png" /></p>
 <h3 id="show-list-of-plugins-with-api">Show List of Plugins With API</h3>
 <p>The POST command:</p>
 <pre><code>$ curl -X POST 192.168.1.1/osc/commands/execute --data '{"name":"camera._listPlugins"}' -H 'content-type: application/json'
