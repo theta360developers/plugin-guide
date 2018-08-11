@@ -60,12 +60,49 @@ You can also use Vysor with an IP address that is established using Wi-Fi or Eth
 
 ## Set Active Plugin
 
-When you develop the plugin application, a companion mobile application can set the active plugin using the
-WiFi API of the camera. The Ricoh mobile application that
-most of your users will also have can set the active plugin. For
-testing, you can either use the Ricoh mobile app, build your own mobile app, or send a REST command
+When you develop the plugin application, the Ricoh mobile application as well as the Ricoh
+Desktop application can set the active plugin. 
+
+Although most people will set the active plug-in with either the desktop or mobile app, you can 
+also build your own mobile app. For testing purposes, you can also send a REST command
 using an HTTP testing tool such as 
 [curl](https://curl.haxx.se/)  or [Postman](https://www.getpostman.com/). 
+
+### Ricoh Desktop App
+
+The Ricoh Desktop app is available on Windows and Mac. You can download it
+from the [Ricoh site](https://theta360.com/en/about/application/pc.html).
+
+![plug-in manager](workflow/img/plug-in-manager.png)
+
+![plug-in list](workflow/img/plug-in-list.png)
+
+
+### Mobile App
+
+The [Ricoh mobile apps](https://theta360.com/en/about/application/basic.html) 
+are available for Android and iOS. The mobile
+apps can set the active plug-in.
+
+The setting for the plug-in is a bit buried on the mobile app. Some members
+of the community have had difficulty finding the setting. 
+
+![First screen](workflow/img/mobile-initial.png)
+
+![mobile camera config](workflow/img/mobile-camera.png)
+
+![mobile go settings](workflow/img/mobile-go-settings.png)
+
+![mobile camera settings](workflow/img/camera-settings.png)
+
+![select plugin](workflow/img/select-plugin-1.png)
+
+![plug-in radio buttons](workflow/img/radio-buttons.png)
+
+![active plug-in](workflow/img/active-plugin.png)
+
+
+
 
 
 
