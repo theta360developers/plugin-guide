@@ -507,4 +507,19 @@ With all 7 stitched images in a folder, go to *File -> Automate -> Merge to HDR 
 
 ![Photoshop HDR Pro](example/img/fisheye/photoshop-hdr-pro.png)
 
+Select the folder. All 7 images will load. Each image will retain different EV values.
+
+![Photoshop 7 Load](example/img/fisheye/photoshop-7-load.png)
+
+There are different ways to edit the image. In the example below, I am
+using Adobe Camera Raw (ACR) in 32 bit format.
+
+![Adobe Camera Raw](example/img/fisheye/adobe-camera-raw.jpg)
+
+![Zoomed View](example/img/fisheye/zoom.jpg)
+
+You can now export to jpg and view it in the RICOH THETA Desktop application.
+
+![THETA Desktop Application](example/img/fisheye/desktop-app.jpg)
+
 
