@@ -402,29 +402,33 @@ Follow this process:
 3. Use adb install -r app-debug.apk to install the new apk you just built
 
 
-#### 9. Create Single HDR Image
+
+
+#### 9. Stitch Dual-fisheye Images into Equirectangular
+
+I used Ichi Hirota's mobile app for the stitching. The app can batch
+process all 7 images with a single command. After I processed them
+on my Android phone, I transferred the files to my desktop computer using
+a USB cable.
+
+![stitched image](example/img/fisheye/stitched-image.jpg)
+
+
+#### 10. Create Single HDR Image
 
 Use Picturenaut to merge the 7 images into a single HDR image.
 
 ![Picturenaut with 7 images](example/img/fisheye/picturenaut.png)
 
-![merged](example/img/fisheye/merged-image.jpg)
+HDRi files are stored in one of three formats: Radiance RGBE, OpenEXR, or 
+Floating point TIFF/PSD.
 
-#### 10. Stitch Dual-fisheye Image into Equirectangular
+![picturenaut exr](example/img/fisheye/picturenaut-exr.jpg)
 
-I used Ichi Hirota's mobile app for the stitching.
+The file is 96 MB.
 
-![stitched image](example/img/fisheye/stitched-image.jpg)
+![exr file format](example/img/fisheye/exr-format.png)
 
-![closeup image](example/img/fisheye/closeup.jpg)
-
-Here's a view of the stitch line on the other side of the picture.
-
-![2nd stitch line](example/img/fisheye/stitch-line-2.jpg)
-
-Here's a closeup of the stitch line. It's almost impossible to see it.
-
-![Closeup 2](example/img/fisheye/closeup-2.jpg)
 
 **Congratulations! You've completed the dual-fisheye tutorial!**
 
@@ -494,4 +498,13 @@ Using the THETA Desktop Application to view the stitched image.
 Community member @squizard360 is [experimenting](https://community.theta360.guide/t/dual-fisheye-images-with-theta-v-plug-in/2692/28?u=codetricity) with Hugin and the 
 [dualfisheye2equirectangular_ffmpeg_remap project](https://github.com/evertvorster/dualfisheye2equirectangular_ffmpeg_remap) from 
 [evertvorster](https://github.com/evertvorster).
+
+### HDR with Photoshop
+
+Photoshop can input all 7 images and create HDR images with HDR Pro.
+
+With all 7 stitched images in a folder, go to *File -> Automate -> Merge to HDR Pro...*.
+
+![Photoshop HDR Pro](example/img/fisheye/photoshop-hdr-pro.png)
+
 
