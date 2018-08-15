@@ -912,6 +912,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#theta-7-image-hdr-with-unity-look-dev-view-hdri" title="THETA 7 Image HDR With Unity Look Dev View HDRI" class="md-nav__link">
+    THETA 7 Image HDR With Unity Look Dev View HDRI
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1457,6 +1464,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#theta-7-image-hdr-with-unity-look-dev-view-hdri" title="THETA 7 Image HDR With Unity Look Dev View HDRI" class="md-nav__link">
+    THETA 7 Image HDR With Unity Look Dev View HDRI
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1805,6 +1819,30 @@ using Adobe Camera Raw (ACR) in 32 bit format.</p>
 <p><img alt="Zoomed View" src="../example/img/fisheye/zoom.jpg" /></p>
 <p>You can now export to jpg and view it in the RICOH THETA Desktop application.</p>
 <p><img alt="THETA Desktop Application" src="../example/img/fisheye/desktop-app.jpg" /></p>
+<h3 id="theta-7-image-hdr-with-unity-look-dev-view-hdri">THETA 7 Image HDR With Unity Look Dev View HDRI</h3>
+<p>Unity has a Look Dev tool that is used to check different assets
+for lighting conditions. With Look Dev you can look at two different
+assets in different views. </p>
+<p><img alt="Unity Dev View Diaganol" src="../example/img/fisheye/unity-diagnol.jpg" /></p>
+<p>Here's an example of a blue light source.</p>
+<p><img alt="Unity Dev View Diaganol" src="../example/img/fisheye/unity-blue.jpg" /></p>
+<p>In the example above, Unity has a known issue of specular convolution producing 
+a blurry image in the skybox.</p>
+<p>To get started, drag the EXR file onto Unity.</p>
+<p><img alt="Unity EXR file" src="../example/img/fisheye/unity-exr.png" /></p>
+<p>You next need to use the HDRI asset to create a material that you
+can apply to a 3D object such as the skybox or a sphere.</p>
+<p>Unity recommends Specular Convolution.</p>
+<p><img alt="Unity Specular" src="../example/img/fisheye/unity-specular.png" /></p>
+<p>It does blur the skybox. Disabling Specular Convolution will 
+result in a normal-looking image in the Skybox. The Texture Shape
+needs to be Cube. Hit Apply.</p>
+<p>On my 6-core i7 with 32GB RAM, it took a few minutes.</p>
+<p>Here's a horizontal comparison view inside of Look Dev View HDRI.</p>
+<p><img alt="Unity Horizontal" src="../example/img/fisheye/unity-horizontal.png" /></p>
+<p>In the example below, I'm not using Specular Convolution and am losing
+the lighting effects.</p>
+<p><img alt="Unity No Specular" src="../example/img/fisheye/unity-no-specular.png" /></p>
                 
                   
                 
