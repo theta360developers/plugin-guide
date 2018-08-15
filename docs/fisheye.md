@@ -558,7 +558,7 @@ On my 6-core i7 with 32GB RAM, it took a few minutes.
 
 Here's a horizontal comparison view inside of Look Dev View HDRI.
 
-![Unity Horizontal](example/img/fisheye/unity-horizontal.png)
+![Unity Horizontal](example/img/fisheye/unity-horizontal.jpg)
 
 In the example below, I'm not using Specular Convolution and am losing
 the lighting effects.
