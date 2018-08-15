@@ -318,6 +318,11 @@ Set exposureCompensationValue to -6.
 
 ![Reset Bracket Count](example/img/fisheye/reset-bcnt.png)
 
+Note that in the example above, I needed to adjust the RIC_EXPOSURE_MODE to 
+RicAutoExposureP for the EV compensation to take effect. The current
+Camera API documentation indicates that only *RicAutoExposureT*, 
+*RicAutoExposureP*, or *RicAutoExposureWDR* can set exposure compensation.
+
 In single shot mode, the exposureCompensation will be zero.
 
 ![Single shot](example/img/fisheye/exposureCompensationZero.png)
@@ -385,6 +390,10 @@ The code for setting exposure compensation is shown below.
         }
 
         bcnt = bcnt - 1;
+
+The EV of the images can be seen in this screenshot from Photoshop HDR Pro:
+
+![EV Settings](example/img/fisheye/7-image-ev.png)
 
 A complete repository of the modified code is here:
 
