@@ -523,3 +523,44 @@ You can now export to jpg and view it in the RICOH THETA Desktop application.
 ![THETA Desktop Application](example/img/fisheye/desktop-app.jpg)
 
 
+### THETA 7 Image HDR With Unity Look Dev View HDRI
+
+Unity has a Look Dev tool that is used to check different assets
+for lighting conditions. With Look Dev you can look at two different
+assets in different views. 
+
+![Unity Dev View Diaganol](example/img/fisheye/unity-diagnol.jpg)
+
+
+Here's an example of a blue light source.
+
+![Unity Dev View Diaganol](example/img/fisheye/unity-blue.jpg)
+
+In the example above, Unity has a known issue of specular convolution producing 
+a blurry image in the skybox.
+
+To get started, drag the EXR file onto Unity.
+
+![Unity EXR file](example/img/fisheye/unity-exr.png)
+
+You next need to use the HDRI asset to create a material that you
+can apply to a 3D object such as the skybox or a sphere.
+
+Unity recommends Specular Convolution.
+
+![Unity Specular](example/img/fisheye/unity-specular.png)
+
+It does blur the skybox. Disabling Specular Convolution will 
+result in a normal-looking image in the Skybox. The Texture Shape
+needs to be Cube. Hit Apply.
+
+On my 6-core i7 with 32GB RAM, it took a few minutes.
+
+Here's a horizontal comparison view inside of Look Dev View HDRI.
+
+![Unity Horizontal](example/img/fisheye/unity-horizontal.png)
+
+In the example below, I'm not using Specular Convolution and am losing
+the lighting effects.
+
+![Unity No Specular](example/img/fisheye/unity-no-specular.png)
