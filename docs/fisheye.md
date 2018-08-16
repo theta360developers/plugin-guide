@@ -531,6 +531,43 @@ You can now export to jpg and view it in the RICOH THETA Desktop application.
 
 ![THETA Desktop Application](example/img/fisheye/desktop-app.jpg)
 
+#### Export to OpenEXR and Radiance file formats
+
+If you want to use your HDRI file with external software such as Unity for use in
+3D model lighting effects, you should save the file as OpenEXR or Radiance, not JPEG.
+
+Here is the workflow:
+
+Inside of the HDR Pro tool shown the previous step, select 32 Bit mode. Uncheck *Complete Toning in Adobe Camera Raw*.
+
+![32 bit Photoshop](example/img/fisheye/32bit.png)
+
+Press OK on HDR Pro. You will be back in Photoshop.  From the *File* menu,
+select *Save As...*.
+
+![Photoshop Save As](example/img/fisheye/photoshop-save-as.png)
+
+You will now see the options to save as Radiance and OpenEXR formats.
+
+![Photoshop Save format](example/img/fisheye/photoshop-save.png)
+
+Save the files on your local computer. You can now import the
+files into another program such as Unity.
+
+![HDRI files on computer](example/img/fisheye/hdr-exr.jpg)
+
+The Radiance and OpenEXR files will be much larger than the
+JPG images. Each original JPG image was approximately 3.3 MB.
+
+The HDR files are around 45 MB.
+
+![Radiance File](example/img/fisheye/radiance-file.png)
+
+Both Radiance and OpenEXR have similar file sizes.
+
+![EXR File](example/img/fisheye/exr-file.png)
+
+
 
 ### THETA 7 Image HDR With Unity Look Dev View HDRI
 
