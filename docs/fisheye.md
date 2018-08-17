@@ -294,6 +294,8 @@ will give you a feel for how HDRI can help with lighting and perspective.
 
 ### Steps
 
+**8/16/2018 this section needs to be updated due to bug fixes in the original code**
+
 #### 1. Open MainActivity.java
 
 Under `app/java/com.theta360.pluginapplication`, locate `MainActivity`.
