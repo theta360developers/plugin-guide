@@ -785,8 +785,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-create-if-statement-for-modification" title="5. Create if statement for modification" class="md-nav__link">
-    5. Create if statement for modification
+  <a href="#5-locate-bracket-section" title="5. Locate bracket section" class="md-nav__link">
+    5. Locate bracket section
   </a>
   
 </li>
@@ -1350,8 +1350,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-create-if-statement-for-modification" title="5. Create if statement for modification" class="md-nav__link">
-    5. Create if statement for modification
+  <a href="#5-locate-bracket-section" title="5. Locate bracket section" class="md-nav__link">
+    5. Locate bracket section
   </a>
   
 </li>
@@ -1721,30 +1721,26 @@ Add a second variable for ExposureCompensationValue and set the value to -6. Lat
 tutorial, we will use this variable to move the exposure compensation from -6 to +6.</p>
 <p><img alt="NumberOfImages" src="../example/img/fisheye/numberOfImages.png" /></p>
 <h4 id="3-reset-bracket-count-and-exposurecompensationvalue">3. Reset Bracket Count and exposureCompensationValue</h4>
-<p>At roughly line 167, reset the variable bcnt to the numberOfImages.</p>
-<p>Set exposureCompensationValue to -6.</p>
+<p>At roughly line 175, reset the variable bcnt to the numberOfImages.</p>
+<p>Set exposureCompensationValue to -6.
+Set bcnt to numberOfImages.</p>
 <p><img alt="Reset Bracket Count" src="../example/img/fisheye/reset-bcnt.png" /></p>
-<p>Note that in the example above, I needed to adjust the RIC_EXPOSURE_MODE to 
+<p>Note that in the example above, RIC_EXPOSURE_MODE is set to 
 RicAutoExposureP for the EV compensation to take effect. The current
 Camera API documentation indicates that only <em>RicAutoExposureT</em>, 
-<em>RicAutoExposureP</em>, or <em>RicAutoExposureWDR</em> can set exposure compensation.</p>
+<em>RicAutoExposureP</em>, or <em>RicAutoExposureWDR</em> can set 
+exposure compensation.</p>
 <p>In single shot mode, the exposureCompensation will be zero.</p>
 <p><img alt="Single shot" src="../example/img/fisheye/exposureCompensationZero.png" /></p>
 <p>If you have any problems following this example, you can also copy and
-paste the relevant sections from the completed file on GitHub 
-<a href="https://github.com/codetricity/theta-7-image-dual-fisheye/blob/master/app/src/main/java/com/theta360/pluginapplication/MainActivity.java">MainActivity.java</a>.</p>
+paste the relevant sections from the completed file on GitHub, 7-image branch.</p>
 <h4 id="4-locate-nextshutter">4. Locate nextShutter()</h4>
-<p>At roughly line 192, identify the section for <code>nextShutter()</code></p>
+<p>At roughly line 203, identify the section for <code>nextShutter()</code></p>
 <p><img alt="nextShutter()" src="../example/img/fisheye/next-shutter.png" /></p>
-<h4 id="5-create-if-statement-for-modification">5. Create if statement for modification</h4>
-<p>We will use an if statement to isolate your modification and preserve
-the original 3 image algorithm as a reference.</p>
-<p>At roughly line 200, look for the line <code>if(bcnt &gt; 0)</code>. Inside that 
-statement create an if statement under the line, </p>
-<pre><code>params.set("RIC_SHOOTING_MODE", "RicStillCaptureStd");
-</code></pre>
-<p>Below this line, add <code>if (numberOfImages == 7) {}</code></p>
-<p><img alt="if statement" src="../example/img/fisheye/if-statement.png" /></p>
+<h4 id="5-locate-bracket-section">5. Locate bracket section</h4>
+<p>At roughly line 211, look for the line <code>if(bcnt &gt; 0)</code>. </p>
+<p><img alt="if bcnt" src="../example/img/fisheye/if-bcnt.png" /></p>
+<p>The code after the <code>else</code> statement handles single shot mode.</p>
 <h4 id="6-review-exposure-compensation-api">6. Review Exposure Compensation API</h4>
 <p>We will adjust the exposure compensation value for every image
 in our 7 image set. Before modifying the code, let's look at
@@ -1766,14 +1762,16 @@ to an adjustment of -1.3.</p>
 <pre><code>if(bcnt &gt; 0) {
     params = mCamera.getParameters();
     params.set("RIC_SHOOTING_MODE", "RicStillCaptureStd");
-    if (numberOfImages == 7) {
-        params.setExposureCompensation(exposureCompensationValue);
-        exposureCompensationValue = exposureCompensationValue + 2;
-    } else {
-        params.setExposureCompensation(3 * ((bcnt - 2)));
-    }
+    exposureCompensationValue = exposureCompensationValue + 2;
+    params.setExposureCompensation(exposureCompensationValue);
 
     bcnt = bcnt - 1;
+    mCamera.setParameters(params);
+    Intent intent = new Intent("com.theta360.plugin.ACTION_AUDIO_SHUTTER");
+    sendBroadcast(intent);
+    mCamera.takePicture(null, null, null, pictureListener);
+}
+else{
 </code></pre>
 <p>The EV of the images can be seen in this screenshot from Photoshop HDR Pro:</p>
 <p><img alt="EV Settings" src="../example/img/fisheye/7-image-ev.png" /></p>
