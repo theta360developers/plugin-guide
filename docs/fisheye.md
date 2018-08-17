@@ -294,7 +294,8 @@ will give you a feel for how HDRI can help with lighting and perspective.
 
 ### Steps
 
-**8/16/2018 this section needs to be updated due to bug fixes in the original code**
+If you prefer to read through the modifications and follow along, the modified
+code is in the [7-image branch](https://github.com/codetricity/original-dual-fisheye-plugin/tree/7-image) of the repository.
 
 #### 1. Open MainActivity.java
 
@@ -332,7 +333,8 @@ In single shot mode, the exposureCompensation will be zero.
 ![Single shot](example/img/fisheye/exposureCompensationZero.png)
 
 If you have any problems following this example, you can also copy and
-paste the relevant sections from the completed file on GitHub, 7-image branch.
+paste the relevant sections from the completed file on GitHub, 
+[7-image branch](https://github.com/codetricity/original-dual-fisheye-plugin/tree/7-image).
 
 
 #### 4. Locate nextShutter()
@@ -394,10 +396,6 @@ The EV of the images can be seen in this screenshot from Photoshop HDR Pro:
 
 ![EV Settings](example/img/fisheye/7-image-ev.png)
 
-A complete repository of the modified code is here:
-
-[https://github.com/codetricity/theta-7-image-dual-fisheye](https://github.com/codetricity/theta-7-image-dual-fisheye)
-
 #### 8. Build and Install
 
 Build the apk. Before installing the apk, you must manually delete the 
@@ -409,18 +407,18 @@ Follow this process:
 2. Use Vysor or the Ricoh desktop app to uninstall the existing plug-in application
 3. Use adb install -r app-debug.apk to install the new apk you just built
 
-
-
-
 #### 9. Stitch Dual-fisheye Images into Equirectangular
 
-I used Ichi Hirota's mobile app for the stitching. The app can batch
-process all 7 images with a single command. After I processed them
-on my Android phone, I transferred the files to my desktop computer using
-a USB cable.
+Use Ichi Hirota's mobile app for the stitching. The app can batch
+process all 7 images with a single command. After you process them
+on your Android phone, you need to transfer the files to your 
+desktop computer using a USB cable.
+
+If you do not have an Android phone, use PTGui on a Windows or 
+Mac laptop. Information on using PTGui is included at the end of
+this tutorial in the reference section.
 
 ![stitched image](example/img/fisheye/stitched-image.jpg)
-
 
 #### 10. Create Single HDR Image
 
@@ -437,11 +435,11 @@ The file is 96 MB.
 
 ![exr file format](example/img/fisheye/exr-format.png)
 
+If you have Photoshop, you can also use HDR Pro to create HDRI files.
 
 **Congratulations! You've completed the dual-fisheye tutorial!**
 
 ## References and Resources
-
 
 ## Turning off THETA V Stitching
 
