@@ -16,8 +16,10 @@ the folder may not show up in Android Studio. StackOverflow has a
 [tip](https://stackoverflow.com/questions/49811283/android-studio-3-1-1-unable-to-add-module-import-gradle-project) about this problem.
 
 1. Import "pluginlibrary" in the SDK by selecting "File"-"New"-"Import Module..."
-2. Add a text "include ':app', ':pluginlibrary'" in "settings.gradle" file
+2. Add the line "include ':app', ':pluginlibrary'" in "settings.gradle" file
 3. Sync by selecting "File"-"Sync Project with Gradle Files".
+
+> NOTE: As of 8/21/2018, I also needed to add implementation project('pluginlibrary') in build.gradle
 
 You should now be able to import the pluginlibrary into your project.
 
