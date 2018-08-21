@@ -757,9 +757,12 @@ the folder may not show up in Android Studio. StackOverflow has a
 <a href="https://stackoverflow.com/questions/49811283/android-studio-3-1-1-unable-to-add-module-import-gradle-project">tip</a> about this problem.</p>
 <ol>
 <li>Import "pluginlibrary" in the SDK by selecting "File"-"New"-"Import Module..."</li>
-<li>Add a text "include ':app', ':pluginlibrary'" in "settings.gradle" file</li>
+<li>Add the line "include ':app', ':pluginlibrary'" in "settings.gradle" file</li>
 <li>Sync by selecting "File"-"Sync Project with Gradle Files".</li>
 </ol>
+<blockquote>
+<p>NOTE: As of 8/21/2018, I also needed to add implementation project('pluginlibrary') in build.gradle</p>
+</blockquote>
 <p>You should now be able to import the pluginlibrary into your project.</p>
 <h2 id="internal-storage">Internal Storage</h2>
 <p>The THETA V has a maximum storage size of 32GB. Developers can use 19GB  for storage of their plug-in applications and approximately 1.5GB for the plug-in itself. The partition for data is <code>/data</code>.</p>
