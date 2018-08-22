@@ -30,8 +30,8 @@ There are three buttons you can map:
 | Button Common Name | Name in Library | Code | Location |
 | ------------------ | ------------------- |:----:| -------- |
 | WiFi               | KEYCODE_WLAN_ON_OFF | 284  | side middle |
-| Mode               | KEYCODE_MEDIA_RECORD | 130  | side bottom |
-| Shutter            | KEYCODE_CAMERA | 27   | front       |
+| Shutter            | KEYCODE_MEDIA_RECORD | 130  | front |
+| Mode              | KEYCODE_CAMERA | 27   | side bottom       |
 
 Two of the buttons are on the side of the camera, below the power button. The third
 button is on the front of the camera. It is the big *shutter* button.
