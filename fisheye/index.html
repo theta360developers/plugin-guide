@@ -1733,7 +1733,7 @@ code is in the <a href="https://github.com/codetricity/original-dual-fisheye-plu
 <p><img alt="MainActivity" src="../example/img/fisheye/mainactivity.png" /></p>
 <h4 id="2-add-variables-for-numberofimages-and-for-exposurecompensationvalue">2. Add Variables for NumberOfImages and for ExposureCompensationValue</h4>
 <p>In <a href="https://github.com/codetricity/theta-7-image-dual-fisheye/blob/master/app/src/main/java/com/theta360/pluginapplication/MainActivity.java">MainActivity.java</a>, add an integer variable called numberOfImages and set the value to 7.
-Add a second variable for ExposureCompensationValue and set the value to -6. Later in the 
+Note the second variable for ExposureCompensationValue that is set the value to -6. Later in the 
 tutorial, we will use this variable to move the exposure compensation from -6 to +6.</p>
 <p><img alt="NumberOfImages" src="../example/img/fisheye/numberOfImages.png" /></p>
 <h4 id="3-reset-bracket-count-and-exposurecompensationvalue">3. Reset Bracket Count and exposureCompensationValue</h4>
@@ -1797,9 +1797,11 @@ else{
 existing Plugin Application from your camera. </p>
 <p>Follow this process:</p>
 <ol>
+<li>Save your project, <em>File -&gt; Save All</em></li>
 <li>Build apk in Android Studio</li>
 <li>Use Vysor or the Ricoh desktop app to uninstall the existing plug-in application</li>
 <li>Use adb install -r app-debug.apk to install the new apk you just built</li>
+<li>Use Vysor to set the permissions of the plug-in to give access to Camera and Storage</li>
 </ol>
 <h4 id="9-stitch-dual-fisheye-images-into-equirectangular">9. Stitch Dual-fisheye Images into Equirectangular</h4>
 <p>Use Ichi Hirota's mobile app for the stitching. The app can batch
