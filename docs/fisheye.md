@@ -594,6 +594,7 @@ On my 6-core i7 with 32GB RAM, it took a few minutes.
 Here's a horizontal comparison view inside of Look Dev View HDRI.
 
 ![Unity Horizontal](example/img/fisheye/unity-horizontal.jpg)
+
 ### HDRI Light Reflection in Unity Projects
 
 Brad Herman has an excellent video showing RICOH THETA images from an older 
