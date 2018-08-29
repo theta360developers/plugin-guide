@@ -574,14 +574,6 @@ assets in different views.
 
 ![Unity Dev View Diaganol](example/img/fisheye/unity-diagnol.jpg)
 
-
-Here's an example of a blue light source.
-
-![Unity Dev View Diaganol](example/img/fisheye/unity-blue.jpg)
-
-In the example above, Unity has a known issue of specular convolution producing 
-a blurry image in the skybox.
-
 To get started, drag the EXR file onto Unity.
 
 ![Unity EXR file](example/img/fisheye/unity-exr.png)
@@ -602,8 +594,20 @@ On my 6-core i7 with 32GB RAM, it took a few minutes.
 Here's a horizontal comparison view inside of Look Dev View HDRI.
 
 ![Unity Horizontal](example/img/fisheye/unity-horizontal.jpg)
+### HDRI Light Reflection in Unity Projects
 
-In the example below, I'm not using Specular Convolution and am losing
-the lighting effects.
+Brad Herman has an excellent video showing RICOH THETA images from an older 
+camera being used in Unity 5.
 
-![Unity No Specular](example/img/fisheye/unity-no-specular.png)
+[![Brad Herman Video](example/img/fisheye/brad-herman.png)](https://youtu.be/JTIJml4Jblg)
+
+I also did some simple tests showing the light reflection from the HDR files produced
+from the THETA images used in this tutorial. The shiny part of the sphere and
+car is the light reflected from the window that I'm standing behind. There
+is not separate directional light source. 
+
+![HDR test 1](example/img/fisheye/hdr-unity.png)
+
+![HDR test 2](example/img/fisheye/hdr-unity-2.png)
+
+
