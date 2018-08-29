@@ -308,7 +308,7 @@ Under `app/java/com.theta360.pluginapplication`, locate `MainActivity`.
 #### 2. Add Variables for NumberOfImages and for ExposureCompensationValue
 
 In [MainActivity.java](https://github.com/codetricity/theta-7-image-dual-fisheye/blob/master/app/src/main/java/com/theta360/pluginapplication/MainActivity.java), add an integer variable called numberOfImages and set the value to 7.
-Add a second variable for ExposureCompensationValue and set the value to -6. Later in the 
+Note the second variable for ExposureCompensationValue that is set the value to -6. Later in the 
 tutorial, we will use this variable to move the exposure compensation from -6 to +6.
 
 ![NumberOfImages](example/img/fisheye/numberOfImages.png)
@@ -405,9 +405,11 @@ existing Plugin Application from your camera.
 
 Follow this process:
 
+1. Save your project, *File -> Save All*
 1. Build apk in Android Studio
-2. Use Vysor or the Ricoh desktop app to uninstall the existing plug-in application
-3. Use adb install -r app-debug.apk to install the new apk you just built
+1. Use Vysor or the Ricoh desktop app to uninstall the existing plug-in application
+1. Use adb install -r app-debug.apk to install the new apk you just built
+1. Use Vysor to set the permissions of the plug-in to give access to Camera and Storage
 
 #### 9. Stitch Dual-fisheye Images into Equirectangular
 
