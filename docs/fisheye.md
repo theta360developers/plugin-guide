@@ -604,7 +604,7 @@ camera being used in Unity 5.
 
 I also did some simple tests showing the light reflection from the HDR files produced
 from the THETA images used in this tutorial. The shiny part of the sphere and
-car is the light reflected from the window that I'm standing behind. There
+car is the light reflected from the window that I'm standing behind or the window to my side. There
 is not separate directional light source. 
 
 ![HDR test 1](example/img/fisheye/hdr-unity.png)
