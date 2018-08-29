@@ -932,6 +932,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#hdri-light-reflection-in-unity-projects" title="HDRI Light Reflection in Unity Projects" class="md-nav__link">
+    HDRI Light Reflection in Unity Projects
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1497,6 +1504,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#hdri-light-reflection-in-unity-projects" title="HDRI Light Reflection in Unity Projects" class="md-nav__link">
+    HDRI Light Reflection in Unity Projects
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1527,11 +1541,14 @@ the time between shots to less than a second. </p>
 <p>The reduction in time is achieved by delaying the process of converting dual-fisheye images into a single equirectangular image inside the camera.</p>
 <p>This is useful for the following applications:</p>
 <ol>
-<li>HDR - High Definition Range - photography technique for greater luminosity</li>
+<li>HDR - High Dynamic Range Imaging - photography technique that stores luminosity along with color<ol>
+<li>Tone mapping of images to reduce the constrast ratio of an entire image and retain local contrast</li>
+<li>Visual Special Effects, VR, and computer game 3D model scenes to get directional lighting information of a scene</li>
+</ol>
+</li>
 <li>Timelapse</li>
 <li>High volume pictures such as taking 1,000 images at a large construction site</li>
 <li>Factory or workflow optimization (Taking pictures of an assembly line or other process involving people moving items)</li>
-<li>Computer graphics 3D model scenes to get lighting information</li>
 </ol>
 <h2 id="concepts-covered">Concepts Covered</h2>
 <ul>
@@ -1539,13 +1556,11 @@ the time between shots to less than a second. </p>
 <li>Permission setting to access storage and camera</li>
 <li>Post-production workflow</li>
 <li>Conversion of dual-fisheye to equirectangular</li>
-<li>High Dynamic Range Images</li>
+<li>High Dynamic Range Imaging</li>
 </ul>
 <h2 id="install-apk-from-source">Install apk from Source</h2>
 <h3 id="requirements">Requirements</h3>
-<ul>
-<li>Tested with THETA V firmware 2.40.2</li>
-</ul>
+<p>Tested with THETA V firmware 2.40.2</p>
 <h3 id="known-issues">Known Issues</h3>
 <p>This is a simplified plug-in example with limited error checking. This example is sensitive
 to the duration of button presses.</p>
@@ -1879,10 +1894,6 @@ JPG images. Each original JPG image was approximately 3.3 MB.</p>
 for lighting conditions. With Look Dev you can look at two different
 assets in different views. </p>
 <p><img alt="Unity Dev View Diaganol" src="../example/img/fisheye/unity-diagnol.jpg" /></p>
-<p>Here's an example of a blue light source.</p>
-<p><img alt="Unity Dev View Diaganol" src="../example/img/fisheye/unity-blue.jpg" /></p>
-<p>In the example above, Unity has a known issue of specular convolution producing 
-a blurry image in the skybox.</p>
 <p>To get started, drag the EXR file onto Unity.</p>
 <p><img alt="Unity EXR file" src="../example/img/fisheye/unity-exr.png" /></p>
 <p>You next need to use the HDRI asset to create a material that you
@@ -1895,9 +1906,16 @@ needs to be Cube. Hit Apply.</p>
 <p>On my 6-core i7 with 32GB RAM, it took a few minutes.</p>
 <p>Here's a horizontal comparison view inside of Look Dev View HDRI.</p>
 <p><img alt="Unity Horizontal" src="../example/img/fisheye/unity-horizontal.jpg" /></p>
-<p>In the example below, I'm not using Specular Convolution and am losing
-the lighting effects.</p>
-<p><img alt="Unity No Specular" src="../example/img/fisheye/unity-no-specular.png" /></p>
+<h3 id="hdri-light-reflection-in-unity-projects">HDRI Light Reflection in Unity Projects</h3>
+<p>Brad Herman has an excellent video showing RICOH THETA images from an older 
+camera being used in Unity 5.</p>
+<p><a href="https://youtu.be/JTIJml4Jblg"><img alt="Brad Herman Video" src="../example/img/fisheye/brad-herman.png" /></a></p>
+<p>I also did some simple tests showing the light reflection from the HDR files produced
+from the THETA images used in this tutorial. The shiny part of the sphere and
+car is the light reflected from the window that I'm standing behind or the window to my side. There
+is not separate directional light source. </p>
+<p><img alt="HDR test 1" src="../example/img/fisheye/hdr-unity.png" /></p>
+<p><img alt="HDR test 2" src="../example/img/fisheye/hdr-unity-2.png" /></p>
                 
                   
                 
