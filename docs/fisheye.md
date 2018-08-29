@@ -9,11 +9,13 @@ The reduction in time is achieved by delaying the process of converting dual-fis
 
 This is useful for the following applications:
 
-1. HDR - High Definition Range - photography technique for greater luminosity
-2. Timelapse
-3. High volume pictures such as taking 1,000 images at a large construction site
-4. Factory or workflow optimization (Taking pictures of an assembly line or other process involving people moving items)
-5. Computer graphics 3D model scenes to get lighting information
+1. HDR - High Dynamic Range Imaging - photography technique that stores luminosity along with color
+    1. Tone mapping of images to reduce the constrast ratio of an entire image and retain local contrast
+    1. Visual Special Effects, VR, and computer game 3D model scenes to get directional lighting information of a scene
+1. Timelapse
+1. High volume pictures such as taking 1,000 images at a large construction site
+1. Factory or workflow optimization (Taking pictures of an assembly line or other process involving people moving items)
+
 
 ## Concepts Covered
 
@@ -21,13 +23,13 @@ This is useful for the following applications:
 - Permission setting to access storage and camera
 - Post-production workflow
 - Conversion of dual-fisheye to equirectangular
-- High Dynamic Range Images
+- High Dynamic Range Imaging
 
 ## Install apk from Source
 
 ### Requirements
 
-* Tested with THETA V firmware 2.40.2
+Tested with THETA V firmware 2.40.2
 
 ### Known Issues
 
