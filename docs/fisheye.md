@@ -613,4 +613,6 @@ is not separate directional light source.
 
 ![HDR test 2](example/img/fisheye/hdr-unity-2.png)
 
+Here's some screenshots from professional VFX designer and artist Sam Winkler.
 
+![Sam Winkler](example/img/fisheye/sam-winkler.png)
