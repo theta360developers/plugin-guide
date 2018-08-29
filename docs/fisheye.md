@@ -42,7 +42,7 @@ to the duration of button presses.
 
 ### Download GitHub Repository
 
-Clone or download the [GitHub repository for this tutorial](https://github.com/codetricity/original-dual-fisheye-plugin).
+Clone or download the [GitHub repository for this tutorial](https://github.com/theta360developers/original-dual-fisheye-plugin).
 
 ![GitHub Repo](example/img/fisheye/github-repo.png)
 
@@ -297,7 +297,7 @@ will give you a feel for how HDRI can help with lighting and perspective.
 ### Steps
 
 If you prefer to read through the modifications and follow along, the modified
-code is in the [7-image branch](https://github.com/codetricity/original-dual-fisheye-plugin/tree/7-image) of the repository.
+code is in the [7-image branch](https://github.com/theta360developers/original-dual-fisheye-plugin/tree/7-image) of the repository.
 
 #### 1. Open MainActivity.java
 
@@ -307,7 +307,7 @@ Under `app/java/com.theta360.pluginapplication`, locate `MainActivity`.
 
 #### 2. Add Variables for NumberOfImages and for ExposureCompensationValue
 
-In [MainActivity.java](https://github.com/codetricity/theta-7-image-dual-fisheye/blob/master/app/src/main/java/com/theta360/pluginapplication/MainActivity.java), add an integer variable called numberOfImages and set the value to 7.
+In [MainActivity.java](https://github.com/theta360developers/original-dual-fisheye-plugin/blob/7-image/app/src/main/java/com/theta360/pluginapplication/MainActivity.java), add an integer variable called numberOfImages and set the value to 7.
 Note the second variable for ExposureCompensationValue that is set the value to -6. Later in the 
 tutorial, we will use this variable to move the exposure compensation from -6 to +6.
 
@@ -336,7 +336,7 @@ In single shot mode, the exposureCompensation will be zero.
 
 If you have any problems following this example, you can also copy and
 paste the relevant sections from the completed file on GitHub, 
-[7-image branch](https://github.com/codetricity/original-dual-fisheye-plugin/tree/7-image).
+[7-image branch](https://github.com/theta360developers/original-dual-fisheye-plugin/tree/7-image).
 
 
 #### 4. Locate nextShutter()
