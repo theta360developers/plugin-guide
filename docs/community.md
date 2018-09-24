@@ -40,12 +40,9 @@ You can message us directly on [community.theta360.guide](https://community.thet
 
 A number of workshops are planned to cover different aspects of plug-in development. We also hold physical and online meetings to explore the booming business around applications for 360 cameras. Here are some of the upcoming events for developers:
 
-
-* SIGGRAPH (Aug 12-16, Vancouver, BC)
-* Plug-in Technical Workshop (Aug 30, San Francisco, CA)
-* TechCrunch DISRUPT (Sept 5-7, San Francisco, CA)
 * NYVR (Oct 25-27, New York, NY)
-
+* Unite 2018 (Oct 23-25, Los Angeles)
+* AU - Autodesk University (Nov 13-15, Los Angeles)
 
 ![](img/community/meetup.png)
 
